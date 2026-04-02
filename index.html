@@ -10,6 +10,7 @@
 
     html, body {
       height: 100%;
+      overflow: hidden;
     }
     body {
       font-family: Georgia, 'Times New Roman', serif;
@@ -661,6 +662,7 @@
     renderTable();
     updateStats();
     updateChips();
+    closePopover();
     clearSelection();
 
     var hasFilters = genre || singer || grouping || searchInput.value.trim();
