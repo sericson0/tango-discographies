@@ -28,8 +28,8 @@
     .btn-download {
       border: 1px solid rgba(241,194,50,0.6);
       border-radius: 4px;
-      padding: 7px 14px;
-      font-size: 12px;
+      padding: 8px 16px;
+      font-size: 13px;
       color: #b8960a;
       cursor: pointer;
       letter-spacing: 0.3px;
@@ -42,7 +42,7 @@
     /* --- Bandleader Selector (inline in header) --- */
     .bandleader-group { flex: 0 1 auto; }
     .field-label {
-      font-size: 10px;
+      font-size: 13px;
       text-transform: uppercase;
       color: #b8960a;
       margin-bottom: 5px;
@@ -86,7 +86,7 @@
       padding: 8px 12px;
       min-width: 110px;
       color: #1c1c1c;
-      font-size: 13px;
+      font-size: 15px;
       font-family: inherit;
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ccc' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
@@ -101,7 +101,7 @@
     .filter-input::placeholder { color: rgba(0,0,0,0.3); }
     .clear-filters {
       padding: 8px 12px;
-      font-size: 11px;
+      font-size: 13px;
       color: rgba(0,0,0,0.3);
       cursor: pointer;
       background: none;
@@ -162,7 +162,6 @@
 
     /* --- Data Table --- */
     .table-container {
-      max-height: 60vh;
       overflow-y: auto;
       position: relative;
     }
@@ -230,59 +229,63 @@
       font-style: italic;
     }
 
-    /* --- Detail Panel (popup overlay) --- */
-    .detail-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-    }
-    .detail-overlay.visible { display: flex; }
+    /* --- Detail Panel (sticky bottom) --- */
     .detail-panel {
+      position: sticky;
+      bottom: 0;
+      z-index: 5;
       background: #fff;
-      border-radius: 8px;
-      padding: 24px 28px;
-      border-left: 3px solid #f1c232;
-      max-width: 700px;
-      width: 90%;
-      max-height: 80vh;
-      overflow-y: auto;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      position: relative;
+      border-top: 2px solid #f1c232;
+      padding: 18px 32px 20px;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
     }
-    .detail-close {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 22px;
-      color: rgba(0,0,0,0.35);
-      cursor: pointer;
-      font-family: inherit;
-      line-height: 1;
-      padding: 4px;
+    .detail-panel .detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
     }
-    .detail-close:hover { color: #b8960a; }
     .detail-label {
-      font-size: 10px;
+      font-size: 11px;
       text-transform: uppercase;
       color: #b8960a;
       letter-spacing: 1.5px;
-      margin-bottom: 14px;
+    }
+    .detail-empty {
+      font-size: 14px;
+      color: rgba(0,0,0,0.3);
+      font-style: italic;
+      text-align: center;
+      padding: 6px 0;
+    }
+    .detail-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1c1c1c;
+      margin-bottom: 16px;
+    }
+    .detail-title .detail-title-year {
+      font-weight: 400;
+      color: rgba(0,0,0,0.4);
+      font-size: 15px;
     }
     .detail-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px 24px;
       font-size: 14px;
     }
-    .detail-grid .detail-field-label { color: rgba(0,0,0,0.4); font-size: 12px; }
-    .detail-grid .detail-field-value { color: #1c1c1c; margin-top: 2px; }
-    .detail-grid .span2 { grid-column: span 2; }
+    .detail-field { }
+    .detail-field-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #b8960a;
+      margin-bottom: 3px;
+    }
+    .detail-field-value { color: #1c1c1c; line-height: 1.4; }
+    .detail-field-value.empty { color: rgba(0,0,0,0.2); }
+    .detail-field.span2 { grid-column: span 2; }
 
     /* --- Back to Top Button --- */
     .back-to-top {
@@ -336,7 +339,7 @@
       .filters-section, .stats-line { padding-left: 16px; padding-right: 16px; }
       .chips-section, .chips-section.visible { padding-left: 16px; padding-right: 16px; }
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
-      .detail-panel { width: 95%; padding: 20px 16px; }
+      .detail-panel { padding-left: 16px; padding-right: 16px; }
       .detail-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -352,11 +355,9 @@
   <!-- Main app (hidden until data loads) -->
   <div id="app" style="display:none;">
 
-    <!-- Combined Header: Row 1 = Bandleader + Downloads, Row 2 = Filters -->
+    <!-- Header: Bandleader + Downloads -->
     <div class="header">
-      <!-- Row 1 -->
       <div class="bandleader-group">
-        <div class="field-label">Bandleader</div>
         <select id="bandleaderSelect" class="bandleader-select"></select>
       </div>
       <div class="header-actions">
@@ -416,15 +417,13 @@
       <div id="scrollIndicator" class="scroll-indicator">&#8595; scroll for more &#8595;</div>
     </div>
 
-  </div>
-
-  <!-- Detail Overlay (popup) -->
-  <div id="detailOverlay" class="detail-overlay">
+    <!-- Detail Panel (always visible at bottom) -->
     <div id="detailPanel" class="detail-panel">
-      <button id="detailClose" class="detail-close" title="Close">&times;</button>
-      <div class="detail-label" id="detailLabel">Recording Detail</div>
-      <div id="detailContent"></div>
+      <div id="detailContent">
+        <div class="detail-empty">Select a row to view recording details</div>
+      </div>
     </div>
+
   </div>
 
   <!-- Back to Top -->
@@ -459,29 +458,28 @@
   const tableBody = $('tableBody');
   const tableContainer = $('tableContainer');
   const scrollIndicator = $('scrollIndicator');
-  const detailOverlay = $('detailOverlay');
   const detailPanel = $('detailPanel');
-  const detailLabel = $('detailLabel');
   const detailContent = $('detailContent');
-  const detailCloseBtn = $('detailClose');
   const backToTopBtn = $('backToTop');
   const btnDownloadArtist = $('btnDownloadArtist');
   const btnDownloadAll = $('btnDownloadAll');
 
+  // --- Accent-insensitive normalization ---
+  function stripAccents(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
   // --- Date parsing ---
   function parseDate(str) {
     if (!str) return null;
-    // M/D/YYYY format
-    const slashParts = str.split('/');
+    var slashParts = str.split('/');
     if (slashParts.length === 3) {
       return new Date(+slashParts[2], +slashParts[0] - 1, +slashParts[1]);
     }
-    // YYYY-MM format
-    const dashParts = str.split('-');
+    var dashParts = str.split('-');
     if (dashParts.length === 2 && /^\d{4}$/.test(dashParts[0])) {
       return new Date(+dashParts[0], +dashParts[1] - 1, 1);
     }
-    // Year-only (YYYY)
     if (/^\d{4}$/.test(str.trim())) {
       return new Date(+str.trim(), 0, 1);
     }
@@ -489,21 +487,19 @@
   }
 
   function formatDate(str) {
-    const d = parseDate(str);
+    var d = parseDate(str);
     if (!d) return str || '';
-    // If original was year-only, display as year
     if (/^\d{4}$/.test(str.trim())) return str.trim();
-    // If original was YYYY-MM, display as YYYY-MM
     if (/^\d{4}-\d{1,2}$/.test(str.trim())) return str.trim();
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
+    var y = d.getFullYear();
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var day = String(d.getDate()).padStart(2, '0');
     return y + '-' + m + '-' + day;
   }
 
   // --- Unique sorted values ---
   function uniqueSorted(arr, key) {
-    const vals = new Set();
+    var vals = new Set();
     arr.forEach(r => { if (r[key] && r[key].trim()) vals.add(r[key].trim()); });
     return Array.from(vals).sort((a, b) => a.localeCompare(b));
   }
@@ -511,43 +507,66 @@
   // --- Populate a <select> with options ---
   function populateSelect(sel, values, allLabel) {
     sel.innerHTML = '';
-    const allOpt = document.createElement('option');
+    var allOpt = document.createElement('option');
     allOpt.value = '';
     allOpt.textContent = allLabel || 'All';
     sel.appendChild(allOpt);
     values.forEach(v => {
-      const opt = document.createElement('option');
+      var opt = document.createElement('option');
       opt.value = v;
       opt.textContent = v;
       sel.appendChild(opt);
     });
   }
 
-  // --- Bandleader dropdown (Last, First sorted by last name) ---
+  // --- Bandleader dropdown (Last, First sorted by last name with letter sections) ---
+  function getLastName(name) {
+    return name.trim().split(/\s+/).pop();
+  }
+
   function toLastFirst(name) {
-    const parts = name.trim().split(/\s+/);
+    var parts = name.trim().split(/\s+/);
     if (parts.length === 1) return name;
-    const last = parts[parts.length - 1];
-    const first = parts.slice(0, -1).join(' ');
+    var last = parts[parts.length - 1];
+    var first = parts.slice(0, -1).join(' ');
     return last + ', ' + first;
   }
 
   function populateBandleaderDropdown() {
-    const counts = {};
+    var counts = {};
     allData.forEach(r => {
-      const bl = r.Bandleader;
+      var bl = r.Bandleader;
       counts[bl] = (counts[bl] || 0) + 1;
     });
-    const names = Object.keys(counts);
-    // Sort by last name (last word in name)
+    var names = Object.keys(counts);
     names.sort((a, b) => {
-      const lastA = a.trim().split(/\s+/).pop().toLowerCase();
-      const lastB = b.trim().split(/\s+/).pop().toLowerCase();
+      var lastA = stripAccents(getLastName(a)).toLowerCase();
+      var lastB = stripAccents(getLastName(b)).toLowerCase();
       return lastA.localeCompare(lastB);
     });
+
     bandleaderSelect.innerHTML = '';
+
+    // Default placeholder
+    var placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Select Bandleader';
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    bandleaderSelect.appendChild(placeholder);
+
+    // Group by first letter of last name
+    var currentLetter = '';
     names.forEach(name => {
-      const opt = document.createElement('option');
+      var letter = stripAccents(getLastName(name))[0].toUpperCase();
+      if (letter !== currentLetter) {
+        currentLetter = letter;
+        var sep = document.createElement('option');
+        sep.disabled = true;
+        sep.textContent = '\u2500\u2500\u2500 ' + letter + ' \u2500\u2500\u2500';
+        bandleaderSelect.appendChild(sep);
+      }
+      var opt = document.createElement('option');
       opt.value = name;
       opt.textContent = toLastFirst(name) + ' \u00B7 ' + counts[name] + ' tracks';
       bandleaderSelect.appendChild(opt);
@@ -556,15 +575,14 @@
 
   // --- Bandleader change ---
   function onBandleaderChange() {
-    const bl = bandleaderSelect.value;
+    var bl = bandleaderSelect.value;
+    if (!bl) return;
     artistData = allData.filter(r => r.Bandleader === bl);
 
-    // Populate filter dropdowns for this artist
     populateSelect(genreFilter, uniqueSorted(artistData, 'Genre'), 'All');
     populateSelect(singerFilter, uniqueSorted(artistData, 'Singer'), 'All');
     populateSelect(groupingFilter, uniqueSorted(artistData, 'Grouping'), 'All');
 
-    // Reset filters and search
     searchInput.value = '';
     sortCol = 'Date';
     sortAsc = true;
@@ -574,17 +592,17 @@
   }
 
   function applyFilters() {
-    const genre = genreFilter.value;
-    const singer = singerFilter.value;
-    const grouping = groupingFilter.value;
-    const search = searchInput.value.trim().toLowerCase();
+    var genre = genreFilter.value;
+    var singer = singerFilter.value;
+    var grouping = groupingFilter.value;
+    var search = stripAccents(searchInput.value.trim().toLowerCase());
 
     filteredData = artistData.filter(r => {
       if (genre && r.Genre !== genre) return false;
       if (singer && r.Singer !== singer) return false;
       if (grouping && r.Grouping !== grouping) return false;
       if (search) {
-        const hay = ((r.Title || '') + ' ' + (r.Composer || '') + ' ' + (r.Author || '') + ' ' + (r.Singer || '')).toLowerCase();
+        var hay = stripAccents(((r.Title || '') + ' ' + (r.Composer || '') + ' ' + (r.Author || '') + ' ' + (r.Singer || '')).toLowerCase());
         if (!hay.includes(search)) return false;
       }
       return true;
@@ -597,16 +615,15 @@
     updateChips();
     clearSelection();
 
-    // Update clear-filters button state
-    const hasFilters = genre || singer || grouping || search;
+    var hasFilters = genre || singer || grouping || searchInput.value.trim();
     clearFiltersBtn.classList.toggle('has-filters', !!hasFilters);
   }
 
   function sortData() {
-    const col = sortCol;
-    const asc = sortAsc;
+    var col = sortCol;
+    var asc = sortAsc;
     filteredData.sort((a, b) => {
-      let va, vb;
+      var va, vb;
       if (col === 'Date') {
         va = parseDate(a.Date);
         vb = parseDate(b.Date);
@@ -617,15 +634,15 @@
       }
       va = (a[col] || '').toLowerCase();
       vb = (b[col] || '').toLowerCase();
-      const cmp = va.localeCompare(vb);
+      var cmp = va.localeCompare(vb);
       return asc ? cmp : -cmp;
     });
   }
 
   function updateSortHeaders() {
     document.querySelectorAll('.data-table th').forEach(th => {
-      const col = th.getAttribute('data-col');
-      const arrow = th.querySelector('.sort-arrow');
+      var col = th.getAttribute('data-col');
+      var arrow = th.querySelector('.sort-arrow');
       if (col === sortCol) {
         th.classList.add('sorted');
         arrow.innerHTML = sortAsc ? '&#9650;' : '&#9660;';
@@ -644,7 +661,7 @@
       return;
     }
     filteredData.forEach((row, i) => {
-      const tr = document.createElement('tr');
+      var tr = document.createElement('tr');
       if (i === selectedRowIndex) tr.classList.add('selected');
       tr.innerHTML =
         '<td class="col-date">' + esc(formatDate(row.Date)) + '</td>' +
@@ -663,23 +680,23 @@
 
   function esc(str) {
     if (!str) return '';
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
   }
 
   function scrollToRow(index) {
-    const rows = tableBody.querySelectorAll('tr');
+    var rows = tableBody.querySelectorAll('tr');
     if (rows[index]) {
       rows[index].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
   }
 
   function downloadCSV(data, filename) {
-    const csv = Papa.unparse(data);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    var csv = '\uFEFF' + Papa.unparse(data);
+    var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
     a.href = url;
     a.download = filename;
     a.click();
@@ -691,15 +708,15 @@
       statsLine.textContent = '0 tracks';
       return;
     }
-    const dates = filteredData.map(r => parseDate(r.Date)).filter(Boolean).sort((a, b) => a - b);
-    const minYear = dates.length ? dates[0].getFullYear() : '?';
-    const maxYear = dates.length ? dates[dates.length - 1].getFullYear() : '?';
+    var dates = filteredData.map(r => parseDate(r.Date)).filter(Boolean).sort((a, b) => a - b);
+    var minYear = dates.length ? dates[0].getFullYear() : '?';
+    var maxYear = dates.length ? dates[dates.length - 1].getFullYear() : '?';
     statsLine.textContent = filteredData.length + ' tracks \u00B7 ' + minYear + '\u2013' + maxYear;
   }
 
   function updateChips() {
     chipsRow.innerHTML = '';
-    const filters = [];
+    var filters = [];
     if (genreFilter.value) filters.push({ label: 'Genre', value: genreFilter.value, clear: () => { genreFilter.value = ''; } });
     if (singerFilter.value) filters.push({ label: 'Singer', value: singerFilter.value, clear: () => { singerFilter.value = ''; } });
     if (groupingFilter.value) filters.push({ label: 'Grouping', value: groupingFilter.value, clear: () => { groupingFilter.value = ''; } });
@@ -711,10 +728,10 @@
     }
     chipsSection.classList.add('visible');
     filters.forEach(f => {
-      const chip = document.createElement('span');
+      var chip = document.createElement('span');
       chip.className = 'chip';
       chip.innerHTML = esc(f.label) + ': ' + esc(f.value) + ' ';
-      const closeBtn = document.createElement('button');
+      var closeBtn = document.createElement('button');
       closeBtn.className = 'chip-close';
       closeBtn.innerHTML = '&times;';
       closeBtn.addEventListener('click', () => { f.clear(); applyFilters(); });
@@ -725,9 +742,8 @@
 
   function clearSelection() {
     selectedRowIndex = -1;
-    detailOverlay.classList.remove('visible');
-    detailContent.innerHTML = '';
-    const prev = tableBody.querySelector('tr.selected');
+    detailContent.innerHTML = '<div class="detail-empty">Select a row to view recording details</div>';
+    var prev = tableBody.querySelector('tr.selected');
     if (prev) prev.classList.remove('selected');
   }
 
@@ -737,18 +753,16 @@
       return;
     }
     selectedRowIndex = index;
-    const rows = tableBody.querySelectorAll('tr');
+    var rows = tableBody.querySelectorAll('tr');
     rows.forEach((r, i) => r.classList.toggle('selected', i === index));
     showDetail(filteredData[index]);
   }
 
   function showDetail(row) {
     if (!row) { clearSelection(); return; }
-    detailOverlay.classList.add('visible');
-    const year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
-    detailLabel.textContent = 'Recording Detail \u00B7 ' + (row.Title || '') + (year ? ' (' + year + ')' : '');
+    var year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
 
-    const fields = [
+    var fields = [
       { label: 'Orchestra', value: row.Orchestra },
       { label: 'Master', value: row.Master },
       { label: 'Arranger', value: row.Arranger },
@@ -762,21 +776,27 @@
       fields.unshift({ label: 'Alt. Title', value: row.AltTitle });
     }
 
-    const grid = document.createElement('div');
-    grid.className = 'detail-grid';
+    var html = '<div class="detail-title">' + esc(row.Title || '') +
+      (year ? ' <span class="detail-title-year">(' + year + ')</span>' : '') +
+      '</div>';
+
+    html += '<div class="detail-grid">';
     fields.forEach(f => {
-      const div = document.createElement('div');
-      if (f.span2) div.className = 'span2';
-      div.innerHTML = '<div class="detail-field-label">' + esc(f.label) + '</div>' +
-                      '<div class="detail-field-value">' + esc(f.value || '\u2014') + '</div>';
-      grid.appendChild(div);
+      var cls = f.span2 ? ' span2' : '';
+      var val = f.value ? esc(f.value) : '<span class="empty">\u2014</span>';
+      var valCls = f.value ? '' : ' empty';
+      html += '<div class="detail-field' + cls + '">' +
+        '<div class="detail-field-label">' + esc(f.label) + '</div>' +
+        '<div class="detail-field-value' + valCls + '">' + val + '</div>' +
+        '</div>';
     });
-    detailContent.innerHTML = '';
-    detailContent.appendChild(grid);
+    html += '</div>';
+
+    detailContent.innerHTML = html;
   }
 
   function checkScrollIndicator() {
-    const el = tableContainer;
+    var el = tableContainer;
     if (el.scrollHeight > el.clientHeight + 20) {
       scrollIndicator.classList.add('visible');
     } else {
@@ -802,21 +822,18 @@
         loadingEl.style.display = 'none';
         appEl.style.display = 'block';
 
-        // Wire up bandleader change
         bandleaderSelect.addEventListener('change', onBandleaderChange);
 
         genreFilter.addEventListener('change', applyFilters);
         singerFilter.addEventListener('change', applyFilters);
         groupingFilter.addEventListener('change', applyFilters);
 
-        // Search with debounce
-        let searchTimeout;
+        var searchTimeout;
         searchInput.addEventListener('input', () => {
           clearTimeout(searchTimeout);
           searchTimeout = setTimeout(applyFilters, 300);
         });
 
-        // Clear filters
         clearFiltersBtn.addEventListener('click', () => {
           genreFilter.value = '';
           singerFilter.value = '';
@@ -825,10 +842,9 @@
           applyFilters();
         });
 
-        // Column sort
         document.querySelectorAll('.data-table th').forEach(th => {
           th.addEventListener('click', () => {
-            const col = th.getAttribute('data-col');
+            var col = th.getAttribute('data-col');
             if (col === sortCol) {
               sortAsc = !sortAsc;
             } else {
@@ -841,19 +857,18 @@
           });
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
           if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
           if (filteredData.length === 0) return;
 
           if (e.key === 'ArrowDown') {
             e.preventDefault();
-            const next = selectedRowIndex < filteredData.length - 1 ? selectedRowIndex + 1 : 0;
+            var next = selectedRowIndex < filteredData.length - 1 ? selectedRowIndex + 1 : 0;
             onRowClick(next);
             scrollToRow(next);
           } else if (e.key === 'ArrowUp') {
             e.preventDefault();
-            const prev = selectedRowIndex > 0 ? selectedRowIndex - 1 : filteredData.length - 1;
+            var prev = selectedRowIndex > 0 ? selectedRowIndex - 1 : filteredData.length - 1;
             onRowClick(prev);
             scrollToRow(prev);
           } else if (e.key === 'Enter' && selectedRowIndex >= 0) {
@@ -864,16 +879,9 @@
           }
         });
 
-        // Detail overlay close
-        detailCloseBtn.addEventListener('click', clearSelection);
-        detailOverlay.addEventListener('click', (e) => {
-          if (e.target === detailOverlay) clearSelection();
-        });
-
-        // Scroll indicator + back to top
         tableContainer.addEventListener('scroll', () => {
-          const el = tableContainer;
-          const nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 20;
+          var el = tableContainer;
+          var nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 20;
           if (nearBottom) {
             scrollIndicator.classList.remove('visible');
           }
@@ -887,18 +895,14 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // CSV downloads
         btnDownloadArtist.addEventListener('click', () => {
-          const name = bandleaderSelect.value || 'artist';
+          var name = bandleaderSelect.value || 'artist';
           downloadCSV(filteredData, name + '.csv');
         });
 
         btnDownloadAll.addEventListener('click', () => {
           downloadCSV(allData, 'tango-discographies-all.csv');
         });
-
-        // Trigger initial load
-        onBandleaderChange();
       },
       error: function() {
         loadingEl.style.display = 'none';
