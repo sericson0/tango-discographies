@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Argentine Tango Discographies</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #faf8f4;
+      color: #1c1c1c;
+    }
+
+    /* --- Header --- */
+    .header {
+      padding: 28px 32px 24px;
+      border-bottom: 2px solid #f1c232;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-title { font-size: 26px; font-weight: 600; color: #1c1c1c; letter-spacing: 0.5px; }
+    .header-subtitle { font-size: 13px; color: rgba(0,0,0,0.4); margin-top: 6px; letter-spacing: 0.3px; }
+    .header-actions { display: flex; gap: 10px; }
+    .btn-download {
+      border: 1px solid rgba(241,194,50,0.6);
+      border-radius: 4px;
+      padding: 7px 14px;
+      font-size: 12px;
+      color: #b8960a;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      background: transparent;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .btn-download:hover { background: rgba(241,194,50,0.08); }
+
+    /* --- Bandleader Selector --- */
+    .bandleader-section {
+      padding: 20px 32px;
+      background: #fff;
+      border-bottom: 1px solid #e8e4dc;
+    }
+    .field-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #b8960a;
+      margin-bottom: 6px;
+      letter-spacing: 1.5px;
+    }
+    .bandleader-select {
+      background: #faf8f4;
+      border: 1px solid #d4cfc4;
+      border-radius: 4px;
+      padding: 12px 16px;
+      font-size: 18px;
+      color: #1c1c1c;
+      font-weight: 600;
+      font-family: inherit;
+      width: 100%;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ccc' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+
+    /* --- Filters Row --- */
+    .filters-section {
+      padding: 16px 32px;
+      background: #faf8f4;
+      border-bottom: 1px solid #e8e4dc;
+    }
+    .filters-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .filter-group { flex: 0 0 auto; }
+    .filter-group.search { flex: 1 1 200px; }
+    .filter-select, .filter-input {
+      background: #fff;
+      border: 1px solid #d4cfc4;
+      border-radius: 4px;
+      padding: 8px 12px;
+      min-width: 110px;
+      color: #1c1c1c;
+      font-size: 13px;
+      font-family: inherit;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ccc' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+    .filter-input {
+      background-image: none;
+      min-width: 200px;
+      width: 100%;
+    }
+    .filter-input::placeholder { color: rgba(0,0,0,0.3); }
+    .clear-filters {
+      padding: 8px 12px;
+      font-size: 11px;
+      color: rgba(0,0,0,0.3);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      align-self: flex-end;
+      transition: color 0.15s;
+    }
+    .clear-filters:hover { color: #b8960a; }
+    .clear-filters.has-filters { color: #b8960a; }
+
+    /* --- Active Filter Chips --- */
+    .chips-section {
+      padding: 0 32px;
+      background: #faf8f4;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.2s, padding 0.2s;
+    }
+    .chips-section.visible {
+      padding: 10px 32px;
+      max-height: 60px;
+      border-bottom: 1px solid #e8e4dc;
+    }
+    .chips-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(241,194,50,0.12);
+      border: 1px solid rgba(241,194,50,0.3);
+      border-radius: 20px;
+      padding: 4px 10px 4px 12px;
+      font-size: 12px;
+      color: #b8960a;
+    }
+    .chip-close {
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      color: #b8960a;
+      opacity: 0.6;
+      background: none;
+      border: none;
+      font-family: inherit;
+      padding: 0;
+    }
+    .chip-close:hover { opacity: 1; }
+
+    /* --- Stats Line --- */
+    .stats-line {
+      padding: 10px 32px;
+      font-size: 12px;
+      color: rgba(0,0,0,0.35);
+      border-bottom: 1px solid #e8e4dc;
+      letter-spacing: 0.2px;
+    }
+
+    /* --- Data Table --- */
+    .table-container {
+      max-height: 60vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .data-table thead { position: sticky; top: 0; z-index: 1; }
+    .data-table th {
+      background: #f4f1eb;
+      color: #b8960a;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      padding: 13px 10px 11px;
+      text-align: left;
+      border-bottom: 2px solid #d4cfc4;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .data-table th:first-child { padding-left: 32px; }
+    .data-table th .sort-arrow { font-size: 10px; margin-left: 4px; opacity: 0.4; }
+    .data-table th.sorted .sort-arrow { opacity: 1; }
+    .data-table td {
+      padding: 10px 10px;
+      border-bottom: 1px solid #ece8e0;
+    }
+    .data-table td:first-child { padding-left: 32px; }
+    .data-table tbody tr { cursor: pointer; transition: background 0.1s; }
+    .data-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+    .data-table tbody tr:hover { background: rgba(241,194,50,0.05); }
+    .data-table tbody tr.selected {
+      background: rgba(241,194,50,0.1);
+      box-shadow: inset 3px 0 0 #f1c232;
+    }
+    .data-table tbody tr.selected:hover { background: rgba(241,194,50,0.13); }
+    .col-date { color: rgba(0,0,0,0.45); }
+    .col-title { color: #1c1c1c; font-weight: 500; }
+    .col-genre, .col-singer { color: rgba(0,0,0,0.6); }
+    .col-label { color: rgba(0,0,0,0.5); }
+    .col-grouping { color: rgba(0,0,0,0.4); font-size: 12px; }
+    .col-composer { color: rgba(0,0,0,0.4); }
+    .col-author { color: rgba(0,0,0,0.35); }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      text-align: center;
+      padding: 14px;
+      color: rgba(0,0,0,0.2);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      display: none;
+    }
+    .scroll-indicator.visible { display: block; }
+
+    /* Empty / error states */
+    .table-message {
+      text-align: center;
+      padding: 40px 32px;
+      color: rgba(0,0,0,0.35);
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    /* --- Detail Panel --- */
+    .detail-panel {
+      margin: 16px 32px 20px;
+      background: #f4f1eb;
+      padding: 16px 20px;
+      border-left: 2px solid #e8e4dc;
+      transition: border-color 0.15s;
+    }
+    .detail-panel.populated { border-left-color: #f1c232; }
+    .detail-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #b8960a;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+    .detail-empty {
+      font-size: 14px;
+      color: rgba(0,0,0,0.3);
+      font-style: italic;
+      text-align: center;
+      padding: 8px 0;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .detail-grid .detail-field-label { color: rgba(0,0,0,0.4); font-size: 12px; }
+    .detail-grid .detail-field-value { color: #1c1c1c; margin-top: 2px; }
+    .detail-grid .span2 { grid-column: span 2; }
+
+    /* --- Back to Top Button --- */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #d4cfc4;
+      color: #b8960a;
+      font-size: 18px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: background 0.15s;
+      z-index: 10;
+    }
+    .back-to-top.visible { display: flex; }
+    .back-to-top:hover { background: rgba(241,194,50,0.08); }
+
+    /* --- Loading / Error --- */
+    .loading-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      font-size: 16px;
+      color: rgba(0,0,0,0.4);
+    }
+    .error-message {
+      text-align: center;
+      padding: 60px 32px;
+      font-size: 16px;
+      color: rgba(0,0,0,0.45);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .col-author, .th-author { display: none; }
+    }
+    @media (max-width: 750px) {
+      .col-composer, .th-composer { display: none; }
+    }
+    @media (max-width: 600px) {
+      .col-grouping, .th-grouping { display: none; }
+      .header { padding: 20px 16px 16px; }
+      .bandleader-section, .filters-section, .stats-line { padding-left: 16px; padding-right: 16px; }
+      .chips-section, .chips-section.visible { padding-left: 16px; padding-right: 16px; }
+      .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
+      .detail-panel { margin-left: 16px; margin-right: 16px; }
+      .detail-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading state -->
+  <div id="loading" class="loading-overlay">Loading discographies...</div>
+
+  <!-- Error state (hidden by default) -->
+  <div id="error" class="error-message" style="display:none;"></div>
+
+  <!-- Main app (hidden until data loads) -->
+  <div id="app" style="display:none;">
+
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <div class="header-title">Argentine Tango Discographies</div>
+        <div class="header-subtitle" id="headerSubtitle"></div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-download" id="btnDownloadArtist">Download Artist CSV</button>
+        <button class="btn-download" id="btnDownloadAll">Download All CSV</button>
+      </div>
+    </div>
+
+    <!-- Bandleader Selector -->
+    <div class="bandleader-section">
+      <div class="field-label">Bandleader</div>
+      <select id="bandleaderSelect" class="bandleader-select"></select>
+    </div>
+
+    <!-- Filters Row -->
+    <div class="filters-section">
+      <div class="filters-row">
+        <div class="filter-group">
+          <div class="field-label">Genre</div>
+          <select id="genreFilter" class="filter-select"></select>
+        </div>
+        <div class="filter-group">
+          <div class="field-label">Singer</div>
+          <select id="singerFilter" class="filter-select" style="min-width:160px;"></select>
+        </div>
+        <div class="filter-group">
+          <div class="field-label">Grouping</div>
+          <select id="groupingFilter" class="filter-select" style="min-width:180px;"></select>
+        </div>
+        <div class="filter-group search">
+          <div class="field-label">Search</div>
+          <input id="searchInput" class="filter-input" type="text" placeholder="Search titles, composers, authors...">
+        </div>
+        <button id="clearFilters" class="clear-filters">Clear filters</button>
+      </div>
+    </div>
+
+    <!-- Active Filter Chips -->
+    <div id="chipsSection" class="chips-section">
+      <div id="chipsRow" class="chips-row"></div>
+    </div>
+
+    <!-- Stats Line -->
+    <div class="stats-line" id="statsLine"></div>
+
+    <!-- Data Table -->
+    <div class="table-container" id="tableContainer">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th data-col="Date">Date <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Title">Title <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Genre">Genre <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Singer">Singer <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Label">Label <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Grouping" class="th-grouping">Grouping <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Composer" class="th-composer">Composer <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Author" class="th-author">Author <span class="sort-arrow">&#9650;</span></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div id="scrollIndicator" class="scroll-indicator">&#8595; scroll for more &#8595;</div>
+    </div>
+
+    <!-- Detail Panel -->
+    <div id="detailPanel" class="detail-panel">
+      <div class="detail-label" id="detailLabel">Recording Detail</div>
+      <div id="detailContent">
+        <div class="detail-empty">Select a row above to view full recording details</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" title="Back to top">&#9650;</button>
+
+  <script>
+    // JS will be added in subsequent tasks
+  </script>
+</body>
+</html>
