@@ -551,6 +551,7 @@
     });
 
     sortData();
+    updateSortHeaders();
     renderTable();
     updateStats();
     updateChips();
@@ -578,6 +579,20 @@
       vb = (b[col] || '').toLowerCase();
       const cmp = va.localeCompare(vb);
       return asc ? cmp : -cmp;
+    });
+  }
+
+  function updateSortHeaders() {
+    document.querySelectorAll('.data-table th').forEach(th => {
+      const col = th.getAttribute('data-col');
+      const arrow = th.querySelector('.sort-arrow');
+      if (col === sortCol) {
+        th.classList.add('sorted');
+        arrow.innerHTML = sortAsc ? '&#9650;' : '&#9660;';
+      } else {
+        th.classList.remove('sorted');
+        arrow.innerHTML = '&#9650;';
+      }
     });
   }
 
@@ -611,6 +626,13 @@
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+  }
+
+  function scrollToRow(index) {
+    const rows = tableBody.querySelectorAll('tr');
+    if (rows[index]) {
+      rows[index].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
   }
 
   function updateStats() {
@@ -652,8 +674,34 @@
   function showDetail(row) {
     if (!row) { clearSelection(); return; }
     detailPanel.classList.add('populated');
-    detailLabel.textContent = 'Recording Detail \u00B7 ' + (row.Title || '') + (row.Date ? ' (' + parseDate(row.Date)?.getFullYear() + ')' : '');
+    const year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
+    detailLabel.textContent = 'Recording Detail \u00B7 ' + (row.Title || '') + (year ? ' (' + year + ')' : '');
+
+    const fields = [
+      { label: 'Orchestra', value: row.Orchestra },
+      { label: 'Master', value: row.Master },
+      { label: 'Arranger', value: row.Arranger },
+      { label: 'Pianist', value: row.Pianist },
+      { label: 'Bassist', value: row.Bassist },
+      { label: 'Lineup', value: row.Lineup },
+      { label: 'Bandoneons', value: row.Bandoneons, span2: true },
+      { label: 'Strings', value: row.Strings },
+    ];
+    if (row.AltTitle) {
+      fields.unshift({ label: 'Alt. Title', value: row.AltTitle });
+    }
+
+    const grid = document.createElement('div');
+    grid.className = 'detail-grid';
+    fields.forEach(f => {
+      const div = document.createElement('div');
+      if (f.span2) div.className = 'span2';
+      div.innerHTML = '<div class="detail-field-label">' + esc(f.label) + '</div>' +
+                      '<div class="detail-field-value">' + esc(f.value || '\u2014') + '</div>';
+      grid.appendChild(div);
+    });
     detailContent.innerHTML = '';
+    detailContent.appendChild(grid);
   }
 
   function checkScrollIndicator() {
@@ -704,6 +752,45 @@
           groupingFilter.value = '';
           searchInput.value = '';
           applyFilters();
+        });
+
+        // Column sort
+        document.querySelectorAll('.data-table th').forEach(th => {
+          th.addEventListener('click', () => {
+            const col = th.getAttribute('data-col');
+            if (col === sortCol) {
+              sortAsc = !sortAsc;
+            } else {
+              sortCol = col;
+              sortAsc = true;
+            }
+            sortData();
+            updateSortHeaders();
+            renderTable();
+          });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+          if (filteredData.length === 0) return;
+
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = selectedRowIndex < filteredData.length - 1 ? selectedRowIndex + 1 : 0;
+            onRowClick(next);
+            scrollToRow(next);
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = selectedRowIndex > 0 ? selectedRowIndex - 1 : filteredData.length - 1;
+            onRowClick(prev);
+            scrollToRow(prev);
+          } else if (e.key === 'Enter' && selectedRowIndex >= 0) {
+            e.preventDefault();
+            onRowClick(selectedRowIndex);
+          } else if (e.key === 'Escape') {
+            clearSelection();
+          }
         });
 
         // Trigger initial load
