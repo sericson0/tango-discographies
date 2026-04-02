@@ -635,6 +635,17 @@
     }
   }
 
+  function downloadCSV(data, filename) {
+    const csv = Papa.unparse(data);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   function updateStats() {
     if (filteredData.length === 0) {
       statsLine.textContent = '0 recordings';
@@ -829,6 +840,16 @@
 
         backToTopBtn.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // CSV downloads
+        btnDownloadArtist.addEventListener('click', () => {
+          const name = bandleaderSelect.value || 'artist';
+          downloadCSV(filteredData, name + '.csv');
+        });
+
+        btnDownloadAll.addEventListener('click', () => {
+          downloadCSV(allData, 'tango-discographies-all.csv');
         });
 
         // Trigger initial load
