@@ -8,10 +8,19 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body {
+      height: 100%;
+    }
     body {
       font-family: Georgia, 'Times New Roman', serif;
       background: #faf8f4;
       color: #1c1c1c;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
 
     /* --- Header (combined bar) --- */
@@ -23,12 +32,13 @@
       align-items: flex-end;
       flex-wrap: wrap;
       gap: 14px;
+      flex-shrink: 0;
     }
     .header-actions { display: flex; gap: 10px; align-self: flex-end; }
     .btn-download {
       border: 1px solid rgba(241,194,50,0.6);
       border-radius: 4px;
-      padding: 8px 16px;
+      padding: 9px 14px;
       font-size: 13px;
       color: #b8960a;
       cursor: pointer;
@@ -70,6 +80,7 @@
       padding: 16px 32px;
       background: #faf8f4;
       border-bottom: 1px solid #e8e4dc;
+      flex-shrink: 0;
     }
     .filters-row {
       display: flex;
@@ -113,20 +124,8 @@
     .clear-filters:hover { color: #b8960a; }
     .clear-filters.has-filters { color: #b8960a; }
 
-    /* --- Active Filter Chips --- */
-    .chips-section {
-      padding: 0 32px;
-      background: #faf8f4;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.2s, padding 0.2s;
-    }
-    .chips-section.visible {
-      padding: 10px 32px;
-      max-height: 60px;
-      border-bottom: 1px solid #e8e4dc;
-    }
-    .chips-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    /* --- Active Filter Chips (inline with stats) --- */
+    .chips-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .chip {
       display: inline-flex;
       align-items: center;
@@ -135,12 +134,12 @@
       border: 1px solid rgba(241,194,50,0.3);
       border-radius: 20px;
       padding: 4px 10px 4px 12px;
-      font-size: 12px;
+      font-size: 15px;
       color: #b8960a;
     }
     .chip-close {
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1;
       color: #b8960a;
       opacity: 0.6;
@@ -151,19 +150,25 @@
     }
     .chip-close:hover { opacity: 1; }
 
-    /* --- Stats Line --- */
+    /* --- Stats Line (with inline chips) --- */
     .stats-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
       padding: 10px 32px;
-      font-size: 12px;
+      font-size: 15px;
       color: rgba(0,0,0,0.35);
       border-bottom: 1px solid #e8e4dc;
-      letter-spacing: 0.2px;
+      flex-shrink: 0;
     }
 
     /* --- Data Table --- */
     .table-container {
       overflow-y: auto;
       position: relative;
+      flex: 1 1 0;
+      min-height: 0;
     }
     .data-table {
       width: 100%;
@@ -197,10 +202,10 @@
     .data-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
     .data-table tbody tr:hover { background: rgba(241,194,50,0.05); }
     .data-table tbody tr.selected {
-      background: rgba(241,194,50,0.1);
-      box-shadow: inset 3px 0 0 #f1c232;
+      background: rgba(241,194,50,0.22);
+      box-shadow: inset 4px 0 0 #f1c232;
     }
-    .data-table tbody tr.selected:hover { background: rgba(241,194,50,0.13); }
+    .data-table tbody tr.selected:hover { background: rgba(241,194,50,0.28); }
     .col-date { color: rgba(0,0,0,0.45); }
     .col-title { color: #1c1c1c; font-weight: 500; }
     .col-genre, .col-singer { color: rgba(0,0,0,0.6); }
@@ -229,27 +234,40 @@
       font-style: italic;
     }
 
-    /* --- Detail Panel (sticky bottom) --- */
+    /* --- Detail Panel (fixed at bottom via flex layout) --- */
     .detail-panel {
-      position: sticky;
-      bottom: 0;
+      flex-shrink: 0;
       z-index: 5;
       background: #fff;
       border-top: 2px solid #f1c232;
       padding: 18px 32px 20px;
       box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
     }
-    .detail-panel .detail-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
+    .detail-row1 {
+      margin-bottom: 12px;
+      line-height: 1.5;
     }
-    .detail-label {
-      font-size: 11px;
-      text-transform: uppercase;
+    .detail-row1 .detail-alt { font-style: italic; font-weight: 400; color: rgba(0,0,0,0.45); }
+    .detail-row1 .detail-year { font-weight: 400; color: rgba(0,0,0,0.4); font-size: 15px; }
+    .detail-row1 .detail-orchestra { color: rgba(0,0,0,0.5); margin-left: 16px; font-size: 15px; font-weight: 400; }
+    .detail-row1 .detail-orchestra-label { text-transform: uppercase; font-size: 10px; letter-spacing: 1px; color: #b8960a; }
+    .detail-toggle {
+      background: none;
+      border: none;
       color: #b8960a;
-      letter-spacing: 1.5px;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 4px 8px;
+      font-family: inherit;
+      letter-spacing: 0.5px;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+    .detail-toggle:hover { opacity: 1; }
+    .detail-top-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
     .detail-empty {
       font-size: 14px;
@@ -262,12 +280,6 @@
       font-size: 18px;
       font-weight: 600;
       color: #1c1c1c;
-      margin-bottom: 16px;
-    }
-    .detail-title .detail-title-year {
-      font-weight: 400;
-      color: rgba(0,0,0,0.4);
-      font-size: 15px;
     }
     .detail-grid {
       display: grid;
@@ -275,6 +287,7 @@
       gap: 14px 24px;
       font-size: 14px;
     }
+    .detail-body { }
     .detail-field { }
     .detail-field-label {
       font-size: 10px;
@@ -337,7 +350,6 @@
       .col-grouping, .th-grouping { display: none; }
       .header { padding: 12px 16px; }
       .filters-section, .stats-line { padding-left: 16px; padding-right: 16px; }
-      .chips-section, .chips-section.visible { padding-left: 16px; padding-right: 16px; }
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
       .detail-panel { padding-left: 16px; padding-right: 16px; }
       .detail-grid { grid-template-columns: 1fr 1fr; }
@@ -389,13 +401,11 @@
       </div>
     </div>
 
-    <!-- Active Filter Chips -->
-    <div id="chipsSection" class="chips-section">
+    <!-- Stats Line with inline filter chips -->
+    <div class="stats-line" id="statsLine">
+      <span id="statsText"></span>
       <div id="chipsRow" class="chips-row"></div>
     </div>
-
-    <!-- Stats Line -->
-    <div class="stats-line" id="statsLine"></div>
 
     <!-- Data Table -->
     <div class="table-container" id="tableContainer">
@@ -419,8 +429,13 @@
 
     <!-- Detail Panel (always visible at bottom) -->
     <div id="detailPanel" class="detail-panel">
-      <div id="detailContent">
-        <div class="detail-empty">Select a row to view recording details</div>
+      <div class="detail-top-bar">
+        <button id="detailToggle" class="detail-toggle" title="Toggle details">&#9660; Details</button>
+      </div>
+      <div id="detailBody" class="detail-body">
+        <div id="detailContent">
+          <div class="detail-empty">Select a row to view recording details</div>
+        </div>
       </div>
     </div>
 
@@ -452,14 +467,16 @@
   const groupingFilter = $('groupingFilter');
   const searchInput = $('searchInput');
   const clearFiltersBtn = $('clearFilters');
-  const chipsSection = $('chipsSection');
   const chipsRow = $('chipsRow');
   const statsLine = $('statsLine');
+  const statsText = $('statsText');
   const tableBody = $('tableBody');
   const tableContainer = $('tableContainer');
   const scrollIndicator = $('scrollIndicator');
   const detailPanel = $('detailPanel');
   const detailContent = $('detailContent');
+  const detailBody = $('detailBody');
+  const detailToggle = $('detailToggle');
   const backToTopBtn = $('backToTop');
   const btnDownloadArtist = $('btnDownloadArtist');
   const btnDownloadAll = $('btnDownloadAll');
@@ -504,6 +521,20 @@
     return Array.from(vals).sort((a, b) => a.localeCompare(b));
   }
 
+  // Extract individual singers from "Singer A y Singer B" entries
+  function uniqueSingers(arr) {
+    var vals = new Set();
+    arr.forEach(r => {
+      if (r.Singer && r.Singer.trim()) {
+        r.Singer.trim().split(/\s+y\s+/i).forEach(s => {
+          var t = s.trim();
+          if (t) vals.add(t);
+        });
+      }
+    });
+    return Array.from(vals).sort((a, b) => a.localeCompare(b));
+  }
+
   // --- Populate a <select> with options ---
   function populateSelect(sel, values, allLabel) {
     sel.innerHTML = '';
@@ -520,16 +551,26 @@
   }
 
   // --- Bandleader dropdown (Last, First sorted by last name with letter sections) ---
+  var LAST_NAME_PARTICLES = ['de', 'di', 'del', 'la', 'las', 'los'];
+
   function getLastName(name) {
-    return name.trim().split(/\s+/).pop();
+    var parts = name.trim().split(/\s+/);
+    if (parts.length <= 1) return name;
+    for (var i = 1; i < parts.length; i++) {
+      if (LAST_NAME_PARTICLES.indexOf(parts[i].toLowerCase()) >= 0) {
+        return parts.slice(i).join(' ');
+      }
+    }
+    return parts[parts.length - 1];
   }
 
   function toLastFirst(name) {
     var parts = name.trim().split(/\s+/);
     if (parts.length === 1) return name;
-    var last = parts[parts.length - 1];
-    var first = parts.slice(0, -1).join(' ');
-    return last + ', ' + first;
+    var lastName = getLastName(name);
+    var lastParts = lastName.split(/\s+/).length;
+    var first = parts.slice(0, parts.length - lastParts).join(' ');
+    return lastName + (first ? ', ' + first : '');
   }
 
   function populateBandleaderDropdown() {
@@ -580,7 +621,7 @@
     artistData = allData.filter(r => r.Bandleader === bl);
 
     populateSelect(genreFilter, uniqueSorted(artistData, 'Genre'), 'All');
-    populateSelect(singerFilter, uniqueSorted(artistData, 'Singer'), 'All');
+    populateSelect(singerFilter, uniqueSingers(artistData), 'All');
     populateSelect(groupingFilter, uniqueSorted(artistData, 'Grouping'), 'All');
 
     searchInput.value = '';
@@ -599,7 +640,7 @@
 
     filteredData = artistData.filter(r => {
       if (genre && r.Genre !== genre) return false;
-      if (singer && r.Singer !== singer) return false;
+      if (singer && !(r.Singer && r.Singer.trim().split(/\s+y\s+/i).some(s => s.trim() === singer))) return false;
       if (grouping && r.Grouping !== grouping) return false;
       if (search) {
         var hay = stripAccents(((r.Title || '') + ' ' + (r.Composer || '') + ' ' + (r.Author || '') + ' ' + (r.Singer || '')).toLowerCase());
@@ -705,13 +746,13 @@
 
   function updateStats() {
     if (filteredData.length === 0) {
-      statsLine.textContent = '0 tracks';
+      statsText.textContent = '0 tracks';
       return;
     }
     var dates = filteredData.map(r => parseDate(r.Date)).filter(Boolean).sort((a, b) => a - b);
     var minYear = dates.length ? dates[0].getFullYear() : '?';
     var maxYear = dates.length ? dates[dates.length - 1].getFullYear() : '?';
-    statsLine.textContent = filteredData.length + ' tracks \u00B7 ' + minYear + '\u2013' + maxYear;
+    statsText.textContent = filteredData.length + ' tracks \u00B7 ' + minYear + '\u2013' + maxYear;
   }
 
   function updateChips() {
@@ -722,11 +763,7 @@
     if (groupingFilter.value) filters.push({ label: 'Grouping', value: groupingFilter.value, clear: () => { groupingFilter.value = ''; } });
     if (searchInput.value.trim()) filters.push({ label: 'Search', value: searchInput.value.trim(), clear: () => { searchInput.value = ''; } });
 
-    if (filters.length === 0) {
-      chipsSection.classList.remove('visible');
-      return;
-    }
-    chipsSection.classList.add('visible');
+    if (filters.length === 0) return;
     filters.forEach(f => {
       var chip = document.createElement('span');
       chip.className = 'chip';
@@ -762,23 +799,23 @@
     if (!row) { clearSelection(); return; }
     var year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
 
+    // Row 1: Title  alt title (italic)  (year)  Orchestra: name
+    var html = '<div class="detail-row1"><span class="detail-title">' + esc(row.Title || '') + '</span>';
+    if (row.AltTitle) html += ' <span class="detail-alt">' + esc(row.AltTitle) + '</span>';
+    if (year) html += ' <span class="detail-year">(' + year + ')</span>';
+    if (row.Orchestra) html += '<span class="detail-orchestra"><span class="detail-orchestra-label">Orchestra: </span>' + esc(row.Orchestra) + '</span>';
+    html += '</div>';
+
+    // Row 2: Master, Lineup, Pianist, Bassist
+    // Row 3: Bandoneons, Strings
     var fields = [
-      { label: 'Orchestra', value: row.Orchestra },
       { label: 'Master', value: row.Master },
-      { label: 'Arranger', value: row.Arranger },
+      { label: 'Lineup', value: row.Lineup },
       { label: 'Pianist', value: row.Pianist },
       { label: 'Bassist', value: row.Bassist },
-      { label: 'Lineup', value: row.Lineup },
       { label: 'Bandoneons', value: row.Bandoneons, span2: true },
-      { label: 'Strings', value: row.Strings },
+      { label: 'Strings', value: row.Strings, span2: true },
     ];
-    if (row.AltTitle) {
-      fields.unshift({ label: 'Alt. Title', value: row.AltTitle });
-    }
-
-    var html = '<div class="detail-title">' + esc(row.Title || '') +
-      (year ? ' <span class="detail-title-year">(' + year + ')</span>' : '') +
-      '</div>';
 
     html += '<div class="detail-grid">';
     fields.forEach(f => {
@@ -820,7 +857,7 @@
         allData = results.data;
         populateBandleaderDropdown();
         loadingEl.style.display = 'none';
-        appEl.style.display = 'block';
+        appEl.style.display = 'flex';
 
         bandleaderSelect.addEventListener('change', onBandleaderChange);
 
@@ -902,6 +939,14 @@
 
         btnDownloadAll.addEventListener('click', () => {
           downloadCSV(allData, 'tango-discographies-all.csv');
+        });
+
+        // Detail panel collapse/expand
+        var detailExpanded = true;
+        detailToggle.addEventListener('click', () => {
+          detailExpanded = !detailExpanded;
+          detailBody.style.display = detailExpanded ? '' : 'none';
+          detailToggle.innerHTML = detailExpanded ? '&#9660; Details' : '&#9650; Details';
         });
       },
       error: function() {
