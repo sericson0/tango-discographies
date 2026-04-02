@@ -648,7 +648,28 @@
 
   function updateChips() {
     chipsRow.innerHTML = '';
-    chipsSection.classList.remove('visible');
+    const filters = [];
+    if (genreFilter.value) filters.push({ label: 'Genre', value: genreFilter.value, clear: () => { genreFilter.value = ''; } });
+    if (singerFilter.value) filters.push({ label: 'Singer', value: singerFilter.value, clear: () => { singerFilter.value = ''; } });
+    if (groupingFilter.value) filters.push({ label: 'Grouping', value: groupingFilter.value, clear: () => { groupingFilter.value = ''; } });
+    if (searchInput.value.trim()) filters.push({ label: 'Search', value: searchInput.value.trim(), clear: () => { searchInput.value = ''; } });
+
+    if (filters.length === 0) {
+      chipsSection.classList.remove('visible');
+      return;
+    }
+    chipsSection.classList.add('visible');
+    filters.forEach(f => {
+      const chip = document.createElement('span');
+      chip.className = 'chip';
+      chip.innerHTML = esc(f.label) + ': ' + esc(f.value) + ' ';
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'chip-close';
+      closeBtn.innerHTML = '&times;';
+      closeBtn.addEventListener('click', () => { f.clear(); applyFilters(); });
+      chip.appendChild(closeBtn);
+      chipsRow.appendChild(chip);
+    });
   }
 
   function clearSelection() {
@@ -791,6 +812,23 @@
           } else if (e.key === 'Escape') {
             clearSelection();
           }
+        });
+
+        // Scroll indicator + back to top
+        tableContainer.addEventListener('scroll', () => {
+          const el = tableContainer;
+          const nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 20;
+          if (nearBottom) {
+            scrollIndicator.classList.remove('visible');
+          }
+        });
+
+        window.addEventListener('scroll', () => {
+          backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // Trigger initial load
