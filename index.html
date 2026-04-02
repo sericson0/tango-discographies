@@ -421,7 +421,266 @@
   <button id="backToTop" class="back-to-top" title="Back to top">&#9650;</button>
 
   <script>
-    // JS will be added in subsequent tasks
+(function() {
+  'use strict';
+
+  // --- State ---
+  let allData = [];
+  let artistData = [];
+  let filteredData = [];
+  let selectedRowIndex = -1;
+  let sortCol = 'Date';
+  let sortAsc = true;
+
+  // --- DOM refs ---
+  const $ = id => document.getElementById(id);
+  const loadingEl = $('loading');
+  const errorEl = $('error');
+  const appEl = $('app');
+  const headerSubtitle = $('headerSubtitle');
+  const bandleaderSelect = $('bandleaderSelect');
+  const genreFilter = $('genreFilter');
+  const singerFilter = $('singerFilter');
+  const groupingFilter = $('groupingFilter');
+  const searchInput = $('searchInput');
+  const clearFiltersBtn = $('clearFilters');
+  const chipsSection = $('chipsSection');
+  const chipsRow = $('chipsRow');
+  const statsLine = $('statsLine');
+  const tableBody = $('tableBody');
+  const tableContainer = $('tableContainer');
+  const scrollIndicator = $('scrollIndicator');
+  const detailPanel = $('detailPanel');
+  const detailLabel = $('detailLabel');
+  const detailContent = $('detailContent');
+  const backToTopBtn = $('backToTop');
+  const btnDownloadArtist = $('btnDownloadArtist');
+  const btnDownloadAll = $('btnDownloadAll');
+
+  // --- Date parsing ---
+  function parseDate(str) {
+    if (!str) return null;
+    const parts = str.split('/');
+    if (parts.length !== 3) return null;
+    return new Date(+parts[2], +parts[0] - 1, +parts[1]);
+  }
+
+  function formatDate(str) {
+    const d = parseDate(str);
+    if (!d) return str || '';
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return y + '-' + m + '-' + day;
+  }
+
+  // --- Unique sorted values ---
+  function uniqueSorted(arr, key) {
+    const vals = new Set();
+    arr.forEach(r => { if (r[key] && r[key].trim()) vals.add(r[key].trim()); });
+    return Array.from(vals).sort((a, b) => a.localeCompare(b));
+  }
+
+  // --- Populate a <select> with options ---
+  function populateSelect(sel, values, allLabel) {
+    sel.innerHTML = '';
+    const allOpt = document.createElement('option');
+    allOpt.value = '';
+    allOpt.textContent = allLabel || 'All';
+    sel.appendChild(allOpt);
+    values.forEach(v => {
+      const opt = document.createElement('option');
+      opt.value = v;
+      opt.textContent = v;
+      sel.appendChild(opt);
+    });
+  }
+
+  // --- Bandleader dropdown ---
+  function populateBandleaderDropdown() {
+    const counts = {};
+    allData.forEach(r => {
+      const bl = r.Bandleader;
+      counts[bl] = (counts[bl] || 0) + 1;
+    });
+    const names = Object.keys(counts).sort((a, b) => a.localeCompare(b));
+    bandleaderSelect.innerHTML = '';
+    names.forEach(name => {
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name + ' \u00B7 ' + counts[name] + ' rec.';
+      bandleaderSelect.appendChild(opt);
+    });
+    headerSubtitle.textContent = allData.length.toLocaleString() + ' recordings \u00B7 ' + names.length + ' bandleaders';
+  }
+
+  // --- Bandleader change ---
+  function onBandleaderChange() {
+    const bl = bandleaderSelect.value;
+    artistData = allData.filter(r => r.Bandleader === bl);
+
+    // Populate filter dropdowns for this artist
+    populateSelect(genreFilter, uniqueSorted(artistData, 'Genre'), 'All');
+    populateSelect(singerFilter, uniqueSorted(artistData, 'Singer'), 'All');
+    populateSelect(groupingFilter, uniqueSorted(artistData, 'Grouping'), 'All');
+
+    // Reset filters and search
+    searchInput.value = '';
+    sortCol = 'Date';
+    sortAsc = true;
+    selectedRowIndex = -1;
+
+    applyFilters();
+  }
+
+  // --- PLACEHOLDER for tasks 3-6 ---
+  function applyFilters() {
+    filteredData = artistData.slice();
+    sortData();
+    renderTable();
+    updateStats();
+    updateChips();
+    clearSelection();
+  }
+
+  function sortData() {
+    const col = sortCol;
+    const asc = sortAsc;
+    filteredData.sort((a, b) => {
+      let va, vb;
+      if (col === 'Date') {
+        va = parseDate(a.Date);
+        vb = parseDate(b.Date);
+        if (!va && !vb) return 0;
+        if (!va) return 1;
+        if (!vb) return -1;
+        return asc ? va - vb : vb - va;
+      }
+      va = (a[col] || '').toLowerCase();
+      vb = (b[col] || '').toLowerCase();
+      const cmp = va.localeCompare(vb);
+      return asc ? cmp : -cmp;
+    });
+  }
+
+  function renderTable() {
+    tableBody.innerHTML = '';
+    if (filteredData.length === 0) {
+      tableBody.innerHTML = '<tr><td colspan="8" class="table-message">No recordings match your filters</td></tr>';
+      scrollIndicator.classList.remove('visible');
+      return;
+    }
+    filteredData.forEach((row, i) => {
+      const tr = document.createElement('tr');
+      if (i === selectedRowIndex) tr.classList.add('selected');
+      tr.innerHTML =
+        '<td class="col-date">' + esc(formatDate(row.Date)) + '</td>' +
+        '<td class="col-title">' + esc(row.Title) + '</td>' +
+        '<td class="col-genre">' + esc(row.Genre) + '</td>' +
+        '<td class="col-singer">' + esc(row.Singer) + '</td>' +
+        '<td class="col-label">' + esc(row.Label) + '</td>' +
+        '<td class="col-grouping">' + esc(row.Grouping) + '</td>' +
+        '<td class="col-composer">' + esc(row.Composer) + '</td>' +
+        '<td class="col-author">' + esc(row.Author) + '</td>';
+      tr.addEventListener('click', () => onRowClick(i));
+      tableBody.appendChild(tr);
+    });
+    checkScrollIndicator();
+  }
+
+  function esc(str) {
+    if (!str) return '';
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function updateStats() {
+    if (filteredData.length === 0) {
+      statsLine.textContent = '0 recordings';
+      return;
+    }
+    const dates = filteredData.map(r => parseDate(r.Date)).filter(Boolean).sort((a, b) => a - b);
+    const minYear = dates.length ? dates[0].getFullYear() : '?';
+    const maxYear = dates.length ? dates[dates.length - 1].getFullYear() : '?';
+    statsLine.textContent = filteredData.length + ' recordings \u00B7 ' + minYear + '\u2013' + maxYear;
+  }
+
+  function updateChips() {
+    chipsRow.innerHTML = '';
+    chipsSection.classList.remove('visible');
+  }
+
+  function clearSelection() {
+    selectedRowIndex = -1;
+    detailPanel.classList.remove('populated');
+    detailLabel.textContent = 'Recording Detail';
+    detailContent.innerHTML = '<div class="detail-empty">Select a row above to view full recording details</div>';
+    const prev = tableBody.querySelector('tr.selected');
+    if (prev) prev.classList.remove('selected');
+  }
+
+  function onRowClick(index) {
+    if (selectedRowIndex === index) {
+      clearSelection();
+      return;
+    }
+    selectedRowIndex = index;
+    const rows = tableBody.querySelectorAll('tr');
+    rows.forEach((r, i) => r.classList.toggle('selected', i === index));
+    showDetail(filteredData[index]);
+  }
+
+  function showDetail(row) {
+    if (!row) { clearSelection(); return; }
+    detailPanel.classList.add('populated');
+    detailLabel.textContent = 'Recording Detail \u00B7 ' + (row.Title || '') + (row.Date ? ' (' + parseDate(row.Date)?.getFullYear() + ')' : '');
+    detailContent.innerHTML = '';
+  }
+
+  function checkScrollIndicator() {
+    const el = tableContainer;
+    if (el.scrollHeight > el.clientHeight + 20) {
+      scrollIndicator.classList.add('visible');
+    } else {
+      scrollIndicator.classList.remove('visible');
+    }
+  }
+
+  // --- Init ---
+  function init() {
+    Papa.parse('discographies.csv', {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        if (!results.data || results.data.length === 0) {
+          loadingEl.style.display = 'none';
+          errorEl.style.display = 'block';
+          errorEl.textContent = 'Could not load discography data. Please try refreshing.';
+          return;
+        }
+        allData = results.data;
+        populateBandleaderDropdown();
+        loadingEl.style.display = 'none';
+        appEl.style.display = 'block';
+
+        // Wire up bandleader change
+        bandleaderSelect.addEventListener('change', onBandleaderChange);
+
+        // Trigger initial load
+        onBandleaderChange();
+      },
+      error: function() {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Could not load discography data. Please try refreshing.';
+      }
+    });
+  }
+
+  init();
+})();
   </script>
 </body>
 </html>
