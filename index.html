@@ -533,14 +533,32 @@
     applyFilters();
   }
 
-  // --- PLACEHOLDER for tasks 3-6 ---
   function applyFilters() {
-    filteredData = artistData.slice();
+    const genre = genreFilter.value;
+    const singer = singerFilter.value;
+    const grouping = groupingFilter.value;
+    const search = searchInput.value.trim().toLowerCase();
+
+    filteredData = artistData.filter(r => {
+      if (genre && r.Genre !== genre) return false;
+      if (singer && r.Singer !== singer) return false;
+      if (grouping && r.Grouping !== grouping) return false;
+      if (search) {
+        const hay = ((r.Title || '') + ' ' + (r.Composer || '') + ' ' + (r.Author || '') + ' ' + (r.Singer || '')).toLowerCase();
+        if (!hay.includes(search)) return false;
+      }
+      return true;
+    });
+
     sortData();
     renderTable();
     updateStats();
     updateChips();
     clearSelection();
+
+    // Update clear-filters button state
+    const hasFilters = genre || singer || grouping || search;
+    clearFiltersBtn.classList.toggle('has-filters', !!hasFilters);
   }
 
   function sortData() {
@@ -667,6 +685,26 @@
 
         // Wire up bandleader change
         bandleaderSelect.addEventListener('change', onBandleaderChange);
+
+        genreFilter.addEventListener('change', applyFilters);
+        singerFilter.addEventListener('change', applyFilters);
+        groupingFilter.addEventListener('change', applyFilters);
+
+        // Search with debounce
+        let searchTimeout;
+        searchInput.addEventListener('input', () => {
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(applyFilters, 300);
+        });
+
+        // Clear filters
+        clearFiltersBtn.addEventListener('click', () => {
+          genreFilter.value = '';
+          singerFilter.value = '';
+          groupingFilter.value = '';
+          searchInput.value = '';
+          applyFilters();
+        });
 
         // Trigger initial load
         onBandleaderChange();
