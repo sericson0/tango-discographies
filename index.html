@@ -690,7 +690,7 @@
   }
 
   function updateSortHeaders() {
-    document.querySelectorAll('.data-table th').forEach(th => {
+    document.querySelectorAll('.data-table th[data-col]').forEach(th => {
       var col = th.getAttribute('data-col');
       var arrow = th.querySelector('.sort-arrow');
       if (col === sortCol) {
