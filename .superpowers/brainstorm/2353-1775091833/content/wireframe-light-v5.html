@@ -1,0 +1,249 @@
+<h2>Tango Discographies Viewer — Light Theme v5</h2>
+<p class="subtitle">Selected row highlight, bolder headers, empty detail state, UX improvements</p>
+
+<div class="mockup" style="margin-top: 24px;">
+  <div class="mockup-header">With Selected Row + UX Refinements</div>
+  <div class="mockup-body" style="padding: 0; background: #faf8f4; color: #1c1c1c; font-family: 'Georgia', 'Times New Roman', serif;">
+
+    <!-- Header -->
+    <div style="padding: 28px 32px 24px; border-bottom: 2px solid #f1c232; background: #fff;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div style="font-size: 26px; font-weight: 600; color: #1c1c1c; letter-spacing: 0.5px;">Argentine Tango Discographies</div>
+          <div style="font-size: 13px; color: rgba(0,0,0,0.4); margin-top: 6px; letter-spacing: 0.3px;">15,460 recordings &middot; 41 bandleaders</div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <div style="border: 1px solid rgba(241,194,50,0.6); border-radius: 4px; padding: 7px 14px; font-size: 12px; color: #b8960a; cursor: pointer; letter-spacing: 0.3px;">Download Artist CSV</div>
+          <div style="border: 1px solid rgba(241,194,50,0.6); border-radius: 4px; padding: 7px 14px; font-size: 12px; color: #b8960a; cursor: pointer; letter-spacing: 0.3px;">Download All CSV</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Artist Selector -->
+    <div style="padding: 20px 32px; background: #fff; border-bottom: 1px solid #e8e4dc;">
+      <div style="font-size: 10px; text-transform: uppercase; color: #b8960a; margin-bottom: 8px; letter-spacing: 1.5px;">Bandleader</div>
+      <div style="background: #faf8f4; border: 1px solid #d4cfc4; border-radius: 4px; padding: 12px 16px; font-size: 18px; color: #1c1c1c; font-weight: 600; cursor: pointer;">
+        Anibal Troilo <span style="color: rgba(0,0,0,0.3); font-size: 14px; font-weight: 400;">&middot; 487 recordings</span> <span style="float: right; color: #ccc; font-size: 14px;">&#9662;</span>
+      </div>
+    </div>
+
+    <!-- Filters Row -->
+    <div style="padding: 16px 32px; background: #faf8f4; border-bottom: 1px solid #e8e4dc;">
+      <div style="display: flex; gap: 14px; align-items: flex-end; flex-wrap: wrap;">
+        <div style="flex: 0 0 auto;">
+          <div style="font-size: 10px; text-transform: uppercase; color: #b8960a; margin-bottom: 5px; letter-spacing: 1.5px;">Genre</div>
+          <div style="background: #fff; border: 1px solid #d4cfc4; border-radius: 4px; padding: 8px 12px; min-width: 110px; color: #1c1c1c; font-size: 13px;">
+            All <span style="float:right; color:#ccc;">&#9662;</span>
+          </div>
+        </div>
+        <div style="flex: 0 0 auto;">
+          <div style="font-size: 10px; text-transform: uppercase; color: #b8960a; margin-bottom: 5px; letter-spacing: 1.5px;">Singer</div>
+          <div style="background: #fff; border: 1px solid #d4cfc4; border-radius: 4px; padding: 8px 12px; min-width: 160px; color: #1c1c1c; font-size: 13px;">
+            All <span style="float:right; color:#ccc;">&#9662;</span>
+          </div>
+        </div>
+        <div style="flex: 0 0 auto;">
+          <div style="font-size: 10px; text-transform: uppercase; color: #b8960a; margin-bottom: 5px; letter-spacing: 1.5px;">Grouping</div>
+          <div style="background: #fff; border: 1px solid #d4cfc4; border-radius: 4px; padding: 8px 12px; min-width: 180px; color: #1c1c1c; font-size: 13px;">
+            All <span style="float:right; color:#ccc;">&#9662;</span>
+          </div>
+        </div>
+        <div style="flex: 1 1 auto;">
+          <div style="font-size: 10px; text-transform: uppercase; color: #b8960a; margin-bottom: 5px; letter-spacing: 1.5px;">Search</div>
+          <div style="background: #fff; border: 1px solid #d4cfc4; border-radius: 4px; padding: 8px 12px; color: rgba(0,0,0,0.3); font-size: 13px;">
+            Search titles, composers, authors...
+          </div>
+        </div>
+        <!-- Clear filters button (NEW) -->
+        <div style="flex: 0 0 auto; align-self: flex-end;">
+          <div style="padding: 8px 12px; font-size: 11px; color: rgba(0,0,0,0.3); cursor: pointer; letter-spacing: 0.3px;">Clear filters</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats line -->
+    <div style="padding: 10px 32px; font-size: 12px; color: rgba(0,0,0,0.35); border-bottom: 1px solid #e8e4dc; letter-spacing: 0.2px;">
+      487 recordings &middot; 1938–1971
+    </div>
+
+    <!-- Data Table (scrollable) -->
+    <div style="max-height: 360px; overflow-y: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+        <thead style="position: sticky; top: 0; z-index: 1;">
+          <tr style="background: #f4f1eb; color: #b8960a; text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">
+            <th style="padding: 13px 12px 11px 32px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Date &#9650;</th>
+            <th style="padding: 13px 10px 11px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Title</th>
+            <th style="padding: 13px 10px 11px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Genre</th>
+            <th style="padding: 13px 10px 11px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Singer</th>
+            <th style="padding: 13px 10px 11px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Label</th>
+            <th style="padding: 13px 10px 11px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Grouping</th>
+            <th style="padding: 13px 10px 11px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Composer</th>
+            <th style="padding: 13px 10px 11px; text-align: left; border-bottom: 2px solid #d4cfc4; font-weight: 700; cursor:pointer;">Author</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #ece8e0; cursor: pointer;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.45);">1938-03-07</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 500;">Comme Il Faut</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Tango</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Instrumental</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">Ode&oacute;n</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4); font-size: 12px;">38-41 Goni Pre-Malena</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4);">Eduardo Arolas</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.35);"></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ece8e0; background: rgba(0,0,0,0.015); cursor: pointer;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.45);">1938-03-07</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 500;">Tinta Verde</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Tango</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Instrumental</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">Ode&oacute;n</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4); font-size: 12px;">38-41 Goni Pre-Malena</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4);">Agustin Bardi</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.35);"></td>
+          </tr>
+          <!-- SELECTED ROW -->
+          <tr style="border-bottom: 1px solid #e6d9a8; background: rgba(241,194,50,0.1); cursor: pointer; box-shadow: inset 3px 0 0 #f1c232;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.55);">1941-03-04</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 600;">Yo Soy El Tango</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.7);">Tango</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.7);">Francisco Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">V&iacute;ctor</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5); font-size: 12px;">38-41 Goni Pre-Malena</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">Domingo Federico</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.45);">Homero Exposito</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ece8e0; background: rgba(0,0,0,0.015); cursor: pointer;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.45);">1941-03-04</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 500;">Mano Brava</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Milonga</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Francisco Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">V&iacute;ctor</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4); font-size: 12px;">38-41 Goni Pre-Malena</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4);">Manuel Buzon</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.35);">Enrique Cadicamo</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ece8e0; cursor: pointer;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.45);">1941-06-10</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 500;">Toda Mi Vida</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Vals</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Francisco Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">V&iacute;ctor</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4); font-size: 12px;">41-43 Goni Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4);">Anibal Troilo</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.35);">Jose Maria Contursi</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ece8e0; background: rgba(0,0,0,0.015); cursor: pointer;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.45);">1941-06-10</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 500;">Tabernero</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Tango</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Francisco Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">V&iacute;ctor</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4); font-size: 12px;">41-43 Goni Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4);">Juan De Dios Filiberto</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.35);"></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ece8e0; cursor: pointer;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.45);">1941-07-15</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 500;">El Bulin De La Calle Ayacucho</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Tango</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Francisco Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">V&iacute;ctor</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4); font-size: 12px;">41-43 Goni Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4);">Jose y Luis Servidio</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.35);">Celedonio Flores</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ece8e0; background: rgba(0,0,0,0.015); cursor: pointer;">
+            <td style="padding: 10px 12px 10px 32px; color: rgba(0,0,0,0.45);">1941-09-02</td>
+            <td style="padding: 10px 10px; color: #1c1c1c; font-weight: 500;">Malena</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Tango</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.6);">Francisco Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.5);">V&iacute;ctor</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4); font-size: 12px;">41-43 Goni Fiorentino</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.4);">Lucio Demare</td>
+            <td style="padding: 10px 10px; color: rgba(0,0,0,0.35);">Homero Manzi</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align: center; padding: 14px; color: rgba(0,0,0,0.2); font-size: 12px; letter-spacing: 0.5px;">
+        &#8595; scroll for more &#8595;
+      </div>
+    </div>
+
+    <!-- Detail Panel: SELECTED STATE -->
+    <div style="margin: 0 32px 0; background: #f4f1eb; border-left: 2px solid #f1c232; padding: 16px 20px;">
+      <div style="font-size: 10px; text-transform: uppercase; color: #b8960a; letter-spacing: 1.5px; margin-bottom: 12px;">Recording Detail &middot; Yo Soy El Tango (1941)</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 13px;">
+        <div><span style="color: rgba(0,0,0,0.4);">Orchestra</span><br><span style="color: #1c1c1c;">Anibal Troilo y su orquesta Tipica</span></div>
+        <div><span style="color: rgba(0,0,0,0.4);">Master</span><br><span style="color: #1c1c1c;">78rpm</span></div>
+        <div><span style="color: rgba(0,0,0,0.4);">Arranger</span><br><span style="color: #1c1c1c;">&mdash;</span></div>
+        <div><span style="color: rgba(0,0,0,0.4);">Pianist</span><br><span style="color: #1c1c1c;">Orlando Goni</span></div>
+        <div><span style="color: rgba(0,0,0,0.4);">Bassist</span><br><span style="color: #1c1c1c;">Enrique Diaz</span></div>
+        <div><span style="color: rgba(0,0,0,0.4);">Lineup</span><br><span style="color: #1c1c1c;">Piano, Bass, 5 Bandoneons, 4 Violins</span></div>
+        <div style="grid-column: span 2;"><span style="color: rgba(0,0,0,0.4);">Bandoneons</span><br><span style="color: #1c1c1c;">Anibal Troilo, Juan M. Rodriguez, Eduardo Marino, Astor Piazzolla, Marcos Troilo</span></div>
+        <div><span style="color: rgba(0,0,0,0.4);">Strings</span><br><span style="color: #1c1c1c;">David Diaz, Reynaldo Nichele, Hugo Baralis, Pedro Sapochnik</span></div>
+      </div>
+    </div>
+
+    <!-- Detail Panel: EMPTY STATE (shown when no row selected) -->
+    <div style="margin: 16px 32px 0; background: #f4f1eb; border-left: 2px solid #e8e4dc; padding: 24px 20px; text-align: center;">
+      <div style="font-size: 10px; text-transform: uppercase; color: rgba(0,0,0,0.25); letter-spacing: 1.5px; margin-bottom: 6px;">Recording Detail</div>
+      <div style="font-size: 14px; color: rgba(0,0,0,0.3); font-style: italic;">Select a row above to view full recording details</div>
+    </div>
+
+    <div style="height: 20px;"></div>
+
+  </div>
+</div>
+
+<!-- Suggestions -->
+<div style="margin-top: 28px;">
+  <h3>Suggested UX Improvements</h3>
+  <p class="subtitle">Additional refinements worth considering</p>
+
+  <div class="options" data-multiselect>
+    <div class="option" data-choice="a" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Hover highlight on rows</h3>
+        <p>Subtle background change on mouse hover so users know rows are clickable. Pairs with the selected-row highlight.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="b" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>Active filter chips</h3>
+        <p>When a filter is active, show a small chip/tag below the filter bar (e.g. <strong>Genre: Vals &times;</strong>) so users can see and clear active filters at a glance.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="c" onclick="toggleSelect(this)">
+      <div class="letter">C</div>
+      <div class="content">
+        <h3>Sort direction indicators</h3>
+        <p>Show a small &#9650;/&#9660; arrow next to the currently sorted column header. Clicking toggles ascending/descending.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="d" onclick="toggleSelect(this)">
+      <div class="letter">D</div>
+      <div class="content">
+        <h3>Keyboard navigation</h3>
+        <p>Arrow keys to move between rows, Enter to select/deselect, Escape to clear selection. Useful for power users browsing large discographies.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="e" onclick="toggleSelect(this)">
+      <div class="letter">E</div>
+      <div class="content">
+        <h3>Responsive column hiding</h3>
+        <p>On narrower screens, auto-hide Composer and Author columns first, then Grouping. The detail panel always shows all fields regardless.</p>
+      </div>
+    </div>
+    <div class="option" data-choice="f" onclick="toggleSelect(this)">
+      <div class="letter">F</div>
+      <div class="content">
+        <h3>"Back to top" button</h3>
+        <p>Since the table scrolls instead of paginates, show a small floating button to jump back to the top after scrolling deep into a large discography.</p>
+      </div>
+    </div>
+  </div>
+</div>

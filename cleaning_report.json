@@ -1,0 +1,3330 @@
+{
+  "files_processed": 41,
+  "name_variant_groups": {
+    "Composer": [
+      {
+        "canonical_key": "agustin bardi",
+        "canonical": "Agustín Bardi",
+        "variants": [
+          "Agustin Bardi",
+          "Agustín Bardi"
+        ],
+        "counts": {
+          "Agustin Bardi": 3,
+          "Agustín Bardi": 154
+        }
+      },
+      {
+        "canonical_key": "enrique discepolo",
+        "canonical": "Enrique Discépolo",
+        "variants": [
+          "Enrique Discepolo",
+          "Enrique Discépolo"
+        ],
+        "counts": {
+          "Enrique Discepolo": 4,
+          "Enrique Discépolo": 158
+        }
+      },
+      {
+        "canonical_key": "francisco pracanico",
+        "canonical": "Francisco Pracáníco",
+        "variants": [
+          "Francisco Pracanico",
+          "Francisco Pracánico",
+          "Francisco Pracáníco"
+        ],
+        "counts": {
+          "Francisco Pracanico": 1,
+          "Francisco Pracánico": 71,
+          "Francisco Pracáníco": 1
+        }
+      },
+      {
+        "canonical_key": "santiago paris",
+        "canonical": "Santiago París",
+        "variants": [
+          "Santiago Paris",
+          "Santiago París"
+        ],
+        "counts": {
+          "Santiago Paris": 1,
+          "Santiago París": 10
+        }
+      },
+      {
+        "canonical_key": "juan cobian",
+        "canonical": "Juan Cobián",
+        "variants": [
+          "Juan Cobian",
+          "Juan Cobián"
+        ],
+        "counts": {
+          "Juan Cobian": 3,
+          "Juan Cobián": 70
+        }
+      },
+      {
+        "canonical_key": "emile waldteufel",
+        "canonical": "Émile Waldteufel",
+        "variants": [
+          "Emile Waldteufel",
+          "Émile Waldteufel"
+        ],
+        "counts": {
+          "Emile Waldteufel": 2,
+          "Émile Waldteufel": 8
+        }
+      },
+      {
+        "canonical_key": "andres domenech",
+        "canonical": "Andrés Doménech",
+        "variants": [
+          "Andrés Domenech",
+          "Andrés Doménech"
+        ],
+        "counts": {
+          "Andrés Domenech": 22,
+          "Andrés Doménech": 4
+        }
+      },
+      {
+        "canonical_key": "catulo castillo",
+        "canonical": "Cátulo Castillo",
+        "variants": [
+          "Catulo Castillo",
+          "Cátulo Castillo"
+        ],
+        "counts": {
+          "Catulo Castillo": 4,
+          "Cátulo Castillo": 68
+        }
+      },
+      {
+        "canonical_key": "jose martinez",
+        "canonical": "José Martínez",
+        "variants": [
+          "José Martinez",
+          "José Martínez"
+        ],
+        "counts": {
+          "José Martinez": 1,
+          "José Martínez": 48
+        }
+      },
+      {
+        "canonical_key": "sebastian piana",
+        "canonical": "Sebastián Piana",
+        "variants": [
+          "Sebastian Piana",
+          "Sebastián Piana"
+        ],
+        "counts": {
+          "Sebastian Piana": 4,
+          "Sebastián Piana": 85
+        }
+      },
+      {
+        "canonical_key": "manuel joves",
+        "canonical": "Manuel Jovés",
+        "variants": [
+          "Manuel Joves",
+          "Manuel Jovés"
+        ],
+        "counts": {
+          "Manuel Joves": 2,
+          "Manuel Jovés": 50
+        }
+      },
+      {
+        "canonical_key": "pedro maffia",
+        "canonical": "Pedro Maffía",
+        "variants": [
+          "Pedro Maffia",
+          "Pedro Maffia.",
+          "Pedro Maffía"
+        ],
+        "counts": {
+          "Pedro Maffia": 126,
+          "Pedro Maffia.": 1,
+          "Pedro Maffía": 1
+        }
+      },
+      {
+        "canonical_key": "german teisseire",
+        "canonical": "Germán Teisseire",
+        "variants": [
+          "German Teisseire",
+          "Germán Teisseire"
+        ],
+        "counts": {
+          "German Teisseire": 1,
+          "Germán Teisseire": 7
+        }
+      },
+      {
+        "canonical_key": "raul hoyos",
+        "canonical": "Raúl Hoyos",
+        "variants": [
+          "Raul Hoyos",
+          "Raúl Hoyos"
+        ],
+        "counts": {
+          "Raul Hoyos": 1,
+          "Raúl Hoyos": 78
+        }
+      },
+      {
+        "canonical_key": "victor brana",
+        "canonical": "Víctor Braña",
+        "variants": [
+          "Victor Braña",
+          "Víctor Braña"
+        ],
+        "counts": {
+          "Victor Braña": 6,
+          "Víctor Braña": 6
+        }
+      },
+      {
+        "canonical_key": "pablo hechim",
+        "canonical": "Pablo Hechím",
+        "variants": [
+          "Pablo Hechim",
+          "Pablo Hechím"
+        ],
+        "counts": {
+          "Pablo Hechim": 6,
+          "Pablo Hechím": 1
+        }
+      },
+      {
+        "canonical_key": "jose razzano",
+        "canonical": "José Razzano",
+        "variants": [
+          "Jose Razzano",
+          "José Razzano"
+        ],
+        "counts": {
+          "Jose Razzano": 5,
+          "José Razzano": 43
+        }
+      },
+      {
+        "canonical_key": "teofilo ibanez",
+        "canonical": "Teófilo Ibáñez",
+        "variants": [
+          "Teófilo Ibañez",
+          "Teófilo Ibáñez"
+        ],
+        "counts": {
+          "Teófilo Ibañez": 1,
+          "Teófilo Ibáñez": 5
+        }
+      },
+      {
+        "canonical_key": "angel villoldo",
+        "canonical": "Ángel Villoldo",
+        "variants": [
+          "Angel Villoldo",
+          "Ángel Villoldo"
+        ],
+        "counts": {
+          "Angel Villoldo": 14,
+          "Ángel Villoldo": 61
+        }
+      },
+      {
+        "canonical_key": "gerardo rodriguez",
+        "canonical": "Gerardo Rodríguez",
+        "variants": [
+          "Gerardo Rodriguez",
+          "Gerardo Rodríguez"
+        ],
+        "counts": {
+          "Gerardo Rodriguez": 6,
+          "Gerardo Rodríguez": 117
+        }
+      },
+      {
+        "canonical_key": "eladia blazquez",
+        "canonical": "Eladia Blázquez",
+        "variants": [
+          "Eladia Blazquez",
+          "Eladia Blázquez"
+        ],
+        "counts": {
+          "Eladia Blazquez": 1,
+          "Eladia Blázquez": 4
+        }
+      },
+      {
+        "canonical_key": "enrique cadicamo",
+        "canonical": "Enrique Cadícamo",
+        "variants": [
+          "Enrique Cadicamo",
+          "Enrique Cadícamo"
+        ],
+        "counts": {
+          "Enrique Cadicamo": 14,
+          "Enrique Cadícamo": 29
+        }
+      },
+      {
+        "canonical_key": "alfredo angelis",
+        "canonical": "Alfredo Ángelis",
+        "variants": [
+          "Alfredo Angelis",
+          "Alfredo Ángelis"
+        ],
+        "counts": {
+          "Alfredo Angelis": 53,
+          "Alfredo Ángelis": 2
+        }
+      },
+      {
+        "canonical_key": "felix lipesker",
+        "canonical": "Félix Lípesker",
+        "variants": [
+          "Félix Lipesker",
+          "Félix Lípesker"
+        ],
+        "counts": {
+          "Félix Lipesker": 14,
+          "Félix Lípesker": 2
+        }
+      },
+      {
+        "canonical_key": "jose dames",
+        "canonical": "José Dames",
+        "variants": [
+          "Jose Dames",
+          "José Dames"
+        ],
+        "counts": {
+          "Jose Dames": 2,
+          "José Dames": 32
+        }
+      },
+      {
+        "canonical_key": "carlos cubria",
+        "canonical": "Carlos Cubría",
+        "variants": [
+          "Carlos Cubria",
+          "Carlos Cubría"
+        ],
+        "counts": {
+          "Carlos Cubria": 2,
+          "Carlos Cubría": 3
+        }
+      },
+      {
+        "canonical_key": "pacifico lambertucci",
+        "canonical": "Pacífico Lambertucci",
+        "variants": [
+          "Pacifico Lambertucci",
+          "Pacífico Lambertucci"
+        ],
+        "counts": {
+          "Pacifico Lambertucci": 1,
+          "Pacífico Lambertucci": 8
+        }
+      },
+      {
+        "canonical_key": "domingo sciaraffia",
+        "canonical": "Domingo Sciaraffía",
+        "variants": [
+          "Domingo Sciaraffia",
+          "Domingo Sciaraffía"
+        ],
+        "counts": {
+          "Domingo Sciaraffia": 1,
+          "Domingo Sciaraffía": 4
+        }
+      },
+      {
+        "canonical_key": "hector varela",
+        "canonical": "Héctor Varela",
+        "variants": [
+          "Hector Varela",
+          "Héctor Varela"
+        ],
+        "counts": {
+          "Hector Varela": 1,
+          "Héctor Varela": 109
+        }
+      },
+      {
+        "canonical_key": "various",
+        "canonical": "Various",
+        "variants": [
+          "Various",
+          "[various]"
+        ],
+        "counts": {
+          "Various": 12,
+          "[various]": 1
+        }
+      },
+      {
+        "canonical_key": "carmelo napoli",
+        "canonical": "Carmelo Nápoli",
+        "variants": [
+          "Carmelo Napoli",
+          "Carmelo Nápoli"
+        ],
+        "counts": {
+          "Carmelo Napoli": 1,
+          "Carmelo Nápoli": 1
+        }
+      },
+      {
+        "canonical_key": "hipolito caron",
+        "canonical": "Hipólito Carón",
+        "variants": [
+          "Hipólito Caron",
+          "Hipólito Carón"
+        ],
+        "counts": {
+          "Hipólito Caron": 3,
+          "Hipólito Carón": 2
+        }
+      },
+      {
+        "canonical_key": "alfredo de angelis",
+        "canonical": "Alfredo De Ángelis",
+        "variants": [
+          "Alfredo De Angelis",
+          "Alfredo De Ángelis"
+        ],
+        "counts": {
+          "Alfredo De Angelis": 18,
+          "Alfredo De Ángelis": 3
+        }
+      },
+      {
+        "canonical_key": "armando angeletti",
+        "canonical": "Armando Ángeletti",
+        "variants": [
+          "Armando Angeletti",
+          "Armando Ángeletti"
+        ],
+        "counts": {
+          "Armando Angeletti": 2,
+          "Armando Ángeletti": 2
+        }
+      },
+      {
+        "canonical_key": "carlos lazzari",
+        "canonical": "Carlos Lázzari",
+        "variants": [
+          "Carlos Lazzari",
+          "Carlos Lázzari"
+        ],
+        "counts": {
+          "Carlos Lazzari": 1,
+          "Carlos Lázzari": 63
+        }
+      },
+      {
+        "canonical_key": "leon lipesker",
+        "canonical": "León Lípesker",
+        "variants": [
+          "Leon Lipesker",
+          "León Lípesker"
+        ],
+        "counts": {
+          "Leon Lipesker": 1,
+          "León Lípesker": 2
+        }
+      },
+      {
+        "canonical_key": "nicolas tavarozzi",
+        "canonical": "Nicolás Tavarozzi",
+        "variants": [
+          "Nicolas Tavarozzi",
+          "Nicolás Tavarozzi"
+        ],
+        "counts": {
+          "Nicolas Tavarozzi": 1,
+          "Nicolás Tavarozzi": 10
+        }
+      },
+      {
+        "canonical_key": "felix blanco",
+        "canonical": "Félix Blanco",
+        "variants": [
+          "Felix Blanco",
+          "Félix Blanco"
+        ],
+        "counts": {
+          "Felix Blanco": 1,
+          "Félix Blanco": 1
+        }
+      },
+      {
+        "canonical_key": "ascanio donato",
+        "canonical": "Ascañio Donato",
+        "variants": [
+          "Ascanio Donato",
+          "Ascañio Donato"
+        ],
+        "counts": {
+          "Ascanio Donato": 13,
+          "Ascañio Donato": 1
+        }
+      },
+      {
+        "canonical_key": "jesus ventura",
+        "canonical": "Jesús Ventura",
+        "variants": [
+          "Jesus Ventura",
+          "Jesús Ventura"
+        ],
+        "counts": {
+          "Jesus Ventura": 1,
+          "Jesús Ventura": 18
+        }
+      },
+      {
+        "canonical_key": "enrique rodriguez",
+        "canonical": "Enrique Rodríguez",
+        "variants": [
+          "Enrique Rodriguez",
+          "Enrique Rodríguez"
+        ],
+        "counts": {
+          "Enrique Rodriguez": 1,
+          "Enrique Rodríguez": 64
+        }
+      },
+      {
+        "canonical_key": "anibal troilo",
+        "canonical": "Aníbal Troilo",
+        "variants": [
+          "Anibal Troilo",
+          "Aníbal Troilo"
+        ],
+        "counts": {
+          "Anibal Troilo": 8,
+          "Aníbal Troilo": 131
+        }
+      },
+      {
+        "canonical_key": "luis fernandez",
+        "canonical": "Luis Fernández",
+        "variants": [
+          "Luis Fernandez",
+          "Luis Fernández"
+        ],
+        "counts": {
+          "Luis Fernandez": 1,
+          "Luis Fernández": 12
+        }
+      },
+      {
+        "canonical_key": "angel greco",
+        "canonical": "Ángel Greco",
+        "variants": [
+          "Angel Greco",
+          "Ángel Greco"
+        ],
+        "counts": {
+          "Angel Greco": 5,
+          "Ángel Greco": 5
+        }
+      },
+      {
+        "canonical_key": "manuel aroztegui",
+        "canonical": "Manuel Aróztegui",
+        "variants": [
+          "Manuel Aroztegui",
+          "Manuel Aróztegui"
+        ],
+        "counts": {
+          "Manuel Aroztegui": 1,
+          "Manuel Aróztegui": 16
+        }
+      },
+      {
+        "canonical_key": "jose tinelli",
+        "canonical": "José Tinelli",
+        "variants": [
+          "Jose Tinelli",
+          "José Tinelli"
+        ],
+        "counts": {
+          "Jose Tinelli": 1,
+          "José Tinelli": 14
+        }
+      },
+      {
+        "canonical_key": "julian plaza",
+        "canonical": "Julián Plaza",
+        "variants": [
+          "Julian Plaza",
+          "Julián Plaza"
+        ],
+        "counts": {
+          "Julian Plaza": 1,
+          "Julián Plaza": 33
+        }
+      },
+      {
+        "canonical_key": "angel d agostino",
+        "canonical": "Ángel D'Agostino",
+        "variants": [
+          "Angel D'Agostino",
+          "Ángel D'Agostino"
+        ],
+        "counts": {
+          "Angel D'Agostino": 1,
+          "Ángel D'Agostino": 24
+        }
+      },
+      {
+        "canonical_key": "juan bauer",
+        "canonical": "Juan Baüer",
+        "variants": [
+          "Juan Bauer",
+          "Juan Baüer"
+        ],
+        "counts": {
+          "Juan Bauer": 8,
+          "Juan Baüer": 14
+        }
+      },
+      {
+        "canonical_key": "alberto acuna",
+        "canonical": "Alberto Acuña",
+        "variants": [
+          "Alberto Acuna",
+          "Alberto Acuña"
+        ],
+        "counts": {
+          "Alberto Acuna": 1,
+          "Alberto Acuña": 12
+        }
+      },
+      {
+        "canonical_key": "angel danesi",
+        "canonical": "Ángel Danesi",
+        "variants": [
+          "Angel Danesi",
+          "Ángel Danesi"
+        ],
+        "counts": {
+          "Angel Danesi": 10,
+          "Ángel Danesi": 10
+        }
+      },
+      {
+        "canonical_key": "joaquin mora",
+        "canonical": "Joaquín Mora",
+        "variants": [
+          "Joaquin Mora",
+          "Joaquín Mora"
+        ],
+        "counts": {
+          "Joaquin Mora": 5,
+          "Joaquín Mora": 17
+        }
+      },
+      {
+        "canonical_key": "virgilio exposito",
+        "canonical": "Virgilio Expósito",
+        "variants": [
+          "Virgilio Exposito",
+          "Virgilio Expósito"
+        ],
+        "counts": {
+          "Virgilio Exposito": 1,
+          "Virgilio Expósito": 8
+        }
+      },
+      {
+        "canonical_key": "rosendo mendizabal",
+        "canonical": "Rosendo Mendizábal",
+        "variants": [
+          "Rosendo Mendizabal",
+          "Rosendo Mendizábal"
+        ],
+        "counts": {
+          "Rosendo Mendizabal": 3,
+          "Rosendo Mendizábal": 18
+        }
+      },
+      {
+        "canonical_key": "victor buchino",
+        "canonical": "Víctor Buchino",
+        "variants": [
+          "Victor Buchino",
+          "Víctor Buchino"
+        ],
+        "counts": {
+          "Victor Buchino": 1,
+          "Víctor Buchino": 1
+        }
+      },
+      {
+        "canonical_key": "julian porteno",
+        "canonical": "Ernesto Temes",
+        "variants": [
+          "Julian Porteno",
+          "Julián Porteño"
+        ],
+        "counts": {
+          "Julian Porteno": 1,
+          "Julián Porteño": 3
+        }
+      },
+      {
+        "canonical_key": "virgilio y homero exposito",
+        "canonical": "Virgilio y Homero Expósito",
+        "variants": [
+          "Virgilio y Homero Exposito",
+          "Virgilio y Homero Expósito"
+        ],
+        "counts": {
+          "Virgilio y Homero Exposito": 1,
+          "Virgilio y Homero Expósito": 1
+        }
+      },
+      {
+        "canonical_key": "gerardo hernan matos rodriguez",
+        "canonical": "Gerardo Hernán Matos Rodríguez",
+        "variants": [
+          "Gerardo Hernan Matos Rodriguez",
+          "Gerardo Hernán Matos Rodríguez"
+        ],
+        "counts": {
+          "Gerardo Hernan Matos Rodriguez": 3,
+          "Gerardo Hernán Matos Rodríguez": 5
+        }
+      },
+      {
+        "canonical_key": "enrique santos discepolo",
+        "canonical": "Enrique Santos Discépolo",
+        "variants": [
+          "Enrique Santos Discepolo",
+          "Enrique Santos Discépolo"
+        ],
+        "counts": {
+          "Enrique Santos Discepolo": 9,
+          "Enrique Santos Discépolo": 11
+        }
+      },
+      {
+        "canonical_key": "carlos marambio catan",
+        "canonical": "Carlos Marambio Catán",
+        "variants": [
+          "Carlos Marambio Catan",
+          "Carlos Marambio Catán"
+        ],
+        "counts": {
+          "Carlos Marambio Catan": 2,
+          "Carlos Marambio Catán": 1
+        }
+      },
+      {
+        "canonical_key": "homero exposito",
+        "canonical": "Homero Expósito",
+        "variants": [
+          "Homero Exposito",
+          "Homero Expósito"
+        ],
+        "counts": {
+          "Homero Exposito": 2,
+          "Homero Expósito": 4
+        }
+      },
+      {
+        "canonical_key": "jose bragato",
+        "canonical": "José Bragato",
+        "variants": [
+          "Jose Bragato",
+          "José Bragato"
+        ],
+        "counts": {
+          "Jose Bragato": 1,
+          "José Bragato": 1
+        }
+      },
+      {
+        "canonical_key": "juan carlos cobian",
+        "canonical": "Juan Carlos Cobián",
+        "variants": [
+          "Juan Carlos Cobian",
+          "Juan Carlos Cobián"
+        ],
+        "counts": {
+          "Juan Carlos Cobian": 10,
+          "Juan Carlos Cobián": 33
+        }
+      },
+      {
+        "canonical_key": "francisco garcia jimenez",
+        "canonical": "Francisco García Jiménez",
+        "variants": [
+          "Francisco García Jimenez",
+          "Francisco García Jiménez"
+        ],
+        "counts": {
+          "Francisco García Jimenez": 1,
+          "Francisco García Jiménez": 1
+        }
+      },
+      {
+        "canonical_key": "jose marquez",
+        "canonical": "José Márquez",
+        "variants": [
+          "Jose Marquez",
+          "José Márquez"
+        ],
+        "counts": {
+          "Jose Marquez": 1,
+          "José Márquez": 6
+        }
+      },
+      {
+        "canonical_key": "jose gonzalez castillo",
+        "canonical": "José González Castillo",
+        "variants": [
+          "Jose Gonzalez Castillo",
+          "José González Castillo"
+        ],
+        "counts": {
+          "Jose Gonzalez Castillo": 2,
+          "José González Castillo": 2
+        }
+      },
+      {
+        "canonical_key": "pedro numa cordoba",
+        "canonical": "Pedro Numa Córdoba",
+        "variants": [
+          "Pedro Numa Cordoba",
+          "Pedro Numa Córdoba"
+        ],
+        "counts": {
+          "Pedro Numa Cordoba": 2,
+          "Pedro Numa Córdoba": 1
+        }
+      },
+      {
+        "canonical_key": "pedro vergez",
+        "canonical": "Pedro Vérgez",
+        "variants": [
+          "Pedro Vergez",
+          "Pedro Vérgez"
+        ],
+        "counts": {
+          "Pedro Vergez": 7,
+          "Pedro Vérgez": 1
+        }
+      },
+      {
+        "canonical_key": "e delfino",
+        "canonical": "Enrique Delfino",
+        "variants": [
+          "E Delfino",
+          "E. Delfino"
+        ],
+        "counts": {
+          "E Delfino": 1,
+          "E. Delfino": 7
+        }
+      },
+      {
+        "canonical_key": "gerardo matos rodriguez",
+        "canonical": "Gerardo Mátos Rodríguez",
+        "variants": [
+          "Gerardo Matos Rodríguez",
+          "Gerardo Mátos Rodríguez"
+        ],
+        "counts": {
+          "Gerardo Matos Rodríguez": 16,
+          "Gerardo Mátos Rodríguez": 1
+        }
+      },
+      {
+        "canonical_key": "catulo castillo y sebastian piana",
+        "canonical": "Cátulo Castillo y Sebastián Piana",
+        "variants": [
+          "Cátulo Castillo y Sebastian Piana",
+          "Cátulo Castillo y Sebastián Piana"
+        ],
+        "counts": {
+          "Cátulo Castillo y Sebastian Piana": 1,
+          "Cátulo Castillo y Sebastián Piana": 1
+        }
+      },
+      {
+        "canonical_key": "raul de los hoyos",
+        "canonical": "Raúl De Los Hoyos",
+        "variants": [
+          "Raul De Los Hoyos",
+          "Raúl De Los Hoyos"
+        ],
+        "counts": {
+          "Raul De Los Hoyos": 1,
+          "Raúl De Los Hoyos": 28
+        }
+      },
+      {
+        "canonical_key": "luis martini",
+        "canonical": "Luis Martíni",
+        "variants": [
+          "Luis Martini",
+          "Luis Martíni"
+        ],
+        "counts": {
+          "Luis Martini": 4,
+          "Luis Martíni": 1
+        }
+      },
+      {
+        "canonical_key": "eduardo escaris mendez",
+        "canonical": "Eduardo Escarís Mendez",
+        "variants": [
+          "Eduardo Escaris Méndez",
+          "Eduardo Escarís Mendez"
+        ],
+        "counts": {
+          "Eduardo Escaris Méndez": 1,
+          "Eduardo Escarís Mendez": 1
+        }
+      },
+      {
+        "canonical_key": "jose maria aguilar",
+        "canonical": "José María Aguilar",
+        "variants": [
+          "Jose Maria Aguilar",
+          "José María Aguilar"
+        ],
+        "counts": {
+          "Jose Maria Aguilar": 1,
+          "José María Aguilar": 11
+        }
+      },
+      {
+        "canonical_key": "guillermo desiderio barbieri",
+        "canonical": "Guillermo Desiderio Barbieri.",
+        "variants": [
+          "Guillermo Desiderio Barbieri",
+          "Guillermo Desiderio Barbieri."
+        ],
+        "counts": {
+          "Guillermo Desiderio Barbieri": 1,
+          "Guillermo Desiderio Barbieri.": 1
+        }
+      },
+      {
+        "canonical_key": "felix scolatti almeida",
+        "canonical": "Félix Scolatti Almeida",
+        "variants": [
+          "Felix Scolatti Almeida",
+          "Félix Scolatti Almeida"
+        ],
+        "counts": {
+          "Felix Scolatti Almeida": 1,
+          "Félix Scolatti Almeida": 1
+        }
+      },
+      {
+        "canonical_key": "angel maffia",
+        "canonical": "Ángel Maffia",
+        "variants": [
+          "Angel Maffia",
+          "Ángel Maffia"
+        ],
+        "counts": {
+          "Angel Maffia": 1,
+          "Ángel Maffia": 14
+        }
+      },
+      {
+        "canonical_key": "luis d abraccio",
+        "canonical": "D'Abraccio",
+        "variants": [
+          "Luis D'Abraccio",
+          "Luis d'Abraccio"
+        ],
+        "counts": {
+          "Luis D'Abraccio": 2,
+          "Luis d'Abraccio": 1
+        }
+      },
+      {
+        "canonical_key": "rafael sanchez",
+        "canonical": "Rafael Sánchez",
+        "variants": [
+          "Rafael Sanchez",
+          "Rafael Sánchez"
+        ],
+        "counts": {
+          "Rafael Sanchez": 1,
+          "Rafael Sánchez": 7
+        }
+      },
+      {
+        "canonical_key": "jose pecora",
+        "canonical": "José Pécora",
+        "variants": [
+          "José Pecora",
+          "José Pécora"
+        ],
+        "counts": {
+          "José Pecora": 1,
+          "José Pécora": 9
+        }
+      },
+      {
+        "canonical_key": "victor lambertucci",
+        "canonical": "Víctor Lambertucci",
+        "variants": [
+          "Victor Lambertucci",
+          "Víctor Lambertucci"
+        ],
+        "counts": {
+          "Victor Lambertucci": 1,
+          "Víctor Lambertucci": 1
+        }
+      },
+      {
+        "canonical_key": "victor troysi",
+        "canonical": "Víctor Troysi",
+        "variants": [
+          "Victor Troysi",
+          "Víctor Troysi"
+        ],
+        "counts": {
+          "Victor Troysi": 3,
+          "Víctor Troysi": 6
+        }
+      },
+      {
+        "canonical_key": "angel bozzi",
+        "canonical": "Ángel Bozzi",
+        "variants": [
+          "Angel Bozzi",
+          "Ángel Bozzi"
+        ],
+        "counts": {
+          "Angel Bozzi": 2,
+          "Ángel Bozzi": 1
+        }
+      },
+      {
+        "canonical_key": "bartolome chapela",
+        "canonical": "Bartolomé Chapela",
+        "variants": [
+          "Bartolome Chapela",
+          "Bartolomé Chapela"
+        ],
+        "counts": {
+          "Bartolome Chapela": 1,
+          "Bartolomé Chapela": 8
+        }
+      },
+      {
+        "canonical_key": "victor schertzinger",
+        "canonical": "Víctor Schertzinger",
+        "variants": [
+          "Victor Schertzinger",
+          "Víctor Schertzinger"
+        ],
+        "counts": {
+          "Victor Schertzinger": 4,
+          "Víctor Schertzinger": 1
+        }
+      },
+      {
+        "canonical_key": "osman freire",
+        "canonical": "Osmán Freire",
+        "variants": [
+          "Osman Freire",
+          "Osmán Freire"
+        ],
+        "counts": {
+          "Osman Freire": 3,
+          "Osmán Freire": 2
+        }
+      },
+      {
+        "canonical_key": "italo goyeche",
+        "canonical": "Ítalo Goyeche",
+        "variants": [
+          "Italo Goyeche",
+          "Ítalo Goyeche"
+        ],
+        "counts": {
+          "Italo Goyeche": 3,
+          "Ítalo Goyeche": 2
+        }
+      },
+      {
+        "canonical_key": "victor donato",
+        "canonical": "Víctor Donato",
+        "variants": [
+          "Victor Donato",
+          "Víctor Donato"
+        ],
+        "counts": {
+          "Victor Donato": 2,
+          "Víctor Donato": 8
+        }
+      },
+      {
+        "canonical_key": "modesto papavero",
+        "canonical": "Modesto Papávero",
+        "variants": [
+          "Modesto Papavero",
+          "Modesto Papávero"
+        ],
+        "counts": {
+          "Modesto Papavero": 8,
+          "Modesto Papávero": 4
+        }
+      },
+      {
+        "canonical_key": "pascual carabillo",
+        "canonical": "Pascual Carabilló",
+        "variants": [
+          "Pascual Carabillo",
+          "Pascual Carabilló"
+        ],
+        "counts": {
+          "Pascual Carabillo": 1,
+          "Pascual Carabilló": 1
+        }
+      },
+      {
+        "canonical_key": "luis d andrea",
+        "canonical": "Luis D'Andrea",
+        "variants": [
+          "Luis D'Andrea",
+          "Luis d'Andrea"
+        ],
+        "counts": {
+          "Luis D'Andrea": 6,
+          "Luis d'Andrea": 2
+        }
+      },
+      {
+        "canonical_key": "angel ramos",
+        "canonical": "Ángel Ramos",
+        "variants": [
+          "Angel Ramos",
+          "Ángel Ramos"
+        ],
+        "counts": {
+          "Angel Ramos": 4,
+          "Ángel Ramos": 1
+        }
+      },
+      {
+        "canonical_key": "angel rodriguez",
+        "canonical": "Ángel Rodríguez",
+        "variants": [
+          "Angel Rodríguez",
+          "Ángel Rodríguez"
+        ],
+        "counts": {
+          "Angel Rodríguez": 1,
+          "Ángel Rodríguez": 1
+        }
+      },
+      {
+        "canonical_key": "lucio d agostino",
+        "canonical": "Lucio D'Agostino",
+        "variants": [
+          "Lucio D'Agostino",
+          "Lucio d'Agostino"
+        ],
+        "counts": {
+          "Lucio D'Agostino": 3,
+          "Lucio d'Agostino": 1
+        }
+      },
+      {
+        "canonical_key": "juan carabillo",
+        "canonical": "Juan Carabilló",
+        "variants": [
+          "Juan Carabillo",
+          "Juan Carabilló"
+        ],
+        "counts": {
+          "Juan Carabillo": 1,
+          "Juan Carabilló": 2
+        }
+      },
+      {
+        "canonical_key": "angel ortiz",
+        "canonical": "Ángel Ortíz",
+        "variants": [
+          "Angel Ortiz",
+          "Ángel Ortíz"
+        ],
+        "counts": {
+          "Angel Ortiz": 2,
+          "Ángel Ortíz": 1
+        }
+      },
+      {
+        "canonical_key": "alberto rodriguez",
+        "canonical": "Alberto Rodríguez",
+        "variants": [
+          "Alberto Rodriguez",
+          "Alberto Rodríguez"
+        ],
+        "counts": {
+          "Alberto Rodriguez": 1,
+          "Alberto Rodríguez": 19
+        }
+      },
+      {
+        "canonical_key": "ramon coll",
+        "canonical": "Ramón Coll",
+        "variants": [
+          "Ramon Coll",
+          "Ramón Coll"
+        ],
+        "counts": {
+          "Ramon Coll": 1,
+          "Ramón Coll": 2
+        }
+      },
+      {
+        "canonical_key": "nicolas cuccaro",
+        "canonical": "Nicolás Cúccaro",
+        "variants": [
+          "Nicolas Cuccaro",
+          "Nicolás Cúccaro"
+        ],
+        "counts": {
+          "Nicolas Cuccaro": 3,
+          "Nicolás Cúccaro": 1
+        }
+      },
+      {
+        "canonical_key": "maria lara",
+        "canonical": "María Lara",
+        "variants": [
+          "Maria Lara",
+          "María Lara"
+        ],
+        "counts": {
+          "Maria Lara": 1,
+          "María Lara": 3
+        }
+      },
+      {
+        "canonical_key": "martin darre",
+        "canonical": "Martín Darré",
+        "variants": [
+          "Martin Darré",
+          "Martín Darré"
+        ],
+        "counts": {
+          "Martin Darré": 3,
+          "Martín Darré": 1
+        }
+      },
+      {
+        "canonical_key": "orlando tripodi",
+        "canonical": "Orlando Trípodi",
+        "variants": [
+          "Orlando Tripodi",
+          "Orlando Trípodi"
+        ],
+        "counts": {
+          "Orlando Tripodi": 3,
+          "Orlando Trípodi": 8
+        }
+      },
+      {
+        "canonical_key": "miguel fama",
+        "canonical": "Miguel Famá",
+        "variants": [
+          "Miguel Fama",
+          "Miguel Famá"
+        ],
+        "counts": {
+          "Miguel Fama": 1,
+          "Miguel Famá": 2
+        }
+      },
+      {
+        "canonical_key": "armando dattoli",
+        "canonical": "Armando Dáttoli",
+        "variants": [
+          "Armando Dattoli",
+          "Armando Dáttoli"
+        ],
+        "counts": {
+          "Armando Dattoli": 1,
+          "Armando Dáttoli": 2
+        }
+      },
+      {
+        "canonical_key": "eugenio nobile",
+        "canonical": "Eugenio Nóbile",
+        "variants": [
+          "Eugenio Nobile",
+          "Eugenio Nóbile"
+        ],
+        "counts": {
+          "Eugenio Nobile": 2,
+          "Eugenio Nóbile": 1
+        }
+      },
+      {
+        "canonical_key": "eduardo pataro conte",
+        "canonical": "Eduardo Pataro Conté",
+        "variants": [
+          "Eduardo Pataro Conte",
+          "Eduardo Pataro Conté"
+        ],
+        "counts": {
+          "Eduardo Pataro Conte": 1,
+          "Eduardo Pataro Conté": 1
+        }
+      },
+      {
+        "canonical_key": "raul ruiz moreno",
+        "canonical": "Raúl Ruíz Moreno",
+        "variants": [
+          "Raúl Ruiz Moreno",
+          "Raúl Ruíz Moreno"
+        ],
+        "counts": {
+          "Raúl Ruiz Moreno": 1,
+          "Raúl Ruíz Moreno": 1
+        }
+      },
+      {
+        "canonical_key": "santiago coppola",
+        "canonical": "Santiago Cóppola",
+        "variants": [
+          "Santiago Coppola",
+          "Santiago Cóppola"
+        ],
+        "counts": {
+          "Santiago Coppola": 1,
+          "Santiago Cóppola": 1
+        }
+      },
+      {
+        "canonical_key": "jose sune",
+        "canonical": "José Suñé",
+        "variants": [
+          "José Suñe",
+          "José Suñé"
+        ],
+        "counts": {
+          "José Suñe": 1,
+          "José Suñé": 2
+        }
+      },
+      {
+        "canonical_key": "geronimo gradito",
+        "canonical": "Gerónimo Gradito",
+        "variants": [
+          "Geronimo Gradito",
+          "Gerónimo Gradito"
+        ],
+        "counts": {
+          "Geronimo Gradito": 1,
+          "Gerónimo Gradito": 1
+        }
+      },
+      {
+        "canonical_key": "guillermo alo",
+        "canonical": "Guillermo Aló",
+        "variants": [
+          "Guillermo Alo",
+          "Guillermo Aló"
+        ],
+        "counts": {
+          "Guillermo Alo": 1,
+          "Guillermo Aló": 1
+        }
+      }
+    ],
+    "Author": [
+      {
+        "canonical_key": "enrique discepolo",
+        "canonical": "Enrique Discépolo",
+        "variants": [
+          "Enrique Discepolo",
+          "Enrique Discépolo"
+        ],
+        "counts": {
+          "Enrique Discepolo": 8,
+          "Enrique Discépolo": 183
+        }
+      },
+      {
+        "canonical_key": "francisco bohigas",
+        "canonical": "Francisco Bohígas",
+        "variants": [
+          "Francisco Bohigas",
+          "Francisco Bohígas"
+        ],
+        "counts": {
+          "Francisco Bohigas": 20,
+          "Francisco Bohígas": 2
+        }
+      },
+      {
+        "canonical_key": "pedro cordoba",
+        "canonical": "Pedro Córdoba",
+        "variants": [
+          "Pedro Cordoba",
+          "Pedro Córdoba"
+        ],
+        "counts": {
+          "Pedro Cordoba": 7,
+          "Pedro Córdoba": 12
+        }
+      },
+      {
+        "canonical_key": "enrique cadicamo",
+        "canonical": "Enrique Cadícamo",
+        "variants": [
+          "Enrique Cadicamo",
+          "Enrique Cadícamo"
+        ],
+        "counts": {
+          "Enrique Cadicamo": 15,
+          "Enrique Cadícamo": 390
+        }
+      },
+      {
+        "canonical_key": "agustin irusta",
+        "canonical": "Agustín Irusta",
+        "variants": [
+          "Agustin Irusta",
+          "Agustín Irusta"
+        ],
+        "counts": {
+          "Agustin Irusta": 1,
+          "Agustín Irusta": 17
+        }
+      },
+      {
+        "canonical_key": "angel villoldo",
+        "canonical": "Ángel Villoldo",
+        "variants": [
+          "Angel Villoldo",
+          "Ángel Villoldo"
+        ],
+        "counts": {
+          "Angel Villoldo": 1,
+          "Ángel Villoldo": 29
+        }
+      },
+      {
+        "canonical_key": "angel marino",
+        "canonical": "Ángel Marino",
+        "variants": [
+          "Angel Marino",
+          "Ángel Marino"
+        ],
+        "counts": {
+          "Angel Marino": 1,
+          "Ángel Marino": 2
+        }
+      },
+      {
+        "canonical_key": "hector marco",
+        "canonical": "Héctor Marcó",
+        "variants": [
+          "Héctor Marco",
+          "Héctor Marcó"
+        ],
+        "counts": {
+          "Héctor Marco": 1,
+          "Héctor Marcó": 89
+        }
+      },
+      {
+        "canonical_key": "victor solino",
+        "canonical": "Víctor Soliño",
+        "variants": [
+          "Victor Soliño",
+          "Víctor Soliño"
+        ],
+        "counts": {
+          "Victor Soliño": 2,
+          "Víctor Soliño": 35
+        }
+      },
+      {
+        "canonical_key": "juan catan",
+        "canonical": "Juan Catán",
+        "variants": [
+          "Juan Catan",
+          "Juan Catán"
+        ],
+        "counts": {
+          "Juan Catan": 1,
+          "Juan Catán": 44
+        }
+      },
+      {
+        "canonical_key": "ivan diez",
+        "canonical": "Iván Diez",
+        "variants": [
+          "Ivan Diez",
+          "Iván Diez"
+        ],
+        "counts": {
+          "Ivan Diez": 1,
+          "Iván Diez": 6
+        }
+      },
+      {
+        "canonical_key": "yaravi",
+        "canonical": "Yaraví",
+        "variants": [
+          "Yaravi",
+          "Yaraví"
+        ],
+        "counts": {
+          "Yaravi": 1,
+          "Yaraví": 13
+        }
+      },
+      {
+        "canonical_key": "jose rotulo",
+        "canonical": "José Rótulo",
+        "variants": [
+          "José Rotulo",
+          "José Rótulo"
+        ],
+        "counts": {
+          "José Rotulo": 1,
+          "José Rótulo": 70
+        }
+      },
+      {
+        "canonical_key": "francisco garcia jimenez",
+        "canonical": "Francisco García Jiménez",
+        "variants": [
+          "Francisco García Jimenez",
+          "Francisco García Jiménez"
+        ],
+        "counts": {
+          "Francisco García Jimenez": 1,
+          "Francisco García Jiménez": 47
+        }
+      },
+      {
+        "canonical_key": "enrique santos discepolo",
+        "canonical": "Enrique Santos Discépolo",
+        "variants": [
+          "Enrique Santos Discepolo",
+          "Enrique Santos Discépolo"
+        ],
+        "counts": {
+          "Enrique Santos Discepolo": 2,
+          "Enrique Santos Discépolo": 28
+        }
+      },
+      {
+        "canonical_key": "homero exposito",
+        "canonical": "Homero Expósito",
+        "variants": [
+          "Homero Exposito",
+          "Homero Expósito"
+        ],
+        "counts": {
+          "Homero Exposito": 3,
+          "Homero Expósito": 105
+        }
+      },
+      {
+        "canonical_key": "juan andres caruso",
+        "canonical": "Juan Caruso",
+        "variants": [
+          "Juan Andres Caruso",
+          "Juan Andrés Caruso"
+        ],
+        "counts": {
+          "Juan Andres Caruso": 1,
+          "Juan Andrés Caruso": 17
+        }
+      },
+      {
+        "canonical_key": "various",
+        "canonical": "Various",
+        "variants": [
+          "Various",
+          "[various]"
+        ],
+        "counts": {
+          "Various": 12,
+          "[various]": 1
+        }
+      },
+      {
+        "canonical_key": "domingo eduardo sciaraffia",
+        "canonical": "Domingo Eduardo Sciaraffía",
+        "variants": [
+          "Domingo Eduardo Sciaraffia",
+          "Domingo Eduardo Sciaraffía"
+        ],
+        "counts": {
+          "Domingo Eduardo Sciaraffia": 2,
+          "Domingo Eduardo Sciaraffía": 1
+        }
+      },
+      {
+        "canonical_key": "benjamin tagle lara",
+        "canonical": "Benjamín Tagle Lara",
+        "variants": [
+          "Benjamín Tagle Lara",
+          "Benjamín Tagle-Lara"
+        ],
+        "counts": {
+          "Benjamín Tagle Lara": 2,
+          "Benjamín Tagle-Lara": 1
+        }
+      },
+      {
+        "canonical_key": "eduardo beccar",
+        "canonical": "Eduardo Béccar",
+        "variants": [
+          "Eduardo Beccar",
+          "Eduardo Béccar"
+        ],
+        "counts": {
+          "Eduardo Beccar": 9,
+          "Eduardo Béccar": 1
+        }
+      },
+      {
+        "canonical_key": "luis cesar amadori",
+        "canonical": "Luis César Amadori",
+        "variants": [
+          "Luis Cesar Amadori",
+          "Luis César Amadori"
+        ],
+        "counts": {
+          "Luis Cesar Amadori": 2,
+          "Luis César Amadori": 7
+        }
+      },
+      {
+        "canonical_key": "jose razzano",
+        "canonical": "José Razzano",
+        "variants": [
+          "Jose Razzano",
+          "José Razzano"
+        ],
+        "counts": {
+          "Jose Razzano": 5,
+          "José Razzano": 17
+        }
+      },
+      {
+        "canonical_key": "eugenio majul",
+        "canonical": "Eugenio Majúl",
+        "variants": [
+          "Eugenio Majul",
+          "Eugenio Majúl"
+        ],
+        "counts": {
+          "Eugenio Majul": 17,
+          "Eugenio Majúl": 1
+        }
+      },
+      {
+        "canonical_key": "eduardo escaris mendez",
+        "canonical": "Eduardo Escarís Méndez",
+        "variants": [
+          "Eduardo Escaris Méndez",
+          "Eduardo Escarís Méndez"
+        ],
+        "counts": {
+          "Eduardo Escaris Méndez": 1,
+          "Eduardo Escarís Méndez": 1
+        }
+      },
+      {
+        "canonical_key": "angel del valle",
+        "canonical": "Ángel Del Valle",
+        "variants": [
+          "Angel Del Valle",
+          "Ángel Del Valle"
+        ],
+        "counts": {
+          "Angel Del Valle": 2,
+          "Ángel Del Valle": 2
+        }
+      },
+      {
+        "canonical_key": "antonio martinez viergol",
+        "canonical": "Antonio Viérgol",
+        "variants": [
+          "Antonio Martínez Viergol",
+          "Antonio Martínez Viérgol"
+        ],
+        "counts": {
+          "Antonio Martínez Viergol": 1,
+          "Antonio Martínez Viérgol": 1
+        }
+      },
+      {
+        "canonical_key": "angel greco",
+        "canonical": "Ángel Greco",
+        "variants": [
+          "Angel Greco",
+          "Ángel Greco"
+        ],
+        "counts": {
+          "Angel Greco": 5,
+          "Ángel Greco": 3
+        }
+      },
+      {
+        "canonical_key": "ricardo podesta",
+        "canonical": "Ricardo Podestá",
+        "variants": [
+          "Ricardo Podesta",
+          "Ricardo Podestá"
+        ],
+        "counts": {
+          "Ricardo Podesta": 3,
+          "Ricardo Podestá": 24
+        }
+      },
+      {
+        "canonical_key": "eugenio cardenas",
+        "canonical": "Eugenio Cárdenas",
+        "variants": [
+          "Eugenio Cardenas",
+          "Eugenio Cárdenas"
+        ],
+        "counts": {
+          "Eugenio Cardenas": 2,
+          "Eugenio Cárdenas": 69
+        }
+      },
+      {
+        "canonical_key": "jose gonzalez castillo",
+        "canonical": "José González Castillo",
+        "variants": [
+          "Jose González Castillo",
+          "José Gonzalez Castillo",
+          "José González Castillo"
+        ],
+        "counts": {
+          "Jose González Castillo": 1,
+          "José Gonzalez Castillo": 1,
+          "José González Castillo": 13
+        }
+      },
+      {
+        "canonical_key": "oscar castroge",
+        "canonical": "Oscar Castrogé",
+        "variants": [
+          "Oscar Castroge",
+          "Oscar Castrogé"
+        ],
+        "counts": {
+          "Oscar Castroge": 1,
+          "Oscar Castrogé": 1
+        }
+      },
+      {
+        "canonical_key": "francisco lio",
+        "canonical": "Francisco Lío",
+        "variants": [
+          "Francisco Lio",
+          "Francisco Lío"
+        ],
+        "counts": {
+          "Francisco Lio": 8,
+          "Francisco Lío": 12
+        }
+      },
+      {
+        "canonical_key": "gerardo rodriguez",
+        "canonical": "Gerardo Rodríguez",
+        "variants": [
+          "Gerardo Rodriguez",
+          "Gerardo Rodríguez"
+        ],
+        "counts": {
+          "Gerardo Rodriguez": 5,
+          "Gerardo Rodríguez": 58
+        }
+      },
+      {
+        "canonical_key": "julian centeya",
+        "canonical": "Julián Centeya",
+        "variants": [
+          "Julian Centeya",
+          "Julián Centeya"
+        ],
+        "counts": {
+          "Julian Centeya": 1,
+          "Julián Centeya": 13
+        }
+      },
+      {
+        "canonical_key": "francisco loiacono",
+        "canonical": "Francisco Loiácono",
+        "variants": [
+          "Francisco Loiacono",
+          "Francisco Loiácono"
+        ],
+        "counts": {
+          "Francisco Loiacono": 1,
+          "Francisco Loiácono": 5
+        }
+      },
+      {
+        "canonical_key": "jorge curi",
+        "canonical": "Jorge Curí",
+        "variants": [
+          "Jorge Curi",
+          "Jorge Curí"
+        ],
+        "counts": {
+          "Jorge Curi": 20,
+          "Jorge Curí": 1
+        }
+      },
+      {
+        "canonical_key": "cesar vedani",
+        "canonical": "César Vedani",
+        "variants": [
+          "Cesar Vedani",
+          "César Vedani"
+        ],
+        "counts": {
+          "Cesar Vedani": 1,
+          "César Vedani": 35
+        }
+      },
+      {
+        "canonical_key": "victor lamanna",
+        "canonical": "Víctor Lamanna",
+        "variants": [
+          "Victor Lamanna",
+          "Víctor Lamanna"
+        ],
+        "counts": {
+          "Victor Lamanna": 1,
+          "Víctor Lamanna": 5
+        }
+      },
+      {
+        "canonical_key": "victorino velazquez",
+        "canonical": "Víctorino Velázquez",
+        "variants": [
+          "Victorino Velazquez",
+          "Victorino Velázquez",
+          "Víctorino Velázquez"
+        ],
+        "counts": {
+          "Victorino Velazquez": 2,
+          "Victorino Velázquez": 4,
+          "Víctorino Velázquez": 1
+        }
+      },
+      {
+        "canonical_key": "hector mendez",
+        "canonical": "Héctor Méndez",
+        "variants": [
+          "Héctor Mendez",
+          "Héctor Méndez"
+        ],
+        "counts": {
+          "Héctor Mendez": 1,
+          "Héctor Méndez": 1
+        }
+      },
+      {
+        "canonical_key": "maximo orsi",
+        "canonical": "Máximo Orsi",
+        "variants": [
+          "Maximo Orsi",
+          "Máximo Orsi"
+        ],
+        "counts": {
+          "Maximo Orsi": 6,
+          "Máximo Orsi": 16
+        }
+      },
+      {
+        "canonical_key": "jose de grandis",
+        "canonical": "José De Grandis",
+        "variants": [
+          "Jose De Grandis",
+          "José De Grandis"
+        ],
+        "counts": {
+          "Jose De Grandis": 1,
+          "José De Grandis": 44
+        }
+      },
+      {
+        "canonical_key": "jose sune",
+        "canonical": "José Suñé",
+        "variants": [
+          "José Suñe",
+          "José Suñé"
+        ],
+        "counts": {
+          "José Suñe": 7,
+          "José Suñé": 12
+        }
+      },
+      {
+        "canonical_key": "italo gianetti",
+        "canonical": "Ítalo Gianetti",
+        "variants": [
+          "Italo Gianetti",
+          "Ítalo Gianetti"
+        ],
+        "counts": {
+          "Italo Gianetti": 3,
+          "Ítalo Gianetti": 1
+        }
+      },
+      {
+        "canonical_key": "a viergol",
+        "canonical": "Antonio Viérgol",
+        "variants": [
+          "A. Viergol",
+          "A. Viérgol"
+        ],
+        "counts": {
+          "A. Viergol": 2,
+          "A. Viérgol": 1
+        }
+      },
+      {
+        "canonical_key": "jose maria ruffet",
+        "canonical": "José María Ruffet",
+        "variants": [
+          "José Maria Ruffet",
+          "José María Ruffet"
+        ],
+        "counts": {
+          "José Maria Ruffet": 1,
+          "José María Ruffet": 1
+        }
+      },
+      {
+        "canonical_key": "rafael rossi",
+        "canonical": "Rafael Rossí",
+        "variants": [
+          "Rafael Rossi",
+          "Rafael Rossí"
+        ],
+        "counts": {
+          "Rafael Rossi": 3,
+          "Rafael Rossí": 1
+        }
+      },
+      {
+        "canonical_key": "luis bayon herrera",
+        "canonical": "Luis Bayón Herrera",
+        "variants": [
+          "Luis Bayon Herrera",
+          "Luis Bayón Herrera"
+        ],
+        "counts": {
+          "Luis Bayon Herrera": 1,
+          "Luis Bayón Herrera": 3
+        }
+      },
+      {
+        "canonical_key": "jose antonio diez gomez",
+        "canonical": "José Antonio Diez Gómez",
+        "variants": [
+          "Jose Antonio Diez Gomez",
+          "José Antonio Diez Gomez",
+          "José Antonio Diez Gómez"
+        ],
+        "counts": {
+          "Jose Antonio Diez Gomez": 2,
+          "José Antonio Diez Gomez": 1,
+          "José Antonio Diez Gómez": 1
+        }
+      },
+      {
+        "canonical_key": "carlos marambio catan",
+        "canonical": "Carlos Marambio Catán",
+        "variants": [
+          "Carlos Marambio Catan",
+          "Carlos Marambio Catán"
+        ],
+        "counts": {
+          "Carlos Marambio Catan": 1,
+          "Carlos Marambio Catán": 1
+        }
+      },
+      {
+        "canonical_key": "victor brana",
+        "canonical": "Víctor Braña",
+        "variants": [
+          "Victor Braña",
+          "Víctor Braña"
+        ],
+        "counts": {
+          "Victor Braña": 1,
+          "Víctor Braña": 1
+        }
+      },
+      {
+        "canonical_key": "armando angeletti",
+        "canonical": "Armando Ángeletti",
+        "variants": [
+          "Armando Angeletti",
+          "Armando Ángeletti"
+        ],
+        "counts": {
+          "Armando Angeletti": 1,
+          "Armando Ángeletti": 2
+        }
+      },
+      {
+        "canonical_key": "angel danesi",
+        "canonical": "Ángel Danesi",
+        "variants": [
+          "Angel Danesi",
+          "Ángel Danesi"
+        ],
+        "counts": {
+          "Angel Danesi": 1,
+          "Ángel Danesi": 1
+        }
+      },
+      {
+        "canonical_key": "antonio viergol",
+        "canonical": "Antonio Viérgol",
+        "variants": [
+          "Antonio Viergol",
+          "Antonio Viérgol"
+        ],
+        "counts": {
+          "Antonio Viergol": 6,
+          "Antonio Viérgol": 1
+        }
+      },
+      {
+        "canonical_key": "jose riu",
+        "canonical": "José Riú",
+        "variants": [
+          "José Riu",
+          "José Riú"
+        ],
+        "counts": {
+          "José Riu": 4,
+          "José Riú": 5
+        }
+      },
+      {
+        "canonical_key": "modesto papavero",
+        "canonical": "Modesto Papávero",
+        "variants": [
+          "Modesto Papavero",
+          "Modesto Papávero"
+        ],
+        "counts": {
+          "Modesto Papavero": 5,
+          "Modesto Papávero": 3
+        }
+      },
+      {
+        "canonical_key": "gines miralles",
+        "canonical": "Ginés Miralles",
+        "variants": [
+          "Gines Miralles",
+          "Ginés Miralles"
+        ],
+        "counts": {
+          "Gines Miralles": 1,
+          "Ginés Miralles": 1
+        }
+      },
+      {
+        "canonical_key": "maria carnelli",
+        "canonical": "María Carnelli",
+        "variants": [
+          "Maria Carnelli",
+          "María Carnelli"
+        ],
+        "counts": {
+          "Maria Carnelli": 3,
+          "María Carnelli": 3
+        }
+      },
+      {
+        "canonical_key": "maria lara",
+        "canonical": "María Lara",
+        "variants": [
+          "Maria Lara",
+          "María Lara"
+        ],
+        "counts": {
+          "Maria Lara": 1,
+          "María Lara": 5
+        }
+      },
+      {
+        "canonical_key": "martin darre",
+        "canonical": "Martín Darré",
+        "variants": [
+          "Martin Darré",
+          "Martín Darré"
+        ],
+        "counts": {
+          "Martin Darré": 1,
+          "Martín Darré": 2
+        }
+      },
+      {
+        "canonical_key": "ivan casado",
+        "canonical": "Iván Casadó",
+        "variants": [
+          "Iván Casado",
+          "Iván Casadó"
+        ],
+        "counts": {
+          "Iván Casado": 1,
+          "Iván Casadó": 1
+        }
+      },
+      {
+        "canonical_key": "antonio penades",
+        "canonical": "Antonio Penadés",
+        "variants": [
+          "Antonio Penades",
+          "Antonio Penadés"
+        ],
+        "counts": {
+          "Antonio Penades": 1,
+          "Antonio Penadés": 2
+        }
+      },
+      {
+        "canonical_key": "oscar valdez",
+        "canonical": "Oscar Valdéz",
+        "variants": [
+          "Oscar Valdez",
+          "Oscar Valdéz"
+        ],
+        "counts": {
+          "Oscar Valdez": 1,
+          "Oscar Valdéz": 1
+        }
+      },
+      {
+        "canonical_key": "jose diez gomez",
+        "canonical": "José Diez Gómez",
+        "variants": [
+          "José Diez Gomez",
+          "José Diez Gómez"
+        ],
+        "counts": {
+          "José Diez Gomez": 2,
+          "José Diez Gómez": 1
+        }
+      }
+    ],
+    "Singer": [
+      {
+        "canonical_key": "ernesto fama",
+        "canonical": "Ernesto Famá",
+        "variants": [
+          "Ernesto Fama",
+          "Ernesto Famá"
+        ],
+        "counts": {
+          "Ernesto Fama": 168,
+          "Ernesto Famá": 100
+        }
+      },
+      {
+        "canonical_key": "teofilo ibanez",
+        "canonical": "Teófilo Ibáñez",
+        "variants": [
+          "Teófilo Ibanez",
+          "Teófilo Ibáñez"
+        ],
+        "counts": {
+          "Teófilo Ibanez": 13,
+          "Teófilo Ibáñez": 116
+        }
+      },
+      {
+        "canonical_key": "roberto diaz",
+        "canonical": "Roberto Díaz",
+        "variants": [
+          "Roberto Diaz",
+          "Roberto Díaz"
+        ],
+        "counts": {
+          "Roberto Diaz": 2,
+          "Roberto Díaz": 37
+        }
+      },
+      {
+        "canonical_key": "luis diaz",
+        "canonical": "Luis Díaz",
+        "variants": [
+          "Luis Diaz",
+          "Luis Díaz"
+        ],
+        "counts": {
+          "Luis Diaz": 11,
+          "Luis Díaz": 152
+        }
+      },
+      {
+        "canonical_key": "julio martel y nestor rodi",
+        "canonical": "Julio Martel Y Nestor Rodi",
+        "variants": [
+          "Julio Martel Y Nestor Rodi",
+          "Julio Martel y Nestor Rodi"
+        ],
+        "counts": {
+          "Julio Martel Y Nestor Rodi": 1,
+          "Julio Martel y Nestor Rodi": 3
+        }
+      },
+      {
+        "canonical_key": "julian rosales",
+        "canonical": "Julián Rosales",
+        "variants": [
+          "Julian Rosales",
+          "Julián Rosales"
+        ],
+        "counts": {
+          "Julian Rosales": 8,
+          "Julián Rosales": 13
+        }
+      },
+      {
+        "canonical_key": "carlos aguirre y julian rosales",
+        "canonical": "Carlos Aguirre y Julián Rosales",
+        "variants": [
+          "Carlos Aguirre y Julian Rosales",
+          "Carlos Aguirre y Julián Rosales"
+        ],
+        "counts": {
+          "Carlos Aguirre y Julian Rosales": 4,
+          "Carlos Aguirre y Julián Rosales": 2
+        }
+      },
+      {
+        "canonical_key": "raul lavie",
+        "canonical": "Raúl Lavié",
+        "variants": [
+          "Raul Lavie",
+          "Raúl Lavié"
+        ],
+        "counts": {
+          "Raul Lavie": 12,
+          "Raúl Lavié": 7
+        }
+      },
+      {
+        "canonical_key": "nelly vazquez",
+        "canonical": "Nelly Vázquez",
+        "variants": [
+          "Nelly Vazquez",
+          "Nelly Vázquez"
+        ],
+        "counts": {
+          "Nelly Vazquez": 4,
+          "Nelly Vázquez": 17
+        }
+      },
+      {
+        "canonical_key": "luis scalon",
+        "canonical": "Luis Scalón",
+        "variants": [
+          "Luis Scalon",
+          "Luis Scalón"
+        ],
+        "counts": {
+          "Luis Scalon": 7,
+          "Luis Scalón": 11
+        }
+      },
+      {
+        "canonical_key": "hector dario",
+        "canonical": "Héctor Darío",
+        "variants": [
+          "Héctor Dario",
+          "Héctor Darío"
+        ],
+        "counts": {
+          "Héctor Dario": 12,
+          "Héctor Darío": 3
+        }
+      },
+      {
+        "canonical_key": "hector de rosas",
+        "canonical": "Héctor De Rosas",
+        "variants": [
+          "Hector De Rosas",
+          "Héctor De Rosas"
+        ],
+        "counts": {
+          "Hector De Rosas": 13,
+          "Héctor De Rosas": 13
+        }
+      },
+      {
+        "canonical_key": "jose angel trelles",
+        "canonical": "José Ángel Trelles",
+        "variants": [
+          "Jose Angel Trelles",
+          "José Ángel Trelles"
+        ],
+        "counts": {
+          "Jose Angel Trelles": 3,
+          "José Ángel Trelles": 1
+        }
+      },
+      {
+        "canonical_key": "luis diaz y coro",
+        "canonical": "Luis Díaz Y Coro",
+        "variants": [
+          "Luis Diaz y Coro",
+          "Luis Díaz Y Coro"
+        ],
+        "counts": {
+          "Luis Diaz y Coro": 3,
+          "Luis Díaz Y Coro": 6
+        }
+      },
+      {
+        "canonical_key": "canto",
+        "canonical": "Canto",
+        "variants": [
+          "Canto",
+          "canto"
+        ],
+        "counts": {
+          "Canto": 1,
+          "canto": 15
+        }
+      },
+      {
+        "canonical_key": "carlos vivan y coro",
+        "canonical": "Carlos Viván Y Coro",
+        "variants": [
+          "Carlos Viván Y Coro",
+          "Carlos Viván y coro"
+        ],
+        "counts": {
+          "Carlos Viván Y Coro": 1,
+          "Carlos Viván y coro": 1
+        }
+      },
+      {
+        "canonical_key": "felix gutierrez",
+        "canonical": "Félix Gutiérrez",
+        "variants": [
+          "Felix Gutierrez",
+          "Félix Gutiérrez"
+        ],
+        "counts": {
+          "Felix Gutierrez": 8,
+          "Félix Gutiérrez": 15
+        }
+      },
+      {
+        "canonical_key": "con coro",
+        "canonical": "Con Coro",
+        "variants": [
+          "Con Coro",
+          "con Coro"
+        ],
+        "counts": {
+          "Con Coro": 7,
+          "con Coro": 1
+        }
+      },
+      {
+        "canonical_key": "agustin irusta",
+        "canonical": "Agustín Irusta",
+        "variants": [
+          "Agustin Irusta",
+          "Agustín Irusta"
+        ],
+        "counts": {
+          "Agustin Irusta": 67,
+          "Agustín Irusta": 1
+        }
+      },
+      {
+        "canonical_key": "carlos nogues",
+        "canonical": "Carlos Nogués",
+        "variants": [
+          "Carlos Nogués",
+          "Carlos Nogúes"
+        ],
+        "counts": {
+          "Carlos Nogués": 9,
+          "Carlos Nogúes": 3
+        }
+      },
+      {
+        "canonical_key": "coro",
+        "canonical": "Coro",
+        "variants": [
+          "Coro",
+          "coro"
+        ],
+        "counts": {
+          "Coro": 3,
+          "coro": 5
+        }
+      },
+      {
+        "canonical_key": "maria grana",
+        "canonical": "María Graña",
+        "variants": [
+          "Maria Graña",
+          "María Graña"
+        ],
+        "counts": {
+          "Maria Graña": 1,
+          "María Graña": 1
+        }
+      },
+      {
+        "canonical_key": "orquesta tipica criolla",
+        "canonical": "Orquesta Típica Criolla",
+        "variants": [
+          "Orquesta Típica Criolla",
+          "orquesta Típica Criolla"
+        ],
+        "counts": {
+          "Orquesta Típica Criolla": 1,
+          "orquesta Típica Criolla": 2
+        }
+      }
+    ]
+  },
+  "duplicate_review": [
+    {
+      "file": "Alberto Castillo.csv",
+      "key": {
+        "Orchestra": "Alberto Castillo y su Orquesta Típica",
+        "Title": "Vestido Punzó",
+        "Date": "7/6/1945",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        36,
+        37
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        37
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla, su Bandoneón y su Orquesta de Cuerdas",
+        "Title": "Tres Minutos con la Realidad",
+        "Date": "1957",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        114,
+        122
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Label",
+          "values": [
+            "Antar Telefunken",
+            "Music Hall"
+          ]
+        },
+        {
+          "field": "Master",
+          "values": [
+            "LP",
+            "LP (10\")"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla His Quintet & Rhythms",
+        "Title": "Lullaby of Birdland",
+        "Date": "1959",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        146,
+        152
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "",
+            "Tema del Disco #55"
+          ]
+        },
+        {
+          "field": "Master",
+          "values": [
+            "45rpm",
+            "LP"
+          ]
+        },
+        {
+          "field": "Composer",
+          "values": [
+            "",
+            "George Shearing"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla y su Quinteto \"Nuevo Tango\"",
+        "Title": "Tango para una Ciudad",
+        "Date": "4/1/1963",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        223,
+        224
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        224
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Amelita Baltar",
+        "Title": "Balada Para Un Loco",
+        "Date": "11/13/1969",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        334,
+        340
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Master",
+          "values": [
+            "33rpm",
+            "LP"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Il Pleut Sur Santiago",
+        "Date": "1976",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        478,
+        484
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "Vers Bande",
+            "Vers Violon"
+          ]
+        },
+        {
+          "field": "Bandoneons",
+          "values": [
+            "",
+            "Astor Piazzolla"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Station Taxis",
+        "Date": "1977",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        538,
+        549
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        549
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Hotel P L M",
+        "Date": "1977",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        540,
+        546
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        546
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Chanson Pour un Homme Triste",
+        "Date": "1977",
+        "Singer": "Pauline Meyer"
+      },
+      "row_numbers": [
+        544,
+        545
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "1er Couplet",
+            "2e Couplet"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Fuga y Misterio",
+        "Date": "6/11/1983",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        669,
+        681
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Label",
+          "values": [
+            "La Batuta / Teatro Colon",
+            "Milan Sur"
+          ]
+        },
+        {
+          "field": "Pianist",
+          "values": [
+            "",
+            "Pablo Ziegler"
+          ]
+        },
+        {
+          "field": "Bassist",
+          "values": [
+            "",
+            "Hector Console"
+          ]
+        },
+        {
+          "field": "Strings",
+          "values": [
+            "",
+            "* Conjunto 9: Astor Piazzolla (Bandoneon Y Direccion), Fernando Suarez Paz, Hugo Baralis, Delmar Quarteti [?] (Viola), Jose Bragato (Cello), Oscar Lopez Ruiz (Guitar)"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Adiós Nonino",
+        "Date": "6/11/1983",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        670,
+        685
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Label",
+          "values": [
+            "La Batuta / Teatro Colon",
+            "Milan Sur"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "1) Parte I",
+        "Date": "6/11/1983",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        671,
+        676
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "Allegro Marcato",
+            "Presto"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "2) Parte Ii",
+        "Date": "6/11/1983",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        672,
+        677
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "Lento Melancolico",
+            "Moderato"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "3) Parte Iii",
+        "Date": "6/11/1983",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        673,
+        678
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "Allegro Marcato",
+            "Presto"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Vendaravis",
+        "Date": "6/11/1983",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        674,
+        680
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Label",
+          "values": [
+            "La Batuta / Teatro Colon",
+            "Milan Sur"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Verano Porteño",
+        "Date": "6/11/1983",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        675,
+        682
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Label",
+          "values": [
+            "La Batuta / Teatro Colon",
+            "Milan Sur"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Oblivion",
+        "Date": "1984",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        733,
+        736,
+        737,
+        740
+      ],
+      "count": 4,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "Bandoneon Solista",
+            "Chitarra Solista",
+            "Oboe e Orchestra",
+            "Trombone Solista"
+          ]
+        },
+        {
+          "field": "Bandoneons",
+          "values": [
+            "",
+            "Solistas: Astor Piazzolla"
+          ]
+        },
+        {
+          "field": "Strings",
+          "values": [
+            "",
+            "Juan Pablo Torres (Trombon), Angelo Arienti (Guitar)"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Milonga for Three",
+        "Date": "1988",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        853,
+        861
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "",
+            "Reprise"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Prelude to the Cyclical Night",
+        "Date": "1988",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        858,
+        865
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "Part One",
+            "Part Two"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Regreso al Amor",
+        "Date": "1988",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        884,
+        886
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "",
+            "Bandoneon Solo"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Tristeza Separacion",
+        "Date": "1988",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        885,
+        888
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "",
+            "Bandoneon Solo"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla",
+        "Title": "Los Suenos",
+        "Date": "1988",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        887,
+        889
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "",
+            "Bandoneon Solo"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Astor Piazzolla.csv",
+      "key": {
+        "Orchestra": "Astor Piazzolla - Athens Colours Orchestra - Manos Hadjidakis",
+        "Title": "Adiós Nonino",
+        "Date": "7/3/1990",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        947,
+        951
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        951
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Carlos Gardel.csv",
+      "key": {
+        "Orchestra": "Carlos Gardel",
+        "Title": "Beso Ingrato",
+        "Date": "1924",
+        "Singer": "Carlos Gardel"
+      },
+      "row_numbers": [
+        125,
+        126
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        126
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Carlos Gardel.csv",
+      "key": {
+        "Orchestra": "Carlos Gardel",
+        "Title": "Allá en la Ribera",
+        "Date": "1928",
+        "Singer": "Carlos Gardel"
+      },
+      "row_numbers": [
+        300,
+        385
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        385
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Carlos Gardel.csv",
+      "key": {
+        "Orchestra": "Carlos Gardel",
+        "Title": "Chorra",
+        "Date": "1928",
+        "Singer": "Carlos Gardel"
+      },
+      "row_numbers": [
+        352,
+        354
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        354
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Carlos Gardel.csv",
+      "key": {
+        "Orchestra": "Carlos Gardel",
+        "Title": "Canción De Cuna",
+        "Date": "1928",
+        "Singer": "Carlos Gardel"
+      },
+      "row_numbers": [
+        355,
+        358
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        358
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Carlos Gardel.csv",
+      "key": {
+        "Orchestra": "Carlos Gardel",
+        "Title": "Buenos Aires",
+        "Date": "1/4/1930",
+        "Singer": "Carlos Gardel"
+      },
+      "row_numbers": [
+        485,
+        487
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        487
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Horacio Salgan.csv",
+      "key": {
+        "Orchestra": "Quinteto Real",
+        "Title": "Mal De Amores",
+        "Date": "1960",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        33,
+        38
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Author",
+          "values": [
+            "",
+            "Lito Bayardo"
+          ]
+        },
+        {
+          "field": "Bassist",
+          "values": [
+            "Enrique Díaz",
+            "Rafael Ferro"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Héctor Varela.csv",
+      "key": {
+        "Orchestra": "Orquesta Héctor Varela",
+        "Title": "Noches de Brasíl",
+        "Date": "6/1/1955",
+        "Singer": "Argentino Ledesma"
+      },
+      "row_numbers": [
+        71,
+        72
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        72
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Héctor Varela.csv",
+      "key": {
+        "Orchestra": "Orquesta Héctor Varela",
+        "Title": "Anoche Te Soñé",
+        "Date": "8/8/1961",
+        "Singer": "Ernesto Herrera y Jorge Rolando"
+      },
+      "row_numbers": [
+        175,
+        176
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        176
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "José Basso.csv",
+      "key": {
+        "Orchestra": "Orquesta José Basso",
+        "Title": "La Cumparsita",
+        "Date": "1970",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        245,
+        256
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        256
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Julio De Caro.csv",
+      "key": {
+        "Orchestra": "Orquesta Típica De Caro",
+        "Title": "Taponazo",
+        "Date": "1932",
+        "Singer": "Teófilo Ibáñez"
+      },
+      "row_numbers": [
+        135,
+        136
+      ],
+      "count": 2,
+      "true_duplicate": true,
+      "removed_rows": [
+        136
+      ],
+      "differing_fields": []
+    },
+    {
+      "file": "Orquesta Típica Victor.csv",
+      "key": {
+        "Orchestra": "Orquesta Típica Victor",
+        "Title": "Solterona",
+        "Date": "7/20/1926",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        31,
+        33
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "AltTitle",
+          "values": [
+            "",
+            "Old Maid"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Osvaldo Fresedo.csv",
+      "key": {
+        "Orchestra": "Orquesta Típica Fresedo",
+        "Title": "Pobre Farolito",
+        "Date": "1926",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        147,
+        154
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Composer",
+          "values": [
+            "Francisco Canaro",
+            "José Domínguez"
+          ]
+        },
+        {
+          "field": "Author",
+          "values": [
+            "",
+            "Emilio Fresedo"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Osvaldo Fresedo.csv",
+      "key": {
+        "Orchestra": "Orquesta Típica Fresedo",
+        "Title": "Tentación",
+        "Date": "1926",
+        "Singer": "Instrumental"
+      },
+      "row_numbers": [
+        172,
+        173
+      ],
+      "count": 2,
+      "true_duplicate": false,
+      "removed_rows": [],
+      "differing_fields": [
+        {
+          "field": "Genre",
+          "values": [
+            "Tango",
+            "Vals"
+          ]
+        },
+        {
+          "field": "Composer",
+          "values": [
+            "José Rizzuti",
+            "Vicente Gorrese"
+          ]
+        }
+      ]
+    }
+  ],
+  "true_duplicates_removed": 14,
+  "cross_file_duplicates_removed": 0,
+  "consolidated_records": 15460
+}
