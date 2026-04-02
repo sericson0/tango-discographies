@@ -14,20 +14,17 @@
       color: #1c1c1c;
     }
 
-    /* --- Header --- */
+    /* --- Header (combined bar) --- */
     .header {
-      padding: 28px 32px 24px;
+      padding: 14px 32px;
       border-bottom: 2px solid #f1c232;
       background: #fff;
       display: flex;
-      justify-content: space-between;
       align-items: flex-end;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 14px;
     }
-    .header-title { font-size: 26px; font-weight: 600; color: #1c1c1c; letter-spacing: 0.5px; }
-    .header-subtitle { font-size: 13px; color: rgba(0,0,0,0.4); margin-top: 6px; letter-spacing: 0.3px; }
-    .header-actions { display: flex; gap: 10px; }
+    .header-actions { display: flex; gap: 10px; align-self: flex-end; }
     .btn-download {
       border: 1px solid rgba(241,194,50,0.6);
       border-radius: 4px;
@@ -42,34 +39,30 @@
     }
     .btn-download:hover { background: rgba(241,194,50,0.08); }
 
-    /* --- Bandleader Selector --- */
-    .bandleader-section {
-      padding: 20px 32px;
-      background: #fff;
-      border-bottom: 1px solid #e8e4dc;
-    }
+    /* --- Bandleader Selector (inline in header) --- */
+    .bandleader-group { flex: 0 1 auto; }
     .field-label {
       font-size: 10px;
       text-transform: uppercase;
       color: #b8960a;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       letter-spacing: 1.5px;
     }
     .bandleader-select {
       background: #faf8f4;
       border: 1px solid #d4cfc4;
       border-radius: 4px;
-      padding: 12px 16px;
-      font-size: 18px;
+      padding: 9px 14px;
+      font-size: 15px;
       color: #1c1c1c;
       font-weight: 600;
       font-family: inherit;
-      width: 100%;
       cursor: pointer;
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ccc' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 16px center;
+      background-position: right 14px center;
+      padding-right: 36px;
     }
 
     /* --- Filters Row --- */
@@ -176,14 +169,14 @@
     .data-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13px;
+      font-size: 15px;
     }
     .data-table thead { position: sticky; top: 0; z-index: 1; }
     .data-table th {
       background: #f4f1eb;
       color: #b8960a;
       text-transform: uppercase;
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 1px;
       font-weight: 700;
       padding: 13px 10px 11px;
@@ -213,7 +206,7 @@
     .col-title { color: #1c1c1c; font-weight: 500; }
     .col-genre, .col-singer { color: rgba(0,0,0,0.6); }
     .col-label { color: rgba(0,0,0,0.5); }
-    .col-grouping { color: rgba(0,0,0,0.4); font-size: 12px; }
+    .col-grouping { color: rgba(0,0,0,0.4); font-size: 14px; }
     .col-composer { color: rgba(0,0,0,0.4); }
     .col-author { color: rgba(0,0,0,0.35); }
 
@@ -237,34 +230,55 @@
       font-style: italic;
     }
 
-    /* --- Detail Panel --- */
-    .detail-panel {
-      margin: 16px 32px 20px;
-      background: #f4f1eb;
-      padding: 16px 20px;
-      border-left: 2px solid #e8e4dc;
-      transition: border-color 0.15s;
+    /* --- Detail Panel (popup overlay) --- */
+    .detail-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
     }
-    .detail-panel.populated { border-left-color: #f1c232; }
+    .detail-overlay.visible { display: flex; }
+    .detail-panel {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px 28px;
+      border-left: 3px solid #f1c232;
+      max-width: 700px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      position: relative;
+    }
+    .detail-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: rgba(0,0,0,0.35);
+      cursor: pointer;
+      font-family: inherit;
+      line-height: 1;
+      padding: 4px;
+    }
+    .detail-close:hover { color: #b8960a; }
     .detail-label {
       font-size: 10px;
       text-transform: uppercase;
       color: #b8960a;
       letter-spacing: 1.5px;
-      margin-bottom: 12px;
-    }
-    .detail-empty {
-      font-size: 14px;
-      color: rgba(0,0,0,0.3);
-      font-style: italic;
-      text-align: center;
-      padding: 8px 0;
+      margin-bottom: 14px;
     }
     .detail-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      font-size: 13px;
+      gap: 12px;
+      font-size: 14px;
     }
     .detail-grid .detail-field-label { color: rgba(0,0,0,0.4); font-size: 12px; }
     .detail-grid .detail-field-value { color: #1c1c1c; margin-top: 2px; }
@@ -318,11 +332,11 @@
     }
     @media (max-width: 600px) {
       .col-grouping, .th-grouping { display: none; }
-      .header { padding: 20px 16px 16px; }
-      .bandleader-section, .filters-section, .stats-line { padding-left: 16px; padding-right: 16px; }
+      .header { padding: 12px 16px; }
+      .filters-section, .stats-line { padding-left: 16px; padding-right: 16px; }
       .chips-section, .chips-section.visible { padding-left: 16px; padding-right: 16px; }
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
-      .detail-panel { margin-left: 16px; margin-right: 16px; }
+      .detail-panel { width: 95%; padding: 20px 16px; }
       .detail-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -338,22 +352,17 @@
   <!-- Main app (hidden until data loads) -->
   <div id="app" style="display:none;">
 
-    <!-- Header -->
+    <!-- Combined Header: Row 1 = Bandleader + Downloads, Row 2 = Filters -->
     <div class="header">
-      <div>
-        <div class="header-title">Argentine Tango Discographies</div>
-        <div class="header-subtitle" id="headerSubtitle"></div>
+      <!-- Row 1 -->
+      <div class="bandleader-group">
+        <div class="field-label">Bandleader</div>
+        <select id="bandleaderSelect" class="bandleader-select"></select>
       </div>
       <div class="header-actions">
         <button class="btn-download" id="btnDownloadArtist">Download Artist CSV</button>
         <button class="btn-download" id="btnDownloadAll">Download All CSV</button>
       </div>
-    </div>
-
-    <!-- Bandleader Selector -->
-    <div class="bandleader-section">
-      <div class="field-label">Bandleader</div>
-      <select id="bandleaderSelect" class="bandleader-select"></select>
     </div>
 
     <!-- Filters Row -->
@@ -407,14 +416,15 @@
       <div id="scrollIndicator" class="scroll-indicator">&#8595; scroll for more &#8595;</div>
     </div>
 
-    <!-- Detail Panel -->
-    <div id="detailPanel" class="detail-panel">
-      <div class="detail-label" id="detailLabel">Recording Detail</div>
-      <div id="detailContent">
-        <div class="detail-empty">Select a row above to view full recording details</div>
-      </div>
-    </div>
+  </div>
 
+  <!-- Detail Overlay (popup) -->
+  <div id="detailOverlay" class="detail-overlay">
+    <div id="detailPanel" class="detail-panel">
+      <button id="detailClose" class="detail-close" title="Close">&times;</button>
+      <div class="detail-label" id="detailLabel">Recording Detail</div>
+      <div id="detailContent"></div>
+    </div>
   </div>
 
   <!-- Back to Top -->
@@ -437,7 +447,6 @@
   const loadingEl = $('loading');
   const errorEl = $('error');
   const appEl = $('app');
-  const headerSubtitle = $('headerSubtitle');
   const bandleaderSelect = $('bandleaderSelect');
   const genreFilter = $('genreFilter');
   const singerFilter = $('singerFilter');
@@ -450,9 +459,11 @@
   const tableBody = $('tableBody');
   const tableContainer = $('tableContainer');
   const scrollIndicator = $('scrollIndicator');
+  const detailOverlay = $('detailOverlay');
   const detailPanel = $('detailPanel');
   const detailLabel = $('detailLabel');
   const detailContent = $('detailContent');
+  const detailCloseBtn = $('detailClose');
   const backToTopBtn = $('backToTop');
   const btnDownloadArtist = $('btnDownloadArtist');
   const btnDownloadAll = $('btnDownloadAll');
@@ -512,22 +523,35 @@
     });
   }
 
-  // --- Bandleader dropdown ---
+  // --- Bandleader dropdown (Last, First sorted by last name) ---
+  function toLastFirst(name) {
+    const parts = name.trim().split(/\s+/);
+    if (parts.length === 1) return name;
+    const last = parts[parts.length - 1];
+    const first = parts.slice(0, -1).join(' ');
+    return last + ', ' + first;
+  }
+
   function populateBandleaderDropdown() {
     const counts = {};
     allData.forEach(r => {
       const bl = r.Bandleader;
       counts[bl] = (counts[bl] || 0) + 1;
     });
-    const names = Object.keys(counts).sort((a, b) => a.localeCompare(b));
+    const names = Object.keys(counts);
+    // Sort by last name (last word in name)
+    names.sort((a, b) => {
+      const lastA = a.trim().split(/\s+/).pop().toLowerCase();
+      const lastB = b.trim().split(/\s+/).pop().toLowerCase();
+      return lastA.localeCompare(lastB);
+    });
     bandleaderSelect.innerHTML = '';
     names.forEach(name => {
       const opt = document.createElement('option');
       opt.value = name;
-      opt.textContent = name + ' \u00B7 ' + counts[name] + ' rec.';
+      opt.textContent = toLastFirst(name) + ' \u00B7 ' + counts[name] + ' tracks';
       bandleaderSelect.appendChild(opt);
     });
-    headerSubtitle.textContent = allData.length.toLocaleString() + ' recordings \u00B7 ' + names.length + ' bandleaders';
   }
 
   // --- Bandleader change ---
@@ -664,13 +688,13 @@
 
   function updateStats() {
     if (filteredData.length === 0) {
-      statsLine.textContent = '0 recordings';
+      statsLine.textContent = '0 tracks';
       return;
     }
     const dates = filteredData.map(r => parseDate(r.Date)).filter(Boolean).sort((a, b) => a - b);
     const minYear = dates.length ? dates[0].getFullYear() : '?';
     const maxYear = dates.length ? dates[dates.length - 1].getFullYear() : '?';
-    statsLine.textContent = filteredData.length + ' recordings \u00B7 ' + minYear + '\u2013' + maxYear;
+    statsLine.textContent = filteredData.length + ' tracks \u00B7 ' + minYear + '\u2013' + maxYear;
   }
 
   function updateChips() {
@@ -701,9 +725,8 @@
 
   function clearSelection() {
     selectedRowIndex = -1;
-    detailPanel.classList.remove('populated');
-    detailLabel.textContent = 'Recording Detail';
-    detailContent.innerHTML = '<div class="detail-empty">Select a row above to view full recording details</div>';
+    detailOverlay.classList.remove('visible');
+    detailContent.innerHTML = '';
     const prev = tableBody.querySelector('tr.selected');
     if (prev) prev.classList.remove('selected');
   }
@@ -721,7 +744,7 @@
 
   function showDetail(row) {
     if (!row) { clearSelection(); return; }
-    detailPanel.classList.add('populated');
+    detailOverlay.classList.add('visible');
     const year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
     detailLabel.textContent = 'Recording Detail \u00B7 ' + (row.Title || '') + (year ? ' (' + year + ')' : '');
 
@@ -839,6 +862,12 @@
           } else if (e.key === 'Escape') {
             clearSelection();
           }
+        });
+
+        // Detail overlay close
+        detailCloseBtn.addEventListener('click', clearSelection);
+        detailOverlay.addEventListener('click', (e) => {
+          if (e.target === detailOverlay) clearSelection();
         });
 
         // Scroll indicator + back to top
