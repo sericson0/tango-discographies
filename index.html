@@ -460,14 +460,30 @@
   // --- Date parsing ---
   function parseDate(str) {
     if (!str) return null;
-    const parts = str.split('/');
-    if (parts.length !== 3) return null;
-    return new Date(+parts[2], +parts[0] - 1, +parts[1]);
+    // M/D/YYYY format
+    const slashParts = str.split('/');
+    if (slashParts.length === 3) {
+      return new Date(+slashParts[2], +slashParts[0] - 1, +slashParts[1]);
+    }
+    // YYYY-MM format
+    const dashParts = str.split('-');
+    if (dashParts.length === 2 && /^\d{4}$/.test(dashParts[0])) {
+      return new Date(+dashParts[0], +dashParts[1] - 1, 1);
+    }
+    // Year-only (YYYY)
+    if (/^\d{4}$/.test(str.trim())) {
+      return new Date(+str.trim(), 0, 1);
+    }
+    return null;
   }
 
   function formatDate(str) {
     const d = parseDate(str);
     if (!d) return str || '';
+    // If original was year-only, display as year
+    if (/^\d{4}$/.test(str.trim())) return str.trim();
+    // If original was YYYY-MM, display as YYYY-MM
+    if (/^\d{4}-\d{1,2}$/.test(str.trim())) return str.trim();
     const y = d.getFullYear();
     const m = String(d.getMonth() + 1).padStart(2, '0');
     const day = String(d.getDate()).padStart(2, '0');
