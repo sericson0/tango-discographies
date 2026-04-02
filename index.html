@@ -303,14 +303,16 @@
     .detail-field.span2 { grid-column: span 2; }
     .col-expand {
       text-align: center;
-      width: 32px;
+      width: 48px;
       color: #b8960a;
-      font-size: 16px;
+      font-size: 22px;
+      font-weight: 700;
       cursor: pointer;
       padding: 10px 6px;
+      line-height: 1;
     }
     .col-expand:hover { color: #d4a800; }
-    .th-expand { width: 32px; cursor: default !important; }
+    .th-expand { width: 48px; text-align: center !important; cursor: default !important; font-size: 11px !important; }
 
     /* --- Back to Top Button --- */
     .back-to-top {
@@ -432,7 +434,7 @@
             <th data-col="Grouping" class="th-grouping">Grouping <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Composer" class="th-composer">Composer <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Author" class="th-author">Author <span class="sort-arrow">&#9650;</span></th>
-            <th class="th-expand"></th>
+            <th class="th-expand">Details</th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
