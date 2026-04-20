@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Questions & Discussion
-    url: https://github.com/sericson0/tango-discographies/discussions
-    about: Ask questions, share finds, or discuss the project (enable Discussions in repo settings first)
+  - name: Email the maintainer
+    url: mailto:TangoToolkit@gmail.com
+    about: Questions, collaboration, or anything that doesn't fit an issue template
