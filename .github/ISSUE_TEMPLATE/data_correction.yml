@@ -1,0 +1,87 @@
+name: Data Correction
+description: Report an incorrect or missing entry in the tango discography data
+title: "[Data] "
+labels: ["data-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the data. Please fill in as much as you can.
+        If you have many corrections for one artist, consider opening a pull
+        request against `csv_files/` instead.
+
+  - type: input
+    id: artist
+    attributes:
+      label: Artist / Orchestra
+      description: Bandleader or orchestra name. Use a new name if adding an artist not yet covered.
+      placeholder: "e.g., Carlos Di Sarli"
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Recording title
+      placeholder: "e.g., Bahía Blanca"
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date of recording (optional)
+      placeholder: "e.g., 1957 or 03/15/1957"
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: Field being corrected
+      options:
+        - Title
+        - Date
+        - Singer
+        - Genre
+        - Grouping
+        - Lineup
+        - Composer / Author
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current value in the data
+      placeholder: What the entry says today
+    validations:
+      required: true
+
+  - type: textarea
+    id: corrected
+    attributes:
+      label: Corrected value
+      placeholder: What it should say
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / evidence
+      description: Where does the correction come from? Liner notes, a reputable catalog, a specific recording, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes (optional)
+
+  - type: checkboxes
+    id: duplicate
+    attributes:
+      label: Pre-flight
+      options:
+        - label: I searched existing issues and this correction has not already been filed
+          required: true
