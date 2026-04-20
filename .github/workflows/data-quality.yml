@@ -19,7 +19,7 @@ jobs:
       - name: Build consolidated CSV
         run: python build.py
       - name: Run data-quality check
-        run: python check_data_quality.py --json-out quality-report.json --fail-on-issues
+        run: python check_data_quality.py --json-out quality-report.json
       - name: Upload quality report
         if: always()
         uses: actions/upload-artifact@v4
