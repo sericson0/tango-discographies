@@ -6,5 +6,5 @@ In short: be respectful, welcoming, and constructive. Harassment, personal
 attacks, and discrimination are not tolerated.
 
 Instances of unacceptable behavior may be reported privately to
-**sericson0@gmail.com**. All reports will be reviewed and handled
+**TangoToolkit@gmail.com**. All reports will be reviewed and handled
 confidentially.

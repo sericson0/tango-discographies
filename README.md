@@ -9,7 +9,7 @@ A searchable web viewer for tango orchestra discographies.
 ## Features
 
 - Browse discographies of ~40 classic tango orchestras and singers
-- Full-text search across titles, composers, and lyricists
+- Full-text search across titles, composers, authors, and singers
 - Filter by genre, singer, and grouping
 - Sort any column; click a row for a detail popup
 - Download per-artist or full-catalog CSV
@@ -30,7 +30,7 @@ Three ways to contribute:
 - **Found a bug or have a feature idea?** Open a [bug report](../../issues/new?template=bug_report.yml) or [feature request](../../issues/new?template=feature_request.yml).
 - **Want to submit code or data directly?** Open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow.
 
-Questions? Start a [Discussion](../../discussions).
+Questions? Start a [Discussion](../../discussions) or email [TangoToolkit@gmail.com](mailto:TangoToolkit@gmail.com).
 
 ## Development
 
@@ -66,9 +66,9 @@ If you reference this project in research or a publication, please cite:
 > Ericson, S. (2026). *Tango Discographies* [Data set and software]. Retrieved from https://github.com/sericson0/tango-discographies
 
 <details>
-<summary>Maintainer setup checklist (post-merge)</summary>
+<summary>Maintainer setup checklist</summary>
 
-One-time GitHub UI actions after merging the open-source setup:
+One-time GitHub UI actions:
 
 - Enable **Discussions** (Settings -> Features -> Discussions)
 - Add an "About" description and the live-site URL
