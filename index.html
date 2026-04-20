@@ -560,6 +560,39 @@
     });
   }
 
+  // --- Singer dropdown (Last, First sorted by last name with letter sections) ---
+  function populateSingerDropdown(arr) {
+    var names = uniqueSingers(arr);
+    names.sort((a, b) => {
+      var lastA = stripAccents(getLastName(a)).toLowerCase();
+      var lastB = stripAccents(getLastName(b)).toLowerCase();
+      return lastA.localeCompare(lastB);
+    });
+
+    singerFilter.innerHTML = '';
+    var allOpt = document.createElement('option');
+    allOpt.value = '';
+    allOpt.textContent = 'All';
+    singerFilter.appendChild(allOpt);
+
+    var currentLetter = '';
+    names.forEach(name => {
+      var first = stripAccents(getLastName(name))[0];
+      var letter = first ? first.toUpperCase() : '';
+      if (letter !== currentLetter) {
+        currentLetter = letter;
+        var sep = document.createElement('option');
+        sep.disabled = true;
+        sep.textContent = '\u2500\u2500\u2500 ' + letter + ' \u2500\u2500\u2500';
+        singerFilter.appendChild(sep);
+      }
+      var opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = toLastFirst(name);
+      singerFilter.appendChild(opt);
+    });
+  }
+
   // --- Bandleader dropdown (Last, First sorted by last name with letter sections) ---
   var LAST_NAME_PARTICLES = ['de', 'di', 'del', 'la', 'las', 'los'];
 
@@ -631,7 +664,7 @@
     artistData = allData.filter(r => r.Bandleader === bl);
 
     populateSelect(genreFilter, uniqueSorted(artistData, 'Genre'), 'All');
-    populateSelect(singerFilter, uniqueSingers(artistData), 'All');
+    populateSingerDropdown(artistData);
     populateSelect(groupingFilter, uniqueSorted(artistData, 'Grouping'), 'All');
 
     searchInput.value = '';
