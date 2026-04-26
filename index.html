@@ -39,6 +39,7 @@
 
       /* Derived from --accent */
       --accent-hover: color-mix(in srgb, var(--accent), black 12%);
+      --accent-muted: color-mix(in srgb, var(--accent), var(--text) 30%);
 
       /* Derived from --bg */
       --surface-alt:  color-mix(in srgb, var(--bg), var(--text) 5%);
@@ -91,7 +92,7 @@
     .field-label {
       font-size: 13px;
       text-transform: uppercase;
-      color: var(--accent-hover);
+      color: var(--accent-muted);
       margin-bottom: 5px;
       letter-spacing: 1.5px;
     }
