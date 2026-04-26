@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Argentine Tango Discographies</title>
+  <script>
+    (function() {
+      var params = new URLSearchParams(location.search);
+      var hex = /^[0-9a-fA-F]{3,8}$/;
+      var map = { bg: '--bg', text: '--text', accent: '--accent' };
+      for (var key in map) {
+        var v = params.get(key);
+        if (v && hex.test(v)) {
+          document.documentElement.style.setProperty(map[key], '#' + v);
+        }
+      }
+    })();
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
