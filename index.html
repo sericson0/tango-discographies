@@ -351,6 +351,74 @@
     .col-expand:hover { color: var(--accent); }
     .th-expand { width: 48px; text-align: center !important; cursor: default !important; font-size: 11px !important; }
 
+    /* --- Thumbnail column --- */
+    .th-thumb { width: 48px; text-align: center !important; cursor: default !important; font-size: 11px !important; }
+    .col-thumb {
+      width: 48px;
+      padding: 4px;
+      text-align: center;
+      vertical-align: middle;
+      cursor: zoom-in;
+    }
+    .col-thumb img {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 3px;
+      display: block;
+      margin: 0 auto;
+      background: var(--border-soft);
+      border: 1px solid var(--border);
+      transition: transform 0.1s ease, border-color 0.1s ease;
+    }
+    .col-thumb:hover img {
+      transform: scale(1.08);
+      border-color: var(--accent);
+    }
+
+    /* --- Detail popover image --- */
+    .detail-header {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    .detail-header .detail-row1 {
+      flex: 1;
+      margin-bottom: 0;
+    }
+    .detail-thumb {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--border-soft);
+      cursor: zoom-in;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    /* --- Lightbox --- */
+    .lightbox-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox-backdrop.visible { display: flex; }
+    .lightbox-image {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
     /* --- Back to Top Button --- */
     .back-to-top {
       position: fixed;
@@ -404,6 +472,8 @@
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
       .detail-popover { padding-left: 16px; padding-right: 16px; }
       .detail-grid { grid-template-columns: 1fr 1fr; }
+      .detail-thumb { width: 100px; height: 100px; }
+      .detail-header { gap: 12px; }
     }
   </style>
 </head>
@@ -463,6 +533,7 @@
       <table class="data-table">
         <thead>
           <tr>
+            <th class="th-thumb"></th>
             <th data-col="Date">Date <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Title">Title <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Genre">Genre <span class="sort-arrow">&#9650;</span></th>
@@ -486,6 +557,11 @@
   <div id="detailPopover" class="detail-popover">
     <button id="detailPopoverClose" class="detail-popover-close" title="Close">&times;</button>
     <div id="detailContent"></div>
+  </div>
+
+  <!-- Image Lightbox -->
+  <div id="lightboxBackdrop" class="lightbox-backdrop">
+    <img id="lightboxImage" class="lightbox-image" alt="">
   </div>
 
   <!-- Back to Top -->
@@ -524,6 +600,8 @@
   const detailPopover = $('detailPopover');
   const detailPopoverClose = $('detailPopoverClose');
   const detailContent = $('detailContent');
+  const lightboxBackdrop = $('lightboxBackdrop');
+  const lightboxImage = $('lightboxImage');
   const backToTopBtn = $('backToTop');
   const btnDownloadArtist = $('btnDownloadArtist');
   const btnDownloadAll = $('btnDownloadAll');
@@ -531,6 +609,24 @@
   // --- Accent-insensitive normalization ---
   function stripAccents(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  // --- Image URL construction ---
+  // Convention: {LastFirst}/{YYYY-MM-DD}_{Title-Hyphenated}_{LastName}.webp
+  // Example: An\u00edbal Troilo + 3/7/1938 + Comme Il Faut ->
+  //   TroiloAnibal/1938-03-07_Comme-Il-Faut_Troilo.webp
+  const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
+  function imageUrl(row) {
+    if (!row || !row.Bandleader || !row.Date || !row.Title) return null;
+    var parts = stripAccents(row.Bandleader).trim().split(/\s+/);
+    if (parts.length === 0 || parts[0] === '') return null;
+    var last = parts.pop();
+    var folder = last + parts.join('');
+    var dateParts = row.Date.split('/');
+    if (dateParts.length !== 3) return null;
+    var iso = dateParts[2] + '-' + String(dateParts[0]).padStart(2, '0') + '-' + String(dateParts[1]).padStart(2, '0');
+    var title = row.Title.trim().replace(/\s+/g, '-');
+    return IMAGE_BASE + '/' + folder + '/' + iso + '_' + title + '_' + last + '.webp';
   }
 
   // --- Date parsing ---
@@ -778,14 +874,19 @@
   function renderTable() {
     tableBody.innerHTML = '';
     if (filteredData.length === 0) {
-      tableBody.innerHTML = '<tr><td colspan="9" class="table-message">No recordings match your filters</td></tr>';
+      tableBody.innerHTML = '<tr><td colspan="10" class="table-message">No recordings match your filters</td></tr>';
       scrollIndicator.classList.remove('visible');
       return;
     }
     filteredData.forEach((row, i) => {
       var tr = document.createElement('tr');
       if (i === selectedRowIndex) tr.classList.add('selected');
+      var imgSrc = imageUrl(row);
+      var thumbCell = imgSrc
+        ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(imgSrc) + '" alt="" onerror="this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\'"></td>'
+        : '<td class="col-thumb" data-noimg="1"></td>';
       tr.innerHTML =
+        thumbCell +
         '<td class="col-date">' + esc(formatDate(row.Date)) + '</td>' +
         '<td class="col-title">' + esc(row.Title) + '</td>' +
         '<td class="col-genre">' + esc(row.Genre) + '</td>' +
@@ -799,6 +900,13 @@
       tr.querySelector('.col-expand').addEventListener('click', (e) => {
         e.stopPropagation();
         openPopover(i, e.currentTarget);
+      });
+      tr.querySelector('.col-thumb').addEventListener('click', (e) => {
+        e.stopPropagation();
+        var td = e.currentTarget;
+        if (td.dataset.noimg) return;
+        var img = td.querySelector('img');
+        if (img && img.src) openLightbox(img.src);
       });
       tableBody.appendChild(tr);
     });
@@ -883,12 +991,18 @@
     var row = filteredData[index];
     if (!row) return;
     var year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
+    var imgSrc = imageUrl(row);
 
-    var html = '<div class="detail-row1"><span class="detail-title">' + esc(row.Title || '') + '</span>';
+    var html = '<div class="detail-header">';
+    if (imgSrc) {
+      html += '<img class="detail-thumb" src="' + esc(imgSrc) + '" alt="" ' +
+        'onerror="this.style.display=\'none\'">';
+    }
+    html += '<div class="detail-row1"><span class="detail-title">' + esc(row.Title || '') + '</span>';
     if (row.AltTitle) html += ' <span class="detail-alt">' + esc(row.AltTitle) + '</span>';
     if (year) html += ' <span class="detail-year">(' + year + ')</span>';
     if (row.Orchestra) html += '<span class="detail-orchestra"><span class="detail-orchestra-label">Orchestra: </span>' + esc(row.Orchestra) + '</span>';
-    html += '</div>';
+    html += '</div></div>';
 
     var fields = [
       { label: 'Master', value: row.Master },
@@ -912,6 +1026,11 @@
     html += '</div>';
 
     detailContent.innerHTML = html;
+
+    var detailThumb = detailContent.querySelector('.detail-thumb');
+    if (detailThumb) {
+      detailThumb.addEventListener('click', () => openLightbox(detailThumb.src));
+    }
 
     // Position near the anchor row
     var rect = anchorEl.getBoundingClientRect();
@@ -939,6 +1058,17 @@
   function closePopover() {
     detailPopover.classList.remove('visible');
     detailBackdrop.classList.remove('visible');
+  }
+
+  function openLightbox(src) {
+    if (!src) return;
+    lightboxImage.src = src;
+    lightboxBackdrop.classList.add('visible');
+  }
+
+  function closeLightbox() {
+    lightboxBackdrop.classList.remove('visible');
+    lightboxImage.src = '';
   }
 
   function checkScrollIndicator() {
@@ -1021,7 +1151,9 @@
             e.preventDefault();
             onRowClick(selectedRowIndex);
           } else if (e.key === 'Escape') {
-            if (detailPopover.classList.contains('visible')) {
+            if (lightboxBackdrop.classList.contains('visible')) {
+              closeLightbox();
+            } else if (detailPopover.classList.contains('visible')) {
               closePopover();
             } else {
               clearSelection();
@@ -1056,6 +1188,7 @@
 
         detailPopoverClose.addEventListener('click', closePopover);
         detailBackdrop.addEventListener('click', closePopover);
+        lightboxBackdrop.addEventListener('click', closeLightbox);
       },
       error: function() {
         loadingEl.style.display = 'none';
