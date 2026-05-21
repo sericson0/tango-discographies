@@ -4,27 +4,42 @@
 This is the single source of compiled data for the web viewer. Run locally
 after editing any file in csv_files/ to preview changes in the browser.
 CI also runs this on every push to main before deploying to GitHub Pages.
+
+Alongside discographies.csv, this also writes duplicates_report.csv listing
+fuzzy-duplicate groups (same Orchestra+Title+Year but differing on other
+fields) for manual review.
 """
 
 from __future__ import annotations
 
 import csv
+import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 OUTPUT_HEADERS = [
     "Bandleader", "Orchestra", "Date", "Title", "AltTitle", "Genre",
-    "Singer", "Label", "Master", "Composer", "Author", "Arranger",
-    "Grouping", "Pianist", "Bassist", "Bandoneons", "Strings", "Lineup",
+    "Singer", "Label", "Master", "Matrix", "Disc", "Composer", "Author",
+    "Arranger", "Grouping", "Pianist", "Bassist", "Bandoneons", "Strings",
+    "Lineup",
 ]
 
 DEDUPE_KEY_FIELDS = ("Orchestra", "Title", "Date", "Singer")
 
+YEAR_RE = re.compile(r"(\d{4})")
 
-def build(csv_dir: Path, output_path: Path) -> int:
+
+def extract_year(date_value: str) -> str:
+    match = YEAR_RE.search(date_value or "")
+    return match.group(1) if match else ""
+
+
+def build(csv_dir: Path, output_path: Path) -> tuple[int, list[dict]]:
     """Concatenate all CSVs in csv_dir into output_path, deduping across files.
 
-    Returns the number of rows written.
+    Returns the number of rows written and a list of fuzzy-duplicate group
+    summaries.
     """
     all_rows: list[dict[str, str]] = []
     source_files = sorted(csv_dir.glob("*.csv"))
@@ -36,40 +51,90 @@ def build(csv_dir: Path, output_path: Path) -> int:
         with source.open("r", encoding="utf-8-sig", newline="") as f:
             reader = csv.DictReader(f)
             for row in reader:
+                row["_source_file"] = source.name
                 all_rows.append(row)
 
     consolidated: list[dict[str, str]] = []
     seen: dict[tuple, dict[str, str]] = {}
-    cross_file_dups = 0
     for row in all_rows:
         key = tuple(row.get(f, "").strip().lower() for f in DEDUPE_KEY_FIELDS)
         if all(key) and key in seen:
-            if row == seen[key]:
-                cross_file_dups += 1
+            cleaned_existing = {k: v for k, v in seen[key].items() if k != "_source_file"}
+            cleaned_new = {k: v for k, v in row.items() if k != "_source_file"}
+            if cleaned_existing == cleaned_new:
                 continue
         if all(key):
             seen[key] = row
         consolidated.append(row)
 
+    fuzzy_groups = collect_fuzzy_duplicates(consolidated)
+
     with output_path.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=OUTPUT_HEADERS)
         writer.writeheader()
-        writer.writerows(consolidated)
+        for row in consolidated:
+            writer.writerow({h: row.get(h, "") for h in OUTPUT_HEADERS})
 
-    return len(consolidated)
+    return len(consolidated), fuzzy_groups
+
+
+def collect_fuzzy_duplicates(rows: list[dict[str, str]]) -> list[dict]:
+    """Group rows that share Orchestra+Title+Year but differ on Singer or Date.
+
+    Returns one report row per fuzzy group, with the source files and the
+    set of differing field values.
+    """
+    groups: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        orch = row.get("Orchestra", "").strip().lower()
+        title = row.get("Title", "").strip().lower()
+        year = extract_year(row.get("Date", ""))
+        if orch and title and year:
+            groups[(orch, title, year)].append(row)
+
+    report = []
+    for (orch_key, title_key, year), group in groups.items():
+        if len(group) < 2:
+            continue
+        singers = sorted({r.get("Singer", "").strip() for r in group})
+        dates = sorted({r.get("Date", "").strip() for r in group})
+        if len(singers) <= 1 and len(dates) <= 1:
+            continue
+        report.append({
+            "Orchestra": group[0].get("Orchestra", ""),
+            "Title": group[0].get("Title", ""),
+            "Year": year,
+            "RowCount": len(group),
+            "Singers": " | ".join(singers),
+            "Dates": " | ".join(dates),
+            "SourceFiles": " | ".join(sorted({r.get("_source_file", "") for r in group})),
+        })
+    report.sort(key=lambda r: (-r["RowCount"], r["Orchestra"], r["Title"]))
+    return report
+
+
+def write_duplicates_report(report_path: Path, report: list[dict]) -> None:
+    headers = ["Orchestra", "Title", "Year", "RowCount", "Singers", "Dates", "SourceFiles"]
+    with report_path.open("w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=headers)
+        writer.writeheader()
+        writer.writerows(report)
 
 
 def main() -> None:
     root = Path(__file__).parent
     csv_dir = root / "csv_files"
     output_path = root / "discographies.csv"
+    report_path = root / "duplicates_report.csv"
 
     if not csv_dir.is_dir():
         print(f"error: {csv_dir} does not exist", file=sys.stderr)
         sys.exit(1)
 
-    n = build(csv_dir, output_path)
+    n, fuzzy = build(csv_dir, output_path)
+    write_duplicates_report(report_path, fuzzy)
     print(f"wrote {n} rows to {output_path.name}")
+    print(f"wrote {len(fuzzy)} fuzzy-duplicate groups to {report_path.name}")
 
 
 if __name__ == "__main__":

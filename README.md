@@ -32,6 +32,32 @@ Three ways to contribute:
 
 Questions? Start a [Discussion](../../discussions) or email [TangoToolkit@gmail.com](mailto:TangoToolkit@gmail.com).
 
+## Embedding
+
+The viewer can be embedded as an iframe on any site:
+
+```html
+<iframe src="https://sericson0.github.io/tango-discographies/"
+        width="100%" height="800" frameborder="0"></iframe>
+```
+
+To match your site's color theme, pass hex colors (without the `#` prefix) via URL query params:
+
+| Param    | Default  | Controls                                                                  |
+| -------- | -------- | ------------------------------------------------------------------------- |
+| `bg`     | `f8fafc` | Page background                                                           |
+| `text`   | `1e293b` | Primary text color (and basis for muted column text)                      |
+| `accent` | `f97316` | Highlights: chips, header underline, hover row, selected row, button borders |
+
+Example with a dark theme:
+
+```html
+<iframe src="https://sericson0.github.io/tango-discographies/?bg=0a0a0a&text=eaeaea&accent=fbbf24"
+        width="100%" height="800" frameborder="0"></iframe>
+```
+
+Invalid or missing params silently fall back to the defaults.
+
 ## Development
 
 **Requirements:** Python 3.10+ (standard library only — no dependencies) and any modern browser.
