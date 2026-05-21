@@ -45,6 +45,15 @@ GENRE_RENAMES = {
     "Tango Canción": "Tango",
     "Tango canción": "Tango",
     "Tango Cancion": "Tango",
+    # Fourth-pass: sub-variants collapsed to base
+    "Vals Americano": "Vals",
+    "Vals Criollo": "Vals",
+    "Vals criollo": "Vals",
+    "Milonga Criolla": "Milonga",
+    "Milonga Tangueada": "Milonga",
+    "Tango Canyengue": "Tango",
+    "Tango Campero": "Tango",
+    "Tango campero": "Tango",
 }
 
 GENRE_KEEP_TOKENS = ("tango", "milonga", "vals")
@@ -244,6 +253,46 @@ PERSON_TYPO_MAP = {
 
     # Third-pass: corrupted multi-token (item 11)
     "Adolfo De Adolfo Alejandro Pérez": "Alejandro Pérez",
+
+    # Fourth-pass: supporting-role typos (Bandoneons/Strings/Bassist)
+    "Ernesto De Cicco": "Ernesto Di Cicco",
+    "Felipe Ricciardi": "Felipe Riccardo",
+    "Felipe Riccardi": "Felipe Riccardo",
+    "Federico Scorticatti": "Federico Scorticati",
+    "Eduardo Cortti": "Eduardo Corti",
+    "Bernard Weber": "Bernardo Weber",
+    "Andriano Fanelli": "Adriano Fanelli",
+    "Antinio Agri": "Antonio Agri",
+    "Bernardo Germinio": "Bernardo Germino",
+    "Pedro Belluatim": "Pedro Belluati",
+    "Atilio Carral": "Atilio Corral",
+    "Alfredo Sciarreta": "Alfredo Sciarretta",
+    "Vicente Sicarretta": "Vicente Sciarretta",
+    "Enrique Marcheto": "Enrique Marchetto",
+    "Quicho Diaz": "Kicho Diaz",
+    "Nerón Ferrazano": "Nerón Ferrazzano",
+    "Francisco Sammartino": "Francisco Sanmartino",
+    "Angel Scichetti": "Ángel Cichetti",
+
+    # Fourth-pass: accent overrides for supporting roles
+    "Angel Genta": "Ángel Genta",
+    "Andres Rivas": "Andrés Rivas",
+    "Jose Bragato": "José Bragato",
+    "Jose Nieso": "José Nieso",
+    "Victor Felice": "Víctor Felice",
+    "Simon Bajour": "Simón Bajour",
+    "Hector Del Curto": "Héctor Del Curto",
+    "Cayetano Camara": "Cayetano Cámara",
+    "Nestor Panik": "Néstor Panik",
+    "Claudio Gonzales": "Claudio González",
+    "Fernando Rodriguez": "Fernando Rodríguez",
+
+    # Fourth-pass: data-leak fixes
+    "Ma+O158:O177rio Monteleone": "Mario Monteleone",
+
+    # Fourth-pass: Cyrillic letter contamination
+    "Rodolfo Alchourrоn": "Rodolfo Alchourrón",
+    "Rodolfo Alchourrон": "Rodolfo Alchourrón",
 }
 
 PERSON_FIELDS = ("Singer", "Composer", "Author", "Arranger", "Bandleader",
@@ -332,8 +381,6 @@ CATEGORY_FIXES = {
         "Rabchera": "Ranchera",
         "Cifra Gauc": "Cifra Gaucha",
         "Polca Humoristica": "Polca Humorística",
-        "Tango campero": "Tango Campero",
-        "Vals criollo": "Vals Criollo",
     },
     "Label": {
         "Odeon": "Odeón",
@@ -1338,30 +1385,406 @@ def fix_hyphen_credit_pairs(rows: list[dict[str, str]]) -> int:
 
 
 # ----------------------------------------------------------------------------
-# Dotted-initial normalization (`J.a.` -> `J.A.`, insert missing space)
+# Initialism normalization: `J.a. Saavedra` -> `J. A. Saavedra`,
+# `T.b.c.` -> `T. B. C.`
 # ----------------------------------------------------------------------------
 
-# Match a single capital letter, dot, then lowercase letter, capture the
-# lowercase letter so we can uppercase it.
-DOTTED_INITIAL_FIX_RE = re.compile(r"\b([A-Z])\.([a-z])")
+INITIALISM_CHAIN_RE = re.compile(r"\b(?:[A-Za-z]\.){2,}")
+
+
+def _normalize_initialism(match: "re.Match[str]") -> str:
+    s = match.group(0)
+    letters = re.findall(r"([A-Za-z])\.", s)
+    return ". ".join(letter.upper() for letter in letters) + "."
 
 
 def fix_dotted_initials(rows: list[dict[str, str]]) -> int:
-    """`J.a. Saavedra` -> `J. A. Saavedra`. Apply to Composer and Author."""
+    """Apply to Composer, Author, Title, AltTitle. Handles arbitrary-length
+    initial chains (`T.b.c.` -> `T. B. C.`)."""
     changes = 0
     for row in rows:
-        for field in ("Composer", "Author"):
+        for field in ("Composer", "Author", "Title", "AltTitle"):
             cell = row.get(field, "")
             if not cell or "." not in cell:
                 continue
-            new = DOTTED_INITIAL_FIX_RE.sub(
-                lambda m: f"{m.group(1)}. {m.group(2).upper()}",
-                cell,
-            )
+            new = INITIALISM_CHAIN_RE.sub(_normalize_initialism, cell)
             if new != cell:
                 row[field] = new
                 changes += 1
     return changes
+
+
+# ----------------------------------------------------------------------------
+# Title-level cross-file unifications
+# ----------------------------------------------------------------------------
+
+TITLE_UNIFICATIONS = {
+    "Inspiracion": "Inspiración",
+    "Adiós Pampa Mia": "Adiós Pampa Mía",
+    "Cuando Volverás": "Cuándo Volverás",
+    "El Huracan": "El Huracán",
+    "Lagrimas": "Lágrimas",
+    "Intimas": "Íntimas",
+    "Margo": "Margó",
+}
+
+
+def fix_title_unifications(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in ("Title", "AltTitle"):
+            v = row.get(field, "")
+            if v in TITLE_UNIFICATIONS:
+                row[field] = TITLE_UNIFICATIONS[v]
+                changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Composer/Author column swap for famous tangos (when columns were swapped)
+# ----------------------------------------------------------------------------
+
+# Per-Title: which values in Composer column actually belong in Author column,
+# and vice versa.
+FAMOUS_TITLE_ATTRIBUTIONS = [
+    {
+        "title": "La Cumparsita",
+        "should_be_author": {
+            "Pascual Contursi", "Enrique Maroni",
+            "Pascual Contursi, Enrique Maroni",
+        },
+        "should_be_composer": {"Gerardo Matos Rodríguez", "Gerardo Rodríguez"},
+    },
+    {
+        "title": "El Choclo",
+        "should_be_author": {"Enrique Santos Discépolo", "Enrique Discépolo"},
+        "should_be_composer": {"Ángel Villoldo"},
+    },
+    {
+        "title": "Chiqué",
+        "should_be_author": set(),
+        "should_be_composer": {"Ricardo Brignolo", "Ricardo Luis Brignolo"},
+    },
+    {
+        "title": "A Media Luz",
+        "should_be_author": {"Carlos Lenzi", "Carlos César Lenzi"},
+        "should_be_composer": {"Edgardo Donato"},
+    },
+    {
+        "title": "Adiós Muchachos",
+        "should_be_author": set(),
+        "should_be_composer": {"Julio Sanders"},
+    },
+]
+
+
+def fix_famous_title_swaps(rows: list[dict[str, str]]) -> int:
+    """For famous tangos, swap Composer/Author when both columns appear to be
+    misfiled (composer column has the lyricist, author column has the composer).
+    Conservative — only swaps when at least one side is clearly misfiled and the
+    swap won't produce empty wrong-column data."""
+    changes = 0
+    by_title = {a["title"]: a for a in FAMOUS_TITLE_ATTRIBUTIONS}
+    for row in rows:
+        title = row.get("Title", "")
+        attrib = by_title.get(title)
+        if not attrib:
+            continue
+        c = row.get("Composer", "").strip()
+        a = row.get("Author", "").strip()
+
+        c_is_misfiled_author = c and c in attrib["should_be_author"]
+        a_is_misfiled_composer = a and a in attrib["should_be_composer"]
+
+        if c_is_misfiled_author and a_is_misfiled_composer:
+            row["Composer"], row["Author"] = a, c
+            changes += 1
+        elif c_is_misfiled_author and not a:
+            row["Author"] = c
+            row["Composer"] = ""
+            changes += 1
+        elif a_is_misfiled_composer and not c:
+            row["Composer"] = a
+            row["Author"] = ""
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Carabelli/OTV cross-file duplicate removal
+# ----------------------------------------------------------------------------
+
+# The same Victor sessions are filed under both `Adolfo Carabelli.csv` and
+# `Orquesta Típica Victor.csv` for these 7 (Date, Title) keys. Carabelli was
+# OTV's director in this period — these belong in OTV. Delete from Carabelli.
+CARABELLI_OTV_DUPS = {
+    ("1930-01-07", "Engrupido"),
+    ("1930-01-07", "Esponjita"),
+    ("1930-02-05", "Recóndita"),
+    ("1930-06-12", "El Neura"),
+    ("1930-06-19", "El Cuatrero"),
+    ("1930-06-19", "El Flete"),
+    ("1930-11-05", "Hacé Memoria"),
+}
+
+
+def delete_carabelli_otv_dups(rows: list[dict[str, str]], filename: str) -> tuple[list[dict[str, str]], int]:
+    if filename != "Adolfo Carabelli.csv":
+        return rows, 0
+    kept = []
+    dropped = 0
+    for row in rows:
+        key = (row.get("Date", "").strip(), row.get("Title", "").strip())
+        if (key in CARABELLI_OTV_DUPS
+            and row.get("Orchestra", "").strip() == "Orquesta Típica Porteña"):
+            dropped += 1
+            continue
+        kept.append(row)
+    return kept, dropped
+
+
+# ----------------------------------------------------------------------------
+# Composer/Author swap for Pedro Maffia accent (column-restricted typo)
+# ----------------------------------------------------------------------------
+
+# Apply Pedro Maffia -> Pedro Maffía ONLY in Composer/Author columns. Leaving
+# Bandleader and Bandoneons columns alone (they use the un-accented form).
+COMPOSER_AUTHOR_ONLY_TYPOS = {
+    "Pedro Maffia": "Pedro Maffía",
+}
+
+
+def fix_composer_author_only_typos(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in ("Composer", "Author"):
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            parts = [p.strip() for p in cell.split(",")]
+            new_parts = [COMPOSER_AUTHOR_ONLY_TYPOS.get(p, p) for p in parts]
+            new = ", ".join(new_parts)
+            if new != cell:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Targeted misc cleanups
+# ----------------------------------------------------------------------------
+
+# Strip `[?]` and trailing `?` uncertainty markers wherever they appear.
+UNCERTAIN_MARKER_INLINE_RE = re.compile(r"\s*\[\??\]\s*")
+TRAILING_Q_RE = re.compile(r"\?+$")
+
+
+def fix_uncertain_markers(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    person_list_fields = ("Composer", "Author", "Arranger", "Bandoneons",
+                          "Strings", "Singer", "Pianist", "Bassist")
+    for row in rows:
+        for field in person_list_fields:
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            # Strip [?] markers anywhere in the cell; collapse resulting whitespace.
+            new_cell = UNCERTAIN_MARKER_INLINE_RE.sub(" ", cell)
+            new_cell = re.sub(r"\s+", " ", new_cell).strip()
+            new_cell = re.sub(r"\s+,", ",", new_cell)
+            new_cell = re.sub(r",\s+\)", ")", new_cell)
+            # Also strip trailing `?` per name element
+            parts = [p.strip() for p in new_cell.split(",")]
+            new_parts = []
+            for p in parts:
+                new_p = TRAILING_Q_RE.sub("", p).rstrip()
+                new_parts.append(new_p)
+            new_cell = ", ".join(new_parts)
+            if new_cell != cell:
+                row[field] = new_cell
+                changes += 1
+    return changes
+
+
+# Cyrillic-letter lookalikes — homoglyph replacement (Cyrillic chars that look
+# identical to Latin chars; sometimes leak in via copy-paste from mixed-script
+# sources). Replace with Latin equivalents.
+CYRILLIC_TO_LATIN = {
+    "а": "a",  # Cyrillic а
+    "А": "A",  # Cyrillic А
+    "е": "e",  # Cyrillic е
+    "Е": "E",  # Cyrillic Е
+    "о": "o",  # Cyrillic о
+    "О": "O",  # Cyrillic О
+    "р": "p",  # Cyrillic р
+    "Р": "P",  # Cyrillic Р
+    "с": "c",  # Cyrillic с
+    "С": "C",  # Cyrillic С
+    "х": "x",  # Cyrillic х
+    "Х": "X",  # Cyrillic Х
+    "н": "n",  # Cyrillic н (NOT a perfect lookalike but used as 'n' in data)
+    "Н": "N",  # Cyrillic Н
+}
+
+
+# Substring repairs that should happen after Cyrillic→Latin replacement
+# (the name then needs the proper Spanish accent restored).
+POST_CYRILLIC_ACCENT_FIXES = {
+    "Alchourron": "Alchourrón",
+}
+
+
+def fix_cyrillic_lookalikes(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in CANONICAL_HEADERS:
+            v = row.get(field, "")
+            if not v:
+                continue
+            new = v
+            for cyr, lat in CYRILLIC_TO_LATIN.items():
+                if cyr in new:
+                    new = new.replace(cyr, lat)
+            for old, repl in POST_CYRILLIC_ACCENT_FIXES.items():
+                if old in new and repl not in new:
+                    new = new.replace(old, repl)
+            if new != v:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# Replace `?` in middle of names where it stands in for an accented letter
+QUESTION_FOR_ACCENT = {
+    "L. Ri?os": "L. Ríos",
+    "Rezs? Seress": "Rezsö Seress",
+}
+
+
+def fix_question_for_accent(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in ("Composer", "Author"):
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            new = cell
+            for old, repl in QUESTION_FOR_ACCENT.items():
+                if old in new:
+                    new = new.replace(old, repl)
+            if new != cell:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# Replace curly apostrophes in Title/AltTitle (Lomuto contains 4 cells)
+CURLY_APOSTROPHES = ("’", "‘", "‛")
+
+
+def fix_curly_quotes_in_titles(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in ("Title", "AltTitle"):
+            v = row.get(field, "")
+            if not v:
+                continue
+            new = v
+            for ch in CURLY_APOSTROPHES:
+                new = new.replace(ch, "'")
+            if new != v:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# Fix `Sadaic`/`Discos`/`Casetes`-containing tokens in Composer/Author
+# These are registry / format metadata leaked into person fields.
+SADAIC_JUNK_TOKENS = (
+    re.compile(r"\bSadaic\b", re.IGNORECASE),
+    re.compile(r"\bDiscos\b", re.IGNORECASE),
+    re.compile(r"\bCasetes\b", re.IGNORECASE),
+)
+
+
+def fix_sadaic_junk(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in ("Composer", "Author"):
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            parts = [p.strip() for p in cell.split(",")]
+            new_parts = []
+            cell_changed = False
+            for p in parts:
+                if any(pat.search(p) for pat in SADAIC_JUNK_TOKENS):
+                    cell_changed = True
+                    continue
+                new_parts.append(p)
+            new = ", ".join(new_parts)
+            if cell_changed or new != cell:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# Normalize UNKNOWN-style placeholders to a single form
+UNKNOWN_PLACEHOLDER_MAP = {
+    "UKNOWN": "UNKNOWN",
+    "**Unknown": "UNKNOWN",
+    "**Unknown (wind)": "UNKNOWN",
+    "**Unknown (Guitar)": "UNKNOWN",
+}
+
+
+def normalize_unknown_placeholders(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    person_list_fields = ("Bandoneons", "Strings", "Bassist", "Pianist")
+    for row in rows:
+        for field in person_list_fields:
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            parts = [p.strip() for p in cell.split(",")]
+            new_parts = [UNKNOWN_PLACEHOLDER_MAP.get(p, p) for p in parts]
+            new = ", ".join(new_parts)
+            if new != cell:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# Blank the stray `Sinphonic` in Pianist column (it's an orchestration
+# descriptor, not a pianist)
+def fix_sinphonic_leak(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        if row.get("Pianist", "").strip() == "Sinphonic":
+            row["Pianist"] = ""
+            changes += 1
+    return changes
+
+
+# Fix the OTV row with a stray low-quote in Title
+def fix_otv_low_quote(rows: list[dict[str, str]], filename: str) -> int:
+    if filename != "Orquesta Típica Victor.csv":
+        return 0
+    changes = 0
+    for row in rows:
+        v = row.get("Title", "")
+        if "„" in v:
+            new = v.replace("„", '"')
+            # Capitalize letter immediately after the (re-straight-quoted) open
+            new = re.sub(r'"([a-z])', lambda m: '"' + m.group(1).upper(), new)
+            row["Title"] = new
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Driver
+# ----------------------------------------------------------------------------
 
 
 # ----------------------------------------------------------------------------
@@ -1401,6 +1824,10 @@ def main() -> int:
 
         rows, l_dropped = delete_lomuto_junk(rows, filename)
         summary["lomuto_junk_dropped"] += l_dropped
+
+        # Fix Cyrillic letter contamination BEFORE typo map (so the corrected
+        # ASCII forms match the typo entries)
+        summary["cyrillic_fixed"] += fix_cyrillic_lookalikes(rows)
 
         summary["person_typos"] += fix_person_typos(rows)
         summary["particle_surnames"] += fix_particle_surnames(rows)
@@ -1443,6 +1870,20 @@ def main() -> int:
         summary["hyphen_pairs_split"] += fix_hyphen_credit_pairs(rows)
         summary["dotted_initials_fixed"] += fix_dotted_initials(rows)
 
+        # Fourth-pass: cross-file unifications and remaining cleanups
+        summary["title_unifications"] += fix_title_unifications(rows)
+        summary["famous_title_swaps"] += fix_famous_title_swaps(rows)
+        rows, c_dups = delete_carabelli_otv_dups(rows, filename)
+        summary["carabelli_otv_dups_dropped"] += c_dups
+        summary["composer_author_only_typos"] += fix_composer_author_only_typos(rows)
+        summary["uncertain_markers_stripped"] += fix_uncertain_markers(rows)
+        summary["question_for_accent_fixed"] += fix_question_for_accent(rows)
+        summary["curly_quotes_in_titles"] += fix_curly_quotes_in_titles(rows)
+        summary["sadaic_junk_blanked"] += fix_sadaic_junk(rows)
+        summary["unknown_placeholders_normalized"] += normalize_unknown_placeholders(rows)
+        summary["sinphonic_blanked"] += fix_sinphonic_leak(rows)
+        summary["otv_low_quote_fixed"] += fix_otv_low_quote(rows, filename)
+
         write_csv(path, rows)
 
     print("Quality fixes applied:")
@@ -1480,6 +1921,18 @@ def main() -> int:
         "credit_junk_cleaned",
         "hyphen_pairs_split",
         "dotted_initials_fixed",
+        "cyrillic_fixed",
+        "title_unifications",
+        "famous_title_swaps",
+        "carabelli_otv_dups_dropped",
+        "composer_author_only_typos",
+        "uncertain_markers_stripped",
+        "question_for_accent_fixed",
+        "curly_quotes_in_titles",
+        "sadaic_junk_blanked",
+        "unknown_placeholders_normalized",
+        "sinphonic_blanked",
+        "otv_low_quote_fixed",
     ]:
         print(f"  {summary[key]:6d}  {key}")
 
