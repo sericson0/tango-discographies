@@ -77,7 +77,7 @@ def fix_genres(rows: list[dict[str, str]]) -> tuple[list[dict[str, str]], int, i
 # ----------------------------------------------------------------------------
 
 PERSON_TYPO_MAP = {
-    # name -> canonical
+    # First-pass typo map
     "Erique Lomuto": "Enrique Lomuto",
     "Teofilo Ibañez": "Teófilo Ibáñez",
     "Teófilo Ibanez": "Teófilo Ibáñez",
@@ -117,8 +117,29 @@ PERSON_TYPO_MAP = {
     "Andrés Domenech": "Andrés Doménech",
     "Andres Domenech": "Andrés Doménech",
     "Andres R. Doménech": "Andrés R. Doménech",
-    # Carlos César Lenzi NFC issue handled by NFC in trim()
-    # Bién typo in a title — handled separately in fix_title_typos
+
+    # Second-pass typos
+    "Héctor Varelia": "Héctor Varela",
+    "Guillermo Barbieri.": "Guillermo Barbieri",
+    "Francisco Jímnez": "Francisco Jiménez",
+    "Francisco Gimenez": "Francisco Jiménez",
+    "Carmelo Muttarelli": "Carmelo Mutarelli",
+    "Vicente De Campo": "Vicente Del Campo",
+    "Luisdiaz": "Luis Díaz",
+
+    # Second-pass accent overrides (majority was wrong)
+    "Americo Bianchi": "Américo Bianchi",
+    "Daniel Alvarez": "Daniel Álvarez",
+    "Mauricio Mise": "Mauricio Misé",
+    "Hipólito Caron": "Hipólito Carón",
+    "Carlos Lazzari": "Carlos Lázzari",
+    "Claudio Gonzalez": "Claudio González",
+    "Francisco Orefice": "Francisco Oréfice",
+    "Fernando Suarez Paz": "Fernando Suárez Paz",
+    "Alfredo Attadia": "Alfredo Attadía",
+    "Domingo Sanchez": "Domingo Sánchez",
+    "Victor Lavallén": "Víctor Lavallén",
+    "Carmelo Aguila": "Carmelo Águila",
 }
 
 PERSON_FIELDS = ("Singer", "Composer", "Author", "Arranger", "Bandleader",
@@ -166,6 +187,11 @@ PARTICLE_SURNAMES = (
     ("de Grandis", "De Grandis"),
     ("de los Hoyos", "De Los Hoyos"),
     ("de las", "De Las"),
+    # Second-pass additions (multi-word particles)
+    ("de la Fuente", "De La Fuente"),
+    ("de la Plaza", "De La Plaza"),
+    ("del Curto", "Del Curto"),
+    ("de Vivo", "De Vivo"),
 )
 
 
@@ -202,6 +228,14 @@ CATEGORY_FIXES = {
         "Rabchera": "Ranchera",
         "Cifra Gauc": "Cifra Gaucha",
         "Polca Humoristica": "Polca Humorística",
+        "Tango campero": "Tango Campero",
+        "Vals criollo": "Vals Criollo",
+    },
+    "Label": {
+        "Odeon": "Odeón",
+        "Victor": "Víctor",
+        "TK": "T.K.",
+        "Disco TK": "T.K.",
     },
 }
 
@@ -657,6 +691,252 @@ def fix_title_typos(rows: list[dict[str, str]]) -> int:
 
 
 # ----------------------------------------------------------------------------
+# Title accent restorations — words almost always accented in Spanish
+# ----------------------------------------------------------------------------
+
+# Pairs of (unaccented, accented) — applied as word-boundary replacements
+# in Title and AltTitle. Cell-level exclusions handle English contexts like
+# `April In Paris`.
+TITLE_ACCENT_FIXES = [
+    ("Corazon", "Corazón"), ("corazon", "corazón"),
+    ("Bandoneon", "Bandoneón"), ("bandoneon", "bandoneón"),
+    ("Cancion", "Canción"), ("cancion", "canción"),
+    ("Adios", "Adiós"), ("adios", "adiós"),
+    ("Maria", "María"),
+    ("Otono", "Otoño"), ("otono", "otoño"),
+    ("Porteno", "Porteño"), ("porteno", "porteño"),
+    ("Quien", "Quién"), ("quien", "quién"),
+    ("Mama", "Mamá"),
+    ("Tambien", "También"), ("tambien", "también"),
+    ("Pasion", "Pasión"), ("pasion", "pasión"),
+    ("Ilusion", "Ilusión"), ("ilusion", "ilusión"),
+    ("Traicion", "Traición"), ("traicion", "traición"),
+    ("Evocacion", "Evocación"), ("evocacion", "evocación"),
+    # Single-character "Dia"/"dia" needs more care — match only word-boundary
+    ("Dia", "Día"), ("dia", "día"),
+]
+
+TITLE_ACCENT_EXCLUDE_CELLS = {
+    "April In Paris",  # English title — paris stays unaccented
+    # Spurious-accent reversal:
+}
+
+# Reverse: where an over-accented form snuck in
+TITLE_REVERSE_ACCENTS = [
+    ("Víctoria", "Victoria"),  # Victoria takes no accent
+]
+
+
+def fix_title_accents(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in ("Title", "AltTitle"):
+            v = row.get(field, "")
+            if not v:
+                continue
+            if v in TITLE_ACCENT_EXCLUDE_CELLS:
+                continue
+            new = v
+            for old, repl in TITLE_ACCENT_FIXES:
+                new = re.sub(rf"\b{re.escape(old)}\b", repl, new)
+            # `paris` -> `parís` (proper noun, both cases)
+            new = re.sub(r"\bParis\b", "París", new)
+            new = re.sub(r"\bparis\b", "parís", new)
+            # Reverse spurious accents
+            for old, repl in TITLE_REVERSE_ACCENTS:
+                new = re.sub(rf"\b{re.escape(old)}\b", repl, new)
+            if new != v:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Second-pass row bugs
+# ----------------------------------------------------------------------------
+
+def fix_pugliese_date_typo(rows: list[dict[str, str]], filename: str) -> int:
+    """Pugliese rows with date 1905-06-09 are a 1985 typo (he was born Dec 1905,
+    and the surrounding rows are mid-1980s recordings)."""
+    if filename != "Osvaldo Pugliese.csv":
+        return 0
+    changes = 0
+    for row in rows:
+        if row.get("Date", "") == "1905-06-09":
+            row["Date"] = "1985-06-09"
+            changes += 1
+    return changes
+
+
+def fix_pugliese_bandleader_leak(rows: list[dict[str, str]], filename: str) -> int:
+    if filename != "Osvaldo Pugliese.csv":
+        return 0
+    changes = 0
+    for row in rows:
+        b = row.get("Bandleader", "")
+        if "con cuerdas arreglos" in b:
+            row["Bandleader"] = "Osvaldo Pugliese"
+            changes += 1
+    return changes
+
+
+def fix_piazzolla_penal_split(rows: list[dict[str, str]], filename: str) -> int:
+    """Repair one row where 'Tango Fever (Penalty)' was split across Title and
+    AltTitle: Title='Penal)', AltTitle='Tango Fever (Penalty'."""
+    if filename != "Astor Piazzolla.csv":
+        return 0
+    changes = 0
+    for row in rows:
+        if row.get("Title") == "Penal)" and row.get("AltTitle") == "Tango Fever (Penalty":
+            row["Title"] = "Tango Fever (Penalty)"
+            row["AltTitle"] = ""
+            changes += 1
+    return changes
+
+
+def fix_darienzo_1928_cluster(rows: list[dict[str, str]], filename: str) -> int:
+    """34 rows are dated 1928-01-01 — an artifact of year-only data being
+    normalized to Jan 1. Promote back to year-only."""
+    if filename != "Juan D'Arienzo.csv":
+        return 0
+    changes = 0
+    for row in rows:
+        if row.get("Date") == "1928-01-01":
+            row["Date"] = "1928"
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Piazzolla orchestra consolidation
+# ----------------------------------------------------------------------------
+
+PIAZZOLLA_ORCHESTRA_MERGES = {
+    'Astor Piazzolla y su Quinteto "Nuevo Tango"': "Astor Piazzolla y su Quinteto Tango Nuevo",
+    "Astor Piazzolla And The New Tango Quintet (Y su Quinteto Tango Nuevo)": "Astor Piazzolla y su Quinteto Tango Nuevo",
+    "Astor Piazzolla & His Orquesta": "Astor Piazzolla y su Orquesta",
+    "Astor Piazzolla con Orquesta": "Astor Piazzolla y su Orquesta",
+}
+
+
+def consolidate_piazzolla_orchestra(rows: list[dict[str, str]], filename: str) -> int:
+    if filename != "Astor Piazzolla.csv":
+        return 0
+    changes = 0
+    for row in rows:
+        o = row.get("Orchestra", "")
+        if o in PIAZZOLLA_ORCHESTRA_MERGES:
+            row["Orchestra"] = PIAZZOLLA_ORCHESTRA_MERGES[o]
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Instrument-name capitalization inside parens, e.g. (cello) -> (Cello)
+# ----------------------------------------------------------------------------
+
+INSTRUMENT_NAMES = [
+    "cello", "guitar", "guitarra", "viola", "bass", "piano", "bandoneon",
+    "bandoneón", "violin", "violín", "vibrafono", "vibráfono", "recitado",
+    "drums", "percussion", "percusion", "percusión", "flute", "flauta",
+    "voz", "voice", "arpa", "harp", "arreglos", "cantor", "narrador",
+    "saxofon", "saxofón", "trompeta", "trombon", "trombón", "armonica",
+    "armónica", "acordeon", "acordeón", "clarinete", "oboe",
+]
+
+_INSTRUMENT_PATTERN = re.compile(
+    r"\((" + "|".join(re.escape(n) for n in INSTRUMENT_NAMES) + r")\b",
+    re.IGNORECASE,
+)
+
+
+def _capitalize_instrument(match: "re.Match[str]") -> str:
+    name = match.group(1)
+    return "(" + name[0].upper() + name[1:].lower()
+
+
+def fix_instrument_casing(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in CANONICAL_HEADERS:
+            v = row.get(field, "")
+            if not v or "(" not in v:
+                continue
+            new = _INSTRUMENT_PATTERN.sub(_capitalize_instrument, v)
+            if new != v:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Close unmatched open-parens in person-name fields
+# ----------------------------------------------------------------------------
+
+def fix_unmatched_parens(rows: list[dict[str, str]]) -> int:
+    """Close any open-paren-without-close in a single name element of a
+    person-name list (e.g. 'Emilio Paiva (Cello' -> 'Emilio Paiva (Cello)')."""
+    changes = 0
+    person_list_fields = ("Composer", "Author", "Arranger", "Bandoneons", "Strings")
+    for row in rows:
+        for field in person_list_fields:
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            parts = [p.strip() for p in cell.split(",")]
+            new_parts = []
+            cell_changed = False
+            for p in parts:
+                opens = p.count("(")
+                closes = p.count(")")
+                if opens > closes:
+                    p = p + ")" * (opens - closes)
+                    cell_changed = True
+                elif closes > opens:
+                    # Strip stray closing parens
+                    extra = closes - opens
+                    while extra > 0 and p.endswith(")"):
+                        p = p[:-1].rstrip()
+                        extra -= 1
+                    cell_changed = True
+                new_parts.append(p)
+            if cell_changed:
+                changes += 1
+                row[field] = ", ".join(new_parts)
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Stray punctuation suffixes in person names — '?', '[?]'
+# ----------------------------------------------------------------------------
+
+STRAY_PUNCT_RE = re.compile(r"(\s*\[\??\]|\s*\?+)$")
+
+
+def fix_person_stray_punct(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    person_list_fields = ("Composer", "Author", "Arranger", "Bandoneons", "Strings",
+                          "Singer", "Pianist", "Bassist", "Bandleader")
+    for row in rows:
+        for field in person_list_fields:
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            parts = [p.strip() for p in cell.split(",")]
+            new_parts = []
+            cell_changed = False
+            for p in parts:
+                new_p = STRAY_PUNCT_RE.sub("", p).rstrip()
+                if new_p != p:
+                    cell_changed = True
+                new_parts.append(new_p)
+            if cell_changed:
+                changes += 1
+                row[field] = ", ".join(new_parts)
+    return changes
+
+
+# ----------------------------------------------------------------------------
 # Driver
 # ----------------------------------------------------------------------------
 
@@ -699,11 +979,19 @@ def main() -> int:
         summary["category_typos"] += fix_category_typos(rows)
         summary["maffia_master"] += fix_maffia_master_field(rows, filename)
         summary["title_typos"] += fix_title_typos(rows)
+        summary["title_accents"] += fix_title_accents(rows)
 
         d_changes, file_unparseable = fix_dates(rows, filename)
         summary["date_normalizations"] += d_changes
         for row_num, old, new in file_unparseable:
             unparseable_dates.append((filename, row_num, old, new))
+
+        # Second-pass row bugs
+        summary["pugliese_date_typo"] += fix_pugliese_date_typo(rows, filename)
+        summary["pugliese_bandleader_leak"] += fix_pugliese_bandleader_leak(rows, filename)
+        summary["piazzolla_penal_split"] += fix_piazzolla_penal_split(rows, filename)
+        summary["darienzo_1928_cluster"] += fix_darienzo_1928_cluster(rows, filename)
+        summary["piazzolla_orchestra_merged"] += consolidate_piazzolla_orchestra(rows, filename)
 
         summary["first_last_credits"] += fix_first_last_in_credits(rows)
         summary["piazzolla_footnotes"] += strip_footnote_markers(rows, filename)
@@ -711,6 +999,10 @@ def main() -> int:
         summary["de_angelis_grouping"] += normalize_de_angelis_grouping(rows, filename)
         summary["lastfirst_flipped"] += fix_lastfirst_order(rows, filename)
         summary["credit_separators"] += standardize_credit_separators(rows)
+
+        summary["unmatched_parens_fixed"] += fix_unmatched_parens(rows)
+        summary["stray_punct_stripped"] += fix_person_stray_punct(rows)
+        summary["instrument_capitalized"] += fix_instrument_casing(rows)
 
         write_csv(path, rows)
 
@@ -724,13 +1016,22 @@ def main() -> int:
         "category_typos",
         "maffia_master",
         "title_typos",
+        "title_accents",
         "date_normalizations",
+        "pugliese_date_typo",
+        "pugliese_bandleader_leak",
+        "piazzolla_penal_split",
+        "darienzo_1928_cluster",
+        "piazzolla_orchestra_merged",
         "first_last_credits",
         "piazzolla_footnotes",
         "question_exclam_stripped",
         "de_angelis_grouping",
         "lastfirst_flipped",
         "credit_separators",
+        "unmatched_parens_fixed",
+        "stray_punct_stripped",
+        "instrument_capitalized",
     ]:
         print(f"  {summary[key]:6d}  {key}")
 

@@ -68,6 +68,26 @@ CONNECTIVES = {
 WEIRD_CHARS = ("﻿", "�")
 WHITESPACE_RE = re.compile(r"\s+")
 
+# Specific surname particles that should stay capitalized even when interior
+# (since they're part of a Spanish/Italian surname like 'De Caro', 'De Angelis',
+# not the connective preposition). Applied as a post-pass on all fields.
+PARTICLE_SURNAME_RESTORATIONS = (
+    ("de Angelis", "De Angelis"),
+    ("de Caro", "De Caro"),
+    ("del Bagno", "Del Bagno"),
+    ("de Franco", "De Franco"),
+    ("de Lío", "De Lío"),
+    ("di Sarli", "Di Sarli"),
+    ("d'Arienzo", "D'Arienzo"),
+    ("d'Agostino", "D'Agostino"),
+    ("de Grandis", "De Grandis"),
+    ("de los Hoyos", "De Los Hoyos"),
+    ("de la Fuente", "De La Fuente"),
+    ("de la Plaza", "De La Plaza"),
+    ("del Curto", "Del Curto"),
+    ("de Vivo", "De Vivo"),
+)
+
 
 def trim(value: str) -> str:
     for ch in WEIRD_CHARS:
@@ -168,6 +188,16 @@ def normalize_list(value: str, apply_case: bool, person_name: bool) -> str:
     return ", ".join(parts)
 
 
+def restore_particle_surnames(value: str) -> str:
+    """Re-capitalize known surname particles that title_case_spanish lowercased."""
+    if not value:
+        return value
+    for lower, upper in PARTICLE_SURNAME_RESTORATIONS:
+        if lower in value:
+            value = value.replace(lower, upper)
+    return value
+
+
 def normalize_cell(field: str, value: str) -> str:
     value = trim(value)
     if not value:
@@ -176,14 +206,16 @@ def normalize_cell(field: str, value: str) -> str:
         return ""
     person_name = field in PERSON_NAME_FIELDS
     if field in LIST_FIELDS:
-        return normalize_list(
+        result = normalize_list(
             value,
             apply_case=(field in CASE_FIELDS),
             person_name=person_name,
         )
-    if field in CASE_FIELDS:
-        return title_case_spanish(value, person_name=person_name)
-    return value
+    elif field in CASE_FIELDS:
+        result = title_case_spanish(value, person_name=person_name)
+    else:
+        result = value
+    return restore_particle_surnames(result)
 
 
 def canonical_key(value: str) -> str:
