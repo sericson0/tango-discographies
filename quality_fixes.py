@@ -140,6 +140,110 @@ PERSON_TYPO_MAP = {
     "Domingo Sanchez": "Domingo Sánchez",
     "Victor Lavallén": "Víctor Lavallén",
     "Carmelo Aguila": "Carmelo Águila",
+
+    # Third-pass: Singer accent fixes
+    "Ernesto Fama": "Ernesto Famá",
+    "Agustin Irusta": "Agustín Irusta",
+    "Hector De Rosas": "Héctor De Rosas",
+    "Jose Bohr": "José Bohr",
+    "Carlos Roldan": "Carlos Roldán",
+    "Aldolfo Rivas": "Adolfo Rivas",
+    "Ignacio Diáz": "Ignacio Díaz",
+    "Angel Ramos": "Ángel Ramos",
+
+    # Third-pass: Composer typos (edit-distance 1)
+    "Roberto Fipo": "Roberto Firpo",
+    "Anselmo Aleta": "Anselmo Aieta",
+    "Pedro Mafia": "Pedro Maffía",
+    "Rodolfo Sciamarella": "Rodolfo Sciammarella",
+    "Rafael Rossa": "Rafael Rossi",
+    "Enrique Franchini": "Enrique Francini",
+    "Horacio Pettorosi": "Horacio Pettorossi",
+    "Horacio Pettoross": "Horacio Pettorossi",
+    "Luis Berstein": "Luis Bernstein",
+    "Armando Balioti": "Armando Baliotti",
+    "Luis Ricardi": "Luis Riccardi",
+    "Carlos Vivián": "Carlos Viván",
+    "Juan Bahuer": "Juan Bauer",
+    "Eduardo Arman": "Eduardo Armani",
+    "Ángel Vanesi": "Ángel Danesi",
+    "Carlos Percuocco": "Carlos Percuoco",
+    "Orestes Cóffaro": "Orestes Cófaro",
+    "Guillermo Cavarza": "Guillermo Cavazza",
+    "Teófilo Yespés": "Teófilo Lespés",
+    "Alejandro Junissi": "Alejandro Junnissi",
+    "Domingo Riverol.": "Domingo Riverol",
+    "Ángel Riverol.": "Ángel Riverol",
+
+    # Third-pass: Author typos
+    "José Suñe": "José Suñé",
+    "José Riu": "José Riú",
+    "Víctorino Velázquez": "Victorino Velázquez",
+    "Haydee Cardón": "Haydeé Cardón",
+    "Víctor Spindola": "Víctor Spíndola",
+    "Juan Carabillo": "Juan Carabilló",
+    "Nestor Vargas": "Néstor Vargas",
+    "Jose Cousani": "José Cousani",
+    "Andres Giachino": "Andrés Giachino",
+    "Jose Gil": "José Gil",
+    "Victor Lambertucci": "Víctor Lambertucci",
+
+    # Third-pass: initials -> full (high-confidence single-occurrence cases)
+    "F. Canaro": "Francisco Canaro",
+    "O. Fresedo": "Osvaldo Fresedo",
+    "A. Aieta": "Anselmo Aieta",
+    "A. Bardi": "Agustín Bardi",
+    "P. Maffia": "Pedro Maffía",
+    "F. Pracanico": "Francisco Pracánico",
+    "J. Servidio": "José Servidio",
+    "C. Posadas": "Carlos Posadas",
+    "J. Pollero": "Julio Pollero",
+    "S. París": "Santiago París",
+    "R. Blanco": "Roberto Blanco",
+    "A.j. Tagini": "Armando Tagini",
+    "C. Flores": "Celedonio Flores",
+    "A. Tagini": "Armando Tagini",
+    "J. Staffolani": "José Staffolani",
+    "P. Cordoba": "Pedro Córdoba",
+    "L. Herrera": "Luis Herrera",
+    "L. De Biase": "Luis De Biase",
+    "A. Bustamante": "Arturo Bustamante",
+    "E. Fresedo": "Emilio Fresedo",
+    "A. Novion": "Alberto Novión",
+    "E.cadicamo": "Enrique Cadícamo",
+    "Rogelio Cadicamo": "Rogelio Cadícamo",
+    "P. Etchegoyen": "Pedro Etchegoyen",
+    "A. Chimenti": "Armando Chimenti",
+    "A. Canto": "Alberto Canto",
+    "J. Martinez": "José Martínez",
+    "J. Ruffet": "José Ruffet",
+
+    # Third-pass: compound-surname recovery (information lost in First+Last reduction)
+    "Julio Caro": "Julio De Caro",
+    "Carlos Sarli": "Carlos Di Sarli",
+    "Raúl Hoyos": "Raúl De Los Hoyos",
+    "Francisco Caro": "Francisco De Caro",
+    "Arturo Bassi": "Arturo De Bassi",
+    "Graciano Leone": "Graciano De Leone",
+    "Alfredo Pera": "Alfredo Le Pera",
+    "Ernesto Cruz": "Ernesto De La Cruz",
+    "Alfredo Franco": "Alfredo De Franco",
+    "Eduardo Piano": "Eduardo Del Piano",
+    "José Grandis": "José De Grandis",
+    "Carlos Riestra": "Carlos De La Riestra",
+    "Oscar Fuente": "Oscar De La Fuente",
+    "Pascual Gullo": "Pascual De Gullo",
+    "Guillermo Ciancio": "Guillermo Del Ciancio",
+    "Herminia Rossano": "Herminia De Rossano",
+    "Alejandro Barrio": "Alejandro Del Barrio",
+    "Eduardo Labar": "Eduardo De Labar",
+    "Rafael Bagno": "Rafael Del Bagno",
+    "José Pilato": "José Di Pilato",
+    "Jaime Hoyos": "Jaime De Los Hoyos",
+    "Gerardo Rodríguez (Cumparsita)": "Gerardo Matos Rodríguez",
+
+    # Third-pass: corrupted multi-token (item 11)
+    "Adolfo De Adolfo Alejandro Pérez": "Alejandro Pérez",
 }
 
 PERSON_FIELDS = ("Singer", "Composer", "Author", "Arranger", "Bandleader",
@@ -937,6 +1041,330 @@ def fix_person_stray_punct(rows: list[dict[str, str]]) -> int:
 
 
 # ----------------------------------------------------------------------------
+# Singer joiner normalization + last-name expansion
+# ----------------------------------------------------------------------------
+
+# Last-name shorthand seen in slash-joined Singer cells (e.g. Anibal Troilo
+# file lists pairs of his singers as `Fiorentino / Mandarino`). Expand to
+# full names; uncertain ones (Cárdenas, Rufino, Calderón) are left unexpanded
+# for manual review.
+SINGER_LAST_NAME_EXPANSIONS = {
+    "Fiorentino": "Francisco Fiorentino",
+    "Mandarino": "Roberto Mandarino",
+    "Marino": "Alberto Marino",
+    "Ruiz": "Floreal Ruiz",
+    "Rivero": "Edmundo Rivero",
+    "Casal": "Jorge Casal",
+    "Berón": "Raúl Berón",
+    "Goyeneche": "Roberto Goyeneche",
+}
+
+
+def normalize_singer_joiners(rows: list[dict[str, str]]) -> int:
+    """Normalize Singer joiners to lowercase ' y '. Replaces capital ' Y ',
+    ' & ', and ' / '. After joiner normalization, also expand last-name
+    shorthand using SINGER_LAST_NAME_EXPANSIONS where possible."""
+    changes = 0
+    for row in rows:
+        s = row.get("Singer", "")
+        if not s:
+            continue
+        new = s
+        # Capital Y between words → lowercase y
+        new = re.sub(r"\s+Y\s+", " y ", new)
+        # Ampersand → y
+        new = re.sub(r"\s*&\s*", " y ", new)
+        # Slash → y
+        new = re.sub(r"\s*/\s*", " y ", new)
+        # Collapse double spaces
+        new = re.sub(r"\s+", " ", new).strip()
+
+        # Expand single-word names to full names if recognized
+        # Split on " y " and ", " to get individual singer tokens
+        tokens = re.split(r"\s+y\s+|,\s+", new)
+        expanded = []
+        for tok in tokens:
+            tok = tok.strip()
+            if not tok:
+                continue
+            if tok in SINGER_LAST_NAME_EXPANSIONS:
+                expanded.append(SINGER_LAST_NAME_EXPANSIONS[tok])
+            else:
+                expanded.append(tok)
+        # Rejoin with ' y ' (drop any commas — assume all separators are 'y')
+        if len(expanded) > 1:
+            new = " y ".join(expanded)
+        else:
+            new = expanded[0] if expanded else new
+
+        if new != s:
+            row["Singer"] = new
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Non-singer leaks in Singer column → blank
+# ----------------------------------------------------------------------------
+
+# Values applied AFTER joiner normalization (so capital Y is already lowercase y).
+SINGER_NON_SINGER_LEAK_VALUES = {
+    "Armando Pontier y Su Orquesta Típica",
+    "Héctor Varela y Su Orquesta",
+    "Orquesta",
+    "Orquesta Típica Criolla",
+    "Coro",
+    "Con Coro",
+    "Estribillo",
+    "Con Estribillo",
+    "Estribillo Coreado",
+    "Estribillo y Coro",
+    "Dirección Orquestal De Armando Pontier",
+    "Cantor y Cantora Sin Identificar y Coro Del Teatro Nacional",
+}
+
+
+def blank_singer_non_singer_leaks(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        s = row.get("Singer", "").strip()
+        if s in SINGER_NON_SINGER_LEAK_VALUES:
+            row["Singer"] = ""
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Singer: strip glosa annotations and standardize Instrumental
+# ----------------------------------------------------------------------------
+
+GLOSA_SUFFIX_RE = re.compile(
+    r"\s+(?:y\s+)?(?:Glosas?|Coplas|Pregón|Estribillo Recitado|Con Palabras De|Recitado)\s+(?:De|Por)\s+.+$",
+    re.IGNORECASE,
+)
+GLOSA_ONLY_RE = re.compile(
+    r"^(?:Glosas?|Coplas|Pregón|Estribillo Recitado|Recitado)\s+(?:De|Por)\s+.+$",
+    re.IGNORECASE,
+)
+RECITADO_VARIANT_RE = re.compile(r"^Instrumental\s*\(\s*Con\s*Recitado\s*\)\s*$", re.IGNORECASE)
+
+
+def fix_glosa_and_instrumental(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        s = row.get("Singer", "")
+        if not s:
+            continue
+        new = s.strip()
+        # If the whole cell is just a glosa annotation, blank it
+        if GLOSA_ONLY_RE.match(new):
+            new = ""
+        else:
+            # Otherwise strip trailing glosa annotation
+            new = GLOSA_SUFFIX_RE.sub("", new).rstrip()
+        # Normalize Instrumental (Con Recitado) → Instrumental
+        if RECITADO_VARIANT_RE.match(new):
+            new = "Instrumental"
+        # Also strip trailing " y Coro" suffix from valid singer names
+        new = re.sub(r"\s+y\s+Coro\s*$", "", new, flags=re.IGNORECASE).rstrip()
+        if new != s:
+            row["Singer"] = new
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Recover Instrumentals where empty Singer + era clearly implies instrumental
+# ----------------------------------------------------------------------------
+
+def recover_instrumentals(rows: list[dict[str, str]], filename: str) -> int:
+    """For known files+eras where empty Singer means instrumental, fill in.
+
+    - Juan Carlos Cobain.csv: all 1922 rows are pre-singer era (Cobián was
+      leading instrumental orchestras then). 48 empty cells recoverable.
+    - Horacio Salgan.csv: 1963-64 empty Singer rows are instrumentals.
+    """
+    if filename not in {"Juan Carlos Cobain.csv", "Horacio Salgan.csv"}:
+        return 0
+    changes = 0
+    for row in rows:
+        if row.get("Singer", "").strip():
+            continue
+        d = row.get("Date", "")
+        if filename == "Juan Carlos Cobain.csv" and d.startswith("1922"):
+            row["Singer"] = "Instrumental"
+            changes += 1
+        elif filename == "Horacio Salgan.csv" and (d.startswith("1963") or d.startswith("1964")):
+            row["Singer"] = "Instrumental"
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Orchestra canonical merges (cross-file)
+# ----------------------------------------------------------------------------
+
+ORCHESTRA_CANONICAL_MAP = {
+    # Pedro Maffia
+    "Orquesta Tipica Maffia": "Orquesta Pedro Maffia",
+    # Juan Maglio
+    "Orquesta Típica Maglio": "Orquesta Juan Maglio",
+    # José Basso
+    "Jose Basso y su Orquesta": "Orquesta José Basso",
+    # Roberto Firpo
+    "Orquesta de Roberto Firpo": "Orquesta Roberto Firpo",
+    "Orchestra Típica Argentina Roberto Firpo": "Orquesta Argentina Roberto Firpo",
+    # Astor Piazzolla — drop quotes around "Nuevo Octeto" (consistent with
+    # already-applied Quinteto consolidation)
+    'Astor Piazzolla y su "Nuevo Octeto"': "Astor Piazzolla y su Nuevo Octeto",
+}
+
+
+def apply_orchestra_canonical(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        o = row.get("Orchestra", "")
+        if o in ORCHESTRA_CANONICAL_MAP:
+            row["Orchestra"] = ORCHESTRA_CANONICAL_MAP[o]
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Singer-name leaks in Orchestra column → blank
+# ----------------------------------------------------------------------------
+
+SINGER_LEAKS_IN_ORCHESTRA = {
+    "Armando Pontier.csv": {
+        "Roberto Goyeneche", "Rubén Juárez", "Hugo del Carril",
+        "Hugo Del Carril",
+    },
+    "Astor Piazzolla.csv": {
+        "Amelita Baltar", "Jairo", "Mina", "Georges Moustaki",
+        "Ney Matogrosso", "Marie-Paule Belle",
+    },
+    "Francisco Lomuto.csv": {
+        "Tito Schipa", "Carmencita del Moral", "Carmencita Del Moral",
+    },
+    "Orquesta Típica Victor.csv": {
+        "Mercedes Simone", "Alberto Gómez",
+    },
+}
+
+
+def blank_orchestra_singer_leaks(rows: list[dict[str, str]], filename: str) -> int:
+    leaks = SINGER_LEAKS_IN_ORCHESTRA.get(filename)
+    if not leaks:
+        return 0
+    changes = 0
+    for row in rows:
+        if row.get("Orchestra", "") in leaks:
+            row["Orchestra"] = ""
+            changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Composer/Author junk cleanup
+# ----------------------------------------------------------------------------
+
+JUNK_VALUES_IN_CREDITS = {
+    "Varios", "Various", "A:", "Letra", "F", "D.r.",
+    "Eduardo Discos, Casetes] Sadaic]",
+    "Enrique [Otra]",
+}
+
+CREDIT_PREFIX_STRIPS = [
+    re.compile(r"^Vers\.:\s*", re.IGNORECASE),
+    re.compile(r"^Música:\s*", re.IGNORECASE),
+    re.compile(r"^Letras?:\s*", re.IGNORECASE),
+    re.compile(r"^Música\s+y\s+Letra\s+de\s+", re.IGNORECASE),
+]
+
+
+def clean_credit_junk(rows: list[dict[str, str]]) -> int:
+    """Blank junk values in Composer/Author; strip role-prefixes from real names."""
+    changes = 0
+    for row in rows:
+        for field in ("Composer", "Author"):
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            parts = [p.strip() for p in cell.split(",")]
+            new_parts = []
+            cell_changed = False
+            for p in parts:
+                # Strip role-prefixes ("Vers.: X", "Música: Y")
+                for pat in CREDIT_PREFIX_STRIPS:
+                    new_p = pat.sub("", p)
+                    if new_p != p:
+                        p = new_p.strip()
+                        cell_changed = True
+                if p in JUNK_VALUES_IN_CREDITS:
+                    cell_changed = True
+                    continue  # drop
+                new_parts.append(p)
+            new = ", ".join(new_parts)
+            if cell_changed or new != cell:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Hyphen-joined credit pairs missed by first-pass split
+# ----------------------------------------------------------------------------
+
+HYPHEN_PAIR_FIXES = {
+    "Ferrazzano-Pollero": "Ferrazzano, Pollero",
+}
+
+
+def fix_hyphen_credit_pairs(rows: list[dict[str, str]]) -> int:
+    changes = 0
+    for row in rows:
+        for field in ("Composer", "Author"):
+            cell = row.get(field, "")
+            if not cell:
+                continue
+            new = cell
+            for old, repl in HYPHEN_PAIR_FIXES.items():
+                if old in new:
+                    new = new.replace(old, repl)
+            if new != cell:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
+# Dotted-initial normalization (`J.a.` -> `J.A.`, insert missing space)
+# ----------------------------------------------------------------------------
+
+# Match a single capital letter, dot, then lowercase letter, capture the
+# lowercase letter so we can uppercase it.
+DOTTED_INITIAL_FIX_RE = re.compile(r"\b([A-Z])\.([a-z])")
+
+
+def fix_dotted_initials(rows: list[dict[str, str]]) -> int:
+    """`J.a. Saavedra` -> `J. A. Saavedra`. Apply to Composer and Author."""
+    changes = 0
+    for row in rows:
+        for field in ("Composer", "Author"):
+            cell = row.get(field, "")
+            if not cell or "." not in cell:
+                continue
+            new = DOTTED_INITIAL_FIX_RE.sub(
+                lambda m: f"{m.group(1)}. {m.group(2).upper()}",
+                cell,
+            )
+            if new != cell:
+                row[field] = new
+                changes += 1
+    return changes
+
+
+# ----------------------------------------------------------------------------
 # Driver
 # ----------------------------------------------------------------------------
 
@@ -1004,6 +1432,17 @@ def main() -> int:
         summary["stray_punct_stripped"] += fix_person_stray_punct(rows)
         summary["instrument_capitalized"] += fix_instrument_casing(rows)
 
+        # Third-pass column-consistency fixes
+        summary["singer_joiners"] += normalize_singer_joiners(rows)
+        summary["glosa_stripped"] += fix_glosa_and_instrumental(rows)
+        summary["singer_leaks_blanked"] += blank_singer_non_singer_leaks(rows)
+        summary["instrumentals_recovered"] += recover_instrumentals(rows, filename)
+        summary["orchestra_canonical"] += apply_orchestra_canonical(rows)
+        summary["orchestra_singer_leaks_blanked"] += blank_orchestra_singer_leaks(rows, filename)
+        summary["credit_junk_cleaned"] += clean_credit_junk(rows)
+        summary["hyphen_pairs_split"] += fix_hyphen_credit_pairs(rows)
+        summary["dotted_initials_fixed"] += fix_dotted_initials(rows)
+
         write_csv(path, rows)
 
     print("Quality fixes applied:")
@@ -1032,6 +1471,15 @@ def main() -> int:
         "unmatched_parens_fixed",
         "stray_punct_stripped",
         "instrument_capitalized",
+        "singer_joiners",
+        "glosa_stripped",
+        "singer_leaks_blanked",
+        "instrumentals_recovered",
+        "orchestra_canonical",
+        "orchestra_singer_leaks_blanked",
+        "credit_junk_cleaned",
+        "hyphen_pairs_split",
+        "dotted_initials_fixed",
     ]:
         print(f"  {summary[key]:6d}  {key}")
 
