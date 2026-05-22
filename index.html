@@ -104,7 +104,7 @@
       font-size: 15px;
       color: var(--text);
       font-weight: 600;
-      font-family: inherit;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
       cursor: pointer;
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
@@ -148,6 +148,10 @@
       width: 100%;
     }
     .filter-input::placeholder { color: var(--text-soft); }
+    #singerFilter {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      min-width: 220px;
+    }
     .clear-filters {
       padding: 8px 12px;
       font-size: 13px;
@@ -245,6 +249,10 @@
     }
     .data-table tbody tr.selected:hover { background: color-mix(in srgb, var(--accent), transparent 72%); }
     .col-date { color: var(--text-mute); }
+    .col-bandleader, .th-bandleader { display: none; }
+    .data-table.show-bandleader .col-bandleader,
+    .data-table.show-bandleader .th-bandleader { display: table-cell; }
+    .col-bandleader { color: var(--text-mute); }
     .col-title { color: var(--text); font-weight: 500; }
     .col-genre, .col-singer { color: var(--text-mute); }
     .col-label { color: var(--text-mute); }
@@ -324,7 +332,7 @@
     }
     .detail-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px 24px;
       font-size: 14px;
     }
@@ -338,6 +346,7 @@
     .detail-field-value { color: var(--text); line-height: 1.4; }
     .detail-field-value.empty { color: var(--text-faint); }
     .detail-field.span2 { grid-column: span 2; }
+    .detail-field.span3 { grid-column: 1 / -1; }
     .col-expand {
       text-align: center;
       width: 48px;
@@ -508,7 +517,7 @@
         </div>
         <div class="filter-group">
           <div class="field-label">Singer</div>
-          <select id="singerFilter" class="filter-select" style="min-width:160px;"></select>
+          <select id="singerFilter" class="filter-select"></select>
         </div>
         <div class="filter-group">
           <div class="field-label">Grouping</div>
@@ -535,6 +544,7 @@
           <tr>
             <th class="th-thumb"></th>
             <th data-col="Date">Date <span class="sort-arrow">&#9650;</span></th>
+            <th data-col="Bandleader" class="th-bandleader">Bandleader <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Title">Title <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Genre">Genre <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Singer">Singer <span class="sort-arrow">&#9650;</span></th>
@@ -630,18 +640,26 @@
   }
 
   // --- Date parsing ---
+  // Returns a Date used for sorting. Partial dates are placed at the END of their
+  // period so they sort after fully-specified dates within the same period:
+  //   YYYY-MM-DD -> that day (00:00:00)
+  //   YYYY-MM    -> last day of month, 23:59:59
+  //   YYYY       -> Dec 31, 23:59:59
   function parseDate(str) {
     if (!str) return null;
-    var slashParts = str.split('/');
-    if (slashParts.length === 3) {
-      return new Date(+slashParts[2], +slashParts[0] - 1, +slashParts[1]);
+    str = str.trim();
+    var m;
+    if ((m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(str))) {
+      return new Date(+m[3], +m[1] - 1, +m[2]);
     }
-    var dashParts = str.split('-');
-    if (dashParts.length === 2 && /^\d{4}$/.test(dashParts[0])) {
-      return new Date(+dashParts[0], +dashParts[1] - 1, 1);
+    if ((m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(str))) {
+      return new Date(+m[1], +m[2] - 1, +m[3]);
     }
-    if (/^\d{4}$/.test(str.trim())) {
-      return new Date(+str.trim(), 0, 1);
+    if ((m = /^(\d{4})-(\d{1,2})$/.exec(str))) {
+      return new Date(+m[1], +m[2], 0, 23, 59, 59);
+    }
+    if (/^\d{4}$/.test(str)) {
+      return new Date(+str, 11, 31, 23, 59, 59);
     }
     return null;
   }
@@ -693,14 +711,38 @@
     });
   }
 
-  // --- Singer dropdown (Last, First sorted by last name with letter sections) ---
+  // --- Right-justify track-count padding helper (requires monospace font on the select) ---
+  function padWithCount(name, count, maxLen) {
+    var spaces = '';
+    for (var i = name.length; i < maxLen + 2; i++) spaces += ' ';
+    return name + spaces + '\u00b7 ' + count + ' tracks';
+  }
+
+  // --- Singer dropdown (Instrumental pinned, Last/First by last name, counts right-justified) ---
   function populateSingerDropdown(arr) {
     var names = uniqueSingers(arr);
-    names.sort((a, b) => {
+
+    var counts = {};
+    arr.forEach(r => {
+      if (r.Singer && r.Singer.trim()) {
+        r.Singer.trim().split(/\s+y\s+/i).forEach(s => {
+          var t = s.trim();
+          if (t) counts[t] = (counts[t] || 0) + 1;
+        });
+      }
+    });
+
+    var hasInstrumental = names.indexOf('Instrumental') >= 0;
+    var others = names.filter(n => n !== 'Instrumental');
+    others.sort((a, b) => {
       var lastA = stripAccents(getLastName(a)).toLowerCase();
       var lastB = stripAccents(getLastName(b)).toLowerCase();
       return lastA.localeCompare(lastB);
     });
+
+    var displayNames = others.map(toLastFirst);
+    if (hasInstrumental) displayNames.push('Instrumental');
+    var maxLen = displayNames.reduce((m, n) => Math.max(m, n.length), 0);
 
     singerFilter.innerHTML = '';
     var allOpt = document.createElement('option');
@@ -708,8 +750,15 @@
     allOpt.textContent = 'All';
     singerFilter.appendChild(allOpt);
 
+    if (hasInstrumental) {
+      var iOpt = document.createElement('option');
+      iOpt.value = 'Instrumental';
+      iOpt.textContent = padWithCount('Instrumental', counts['Instrumental'], maxLen);
+      singerFilter.appendChild(iOpt);
+    }
+
     var currentLetter = '';
-    names.forEach(name => {
+    others.forEach(name => {
       var first = stripAccents(getLastName(name))[0];
       var letter = first ? first.toUpperCase() : '';
       if (letter !== currentLetter) {
@@ -721,7 +770,7 @@
       }
       var opt = document.createElement('option');
       opt.value = name;
-      opt.textContent = toLastFirst(name);
+      opt.textContent = padWithCount(toLastFirst(name), counts[name], maxLen);
       singerFilter.appendChild(opt);
     });
   }
@@ -762,6 +811,10 @@
       return lastA.localeCompare(lastB);
     });
 
+    var displayNames = names.map(toLastFirst);
+    displayNames.push('All Orchestras');
+    var maxLen = displayNames.reduce((m, n) => Math.max(m, n.length), 0);
+
     bandleaderSelect.innerHTML = '';
 
     // Default placeholder
@@ -771,6 +824,12 @@
     placeholder.disabled = true;
     placeholder.selected = true;
     bandleaderSelect.appendChild(placeholder);
+
+    // Cross-orchestra option (top)
+    var allOpt = document.createElement('option');
+    allOpt.value = '__all__';
+    allOpt.textContent = padWithCount('All Orchestras', allData.length, maxLen);
+    bandleaderSelect.appendChild(allOpt);
 
     // Group by first letter of last name
     var currentLetter = '';
@@ -785,7 +844,7 @@
       }
       var opt = document.createElement('option');
       opt.value = name;
-      opt.textContent = toLastFirst(name) + ' \u00B7 ' + counts[name] + ' tracks';
+      opt.textContent = padWithCount(toLastFirst(name), counts[name], maxLen);
       bandleaderSelect.appendChild(opt);
     });
   }
@@ -794,7 +853,9 @@
   function onBandleaderChange() {
     var bl = bandleaderSelect.value;
     if (!bl) return;
-    artistData = allData.filter(r => r.Bandleader === bl);
+    var isAll = bl === '__all__';
+    artistData = isAll ? allData.slice() : allData.filter(r => r.Bandleader === bl);
+    document.querySelector('.data-table').classList.toggle('show-bandleader', isAll);
 
     populateSelect(genreFilter, uniqueSorted(artistData, 'Genre'), 'All');
     populateSingerDropdown(artistData);
@@ -819,7 +880,7 @@
       if (singer && !(r.Singer && r.Singer.trim().split(/\s+y\s+/i).some(s => s.trim() === singer))) return false;
       if (grouping && r.Grouping !== grouping) return false;
       if (search) {
-        var hay = stripAccents(((r.Title || '') + ' ' + (r.Composer || '') + ' ' + (r.Author || '') + ' ' + (r.Singer || '')).toLowerCase());
+        var hay = stripAccents(((r.Title || '') + ' ' + (r.Composer || '') + ' ' + (r.Author || '') + ' ' + (r.Singer || '') + ' ' + (r.Orchestra || '') + ' ' + (r.Bandleader || '')).toLowerCase());
         if (!hay.includes(search)) return false;
       }
       return true;
@@ -888,6 +949,7 @@
       tr.innerHTML =
         thumbCell +
         '<td class="col-date">' + esc(formatDate(row.Date)) + '</td>' +
+        '<td class="col-bandleader">' + esc(row.Bandleader) + '</td>' +
         '<td class="col-title">' + esc(row.Title) + '</td>' +
         '<td class="col-genre">' + esc(row.Genre) + '</td>' +
         '<td class="col-singer">' + esc(row.Singer) + '</td>' +
@@ -1001,21 +1063,26 @@
     html += '<div class="detail-row1"><span class="detail-title">' + esc(row.Title || '') + '</span>';
     if (row.AltTitle) html += ' <span class="detail-alt">' + esc(row.AltTitle) + '</span>';
     if (year) html += ' <span class="detail-year">(' + year + ')</span>';
-    if (row.Orchestra) html += '<span class="detail-orchestra"><span class="detail-orchestra-label">Orchestra: </span>' + esc(row.Orchestra) + '</span>';
     html += '</div></div>';
 
     var fields = [
+      { label: 'Genre', value: row.Genre },
+      { label: 'Orchestra', value: row.Orchestra, span2: true },
       { label: 'Master', value: row.Master },
-      { label: 'Lineup', value: row.Lineup },
+      { label: 'Matrix', value: row.Matrix },
+      { label: 'Disk', value: row.Disc },
+      { label: 'Composer', value: row.Composer },
+      { label: 'Author', value: row.Author },
+      { label: 'Lineup', value: row.Lineup, span3: true },
       { label: 'Pianist', value: row.Pianist },
       { label: 'Bassist', value: row.Bassist },
-      { label: 'Bandoneons', value: row.Bandoneons, span2: true },
-      { label: 'Strings', value: row.Strings, span2: true },
+      { label: 'Bandoneons', value: row.Bandoneons, span3: true },
+      { label: 'Strings', value: row.Strings, span3: true },
     ];
 
     html += '<div class="detail-grid">';
     fields.forEach(f => {
-      var cls = f.span2 ? ' span2' : '';
+      var cls = f.span3 ? ' span3' : (f.span2 ? ' span2' : '');
       var val = f.value ? esc(f.value) : '<span class="empty">\u2014</span>';
       var valCls = f.value ? '' : ' empty';
       html += '<div class="detail-field' + cls + '">' +
@@ -1042,14 +1109,16 @@
 
     var popW = detailPopover.offsetWidth;
     var popH = detailPopover.offsetHeight;
-    var top = rect.bottom + window.scrollY + 4;
     var left = rect.right + window.scrollX - popW;
-
-    // Keep within viewport
     if (left < 8) left = 8;
-    if (top + popH > window.scrollY + window.innerHeight - 8) {
-      top = rect.top + window.scrollY - popH - 4;
-    }
+
+    // Vertical: prefer below the anchor, else flip above, always clamp inside viewport.
+    var topLimit = window.scrollY + 8;
+    var bottomLimit = window.scrollY + window.innerHeight - popH - 8;
+    var top = rect.bottom + window.scrollY + 4;
+    if (top > bottomLimit) top = rect.top + window.scrollY - popH - 4;
+    if (top < topLimit) top = topLimit;
+    if (top > bottomLimit) top = bottomLimit;
 
     detailPopover.style.top = top + 'px';
     detailPopover.style.left = left + 'px';

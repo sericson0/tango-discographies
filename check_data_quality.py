@@ -16,32 +16,42 @@ from typing import Dict, List, Tuple
 CANONICAL_COLUMNS = [
     "Bandleader",
     "Orchestra",
-    "Title",
-    "Alternative_Title",
-    "Genre",
     "Date",
+    "Title",
+    "AltTitle",
+    "Genre",
     "Singer",
+    "Label",
+    "Master",
+    "Matrix",
+    "Disc",
     "Composer",
     "Author",
-    "Label",
-    "Medium",
     "Arranger",
     "Grouping",
-    "Piano",
+    "Pianist",
     "Bassist",
     "Bandoneons",
     "Strings",
-    "Other",
+    "Lineup",
 ]
 
 REQUIRED_COLUMNS = ["Bandleader", "Orchestra", "Title", "Genre", "Date"]
 
 HEADER_ALIASES = {
-    "AltTitle": "Alternative_Title",
+    "Alt_Title": "AltTitle",
+    "Alternative_Title": "AltTitle",
     "OrchestraSub": "Orchestra",
-    "Master": "Medium",
-    "Pianist": "Piano",
+    "Medium": "Master",
+    "Piano": "Pianist",
     "Bandoneon": "Bandoneons",
+    "Other": "Lineup",
+    "Disk": "Disc",
+    "Disk_Number": "Disc",
+    "DiskNumber": "Disc",
+    "Catalog": "Disc",
+    "Record number": "Disc",
+    "Matrix_Number": "Matrix",
 }
 
 DATE_PATTERNS = (
