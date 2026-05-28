@@ -84,6 +84,47 @@ def lp_image_url(folder: str, lp_folder: str, image_type: str) -> str:
     return f"{IMAGE_BASE}/{quote(folder)}/LPs/{quote(lp_folder)}/{quote(filename)}"
 
 
+def join_key(date: str, title: str, singer: str) -> tuple:
+    return (normalize_date(date), normalize_title(title), (singer or "").strip())
+
+
+def load_lp_data(lp_dir: Path) -> dict:
+    """Read lp_matches/ into {artist_key: {"matches": {join_key: [cand]}, "manifest": {LP_Folder: [type]}}}.
+
+    Track-match files are named "{Artist}.csv"; image manifests "{Artist} images.csv".
+    Candidate and manifest lists preserve CSV row order (used for tiebreaks/carousel).
+    """
+    data: dict = {}
+    if not lp_dir.is_dir():
+        return data
+    for path in sorted(lp_dir.glob("*.csv")):
+        stem = path.stem
+        is_manifest = stem.endswith(" images")
+        artist_stem = stem[: -len(" images")] if is_manifest else stem
+        key = artist_match_key(artist_stem)
+        entry = data.setdefault(key, {"matches": {}, "manifest": {}})
+        with path.open("r", encoding="utf-8-sig", newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if is_manifest:
+                    folder = (row.get("LP_Folder") or "").strip()
+                    ttype = (row.get("Type") or "").strip()
+                    if folder and ttype:
+                        entry["manifest"].setdefault(folder, []).append(ttype)
+                else:
+                    jk = join_key(
+                        row.get("Disc_Date", ""),
+                        row.get("Disc_Title", ""),
+                        row.get("Singer", ""),
+                    )
+                    entry["matches"].setdefault(jk, []).append({
+                        "LP_Folder": (row.get("LP_Folder") or "").strip(),
+                        "LP_Catalog": (row.get("LP_Catalog") or "").strip(),
+                        "LP_Title": (row.get("LP_Title") or "").strip(),
+                    })
+    return data
+
+
 def extract_year(date_value: str) -> str:
     match = YEAR_RE.search(date_value or "")
     return match.group(1) if match else ""

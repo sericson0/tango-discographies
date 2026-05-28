@@ -1,3 +1,6 @@
+import csv
+import json
+
 import build
 
 
@@ -44,3 +47,43 @@ def test_lp_image_url_encodes_segments():
     )
     url2 = build.lp_image_url("DArienzoJuan", "Tigre Viejo", "Disk 1")
     assert url2.endswith("/Tigre%20Viejo/Tigre%20Viejo%20Disk%201.webp")
+
+
+def _write(path, header, rows):
+    with path.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(header)
+        w.writerows(rows)
+
+
+def test_load_lp_data_pairs_matches_and_manifest(tmp_path):
+    lp_dir = tmp_path / "lp_matches"
+    lp_dir.mkdir()
+    _write(
+        lp_dir / "Juan DArienzo.csv",
+        ["LP_Folder", "LP_Catalog", "LP_Title", "Disc_Date", "Disc_Title", "Singer"],
+        [
+            ["Tigre Viejo", "AVL-3925", "Tigre Viejo", "1969-09-18", "Tigre Viejo", "Instrumental"],
+            ["Con tu Compas", "AVL-3883", "Con Tu Compás", "1969-09-18", "Tigre Viejo", "Instrumental"],
+        ],
+    )
+    _write(
+        lp_dir / "Juan DArienzo images.csv",
+        ["LP_Folder", "Type"],
+        [
+            ["Tigre Viejo", "Front"],
+            ["Tigre Viejo", "Back"],
+        ],
+    )
+
+    data = build.load_lp_data(lp_dir)
+    key = "juan darienzo"
+    assert key in data
+    jk = build.join_key("1969-09-18", "Tigre Viejo", "Instrumental")
+    cands = data[key]["matches"][jk]
+    assert {c["LP_Folder"] for c in cands} == {"Tigre Viejo", "Con tu Compas"}
+    assert data[key]["manifest"]["Tigre Viejo"] == ["Front", "Back"]
+
+
+def test_load_lp_data_missing_dir_returns_empty(tmp_path):
+    assert build.load_lp_data(tmp_path / "nope") == {}
