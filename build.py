@@ -125,6 +125,35 @@ def load_lp_data(lp_dir: Path) -> dict:
     return data
 
 
+def apply_lp_images(rows: list[dict], lp_data: dict) -> None:
+    """Mutate rows in place, setting LP_Title and LP_Images where a track is on an LP.
+
+    Picks the lowest-catalog LP when a track appears on several (ties -> first
+    in CSV order, via stable min). Front is floated to the head of LP_Images.
+    """
+    for row in rows:
+        key = artist_match_key(row.get("Bandleader", ""))
+        data = lp_data.get(key)
+        if not data:
+            continue
+        jk = join_key(row.get("Date", ""), row.get("Title", ""), row.get("Singer", ""))
+        candidates = data["matches"].get(jk)
+        if not candidates:
+            continue
+        chosen = min(candidates, key=lambda c: catalog_sort_value(c["LP_Catalog"]))
+        types = data["manifest"].get(chosen["LP_Folder"], [])
+        if not types:
+            continue
+        folder = bandleader_folder(row.get("Bandleader", ""))
+        ordered = sorted(types, key=lambda t: 0 if t.strip().lower() == "front" else 1)
+        images = [
+            {"type": t, "url": lp_image_url(folder, chosen["LP_Folder"], t)}
+            for t in ordered
+        ]
+        row["LP_Title"] = chosen["LP_Title"]
+        row["LP_Images"] = json.dumps(images, ensure_ascii=False)
+
+
 def extract_year(date_value: str) -> str:
     match = YEAR_RE.search(date_value or "")
     return match.group(1) if match else ""

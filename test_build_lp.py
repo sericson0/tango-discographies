@@ -87,3 +87,70 @@ def test_load_lp_data_pairs_matches_and_manifest(tmp_path):
 
 def test_load_lp_data_missing_dir_returns_empty(tmp_path):
     assert build.load_lp_data(tmp_path / "nope") == {}
+
+
+def _lp_data():
+    return {
+        "juan darienzo": {
+            "matches": {
+                build.join_key("1969-09-18", "Tigre Viejo", "Instrumental"): [
+                    {"LP_Folder": "Tigre Viejo", "LP_Catalog": "AVL-3925", "LP_Title": "Tigre Viejo"},
+                ],
+                build.join_key("1965-08-11", "La Tablada", "Instrumental"): [
+                    {"LP_Folder": "DArienzo Interpreta a Canaro", "LP_Catalog": "AVL-3603",
+                     "LP_Title": "Juan D'Arienzo Interpreta a Canaro"},
+                    {"LP_Folder": "Tiempos Viejos", "LP_Catalog": "AVS-4360", "LP_Title": "Tiempos Viejos"},
+                ],
+            },
+            "manifest": {
+                "Tigre Viejo": ["Back", "Front", "Disk 1"],
+                "DArienzo Interpreta a Canaro": ["Front"],
+                "Tiempos Viejos": ["Front"],
+            },
+        }
+    }
+
+
+def test_apply_lp_images_sets_columns_front_first():
+    rows = [{"Bandleader": "Juan D'Arienzo", "Date": "1969-09-18",
+             "Title": "Tigre Viejo", "Singer": "Instrumental"}]
+    build.apply_lp_images(rows, _lp_data())
+    assert rows[0]["LP_Title"] == "Tigre Viejo"
+    images = json.loads(rows[0]["LP_Images"])
+    assert images[0]["type"] == "Front"  # Front floated to front regardless of manifest order
+    assert {im["type"] for im in images} == {"Front", "Back", "Disk 1"}
+    assert images[0]["url"].endswith("/Tigre%20Viejo/Tigre%20Viejo%20Front.webp")
+
+
+def test_apply_lp_images_picks_lowest_catalog():
+    rows = [{"Bandleader": "Juan D'Arienzo", "Date": "1965-08-11",
+             "Title": "La Tablada", "Singer": "Instrumental"}]
+    build.apply_lp_images(rows, _lp_data())
+    # AVL-3603 < AVS-4360 -> original "Interpreta a Canaro" wins
+    assert rows[0]["LP_Title"] == "Juan D'Arienzo Interpreta a Canaro"
+    images = json.loads(rows[0]["LP_Images"])
+    assert "DArienzo%20Interpreta%20a%20Canaro" in images[0]["url"]
+
+
+def test_apply_lp_images_no_match_leaves_empty():
+    rows = [{"Bandleader": "Juan D'Arienzo", "Date": "1928",
+             "Title": "Callejas Solo", "Singer": "Carlos Dante"}]
+    build.apply_lp_images(rows, _lp_data())
+    assert rows[0].get("LP_Title", "") == ""
+    assert rows[0].get("LP_Images", "") == ""
+
+
+def test_apply_lp_images_chosen_lp_without_manifest_falls_back():
+    data = _lp_data()
+    del data["juan darienzo"]["manifest"]["Tigre Viejo"]
+    rows = [{"Bandleader": "Juan D'Arienzo", "Date": "1969-09-18",
+             "Title": "Tigre Viejo", "Singer": "Instrumental"}]
+    build.apply_lp_images(rows, data)
+    assert rows[0].get("LP_Images", "") == ""
+
+
+def test_apply_lp_images_other_artist_untouched():
+    rows = [{"Bandleader": "Aníbal Troilo", "Date": "1969-09-18",
+             "Title": "Tigre Viejo", "Singer": "Instrumental"}]
+    build.apply_lp_images(rows, _lp_data())
+    assert rows[0].get("LP_Images", "") == ""
