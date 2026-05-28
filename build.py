@@ -13,10 +13,13 @@ fields) for manual review.
 from __future__ import annotations
 
 import csv
+import json
 import re
 import sys
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import quote
 
 OUTPUT_HEADERS = [
     "Bandleader", "Orchestra", "Date", "Title", "AltTitle", "Genre",
@@ -28,6 +31,57 @@ OUTPUT_HEADERS = [
 DEDUPE_KEY_FIELDS = ("Orchestra", "Title", "Date", "Singer")
 
 YEAR_RE = re.compile(r"(\d{4})")
+
+IMAGE_BASE = "https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev"
+
+
+def strip_accents(text: str) -> str:
+    return "".join(
+        c for c in unicodedata.normalize("NFD", text or "")
+        if unicodedata.category(c) != "Mn"
+    )
+
+
+def bandleader_folder(name: str) -> str:
+    """Last+First, accents and apostrophes/punctuation removed, no spaces."""
+    cleaned = re.sub(r"[^\w\s]", "", strip_accents(name or ""))
+    parts = cleaned.split()
+    if not parts:
+        return ""
+    return parts[-1] + "".join(parts[:-1])
+
+
+def artist_match_key(name: str) -> str:
+    """Normalized key to pair lp_matches filenames with Bandleader values."""
+    cleaned = re.sub(r"[^\w\s]", "", strip_accents(name or ""))
+    return re.sub(r"\s+", " ", cleaned.strip().lower())
+
+
+def normalize_date(value: str) -> str:
+    """M/D/YYYY or YYYY-M-D -> ISO YYYY-MM-DD; anything else passes through."""
+    value = (value or "").strip()
+    m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})$", value)
+    if m:
+        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    m = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})$", value)
+    if m:
+        return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+    return value
+
+
+def normalize_title(value: str) -> str:
+    return re.sub(r"\s+", " ", strip_accents(value or "").strip().lower())
+
+
+def catalog_sort_value(catalog: str) -> int:
+    """Sortable rank from a catalog string; lowest = original pressing."""
+    nums = re.findall(r"\d+", catalog or "")
+    return int(max(nums, key=len)) if nums else 10**9
+
+
+def lp_image_url(folder: str, lp_folder: str, image_type: str) -> str:
+    filename = f"{lp_folder} {image_type}.webp"
+    return f"{IMAGE_BASE}/{quote(folder)}/LPs/{quote(lp_folder)}/{quote(filename)}"
 
 
 def extract_year(date_value: str) -> str:
