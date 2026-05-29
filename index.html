@@ -1052,6 +1052,14 @@
     }
   }
 
+  function stripLpImages(rows) {
+    return rows.map(function (r) {
+      var copy = Object.assign({}, r);
+      delete copy.LP_Images;
+      return copy;
+    });
+  }
+
   function downloadCSV(data, filename) {
     var csv = '\uFEFF' + Papa.unparse(data);
     var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -1362,11 +1370,11 @@
 
         btnDownloadArtist.addEventListener('click', () => {
           var name = bandleaderSelect.value || 'artist';
-          downloadCSV(filteredData, name + '.csv');
+          downloadCSV(stripLpImages(filteredData), name + '.csv');
         });
 
         btnDownloadAll.addEventListener('click', () => {
-          downloadCSV(allData, 'tango-discographies-all.csv');
+          downloadCSV(stripLpImages(allData), 'tango-discographies-all.csv');
         });
 
         detailPopoverClose.addEventListener('click', closePopover);
