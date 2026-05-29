@@ -25,7 +25,7 @@ OUTPUT_HEADERS = [
     "Bandleader", "Orchestra", "Date", "Title", "AltTitle", "Genre",
     "Singer", "Label", "Master", "Matrix", "Disc", "Composer", "Author",
     "Arranger", "Grouping", "Pianist", "Bassist", "Bandoneons", "Strings",
-    "Lineup",
+    "Lineup", "LP_Title", "LP_Images",
 ]
 
 DEDUPE_KEY_FIELDS = ("Orchestra", "Title", "Date", "Singer")
@@ -159,7 +159,7 @@ def extract_year(date_value: str) -> str:
     return match.group(1) if match else ""
 
 
-def build(csv_dir: Path, output_path: Path) -> tuple[int, list[dict]]:
+def build(csv_dir: Path, output_path: Path, lp_dir: Path) -> tuple[int, list[dict]]:
     """Concatenate all CSVs in csv_dir into output_path, deduping across files.
 
     Returns the number of rows written and a list of fuzzy-duplicate group
@@ -191,6 +191,7 @@ def build(csv_dir: Path, output_path: Path) -> tuple[int, list[dict]]:
             seen[key] = row
         consolidated.append(row)
 
+    apply_lp_images(consolidated, load_lp_data(lp_dir))
     fuzzy_groups = collect_fuzzy_duplicates(consolidated)
 
     with output_path.open("w", encoding="utf-8-sig", newline="") as f:
@@ -249,13 +250,14 @@ def main() -> None:
     root = Path(__file__).parent
     csv_dir = root / "csv_files"
     output_path = root / "discographies.csv"
+    lp_dir = root / "lp_matches"
     report_path = root / "duplicates_report.csv"
 
     if not csv_dir.is_dir():
         print(f"error: {csv_dir} does not exist", file=sys.stderr)
         sys.exit(1)
 
-    n, fuzzy = build(csv_dir, output_path)
+    n, fuzzy = build(csv_dir, output_path, lp_dir)
     write_duplicates_report(report_path, fuzzy)
     print(f"wrote {n} rows to {output_path.name}")
     print(f"wrote {len(fuzzy)} fuzzy-duplicate groups to {report_path.name}")
