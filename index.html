@@ -622,21 +622,33 @@
   }
 
   // --- Image URL construction ---
-  // Convention: {LastFirst}/{YYYY-MM-DD}_{Title-Hyphenated}_{LastName}.webp
-  // Example: An\u00edbal Troilo + 3/7/1938 + Comme Il Faut ->
-  //   TroiloAnibal/1938-03-07_Comme-Il-Faut_Troilo.webp
+  // Convention: {LastFirst}/{GroupingNormalized}/{YYYY-MM-DD}_{Title-Hyphenated}_{LastName}.webp
+  // Grouping normalization: strip accents, drop ( ) , . +, collapse spaces. Hyphens kept.
+  // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires + "50-54 T.K. (Figari)" ->
+  //   TroiloAnibal/50-54 TK Figari/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
   const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
+  function normalizeGroupingFolder(g) {
+    return stripAccents(g).replace(/[(),.+]/g, '').replace(/\s+/g, ' ').trim();
+  }
   function imageUrl(row) {
-    if (!row || !row.Bandleader || !row.Date || !row.Title) return null;
+    if (!row || !row.Bandleader || !row.Date || !row.Title || !row.Grouping) return null;
     var parts = stripAccents(row.Bandleader).trim().split(/\s+/);
     if (parts.length === 0 || parts[0] === '') return null;
     var last = parts.pop();
     var folder = last + parts.join('');
-    var dateParts = row.Date.split('/');
-    if (dateParts.length !== 3) return null;
-    var iso = dateParts[2] + '-' + String(dateParts[0]).padStart(2, '0') + '-' + String(dateParts[1]).padStart(2, '0');
+    var groupingFolder = normalizeGroupingFolder(row.Grouping);
+    if (!groupingFolder) return null;
+    var d = row.Date.trim();
+    var iso, m;
+    if ((m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(d))) {
+      iso = m[3] + '-' + m[1].padStart(2, '0') + '-' + m[2].padStart(2, '0');
+    } else if ((m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(d))) {
+      iso = m[1] + '-' + m[2].padStart(2, '0') + '-' + m[3].padStart(2, '0');
+    } else {
+      return null;
+    }
     var title = row.Title.trim().replace(/\s+/g, '-');
-    return IMAGE_BASE + '/' + folder + '/' + iso + '_' + title + '_' + last + '.webp';
+    return IMAGE_BASE + '/' + folder + '/' + groupingFolder + '/' + iso + '_' + title + '_' + last + '.webp';
   }
 
   // --- Date parsing ---
