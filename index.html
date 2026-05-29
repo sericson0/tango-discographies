@@ -408,6 +408,37 @@
       display: block;
     }
 
+    /* --- LP image viewer (detail popover) --- */
+    .lp-viewer { flex-shrink: 0; width: 160px; }
+    .lp-viewer .lp-main { margin-bottom: 4px; }
+    .lp-caption {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-hover);
+      text-align: center;
+      min-height: 13px;
+      margin-bottom: 6px;
+    }
+    .lp-thumbs { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+    .lp-thumb {
+      font-size: 10px;
+      padding: 2px 7px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--surface);
+      color: var(--text-mute);
+      cursor: pointer;
+      font-family: inherit;
+      line-height: 1.4;
+    }
+    .lp-thumb.selected {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      background: color-mix(in srgb, var(--accent), transparent 90%);
+    }
+    .lp-title-line { margin-top: 6px; font-size: 13px; color: var(--text-soft); }
+
     /* --- Lightbox --- */
     .lightbox-backdrop {
       display: none;
@@ -1083,16 +1114,29 @@
     var row = filteredData[index];
     if (!row) return;
     var year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
-    var imgSrc = imageUrl(row);
+    var lpImgs = parseLpImages(row);
+    var imgSrc = lpImgs.length ? lpImgs[0].url : imageUrl(row);
 
     var html = '<div class="detail-header">';
-    if (imgSrc) {
+    if (lpImgs.length) {
+      html += '<div class="lp-viewer">' +
+        '<img class="detail-thumb lp-main" src="' + esc(lpImgs[0].url) + '" data-idx="0" alt="" ' +
+        'onerror="this.style.visibility=\'hidden\'">' +
+        '<div class="lp-caption"></div>' +
+        '<div class="lp-thumbs">';
+      lpImgs.forEach(function (im, i) {
+        var label = im.type || ('#' + (i + 1));
+        html += '<button type="button" class="lp-thumb" data-idx="' + i + '">' + esc(label) + '</button>';
+      });
+      html += '</div></div>';
+    } else if (imgSrc) {
       html += '<img class="detail-thumb" src="' + esc(imgSrc) + '" alt="" ' +
         'onerror="this.style.display=\'none\'">';
     }
     html += '<div class="detail-row1"><span class="detail-title">' + esc(row.Title || '') + '</span>';
     if (row.AltTitle) html += ' <span class="detail-alt">' + esc(row.AltTitle) + '</span>';
     if (year) html += ' <span class="detail-year">(' + year + ')</span>';
+    if (lpImgs.length && row.LP_Title) html += '<div class="lp-title-line">LP: ' + esc(row.LP_Title) + '</div>';
     html += '</div></div>';
 
     var fields = [
@@ -1124,9 +1168,31 @@
 
     detailContent.innerHTML = html;
 
-    var detailThumb = detailContent.querySelector('.detail-thumb');
-    if (detailThumb) {
-      detailThumb.addEventListener('click', () => openLightbox(detailThumb.src));
+    if (lpImgs.length) {
+      var mainImg = detailContent.querySelector('.lp-main');
+      var caption = detailContent.querySelector('.lp-caption');
+      var thumbBtns = detailContent.querySelectorAll('.lp-thumb');
+      var selectImage = function (idx) {
+        var im = lpImgs[idx];
+        if (!im) return;
+        mainImg.src = im.url;
+        mainImg.style.visibility = '';
+        mainImg.dataset.idx = idx;
+        caption.textContent = im.type || '';
+        thumbBtns.forEach(function (b) { b.classList.toggle('selected', +b.dataset.idx === idx); });
+      };
+      thumbBtns.forEach(function (b) {
+        b.addEventListener('click', function () { selectImage(+b.dataset.idx); });
+      });
+      mainImg.addEventListener('click', function () {
+        openLightbox(mainImg.src, lpImgs, +mainImg.dataset.idx);
+      });
+      selectImage(0);
+    } else {
+      var detailThumb = detailContent.querySelector('.detail-thumb');
+      if (detailThumb) {
+        detailThumb.addEventListener('click', function () { openLightbox(detailThumb.src); });
+      }
     }
 
     // Position near the anchor row
