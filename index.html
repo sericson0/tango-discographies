@@ -619,6 +619,8 @@
   let selectedRowIndex = -1;
   let sortCol = 'Date';
   let sortAsc = true;
+  let lightboxSet = null;
+  let lightboxIdx = -1;
 
   // --- DOM refs ---
   const $ = id => document.getElementById(id);
@@ -1225,15 +1227,25 @@
     detailBackdrop.classList.remove('visible');
   }
 
-  function openLightbox(src) {
+  function openLightbox(src, set, idx) {
     if (!src) return;
+    lightboxSet = (set && set.length) ? set : null;
+    lightboxIdx = lightboxSet ? (idx || 0) : -1;
     lightboxImage.src = src;
     lightboxBackdrop.classList.add('visible');
+  }
+
+  function lightboxNav(delta) {
+    if (!lightboxSet) return;
+    lightboxIdx = (lightboxIdx + delta + lightboxSet.length) % lightboxSet.length;
+    lightboxImage.src = lightboxSet[lightboxIdx].url;
   }
 
   function closeLightbox() {
     lightboxBackdrop.classList.remove('visible');
     lightboxImage.src = '';
+    lightboxSet = null;
+    lightboxIdx = -1;
   }
 
   function checkScrollIndicator() {
@@ -1300,6 +1312,14 @@
 
         document.addEventListener('keydown', (e) => {
           if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+          if (lightboxBackdrop.classList.contains('visible')) {
+            if (e.key === 'Escape') { closeLightbox(); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); lightboxNav(-1); }
+            else if (e.key === 'ArrowRight') { e.preventDefault(); lightboxNav(1); }
+            return;
+          }
+
           if (filteredData.length === 0) return;
 
           if (e.key === 'ArrowDown') {
@@ -1316,9 +1336,7 @@
             e.preventDefault();
             onRowClick(selectedRowIndex);
           } else if (e.key === 'Escape') {
-            if (lightboxBackdrop.classList.contains('visible')) {
-              closeLightbox();
-            } else if (detailPopover.classList.contains('visible')) {
+            if (detailPopover.classList.contains('visible')) {
               closePopover();
             } else {
               clearSelection();
