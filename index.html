@@ -652,6 +652,23 @@
     return IMAGE_BASE + '/' + folder + '/' + groupingFolder + '/' + iso + '_' + title + '_' + last + '.webp';
   }
 
+  // --- LP images (from the LP_Images JSON column produced by build.py) ---
+  function parseLpImages(row) {
+    if (!row || !row.LP_Images) return [];
+    try {
+      var arr = JSON.parse(row.LP_Images);
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function lpCover(row) {
+    var imgs = parseLpImages(row);
+    if (!imgs.length) return null;
+    var front = imgs.find(function (im) { return (im.type || '').toLowerCase() === 'front'; });
+    return (front || imgs[0]).url || null;
+  }
+
   // --- Date parsing ---
   // Returns a Date used for sorting. Partial dates are placed at the END of their
   // period so they sort after fully-specified dates within the same period:
@@ -955,7 +972,7 @@
     filteredData.forEach((row, i) => {
       var tr = document.createElement('tr');
       if (i === selectedRowIndex) tr.classList.add('selected');
-      var imgSrc = imageUrl(row);
+      var imgSrc = lpCover(row) || imageUrl(row);
       var thumbCell = imgSrc
         ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(imgSrc) + '" alt="" onerror="this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\'"></td>'
         : '<td class="col-thumb" data-noimg="1"></td>';
