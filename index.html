@@ -624,6 +624,7 @@
   // --- Image URL construction ---
   // Convention: {LastFirst}/{GroupingNormalized}/{YYYY-MM-DD}_{Title-Hyphenated}_{LastName}.webp
   // Grouping normalization: strip accents, drop ( ) , . +, collapse spaces. Hyphens kept.
+  // Bandleader folder: strip accents AND apostrophes/punctuation: "Juan D'Arienzo" -> "DArienzoJuan".
   // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires + "50-54 T.K. (Figari)" ->
   //   TroiloAnibal/50-54 TK Figari/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
   const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
@@ -632,7 +633,7 @@
   }
   function imageUrl(row) {
     if (!row || !row.Bandleader || !row.Date || !row.Title || !row.Grouping) return null;
-    var parts = stripAccents(row.Bandleader).trim().split(/\s+/);
+    var parts = stripAccents(row.Bandleader).replace(/[^\w\s]/g, '').trim().split(/\s+/);
     if (parts.length === 0 || parts[0] === '') return null;
     var last = parts.pop();
     var folder = last + parts.join('');
