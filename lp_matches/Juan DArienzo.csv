@@ -291,3 +291,27 @@ El Vals de 15 Anos,AVL-3372,El Vals De Los 15 Años,B,3,Adiós Pampa Mía,1961,m
 El Vals de 15 Anos,AVL-3372,El Vals De Los 15 Años,B,4,Dicha Pasada,1961,matched,1961-07-11,Dicha Pasada,,Horacio Palma,,,
 El Vals de 15 Anos,AVL-3372,El Vals De Los 15 Años,B,5,Amigo Bandoneón,1961,matched,1961-06-29,Amigo Bandoneón,,Jorge Valdez,,,
 El Vals de 15 Anos,AVL-3372,El Vals De Los 15 Años,B,6,En La Madrugada,1961,matched,1961-07-19,En La Madrugada,,Horacio Palma,,,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,A,1,Soy Un Gorrion Esquinero,1975,matched,1975-01-30,Soy un Gorrion Esquinero,,Osvaldo Ramos,Tape-S,,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,A,2,Rio Bamba,1975,matched,1975-01-30,Rio Bamba,,Instrumental,Tape-S,16815,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,A,3,Otra Noche Porteña,1975,matched,1975-01-30,Otra Noche Porteña,,Armando Laborde,Tape-S,,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,A,4,Viejo Malevo,1975,matched,1975-01-30,Viejo Malevo,,Armando Laborde,Tape-S,,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,A,5,Para Vos Querida Pebeta,1975,matched_variant,1975-01-30,Para Vos Mi Querida Pebeta,,Osvaldo Ramos,Tape-S,16808,fuzzy 0.94 of 'Para Vos Mi Querida Pebeta'
+Ultima Grabacion,RVP-6105,Ultima Grabacion,B,1,Chavero Soy,1975,matched,1975-01-30,Chavero Soy,,Osvaldo Ramos,Tape-S,16809,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,B,2,Dialogando Con El Rio,1975,matched,1975-01-30,Dialogando con el Río,,Osvaldo Ramos,Tape-S,16810,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,B,3,Vamos Topo Todavía,1975,matched,1975-01-30,Vamos Topo Todavia,,Alberto Echagüe,Tape-S,16811,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,B,4,Su Pena,1975,matched,1975-01-30,Su Pena,,Osvaldo Ramos,Tape-S,,
+Ultima Grabacion,RVP-6105,Ultima Grabacion,B,5,Romance De Otoño,1975,matched,1975-01-30,Romance de Otoño,,Osvaldo Ramos,Tape-S,,
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,1,"Adiós, Chantecler",1959,matched_year_flex,1958-11-19,Adíos Chantecler,,Jorge Valdez,Tape,0766,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,2,Justo El 31,1959,matched_year_flex,1958-12-17,Justo el Treinta y Uno,Justo el 31,Mario Bustos,Tape,0818,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,3,Buenas Noches Mi Amor,1959,matched_year_flex,1958-12-17,Buenas Noches Mi Amor,,Jorge Valdez,Tape,0817,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,4,Muñeca Brava,1959,matched_year_flex,1958-12-17,Muñeca Brava,,Mario Bustos,Tape,0820,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,5,Hasta Siempre Amor,1959,matched_year_flex,1958-12-23,Hasta Siempre Amor,,Jorge Valdez,Tape,0827,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,6,Bonanza,1959,matched_year_flex,1958-12-23,Bonanza,,Mario Bustos,Tape,0829,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,7,Marinera,1959,matched_year_flex,1958-10-29,Marinera,,Jorge Valdez,Tape,0741,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,1,El Tigre Millán,1959,matched_year_flex,1958-12-10,El Tigre Millán,,Mario Bustos,Tape,0800,"3 takes in discography; picked 1958-12-10 (Mario Bustos) as closest to 1959 LP"
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,2,Sabrás Quien Soy,1959,matched_year_flex,1958-11-12,Sabras Quién Soy,,Jorge Valdez,Tape,0752,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,3,Gerardo Matos Rodríguez,1959,matched_year_flex,1958-10-29,Gerardo Matos Rodríguez,,Mario Bustos,Tape,0743,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,4,Sin Alma Y Sin Dios,1959,matched_year_flex,1958-11-19,Sin Alma y Sin Dios,,Jorge Valdez,Tape,0767,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,5,Justo Un Año,1959,matched_year_flex,1958-11-12,Justo un Año,,Mario Bustos,Tape,0750,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,6,"No Llores, Por Favor",1959,matched_year_flex,1958-09-11,No Llores Por Favor,,Jorge Valdez,Tape,0643,LP year 1959 != recording year 1958
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,7,"Che, Fulano",1959,matched_year_flex,1958-11-12,Che Fulano,,Mario Bustos,Tape,0751,LP year 1959 != recording year 1958

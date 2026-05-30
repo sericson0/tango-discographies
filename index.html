@@ -316,20 +316,6 @@
       padding: 2px 6px;
     }
     .detail-popover-close:hover { color: var(--accent-hover); }
-    .detail-row1 {
-      margin-bottom: 12px;
-      line-height: 1.5;
-      padding-right: 28px;
-    }
-    .detail-row1 .detail-alt { font-style: italic; font-weight: 400; color: var(--text-soft); }
-    .detail-row1 .detail-year { font-weight: 400; color: var(--text-soft); font-size: 15px; }
-    .detail-row1 .detail-orchestra { color: var(--text-mute); margin-left: 16px; font-size: 15px; font-weight: 400; }
-    .detail-row1 .detail-orchestra-label { text-transform: uppercase; font-size: 10px; letter-spacing: 1px; color: var(--accent-hover); }
-    .detail-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text);
-    }
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -347,6 +333,17 @@
     .detail-field-value.empty { color: var(--text-faint); }
     .detail-field.span2 { grid-column: span 2; }
     .detail-field.span3 { grid-column: 1 / -1; }
+    .detail-section-header {
+      grid-column: 1 / -1;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-hover);
+      font-weight: 700;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 12px;
+      margin-top: 4px;
+    }
     .col-expand {
       text-align: center;
       width: 48px;
@@ -384,6 +381,38 @@
       transform: scale(1.08);
       border-color: var(--accent);
     }
+    /* Medium thumbnails (1.5x small) */
+    body.thumbs-m .th-thumb,
+    body.thumbs-m .col-thumb { width: 72px; padding: 6px; }
+    body.thumbs-m .col-thumb img { width: 54px; height: 54px; }
+    /* Large thumbnails (1.5x medium = 2.25x small) */
+    body.thumbs-l .th-thumb,
+    body.thumbs-l .col-thumb { width: 108px; padding: 9px; }
+    body.thumbs-l .col-thumb img { width: 81px; height: 81px; }
+
+    /* Thumb-size segmented control (S | M | L) */
+    .thumb-size-group {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-right: 8px;
+    }
+    .thumb-size-btn {
+      background: transparent;
+      border: 0;
+      border-right: 1px solid var(--border);
+      color: var(--text-soft);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-family: inherit;
+      min-width: 28px;
+    }
+    .thumb-size-btn:last-child { border-right: 0; }
+    .thumb-size-btn:hover { color: var(--text); background: color-mix(in srgb, var(--accent), transparent 95%); }
+    .thumb-size-btn.active { color: var(--accent); background: color-mix(in srgb, var(--accent), transparent 88%); }
 
     /* --- Detail popover image --- */
     .detail-header {
@@ -392,13 +421,33 @@
       margin-bottom: 12px;
       align-items: flex-start;
     }
-    .detail-header .detail-row1 {
+    /* Header metadata column (right of image) */
+    .detail-meta {
       flex: 1;
-      margin-bottom: 0;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 8px 14px;
+      align-content: start;
+      font-size: 14px;
+      line-height: 1.4;
     }
+    .detail-meta-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-hover);
+      align-self: center;
+      white-space: nowrap;
+    }
+    .detail-meta-value { color: var(--text); word-wrap: break-word; }
+    .detail-meta-value.empty { color: var(--text-faint); }
+    .detail-meta-value .meta-title { font-size: 18px; font-weight: 600; }
+    .detail-meta-value .meta-alt { font-style: italic; color: var(--text-soft); margin-left: 6px; font-weight: 400; font-size: 14px; }
+    .detail-meta-value .meta-lp-line { color: var(--text-soft); font-size: 12px; margin-top: 2px; }
     .detail-thumb {
-      width: 160px;
-      height: 160px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 4px;
       border: 1px solid var(--border);
@@ -409,7 +458,7 @@
     }
 
     /* --- LP image viewer (detail popover) --- */
-    .lp-viewer { flex-shrink: 0; width: 160px; }
+    .lp-viewer { flex-shrink: 0; width: 200px; }
     .lp-viewer .lp-main { margin-bottom: 4px; }
     .lp-caption {
       font-size: 10px;
@@ -437,8 +486,6 @@
       color: var(--accent-hover);
       background: color-mix(in srgb, var(--accent), transparent 90%);
     }
-    .lp-title-line { margin-top: 6px; font-size: 13px; color: var(--text-soft); }
-
     /* --- Lightbox --- */
     .lightbox-backdrop {
       display: none;
@@ -512,7 +559,8 @@
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
       .detail-popover { padding-left: 16px; padding-right: 16px; }
       .detail-grid { grid-template-columns: 1fr 1fr; }
-      .detail-thumb { width: 100px; height: 100px; }
+      .detail-thumb { width: 125px; height: 125px; }
+      .lp-viewer { width: 125px; }
       .detail-header { gap: 12px; }
     }
   </style>
@@ -564,6 +612,11 @@
 
     <!-- Stats Line with inline filter chips -->
     <div class="stats-line" id="statsLine">
+      <div id="thumbSizeGroup" class="thumb-size-group" role="group" aria-label="Label size">
+        <button type="button" class="thumb-size-btn" data-size="S" title="Small labels">S</button>
+        <button type="button" class="thumb-size-btn" data-size="M" title="Medium labels">M</button>
+        <button type="button" class="thumb-size-btn" data-size="L" title="Large labels">L</button>
+      </div>
       <span id="statsText"></span>
       <div id="chipsRow" class="chips-row"></div>
     </div>
@@ -636,6 +689,7 @@
   const chipsRow = $('chipsRow');
   const statsLine = $('statsLine');
   const statsText = $('statsText');
+  const thumbSizeGroup = $('thumbSizeGroup');
   const tableBody = $('tableBody');
   const tableContainer = $('tableContainer');
   const scrollIndicator = $('scrollIndicator');
@@ -1151,20 +1205,37 @@
       html += '<img class="detail-thumb" src="' + esc(imgSrc) + '" alt="" ' +
         'onerror="this.style.display=\'none\'">';
     }
-    html += '<div class="detail-row1"><span class="detail-title">' + esc(row.Title || '') + '</span>';
-    if (row.AltTitle) html += ' <span class="detail-alt">' + esc(row.AltTitle) + '</span>';
-    if (year) html += ' <span class="detail-year">(' + year + ')</span>';
-    if (lpImgs.length && row.LP_Title) html += '<div class="lp-title-line">LP: ' + esc(row.LP_Title) + '</div>';
+
+    // Right-of-image metadata column
+    var titleHtml = '<span class="meta-title">' + esc(row.Title || '') + '</span>' +
+      (row.AltTitle ? '<span class="meta-alt">' + esc(row.AltTitle) + '</span>' : '') +
+      (lpImgs.length && row.LP_Title ? '<div class="meta-lp-line">LP: ' + esc(row.LP_Title) + '</div>' : '');
+    var headerFields = [
+      { label: 'Title', value: titleHtml, raw: true },
+      { label: 'Bandleader', value: row.Bandleader },
+      { label: 'Date', value: formatDate(row.Date) },
+      { label: 'Orchestra', value: row.Orchestra },
+      { label: 'Genre', value: row.Genre },
+      { label: 'Singer', value: row.Singer },
+      { label: 'Matrix', value: row.Matrix },
+      { label: 'Disk', value: row.Disc },
+    ];
+    html += '<div class="detail-meta">';
+    headerFields.forEach(function (f) {
+      var hasVal = f.raw ? !!f.value : !!(f.value && String(f.value).trim());
+      var val = hasVal ? (f.raw ? f.value : esc(f.value)) : '—';
+      html += '<div class="detail-meta-label">' + esc(f.label) + '</div>' +
+        '<div class="detail-meta-value' + (hasVal ? '' : ' empty') + '">' + val + '</div>';
+    });
     html += '</div></div>';
 
     var fields = [
-      { label: 'Genre', value: row.Genre },
-      { label: 'Orchestra', value: row.Orchestra, span2: true },
+      { label: 'Label', value: row.Label },
       { label: 'Master', value: row.Master },
-      { label: 'Matrix', value: row.Matrix },
-      { label: 'Disk', value: row.Disc },
+      { label: 'Grouping', value: row.Grouping },
       { label: 'Composer', value: row.Composer },
-      { label: 'Author', value: row.Author },
+      { label: 'Author', value: row.Author, span2: true },
+      { header: 'Band Members' },
       { label: 'Lineup', value: row.Lineup, span3: true },
       { label: 'Pianist', value: row.Pianist },
       { label: 'Bassist', value: row.Bassist },
@@ -1174,6 +1245,10 @@
 
     html += '<div class="detail-grid">';
     fields.forEach(f => {
+      if (f.header) {
+        html += '<div class="detail-section-header">' + esc(f.header) + '</div>';
+        return;
+      }
       var cls = f.span3 ? ' span3' : (f.span2 ? ' span2' : '');
       var val = f.value ? esc(f.value) : '<span class="empty">\u2014</span>';
       var valCls = f.value ? '' : ' empty';
@@ -1388,6 +1463,25 @@
         detailPopoverClose.addEventListener('click', closePopover);
         detailBackdrop.addEventListener('click', closePopover);
         lightboxBackdrop.addEventListener('click', closeLightbox);
+
+        // Label-size segmented control (S / M / L), persisted in localStorage
+        var thumbSize = localStorage.getItem('thumbSize') || 'S';
+        if (!['S', 'M', 'L'].includes(thumbSize)) thumbSize = 'S';
+        applyThumbSize(thumbSize);
+        thumbSizeGroup.addEventListener('click', (e) => {
+          var btn = e.target.closest('.thumb-size-btn');
+          if (!btn) return;
+          thumbSize = btn.dataset.size;
+          localStorage.setItem('thumbSize', thumbSize);
+          applyThumbSize(thumbSize);
+        });
+        function applyThumbSize(size) {
+          document.body.classList.toggle('thumbs-m', size === 'M');
+          document.body.classList.toggle('thumbs-l', size === 'L');
+          thumbSizeGroup.querySelectorAll('.thumb-size-btn').forEach((b) => {
+            b.classList.toggle('active', b.dataset.size === size);
+          });
+        }
       },
       error: function() {
         loadingEl.style.display = 'none';
