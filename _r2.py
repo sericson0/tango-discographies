@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import os
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -58,6 +59,11 @@ def key_for_local(local: Path, artist_root: Path, bandleader_folder_name: str) -
     """Map images/<Artist>/<rest> -> <bandleaderFolder>/<rest>."""
     rel = local.relative_to(artist_root).as_posix()
     return f"{bandleader_folder_name}/{rel}"
+
+
+def public_url(public_base: str, key: str) -> str:
+    """Build a public R2 URL, percent-encoding the key path (e.g. spaces -> %20)."""
+    return f"{public_base.rstrip('/')}/{urllib.parse.quote(key, safe='/')}"
 
 
 def head_exists(url: str) -> bool:

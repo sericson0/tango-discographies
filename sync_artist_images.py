@@ -154,8 +154,8 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
 
             for webp in sorted(art_root.rglob("*.webp")):
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
-                public_url = f"{cfg.public_base}/{key}"
-                if not args.force and _r2.head_exists(public_url):
+                url = _r2.public_url(cfg.public_base, key)
+                if not args.force and _r2.head_exists(url):
                     skipped += 1
                     succeeded_for_delete.add(webp)
                     continue

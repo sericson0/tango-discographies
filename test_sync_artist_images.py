@@ -272,6 +272,15 @@ def test_head_exists_returns_true_on_200():
         assert _r2.head_exists("https://x/y.webp") is True
 
 
+def test_public_url_percent_encodes_spaces_and_keeps_slashes():
+    url = _r2.public_url("https://pub-x.r2.dev", "Artist/LPs/Some LP/Some LP Front.webp")
+    assert url == "https://pub-x.r2.dev/Artist/LPs/Some%20LP/Some%20LP%20Front.webp"
+
+
+def test_public_url_strips_trailing_slash_on_base():
+    assert _r2.public_url("https://pub-x.r2.dev/", "a/b.webp") == "https://pub-x.r2.dev/a/b.webp"
+
+
 def test_head_exists_returns_false_on_404():
     with mock.patch("_r2.urllib.request.urlopen") as op:
         import urllib.error
