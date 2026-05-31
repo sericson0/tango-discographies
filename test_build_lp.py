@@ -82,7 +82,7 @@ def test_load_lp_data_pairs_matches_and_manifest(tmp_path):
     jk = build.join_key("1969-09-18", "Tigre Viejo", "Instrumental")
     cands = data[key]["matches"][jk]
     assert {c["LP_Folder"] for c in cands} == {"Tigre Viejo", "Con tu Compas"}
-    assert data[key]["manifest"]["Tigre Viejo"] == ["Front", "Back"]
+    assert data[key]["manifest"]["Tigre Viejo"] == [("Front", "LP"), ("Back", "LP")]
 
 
 def test_load_lp_data_missing_dir_returns_empty(tmp_path):
@@ -103,9 +103,9 @@ def _lp_data():
                 ],
             },
             "manifest": {
-                "Tigre Viejo": ["Back", "Front", "Disk 1"],
-                "DArienzo Interpreta a Canaro": ["Front"],
-                "Tiempos Viejos": ["Front"],
+                "Tigre Viejo": [("Back", "LP"), ("Front", "LP"), ("Disk 1", "LP")],
+                "DArienzo Interpreta a Canaro": [("Front", "LP")],
+                "Tiempos Viejos": [("Front", "LP")],
             },
         }
     }
@@ -154,3 +154,37 @@ def test_apply_lp_images_other_artist_untouched():
              "Title": "Tigre Viejo", "Singer": "Instrumental"}]
     build.apply_lp_images(rows, _lp_data())
     assert rows[0].get("LP_Images", "") == ""
+
+
+def test_lp_image_url_routes_to_eps_when_kind_ep():
+    url = build.lp_image_url("DArienzoJuan", "Bien Porteno", "Front", kind="EP")
+    assert url == "https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev/DArienzoJuan/EPs/Bien%20Porteno/Bien%20Porteno%20Front.webp"
+
+
+def test_lp_image_url_defaults_to_lps_when_kind_missing():
+    url = build.lp_image_url("DArienzoJuan", "Armenonville", "Front")
+    assert "/LPs/" in url
+    assert url.endswith("Armenonville%20Front.webp")
+
+
+def test_apply_lp_images_uses_ep_subdir_when_manifest_kind_is_ep(tmp_path, monkeypatch):
+    # Set up lp_matches dir with EP rows
+    lp_dir = tmp_path / "lp_matches"
+    lp_dir.mkdir()
+    (lp_dir / "Juan D'Arienzo.csv").write_text(
+        "LP_Folder,LP_Catalog,LP_Title,Side,Track_No,Track_Title,Track_Year,Match_Status,"
+        "Disc_Date,Disc_Title,Disc_AltTitle,Singer,Master,Matrix,Note,Kind\n"
+        "Bien Porteno,AVE-1,Bien Porteno,A,1,Some Song,1959,matched,"
+        "1959-01-01,Some Song,,SomeSinger,,,,EP\n",
+        encoding="utf-8-sig",
+    )
+    (lp_dir / "Juan D'Arienzo images.csv").write_text(
+        "LP_Folder,Type,Kind\nBien Porteno,Front,EP\n",
+        encoding="utf-8-sig",
+    )
+    rows = [{"Bandleader": "Juan D'Arienzo", "Date": "1959-01-01", "Title": "Some Song", "Singer": "SomeSinger"}]
+    lp_data = build.load_lp_data(lp_dir)
+    build.apply_lp_images(rows, lp_data)
+    import json
+    imgs = json.loads(rows[0]["LP_Images"])
+    assert "/EPs/Bien%20Porteno/" in imgs[0]["url"]

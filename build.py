@@ -79,9 +79,10 @@ def catalog_sort_value(catalog: str) -> int:
     return int(max(nums, key=len)) if nums else 10**9
 
 
-def lp_image_url(folder: str, lp_folder: str, image_type: str) -> str:
+def lp_image_url(folder: str, lp_folder: str, image_type: str, kind: str = "LP") -> str:
+    subdir = "EPs" if (kind or "LP").upper() == "EP" else "LPs"
     filename = f"{lp_folder} {image_type}.webp"
-    return f"{IMAGE_BASE}/{quote(folder)}/LPs/{quote(lp_folder)}/{quote(filename)}"
+    return f"{IMAGE_BASE}/{quote(folder)}/{subdir}/{quote(lp_folder)}/{quote(filename)}"
 
 
 def join_key(date: str, title: str, singer: str) -> tuple:
@@ -109,8 +110,9 @@ def load_lp_data(lp_dir: Path) -> dict:
                 if is_manifest:
                     folder = (row.get("LP_Folder") or "").strip()
                     ttype = (row.get("Type") or "").strip()
+                    kind = (row.get("Kind") or "LP").strip() or "LP"
                     if folder and ttype:
-                        entry["manifest"].setdefault(folder, []).append(ttype)
+                        entry["manifest"].setdefault(folder, []).append((ttype, kind))
                 else:
                     jk = join_key(
                         row.get("Disc_Date", ""),
@@ -121,6 +123,7 @@ def load_lp_data(lp_dir: Path) -> dict:
                         "LP_Folder": (row.get("LP_Folder") or "").strip(),
                         "LP_Catalog": (row.get("LP_Catalog") or "").strip(),
                         "LP_Title": (row.get("LP_Title") or "").strip(),
+                        "Kind": (row.get("Kind") or "LP").strip() or "LP",
                     })
     return data
 
@@ -141,14 +144,14 @@ def apply_lp_images(rows: list[dict], lp_data: dict) -> None:
         if not candidates:
             continue
         chosen = min(candidates, key=lambda c: catalog_sort_value(c["LP_Catalog"]))
-        types = data["manifest"].get(chosen["LP_Folder"], [])
-        if not types:
+        types_with_kind = data["manifest"].get(chosen["LP_Folder"], [])
+        if not types_with_kind:
             continue
         folder = bandleader_folder(row.get("Bandleader", ""))
-        ordered = sorted(types, key=lambda t: 0 if t.strip().lower() == "front" else 1)
+        ordered = sorted(types_with_kind, key=lambda tk: 0 if tk[0].strip().lower() == "front" else 1)
         images = [
-            {"type": t, "url": lp_image_url(folder, chosen["LP_Folder"], t)}
-            for t in ordered
+            {"type": t, "url": lp_image_url(folder, chosen["LP_Folder"], t, kind=k)}
+            for t, k in ordered
         ]
         row["LP_Title"] = chosen["LP_Title"]
         row["LP_Images"] = json.dumps(images, ensure_ascii=False)
