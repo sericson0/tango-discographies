@@ -699,14 +699,14 @@
   }
 
   // --- Image URL construction ---
-  // Convention: {LastFirst}/{GroupingNormalized}/{YYYY-MM-DD}_{Title-TitleCased}_{Suffix}.webp
+  // Convention: {LastFirst}/Singles/{GroupingNormalized}/{YYYY-MM-DD}_{Title-TitleCased}_{Suffix}.webp
   // Grouping normalization: strip accents, drop ( ) , . +, collapse spaces. Hyphens kept.
   // Bandleader folder: strip accents + drop apostrophes/punctuation: "Juan D'Arienzo" -> "DArienzoJuan".
   // Title segment: strip accents, Title-Case each word, spaces -> hyphens: "Desde el Alma" -> "Desde-El-Alma".
   // Last-name suffix: strip accents, apostrophe -> hyphen: "D'Arienzo" -> "D-Arienzo".
   // Year-only dates use the bare year as the date segment: "1928" -> 1928_Title_Suffix.webp.
   // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires + "50-54 T.K. (Figari)" ->
-  //   TroiloAnibal/50-54 TK Figari/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
+  //   TroiloAnibal/Singles/50-54 TK Figari/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
   const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
   function normalizeGroupingFolder(g) {
     return stripAccents(g).replace(/[(),.+]/g, '').replace(/\s+/g, ' ').trim();
@@ -734,7 +734,7 @@
     var title = stripAccents(row.Title).trim()
       .replace(/\S+/g, function (w) { return w.charAt(0).toUpperCase() + w.slice(1); })
       .replace(/\s+/g, '-');
-    return IMAGE_BASE + '/' + folder + '/' + groupingFolder + '/' + iso + '_' + title + '_' + suffix + '.webp';
+    return IMAGE_BASE + '/' + folder + '/Singles/' + groupingFolder + '/' + iso + '_' + title + '_' + suffix + '.webp';
   }
 
   // --- LP images (from the LP_Images JSON column produced by build.py) ---
