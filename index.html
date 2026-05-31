@@ -340,9 +340,9 @@
       letter-spacing: 1.5px;
       color: var(--accent-hover);
       font-weight: 700;
-      border-top: 1px solid var(--border-soft);
-      padding-top: 12px;
-      margin-top: 4px;
+      border-top: 2px solid var(--accent-hover);
+      padding-top: 14px;
+      margin-top: 8px;
     }
     .col-expand {
       text-align: center;
@@ -381,14 +381,14 @@
       transform: scale(1.08);
       border-color: var(--accent);
     }
-    /* Medium thumbnails (1.5x small) */
+    /* Medium thumbnails */
     body.thumbs-m .th-thumb,
-    body.thumbs-m .col-thumb { width: 72px; padding: 6px; }
-    body.thumbs-m .col-thumb img { width: 54px; height: 54px; }
-    /* Large thumbnails (1.5x medium = 2.25x small) */
+    body.thumbs-m .col-thumb { width: 90px; padding: 8px; }
+    body.thumbs-m .col-thumb img { width: 68px; height: 68px; }
+    /* Large thumbnails */
     body.thumbs-l .th-thumb,
-    body.thumbs-l .col-thumb { width: 108px; padding: 9px; }
-    body.thumbs-l .col-thumb img { width: 81px; height: 81px; }
+    body.thumbs-l .col-thumb { width: 135px; padding: 11px; }
+    body.thumbs-l .col-thumb img { width: 101px; height: 101px; }
 
     /* Thumb-size segmented control (S | M | L) */
     .thumb-size-group {
@@ -444,7 +444,6 @@
     .detail-meta-value.empty { color: var(--text-faint); }
     .detail-meta-value .meta-title { font-size: 18px; font-weight: 600; }
     .detail-meta-value .meta-alt { font-style: italic; color: var(--text-soft); margin-left: 6px; font-weight: 400; font-size: 14px; }
-    .detail-meta-value .meta-lp-line { color: var(--text-soft); font-size: 12px; margin-top: 2px; }
     .detail-thumb {
       width: 200px;
       height: 200px;
@@ -459,16 +458,7 @@
 
     /* --- LP image viewer (detail popover) --- */
     .lp-viewer { flex-shrink: 0; width: 200px; }
-    .lp-viewer .lp-main { margin-bottom: 4px; }
-    .lp-caption {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent-hover);
-      text-align: center;
-      min-height: 13px;
-      margin-bottom: 6px;
-    }
+    .lp-viewer .lp-main { margin-bottom: 8px; }
     .lp-thumbs { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
     .lp-thumb {
       font-size: 10px;
@@ -1194,10 +1184,9 @@
       html += '<div class="lp-viewer">' +
         '<img class="detail-thumb lp-main" src="' + esc(lpImgs[0].url) + '" data-idx="0" alt="" ' +
         'onerror="this.style.visibility=\'hidden\'">' +
-        '<div class="lp-caption"></div>' +
         '<div class="lp-thumbs">';
       lpImgs.forEach(function (im, i) {
-        var label = im.type || ('#' + (i + 1));
+        var label = (im.type || ('#' + (i + 1))).replace(/\bDisk\b/gi, 'Disc');
         html += '<button type="button" class="lp-thumb" data-idx="' + i + '">' + esc(label) + '</button>';
       });
       html += '</div></div>';
@@ -1208,8 +1197,7 @@
 
     // Right-of-image metadata column
     var titleHtml = '<span class="meta-title">' + esc(row.Title || '') + '</span>' +
-      (row.AltTitle ? '<span class="meta-alt">' + esc(row.AltTitle) + '</span>' : '') +
-      (lpImgs.length && row.LP_Title ? '<div class="meta-lp-line">LP: ' + esc(row.LP_Title) + '</div>' : '');
+      (row.AltTitle ? '<span class="meta-alt">' + esc(row.AltTitle) + '</span>' : '');
     var headerFields = [
       { label: 'Title', value: titleHtml, raw: true },
       { label: 'Bandleader', value: row.Bandleader },
@@ -1263,7 +1251,6 @@
 
     if (lpImgs.length) {
       var mainImg = detailContent.querySelector('.lp-main');
-      var caption = detailContent.querySelector('.lp-caption');
       var thumbBtns = detailContent.querySelectorAll('.lp-thumb');
       var selectImage = function (idx) {
         var im = lpImgs[idx];
@@ -1271,7 +1258,6 @@
         mainImg.src = im.url;
         mainImg.style.visibility = '';
         mainImg.dataset.idx = idx;
-        caption.textContent = im.type || '';
         thumbBtns.forEach(function (b) { b.classList.toggle('selected', +b.dataset.idx === idx); });
       };
       thumbBtns.forEach(function (b) {
