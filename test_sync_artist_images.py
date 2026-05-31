@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pytest
 import sync_artist_images as sai
 
@@ -325,3 +327,44 @@ def test_make_client_reads_env(monkeypatch):
     assert cfg.bucket == "mybucket"
     assert cfg.public_base == "https://example/r2"
     assert cfg.endpoint_url == "https://acct123.r2.cloudflarestorage.com"
+
+
+def test_resolve_artist_known(monkeypatch):
+    monkeypatch.setattr(sai, "ARTIST_DISPLAY", {"Foo": "Foo Bar"})
+    display, csv_path = sai.resolve_artist("Foo", repo_root=Path("/r"))
+    assert display == "Foo Bar"
+    assert csv_path == Path("/r/csv_files/Foo Bar.csv")
+
+
+def test_resolve_artist_unknown_raises():
+    with pytest.raises(SystemExit):
+        sai.resolve_artist("NotInMap", repo_root=Path("/r"))
+
+
+def test_artist_root_under_images(tmp_path):
+    root = tmp_path / "images" / "Foo"
+    root.mkdir(parents=True)
+    assert sai.artist_root("Foo", repo_root=tmp_path) == root
+
+
+def test_dry_run_does_not_create_files(tmp_path, monkeypatch, capsys):
+    # Minimal artist tree
+    images = tmp_path / "images" / "Foo"
+    (images / "LPs" / "X").mkdir(parents=True)
+    (images / "LPs" / "X" / "X Front.jpg").write_bytes(b"fakejpeg")
+    monkeypatch.setattr(sai, "ARTIST_DISPLAY", {"Foo": "Foo"})
+    # Stub the discography CSV
+    (tmp_path / "csv_files").mkdir()
+    (tmp_path / "csv_files" / "Foo.csv").write_text("Bandleader,Date,Title,AltTitle,Singer,Master,Matrix\n", encoding="utf-8-sig")
+    # Stub the LPs.csv
+    (images / "LPs" / "LPs.csv").write_text(
+        "LP_Folder,LP_Catalog,LP_Title,Side,Track_No,Track_Title,Track_Year\nX,X-1,X,A,1,Y,1958\n",
+        encoding="utf-8-sig",
+    )
+    monkeypatch.chdir(tmp_path)
+    rc = sai.main(["Foo", "--dry-run"])
+    assert rc == 0
+    # No webp created, no matches file written, no jpeg deleted
+    assert (images / "LPs" / "X" / "X Front.jpg").exists()
+    assert not (images / "LPs" / "X" / "X Front.webp").exists()
+    assert not (tmp_path / "lp_matches" / "Foo.csv").exists()
