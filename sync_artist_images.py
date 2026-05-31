@@ -23,6 +23,7 @@ import _manifest
 import _match
 import _r2
 from _artist_map import ARTIST_DISPLAY
+from build import bandleader_folder as _bandleader_folder
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
@@ -54,12 +55,6 @@ def _load_discography(path: Path) -> list[dict]:
     if not path.exists():
         raise FileNotFoundError(f"discography CSV not found: {path}")
     return list(csv.DictReader(path.open(encoding="utf-8-sig")))
-
-
-def _bandleader_folder(display_name: str) -> str:
-    """Mirror of build.bandleader_folder; duplicated to avoid circular import."""
-    import build
-    return build.bandleader_folder(display_name)
 
 
 def _local_folder_names(artist_root_path: Path) -> dict[str, dict[str, str]]:
