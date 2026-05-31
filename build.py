@@ -128,13 +128,22 @@ def load_lp_data(lp_dir: Path) -> dict:
     return data
 
 
+LP_IMAGE_YEAR_CUTOFF = 1952  # don't attach LP/EP covers to recordings older than this
+
+
 def apply_lp_images(rows: list[dict], lp_data: dict) -> None:
     """Mutate rows in place, setting LP_Title and LP_Images where a track is on an LP.
 
-    Picks the lowest-catalog LP when a track appears on several (ties -> first
-    in CSV order, via stable min). Front is floated to the head of LP_Images.
+    Picks an LP-kind cover over an EP-kind cover when a track is on both; within
+    one kind, lowest catalog wins (original pressing). Front is floated to the
+    head of LP_Images. Skips tracks older than LP_IMAGE_YEAR_CUTOFF entirely
+    (78rpm-era recordings don't get LP/EP art attached even if the song was
+    re-released on a later LP/EP).
     """
     for row in rows:
+        year = extract_year(row.get("Date", ""))
+        if year and int(year) < LP_IMAGE_YEAR_CUTOFF:
+            continue
         key = artist_match_key(row.get("Bandleader", ""))
         data = lp_data.get(key)
         if not data:
@@ -143,7 +152,11 @@ def apply_lp_images(rows: list[dict], lp_data: dict) -> None:
         candidates = data["matches"].get(jk)
         if not candidates:
             continue
-        chosen = min(candidates, key=lambda c: catalog_sort_value(c["LP_Catalog"]))
+        chosen = min(
+            candidates,
+            key=lambda c: (0 if (c.get("Kind") or "LP").upper() == "LP" else 1,
+                           catalog_sort_value(c["LP_Catalog"])),
+        )
         types_with_kind = data["manifest"].get(chosen["LP_Folder"], [])
         if not types_with_kind:
             continue

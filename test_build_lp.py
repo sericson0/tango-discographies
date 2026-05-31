@@ -188,3 +188,50 @@ def test_apply_lp_images_uses_ep_subdir_when_manifest_kind_is_ep(tmp_path, monke
     import json
     imgs = json.loads(rows[0]["LP_Images"])
     assert "/EPs/Bien%20Porteno/" in imgs[0]["url"]
+
+
+def test_apply_lp_images_prefers_lp_over_ep_when_song_is_on_both(tmp_path):
+    """When a track appears on both an LP and an EP, the LP cover wins regardless of catalog #."""
+    lp_dir = tmp_path / "lp_matches"
+    lp_dir.mkdir()
+    # LP has a HIGHER catalog # than the EP — old logic (lowest catalog wins) would pick EP.
+    (lp_dir / "Juan D'Arienzo.csv").write_text(
+        "LP_Folder,LP_Catalog,LP_Title,Side,Track_No,Track_Title,Track_Year,Match_Status,"
+        "Disc_Date,Disc_Title,Disc_AltTitle,Singer,Master,Matrix,Note,Kind\n"
+        "Big LP,AVL-9999,Big LP Title,A,1,Shared Song,1961,matched,1961-01-01,Shared Song,,Singer,,,,LP\n"
+        "Small EP,AVE-100,,A,1,Shared Song,1961,matched,1961-01-01,Shared Song,,Singer,,,,EP\n",
+        encoding="utf-8-sig",
+    )
+    (lp_dir / "Juan D'Arienzo images.csv").write_text(
+        "LP_Folder,Type,Kind\nBig LP,Front,LP\nSmall EP,Front,EP\n",
+        encoding="utf-8-sig",
+    )
+    rows = [{"Bandleader": "Juan D'Arienzo", "Date": "1961-01-01", "Title": "Shared Song", "Singer": "Singer"}]
+    build.apply_lp_images(rows, build.load_lp_data(lp_dir))
+    import json
+    imgs = json.loads(rows[0]["LP_Images"])
+    assert "/LPs/Big%20LP/" in imgs[0]["url"], imgs
+
+
+def test_apply_lp_images_skips_rows_older_than_1952(tmp_path):
+    """78rpm-era recordings don't get LP/EP art even if matched to a later LP."""
+    lp_dir = tmp_path / "lp_matches"
+    lp_dir.mkdir()
+    (lp_dir / "Juan D'Arienzo.csv").write_text(
+        "LP_Folder,LP_Catalog,LP_Title,Side,Track_No,Track_Title,Track_Year,Match_Status,"
+        "Disc_Date,Disc_Title,Disc_AltTitle,Singer,Master,Matrix,Note,Kind\n"
+        "Reissue,AVL-1,Reissue,A,1,Old Song,1939,matched,1939-08-09,Old Song,,Singer,,,,LP\n"
+        "Reissue,AVL-1,Reissue,A,2,New Song,1953,matched,1953-08-09,New Song,,Singer,,,,LP\n",
+        encoding="utf-8-sig",
+    )
+    (lp_dir / "Juan D'Arienzo images.csv").write_text(
+        "LP_Folder,Type,Kind\nReissue,Front,LP\n",
+        encoding="utf-8-sig",
+    )
+    rows = [
+        {"Bandleader": "Juan D'Arienzo", "Date": "1939-08-09", "Title": "Old Song", "Singer": "Singer"},
+        {"Bandleader": "Juan D'Arienzo", "Date": "1953-08-09", "Title": "New Song", "Singer": "Singer"},
+    ]
+    build.apply_lp_images(rows, build.load_lp_data(lp_dir))
+    assert rows[0].get("LP_Images", "") == ""   # 1939 -> skipped (before 1952 cutoff)
+    assert rows[1].get("LP_Images", "") != ""   # 1953 -> covered
