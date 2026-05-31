@@ -239,3 +239,89 @@ def test_write_matches_csv_includes_kind_column(tmp_path):
     header = out.read_text(encoding="utf-8-sig").splitlines()[0].split(",")
     assert header[-1] == "Kind"
     assert "LP_Folder" in header
+
+
+from unittest import mock
+import _r2
+
+
+def test_key_for_singles_keeps_grouping_subdir(tmp_path):
+    # images/DArienzo/Singles/28-30 Sextet/1928_x_y.webp -> DArienzoJuan/Singles/28-30 Sextet/1928_x_y.webp
+    images_dir = tmp_path / "images" / "DArienzo"
+    f = images_dir / "Singles" / "28-30 Sextet" / "1928_x_y.webp"
+    f.parent.mkdir(parents=True)
+    f.touch()
+    key = _r2.key_for_local(f, artist_root=images_dir, bandleader_folder_name="DArienzoJuan")
+    assert key == "DArienzoJuan/Singles/28-30 Sextet/1928_x_y.webp"
+
+
+def test_key_for_lp_routes_under_lps_subdir(tmp_path):
+    images_dir = tmp_path / "images" / "DArienzo"
+    f = images_dir / "LPs" / "Armenonville" / "Armenonville Front.webp"
+    f.parent.mkdir(parents=True)
+    f.touch()
+    key = _r2.key_for_local(f, artist_root=images_dir, bandleader_folder_name="DArienzoJuan")
+    assert key == "DArienzoJuan/LPs/Armenonville/Armenonville Front.webp"
+
+
+def test_head_exists_returns_true_on_200():
+    with mock.patch("_r2.urllib.request.urlopen") as op:
+        op.return_value.__enter__.return_value.status = 200
+        assert _r2.head_exists("https://x/y.webp") is True
+
+
+def test_head_exists_returns_false_on_404():
+    with mock.patch("_r2.urllib.request.urlopen") as op:
+        import urllib.error
+        op.side_effect = urllib.error.HTTPError("u", 404, "nf", {}, None)
+        assert _r2.head_exists("https://x/y.webp") is False
+
+
+def test_upload_calls_put_object_with_content_type(tmp_path):
+    f = tmp_path / "x.webp"
+    f.write_bytes(b"webp-bytes")
+    client = mock.MagicMock()
+    _r2.upload_file(client, bucket="b", key="k/x.webp", path=f)
+    client.put_object.assert_called_once()
+    kwargs = client.put_object.call_args.kwargs
+    assert kwargs["Bucket"] == "b"
+    assert kwargs["Key"] == "k/x.webp"
+    assert kwargs["ContentType"] == "image/webp"
+    assert kwargs["Body"].read() == b"webp-bytes"
+
+
+def test_upload_retries_on_transient_then_succeeds(tmp_path):
+    from botocore.exceptions import EndpointConnectionError
+    f = tmp_path / "x.webp"
+    f.write_bytes(b"x")
+    client = mock.MagicMock()
+    client.put_object.side_effect = [
+        EndpointConnectionError(endpoint_url="x"),
+        EndpointConnectionError(endpoint_url="x"),
+        None,
+    ]
+    _r2.upload_file(client, bucket="b", key="k/x.webp", path=f, sleeper=lambda _: None)
+    assert client.put_object.call_count == 3
+
+
+def test_upload_gives_up_after_three_failures(tmp_path):
+    from botocore.exceptions import EndpointConnectionError
+    f = tmp_path / "x.webp"
+    f.write_bytes(b"x")
+    client = mock.MagicMock()
+    client.put_object.side_effect = EndpointConnectionError(endpoint_url="x")
+    with pytest.raises(EndpointConnectionError):
+        _r2.upload_file(client, bucket="b", key="k/x.webp", path=f, sleeper=lambda _: None)
+    assert client.put_object.call_count == 3
+
+
+def test_make_client_reads_env(monkeypatch):
+    monkeypatch.setenv("R2_ACCOUNT_ID", "acct123")
+    monkeypatch.setenv("R2_ACCESS_KEY_ID", "ak")
+    monkeypatch.setenv("R2_SECRET_ACCESS_KEY", "sk")
+    monkeypatch.setenv("R2_BUCKET", "mybucket")
+    monkeypatch.setenv("R2_PUBLIC_BASE", "https://example/r2")
+    cfg = _r2.load_env()
+    assert cfg.bucket == "mybucket"
+    assert cfg.public_base == "https://example/r2"
+    assert cfg.endpoint_url == "https://acct123.r2.cloudflarestorage.com"
