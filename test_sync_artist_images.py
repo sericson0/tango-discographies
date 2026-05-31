@@ -140,3 +140,102 @@ def test_write_manifest_writes_correct_header_and_rows(tmp_path):
     assert text.splitlines()[0] == "LP_Folder,Type,Kind"
     assert "Armenonville,Front,LP" in text
     assert "Chirusa,Front,EP" in text
+
+
+import _match
+
+
+SAMPLE_DISCOG = [
+    {"Date": "10/29/1958", "Title": "Adiós Chantecler", "AltTitle": "", "Singer": "Jorge Valdez", "Master": "Tape", "Matrix": "0741"},
+    {"Date": "10/29/1958", "Title": "Gerardo Matos Rodríguez", "AltTitle": "", "Singer": "Mario Bustos", "Master": "Tape", "Matrix": "0743"},
+    {"Date": "1/30/1975", "Title": "Para Vos Mi Querida Pebeta", "AltTitle": "", "Singer": "Osvaldo Ramos", "Master": "Tape-S", "Matrix": "16808"},
+]
+
+
+def test_prepare_indexes_normalizes_year_title_alt():
+    recs = _match.prepare(SAMPLE_DISCOG)
+    assert recs[0]["_year"] == "1958"
+    assert recs[0]["_nt"] == "adios chantecler"
+    assert recs[2]["_year"] == "1975"
+
+
+def test_match_exact_title_same_year():
+    recs = _match.prepare(SAMPLE_DISCOG)
+    hit, status, note = _match.match_track("Adiós Chantecler", "1958", recs)
+    assert status == "matched"
+    assert hit["Singer"] == "Jorge Valdez"
+    assert note == ""
+
+
+def test_match_fuzzy_variant_same_year():
+    recs = _match.prepare(SAMPLE_DISCOG)
+    hit, status, note = _match.match_track("Para Vos Querida Pebeta", "1975", recs)
+    assert status == "matched_variant"
+    assert hit["Title"] == "Para Vos Mi Querida Pebeta"
+
+
+def test_match_year_flex_falls_back_across_years():
+    recs = _match.prepare(SAMPLE_DISCOG)
+    hit, status, note = _match.match_track("Adiós Chantecler", "1959", recs)
+    assert status == "matched_year_flex"
+    assert hit["Date"] == "10/29/1958"
+    assert "1959" in note and "1958" in note
+
+
+def test_match_returns_no_title_match_when_nothing_close():
+    recs = _match.prepare(SAMPLE_DISCOG)
+    hit, status, note = _match.match_track("Completely Unknown Song", "1958", recs)
+    assert hit is None
+    assert status == "no_title_match"
+
+
+def test_match_lps_csv_writes_full_row_with_kind_lp(tmp_path):
+    lps_csv = tmp_path / "LPs.csv"
+    lps_csv.write_text(
+        "LP_Folder,LP_Catalog,LP_Title,Side,Track_No,Track_Title,Track_Year,Match_Status,Disc_Date,Disc_Title,Disc_AltTitle,Singer,Master,Matrix,Note\n"
+        "Foo,AVL-1,Foo Title,A,1,Adiós Chantecler,1959,,,,,,,,\n",
+        encoding="utf-8-sig",
+    )
+    folder_names = {"foo": "Foo"}  # case-insensitive lookup -> actual folder name
+    out_rows = _match.match_lps_csv(lps_csv, _match.prepare(SAMPLE_DISCOG), folder_names)
+    assert len(out_rows) == 1
+    r = out_rows[0]
+    assert r["Kind"] == "LP"
+    assert r["LP_Folder"] == "Foo"
+    assert r["Match_Status"] == "matched_year_flex"
+    assert r["Disc_Date"] == "10/29/1958"
+    assert r["Singer"] == "Jorge Valdez"
+
+
+def test_match_eps_csv_writes_row_with_kind_ep(tmp_path):
+    eps_csv = tmp_path / "EPs.csv"
+    eps_csv.write_text(
+        "EP,ID,Title,Year\nBar,AVE-1,Adiós Chantecler,1958\n",
+        encoding="utf-8-sig",
+    )
+    folder_names = {"bar": "Bar"}
+    out_rows = _match.match_eps_csv(eps_csv, _match.prepare(SAMPLE_DISCOG), folder_names)
+    assert len(out_rows) == 1
+    r = out_rows[0]
+    assert r["Kind"] == "EP"
+    assert r["LP_Folder"] == "Bar"
+    assert r["LP_Catalog"] == "AVE-1"
+    assert r["LP_Title"] == ""  # EPs.csv has no separate LP title
+    assert r["Track_Title"] == "Adiós Chantecler"
+    assert r["Match_Status"] == "matched"
+    assert r["Disc_Date"] == "10/29/1958"
+
+
+def test_write_matches_csv_includes_kind_column(tmp_path):
+    rows = [{
+        "LP_Folder": "Foo", "LP_Catalog": "AVL-1", "LP_Title": "Foo",
+        "Side": "A", "Track_No": "1", "Track_Title": "X", "Track_Year": "1958",
+        "Match_Status": "matched", "Disc_Date": "1958-01-01", "Disc_Title": "X",
+        "Disc_AltTitle": "", "Singer": "Y", "Master": "M", "Matrix": "0",
+        "Note": "", "Kind": "LP",
+    }]
+    out = tmp_path / "matches.csv"
+    _match.write_matches_csv(out, rows)
+    header = out.read_text(encoding="utf-8-sig").splitlines()[0].split(",")
+    assert header[-1] == "Kind"
+    assert "LP_Folder" in header
