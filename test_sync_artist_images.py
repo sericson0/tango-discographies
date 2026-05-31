@@ -205,7 +205,7 @@ def test_match_lps_csv_writes_full_row_with_kind_lp(tmp_path):
     assert r["Kind"] == "LP"
     assert r["LP_Folder"] == "Foo"
     assert r["Match_Status"] == "matched_year_flex"
-    assert r["Disc_Date"] == "10/29/1958"
+    assert r["Disc_Date"] == "1958-10-29"
     assert r["Singer"] == "Jorge Valdez"
 
 
@@ -225,7 +225,7 @@ def test_match_eps_csv_writes_row_with_kind_ep(tmp_path):
     assert r["LP_Title"] == ""  # EPs.csv has no separate LP title
     assert r["Track_Title"] == "Adiós Chantecler"
     assert r["Match_Status"] == "matched"
-    assert r["Disc_Date"] == "10/29/1958"
+    assert r["Disc_Date"] == "1958-10-29"
 
 
 def test_write_matches_csv_includes_kind_column(tmp_path):

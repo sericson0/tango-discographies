@@ -113,11 +113,12 @@ def match_track(title: str, year: str, recs: list[dict]) -> tuple[dict | None, s
 
 
 def _row_from_hit(hit: dict | None, base: dict, status: str, note: str) -> dict:
+    import build  # lazy to avoid circular-import surface
     r = dict(base)
     r["Match_Status"] = status
     r["Note"] = note
     if hit:
-        r["Disc_Date"] = hit.get("Date", "")
+        r["Disc_Date"] = build.normalize_date(hit.get("Date", ""))
         r["Disc_Title"] = hit.get("Title", "")
         r["Disc_AltTitle"] = hit.get("AltTitle", "")
         r["Singer"] = hit.get("Singer", "")

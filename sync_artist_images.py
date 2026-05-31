@@ -25,6 +25,11 @@ import _r2
 from _artist_map import ARTIST_DISPLAY
 from build import bandleader_folder as _bandleader_folder
 
+# Force UTF-8 stdout/stderr on Windows so accented LP/EP folder names print cleanly.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -114,8 +119,9 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
 
         manifest_rows = _manifest.walk_collection(art_root)
 
-        matches_path = repo_root / "lp_matches" / f"{display}.csv"
-        manifest_path = repo_root / "lp_matches" / f"{display} images.csv"
+        lp_match_name = display.replace("'", "")  # lp_matches/ filenames drop the apostrophe by historical convention
+        matches_path = repo_root / "lp_matches" / f"{lp_match_name}.csv"
+        manifest_path = repo_root / "lp_matches" / f"{lp_match_name} images.csv"
 
         if args.dry_run:
             print(f"  would write {len(all_rows)} match rows to {matches_path}")
