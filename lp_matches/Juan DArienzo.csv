@@ -275,18 +275,6 @@ De Ayer y Hoy,AVS-3790,De Ayer y Hoy,B,3,El Jagüel,1968,matched_year_flex,1967-
 De Ayer y Hoy,AVS-3790,De Ayer y Hoy,B,4,D'Arienzo Vos Sos el Rey,1968,matched_year_flex,1967-10-30,D'Arienzo Vos Sos el Rey,,Armando Laborde,Tape-S,7277,LP year 1968 != recording year 1967,LP
 De Ayer y Hoy,AVS-3790,De Ayer y Hoy,B,5,El Recodo,1968,matched_year_flex,1967-10-23,El Recodo,,Instrumental,Tape-S,7263,LP year 1968 != recording year 1967,LP
 De Ayer y Hoy,AVS-3790,De Ayer y Hoy,B,6,Buscate un Amorcito,1968,matched_year_flex,1967-10-30,Búscate un Amorcito,,Osvaldo Ramos,Tape-S,7278,LP year 1968 != recording year 1967,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,A,1,Mariposita ,1969,matched,1969-09-18,Mariposita,,Instrumental,Tape-S,9486,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,A,2,Sólo Tuya,1969,matched,1969-08-12,Sólo Tuya,,Osvaldo Ramos,Tape-S,9443,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,A,3,El Incendio ,1969,matched,1969-09-18,El Incendio,,Instrumental,Tape-S,9490,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,A,4,Con Tu Compás,1969,matched,1969-08-01,Con Tu Compás,,Armando Laborde,Tape-S,9173,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,A,5,El Jaguar ,1969,matched,1969-09-18,El Jaguar,,Instrumental,Tape-S,9489,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,A,6,Gotas De Veneno ,1969,matched,1969-08-12,Gotas de Veneno,,Armando Laborde,Tape-S,9442,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,B,1,El Arranque ,1969,matched,1969-09-18,El Arranque,,Instrumental,Tape-S,9488,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,B,2,Aquel Abril ,1969,matched,1969-08-01,Aquel Abril,,Osvaldo Ramos,Tape-S,9178,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,B,3,Las Cuarenta ,1969,matched,1969-08-01,Las Cuarenta,,Alberto Echagüe,Tape-S,9176,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,B,4,Sin Ti ,1969,matched,1969-08-01,Sin Ti,,Osvaldo Ramos,Tape-S,9172,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,B,5,Pregonera ,1969,matched,1969-09-18,Pregonera,,Ramos y Laborde,Tape-S,9496,,LP
-Con Tus Compas,AVL-3883,Con Tu Compás,B,6,La Chiflada ,1969,matched,1969-09-18,La Chiflada,El Silbido,Instrumental,Tape-S,9492,,LP
 Morocho y Cantor,AVL-3424,,A,1,Morocho Y Cantor ,1962,matched_year_flex,1961-11-06,Morocho y Cantor,,Horacio Palma,Tape,2955,LP year 1962 != recording year 1961,LP
 Morocho y Cantor,AVL-3424,,,2,Yo Te Saludo Palermo ,1962,matched_year_flex,1961-08-10,Yo Te Saludo Palermo,,Jorge Valdez,Tape,2636,LP year 1962 != recording year 1961,LP
 Morocho y Cantor,AVL-3424,,,3,Gran Señor ,1962,matched_year_flex,1961-08-10,Gran Señor,,Instrumental,Tape,2634,LP year 1962 != recording year 1961,LP
@@ -328,7 +316,7 @@ Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,4,Muñeca Brava,1959,matched_ye
 Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,5,Hasta Siempre Amor,1959,matched_year_flex,1958-12-23,Hasta Siempre Amor,,Jorge Valdez,Tape,0827,LP year 1959 != recording year 1958,LP
 Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,6,Bonanza,1959,matched_year_flex,1958-12-23,Bonanza,,Mario Bustos,Tape,0829,LP year 1959 != recording year 1958,LP
 Adios Chantecler,AVL-3204,"Adiós, Chantecler",A,7,Marinera,1959,matched_year_flex,1958-10-29,Marinera,,Jorge Valdez,Tape,0741,LP year 1959 != recording year 1958,LP
-Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,1,El Tigre Millán,1959,matched_year_flex,1958-12-10,El Tigre Millán,,Mario Bustos,Tape,0800,3 takes in discography; picked 1958-12-10 (Mario Bustos) as closest to 1959 LP,LP
+Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,1,El Tigre Millán,1959,matched_year_flex,1958-12-10,El Tigre Millán,,Mario Bustos,Tape,0800,"3 takes in discography; picked 1958-12-10 (Mario Bustos) as closest to 1959 LP",LP
 Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,2,Sabrás Quien Soy,1959,matched_year_flex,1958-11-12,Sabras Quién Soy,,Jorge Valdez,Tape,0752,LP year 1959 != recording year 1958,LP
 Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,3,Gerardo Matos Rodríguez,1959,matched_year_flex,1958-10-29,Gerardo Matos Rodríguez,,Mario Bustos,Tape,0743,LP year 1959 != recording year 1958,LP
 Adios Chantecler,AVL-3204,"Adiós, Chantecler",B,4,Sin Alma Y Sin Dios,1959,matched_year_flex,1958-11-19,Sin Alma y Sin Dios,,Jorge Valdez,Tape,0767,LP year 1959 != recording year 1958,LP
