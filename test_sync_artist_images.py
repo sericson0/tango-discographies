@@ -86,3 +86,57 @@ def test_convert_logs_and_continues_on_pil_error(tmp_path, capsys):
     assert len(pending) == 1
     err = capsys.readouterr().err
     assert "broken.jpg" in err
+
+
+import _manifest
+
+
+def test_type_from_filename_strips_prefix_and_suffix():
+    assert _manifest.type_from_filename("Armenonville", "Armenonville Front.webp") == "Front"
+    assert _manifest.type_from_filename("Armenonville", "Armenonville Side 1.webp") == "Side 1"
+    assert _manifest.type_from_filename("Mi Noche Triste", "Mi Noche Triste Disk 1 Alt.webp") == "Disk 1 Alt"
+
+
+def test_type_from_filename_returns_empty_when_prefix_missing(capsys):
+    # A stray file that doesn't match the convention -> empty type, warning logged.
+    t = _manifest.type_from_filename("Armenonville", "weird-file.webp")
+    assert t == ""
+
+
+def test_walk_returns_rows_per_folder_per_webp(tmp_path):
+    lps = tmp_path / "LPs"
+    eps = tmp_path / "EPs"
+    (lps / "Armenonville").mkdir(parents=True)
+    (lps / "Armenonville" / "Armenonville Front.webp").write_bytes(b"")
+    (lps / "Armenonville" / "Armenonville Back.webp").write_bytes(b"")
+    (eps / "Chirusa").mkdir(parents=True)
+    (eps / "Chirusa" / "Chirusa Front.webp").write_bytes(b"")
+    rows = _manifest.walk_collection(tmp_path)
+    rows = sorted(rows, key=lambda r: (r["Kind"], r["Folder"], r["Type"]))
+    assert rows == [
+        {"Folder": "Chirusa", "Type": "Front", "Kind": "EP"},
+        {"Folder": "Armenonville", "Type": "Back", "Kind": "LP"},
+        {"Folder": "Armenonville", "Type": "Front", "Kind": "LP"},
+    ]
+
+
+def test_walk_skips_jpegs(tmp_path):
+    (tmp_path / "LPs" / "X").mkdir(parents=True)
+    (tmp_path / "LPs" / "X" / "X Front.jpg").write_bytes(b"")
+    (tmp_path / "LPs" / "X" / "X Front.webp").write_bytes(b"")
+    rows = _manifest.walk_collection(tmp_path)
+    assert len(rows) == 1
+    assert rows[0]["Type"] == "Front"
+
+
+def test_write_manifest_writes_correct_header_and_rows(tmp_path):
+    rows = [
+        {"Folder": "Armenonville", "Type": "Front", "Kind": "LP"},
+        {"Folder": "Chirusa", "Type": "Front", "Kind": "EP"},
+    ]
+    out = tmp_path / "manifest.csv"
+    _manifest.write_manifest(out, rows)
+    text = out.read_text(encoding="utf-8-sig")
+    assert text.splitlines()[0] == "LP_Folder,Type,Kind"
+    assert "Armenonville,Front,LP" in text
+    assert "Chirusa,Front,EP" in text
