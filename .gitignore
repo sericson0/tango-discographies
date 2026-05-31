@@ -26,3 +26,6 @@ Thumbs.db
 *.swp
 *.swo
 images/*
+
+# Local credentials
+.env
