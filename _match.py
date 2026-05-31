@@ -54,6 +54,17 @@ def _pick(cand: list[dict], status: str, note: str) -> tuple[dict, str, str]:
 
 
 def match_track(title: str, year: str, recs: list[dict]) -> tuple[dict | None, str, str]:
+    """Match a track title against the prepared discography.
+
+    Tries exact -> compact (no-spaces) -> fuzzy (ratio >= 0.84) within the
+    given year first. If year is empty, the same cascade runs across all
+    recordings. If year is non-empty and nothing matches, falls back to the
+    same cascade ignoring year ('year-flex'), producing 'matched_year_flex' /
+    'matched_year_flex_variant'.
+
+    Returns (hit, status, note). When no match is found, hit is None,
+    status is 'no_title_match', and note is ''.
+    """
     t = norm(title)
     tc = t.replace(" ", "")
     pool_year = [r for r in recs if r["_year"] == year] if year else recs
@@ -98,7 +109,7 @@ def match_track(title: str, year: str, recs: list[dict]) -> tuple[dict | None, s
             ynote = f"LP year {year} != recording year {best2['_year']}"
             return best2, "matched_year_flex_variant", f"fuzzy {best2_r:.2f} of {best2['Title']!r}; {ynote}"
 
-    return None, "no_title_match", "" if year else "no_title_match"
+    return None, "no_title_match", ""
 
 
 def _row_from_hit(hit: dict | None, base: dict, status: str, note: str) -> dict:
