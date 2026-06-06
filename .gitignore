@@ -29,3 +29,45 @@ images/*
 
 # Local credentials
 .env
+verdicts/*
+
+# Internal image-scraping / verification subsystem (not part of public repo)
+_classify.py
+_discogs.py
+_discogs_drivers.py
+_download.py
+_match_store.py
+_verify_singles.py
+fetch_discogs_images.py
+verify_singles.py
+match_ui.py
+match_ui.html
+
+# One-time migration / rename scripts and their plans
+_migrate_lp_matches.py
+_rename_singles.py
+_rename_singles_plan.csv
+
+# Tests for the internal subsystem
+test_classify.py
+test_discogs.py
+test_discogs_drivers.py
+test_match.py
+test_match_store.py
+test_verify_singles.py
+
+# One-off image reports and new lp_matches artifacts
+MISSING_IMAGES_DiSarli.md
+MISSING_IMAGES_DiSarli_singles.csv
+lp_matches/Carlos Di Sarli.csv
+lp_matches/Carlos Di Sarli images.csv
+lp_matches/Miguel Calo.csv
+lp_matches/Miguel Calo images.csv
+lp_matches/Osvaldo Pugliese.csv
+lp_matches/Osvaldo Pugliese images.csv
+lp_matches/Pedro Laurenz.csv
+lp_matches/Pedro Laurenz images.csv
+lp_matches/Ricardo Tanturi.csv
+lp_matches/Ricardo Tanturi images.csv
+lp_matches/Rodolfo Biagi.csv
+lp_matches/Rodolfo Biagi images.csv

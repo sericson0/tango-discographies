@@ -750,8 +750,7 @@
   function lpCover(row) {
     var imgs = parseLpImages(row);
     if (!imgs.length) return null;
-    var front = imgs.find(function (im) { return (im.type || '').toLowerCase() === 'front'; });
-    return (front || imgs[0]).url || null;
+    return imgs[0].url || null;
   }
 
   // --- Date parsing ---

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Convert, match, and upload artist images to Cloudflare R2.
+"""Convert, build image manifest, and upload artist images to Cloudflare R2.
 
 Usage:
     python sync_artist_images.py <Artist>
     python sync_artist_images.py <Artist> --convert-only
-    python sync_artist_images.py <Artist> --match-only
+    python sync_artist_images.py <Artist> --manifest-only
     python sync_artist_images.py <Artist> --upload-only
     python sync_artist_images.py <Artist> --force
     python sync_artist_images.py <Artist> --quality 90
+    python sync_artist_images.py <Artist> --lossless
     python sync_artist_images.py <Artist> --dry-run
     python sync_artist_images.py --all
 """
@@ -20,7 +21,6 @@ from pathlib import Path
 
 import _convert
 import _manifest
-import _match
 import _r2
 from _artist_map import ARTIST_DISPLAY
 from build import bandleader_folder as _bandleader_folder
@@ -35,12 +35,13 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("artist", nargs="?", help="Local folder name under images/")
     p.add_argument("--all", action="store_true", help="Process every folder under images/")
-    p.add_argument("--match-only", action="store_true")
+    p.add_argument("--manifest-only", action="store_true")
     p.add_argument("--convert-only", action="store_true")
     p.add_argument("--upload-only", action="store_true")
     p.add_argument("--force", action="store_true")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--quality", type=int, default=85)
+    p.add_argument("--lossless", action="store_true", help="Convert to lossless WebP instead of lossy quality")
     return p.parse_args(argv)
 
 
@@ -82,9 +83,9 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
         print(f"error: {art_root} does not exist", file=sys.stderr)
         return 1
 
-    run_all = not (args.match_only or args.convert_only or args.upload_only)
+    run_all = not (args.manifest_only or args.convert_only or args.upload_only)
     do_convert = run_all or args.convert_only
-    do_match = run_all or args.match_only
+    do_manifest = run_all or args.manifest_only
     do_upload = run_all or args.upload_only
 
     pending_deletes: list[tuple[Path, Path]] = []
@@ -100,38 +101,23 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
                     n += 1
             print(f"  ({n} files would be converted)")
         else:
-            pending_deletes = _convert.convert_tree(art_root, quality=args.quality)
+            pending_deletes = _convert.convert_tree(art_root, quality=args.quality, lossless=args.lossless)
             print(f"  converted {len(pending_deletes)} files")
 
-    # ---- Phase 2: Match ----
-    if do_match:
-        print(f"== Match == {discog_csv}")
-        recs = _match.prepare(_load_discography(discog_csv))
-        folder_names = _local_folder_names(art_root)
-        all_rows: list[dict] = []
-
-        lps_csv = art_root / "LPs" / "LPs.csv"
-        if lps_csv.exists():
-            all_rows.extend(_match.match_lps_csv(lps_csv, recs, folder_names["LPs"]))
-        eps_csv = art_root / "EPs" / "EPs.csv"
-        if eps_csv.exists():
-            all_rows.extend(_match.match_eps_csv(eps_csv, recs, folder_names["EPs"]))
-
+    # ---- Phase 2: Manifest ----
+    if do_manifest:
+        print(f"== Manifest == {art_root}")
         manifest_rows = _manifest.walk_collection(art_root)
 
         lp_match_name = display.replace("'", "")  # lp_matches/ filenames drop the apostrophe by historical convention
-        matches_path = repo_root / "lp_matches" / f"{lp_match_name}.csv"
         manifest_path = repo_root / "lp_matches" / f"{lp_match_name} images.csv"
 
         if args.dry_run:
-            print(f"  would write {len(all_rows)} match rows to {matches_path}")
             print(f"  would write {len(manifest_rows)} manifest rows to {manifest_path}")
         else:
-            matches_path.parent.mkdir(parents=True, exist_ok=True)
-            _match.write_matches_csv(matches_path, all_rows)
+            manifest_path.parent.mkdir(parents=True, exist_ok=True)
             _manifest.write_manifest(manifest_path, manifest_rows)
-            unmatched = sum(1 for r in all_rows if r.get("Match_Status", "").startswith("no_title"))
-            print(f"  wrote {len(all_rows)} match rows ({unmatched} unmatched) and {len(manifest_rows)} manifest rows")
+            print(f"  wrote {len(manifest_rows)} manifest rows to {manifest_path}")
 
     # ---- Phase 3: Upload ----
     if do_upload:

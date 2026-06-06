@@ -31,6 +31,7 @@ CANONICAL_HEADERS = [
     "Singer", "Label", "Master", "Matrix", "Disc", "Composer", "Author",
     "Arranger", "Grouping", "Pianist", "Bassist", "Bandoneons", "Strings",
     "Lineup",
+    "Img_Type", "Img_Folder", "Img_Side", "Img_Album",
 ]
 
 HEADER_ALIASES = {
@@ -56,7 +57,23 @@ TITLE_CASE_FIELDS = {"Title", "AltTitle", "Orchestra"}
 PERSON_NAME_FIELDS = {"Singer", "Composer", "Author", "Arranger"}
 CASE_FIELDS = TITLE_CASE_FIELDS | PERSON_NAME_FIELDS
 
+# Dotted-initial acronym song titles. Word-by-word title casing would otherwise
+# collapse the dots and lowercase the letters ("T.B.C." -> "Tbc", "N.N." -> "Nn").
+# Keyed by accent-stripped alphanumerics so spaced/dotless variants all map back
+# ("T. B. C.", "T B C", "Tbc" -> "T.B.C."). Applied only to title fields.
+ACRONYM_TITLE_FIELDS = {"Title", "AltTitle"}
+ACRONYM_TITLES = {
+    "tbc": "T.B.C.",
+    "nn": "N.N.",
+    "np": "N.P.",
+}
+
 LIST_FIELDS = {"Composer", "Author", "Arranger", "Bandoneons", "Strings"}
+
+# Image-association columns. Stored verbatim (whitespace-trimmed only): never
+# title-cased, person-name-processed, list-split, or particle-restored, since
+# folder/album names must stay literal (e.g. "Lo Mejor De Carlos Di Sarli").
+VERBATIM_FIELDS = {"Img_Type", "Img_Folder", "Img_Side", "Img_Album"}
 
 VARIANT_FIELDS = ("Singer", "Composer", "Author", "Arranger")
 
@@ -198,10 +215,22 @@ def restore_particle_surnames(value: str) -> str:
     return value
 
 
+def acronym_title(value: str) -> str | None:
+    """Return the canonical dotted form if `value` is a known acronym title."""
+    key = re.sub(r"[^a-z0-9]+", "", canonical_key(value))
+    return ACRONYM_TITLES.get(key)
+
+
 def normalize_cell(field: str, value: str) -> str:
     value = trim(value)
     if not value:
         return ""
+    if field in VERBATIM_FIELDS:
+        return value
+    if field in ACRONYM_TITLE_FIELDS:
+        override = acronym_title(value)
+        if override:
+            return override
     if field in UNKNOWN_FIELDS and is_unknown(value):
         return ""
     person_name = field in PERSON_NAME_FIELDS

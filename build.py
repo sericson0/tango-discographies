@@ -89,79 +89,53 @@ def join_key(date: str, title: str, singer: str) -> tuple:
     return (normalize_date(date), normalize_title(title), (singer or "").strip())
 
 
-def load_lp_data(lp_dir: Path) -> dict:
-    """Read lp_matches/ into {artist_key: {"matches": {join_key: [cand]}, "manifest": {LP_Folder: [type]}}}.
-
-    Track-match files are named "{Artist}.csv"; image manifests "{Artist} images.csv".
-    Candidate and manifest lists preserve CSV row order (used for tiebreaks/carousel).
-    """
+def load_manifests(lp_dir: Path) -> dict:
+    """Read lp_matches/<Artist> images.csv files -> {artist_key: {folder: [(type, kind)]}}."""
     data: dict = {}
     if not lp_dir.is_dir():
         return data
-    for path in sorted(lp_dir.glob("*.csv")):
+    for path in sorted(lp_dir.glob("*images.csv")):
         stem = path.stem
-        is_manifest = stem.endswith(" images")
-        artist_stem = stem[: -len(" images")] if is_manifest else stem
-        key = artist_match_key(artist_stem)
-        entry = data.setdefault(key, {"matches": {}, "manifest": {}})
+        if not stem.endswith(" images"):
+            continue
+        key = artist_match_key(stem[: -len(" images")])
+        entry = data.setdefault(key, {})
         with path.open("r", encoding="utf-8-sig", newline="") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                if is_manifest:
-                    folder = (row.get("LP_Folder") or "").strip()
-                    ttype = (row.get("Type") or "").strip()
-                    kind = (row.get("Kind") or "LP").strip() or "LP"
-                    if folder and ttype:
-                        entry["manifest"].setdefault(folder, []).append((ttype, kind))
-                else:
-                    jk = join_key(
-                        row.get("Disc_Date", ""),
-                        row.get("Disc_Title", ""),
-                        row.get("Singer", ""),
-                    )
-                    entry["matches"].setdefault(jk, []).append({
-                        "LP_Folder": (row.get("LP_Folder") or "").strip(),
-                        "LP_Catalog": (row.get("LP_Catalog") or "").strip(),
-                        "LP_Title": (row.get("LP_Title") or "").strip(),
-                        "Kind": (row.get("Kind") or "LP").strip() or "LP",
-                    })
+            for row in csv.DictReader(f):
+                folder = (row.get("LP_Folder") or "").strip()
+                ttype = (row.get("Type") or "").strip()
+                kind = (row.get("Kind") or "LP").strip() or "LP"
+                if folder and ttype:
+                    entry.setdefault(folder, []).append((ttype, kind))
     return data
 
 
-LP_IMAGE_YEAR_CUTOFF = 1952  # don't attach LP/EP covers to recordings older than this
+def apply_lp_images(rows: list[dict], manifests: dict) -> None:
+    """Set LP_Title/LP_Images from each row's Img_* columns + the image manifest.
 
-
-def apply_lp_images(rows: list[dict], lp_data: dict) -> None:
-    """Mutate rows in place, setting LP_Title and LP_Images where a track is on an LP.
-
-    Picks the lowest-catalog LP/EP when a track appears on several (ties -> first
-    in CSV order, via stable min). Front is floated to the head of LP_Images.
-    Skips tracks older than LP_IMAGE_YEAR_CUTOFF entirely (78rpm-era recordings
-    don't get LP/EP art attached even if the song was re-released on a later LP/EP).
+    Img_Type EP/LP with an Img_Folder gets that release's art attached; the main
+    image is the Back when Img_Side is 'B', else the Front. Manifest entries are
+    filtered to the matching kind (a folder name can exist as both an EP and LP).
+    Img_Type Single / blank -> no LP_Images (single art is built client-side).
     """
     for row in rows:
-        year = extract_year(row.get("Date", ""))
-        if year and int(year) < LP_IMAGE_YEAR_CUTOFF:
+        img_type = (row.get("Img_Type") or "").strip().upper()
+        folder_name = (row.get("Img_Folder") or "").strip()
+        if img_type not in ("EP", "LP") or not folder_name:
             continue
-        key = artist_match_key(row.get("Bandleader", ""))
-        data = lp_data.get(key)
-        if not data:
+        entry = manifests.get(artist_match_key(row.get("Bandleader", "")))
+        if not entry:
             continue
-        jk = join_key(row.get("Date", ""), row.get("Title", ""), row.get("Singer", ""))
-        candidates = data["matches"].get(jk)
-        if not candidates:
+        types = [tk for tk in entry.get(folder_name, [])
+                 if (tk[1] or "LP").strip().upper() == img_type]
+        if not types:
             continue
-        chosen = min(candidates, key=lambda c: catalog_sort_value(c["LP_Catalog"]))
-        types_with_kind = data["manifest"].get(chosen["LP_Folder"], [])
-        if not types_with_kind:
-            continue
+        main_type = "back" if (row.get("Img_Side") or "").strip().upper() == "B" else "front"
+        ordered = sorted(types, key=lambda tk: 0 if tk[0].strip().lower() == main_type else 1)
         folder = bandleader_folder(row.get("Bandleader", ""))
-        ordered = sorted(types_with_kind, key=lambda tk: 0 if tk[0].strip().lower() == "front" else 1)
-        images = [
-            {"type": t, "url": lp_image_url(folder, chosen["LP_Folder"], t, kind=k)}
-            for t, k in ordered
-        ]
-        row["LP_Title"] = chosen["LP_Title"]
+        images = [{"type": t, "url": lp_image_url(folder, folder_name, t, kind=k)}
+                  for t, k in ordered]
+        row["LP_Title"] = (row.get("Img_Album") or "").strip()
         row["LP_Images"] = json.dumps(images, ensure_ascii=False)
 
 
@@ -202,7 +176,7 @@ def build(csv_dir: Path, output_path: Path, lp_dir: Path) -> tuple[int, list[dic
             seen[key] = row
         consolidated.append(row)
 
-    apply_lp_images(consolidated, load_lp_data(lp_dir))
+    apply_lp_images(consolidated, load_manifests(lp_dir))
     fuzzy_groups = collect_fuzzy_duplicates(consolidated)
 
     with output_path.open("w", encoding="utf-8-sig", newline="") as f:
