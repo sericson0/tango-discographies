@@ -66,7 +66,20 @@ def public_url(public_base: str, key: str) -> str:
     return f"{public_base.rstrip('/')}/{urllib.parse.quote(key, safe='/')}"
 
 
-def head_exists(url: str) -> bool:
+# Sentinel returned by head_exists when the remote state could not be determined
+# (transient 5xx / network error). Callers must treat this as "unknown" and must NOT
+# re-upload or delete the local original based on it.
+HEAD_UNKNOWN = None
+
+
+def head_exists(url: str) -> bool | None:
+    """Probe whether an object exists on R2.
+
+    Returns True (200 -> exists), False (404 -> missing), or HEAD_UNKNOWN/None for any
+    other outcome (non-404 HTTP error, timeout, connection error). The unknown sentinel
+    lets callers skip-and-warn rather than treat a transient failure as 'missing' and
+    needlessly re-upload (or, worse, delete) data.
+    """
     req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req, timeout=20) as resp:
@@ -74,9 +87,9 @@ def head_exists(url: str) -> bool:
     except urllib.error.HTTPError as e:
         if e.code == 404:
             return False
-        return False
+        return HEAD_UNKNOWN
     except Exception:
-        return False
+        return HEAD_UNKNOWN
 
 
 def upload_file(client, bucket: str, key: str, path: Path, sleeper: Callable[[float], None] | None = None) -> None:

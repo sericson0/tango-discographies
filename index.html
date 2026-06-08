@@ -702,7 +702,8 @@
   // Convention: {LastFirst}/Singles/{GroupingNormalized}/{YYYY-MM-DD}_{Title-TitleCased}_{Suffix}.webp
   // Grouping normalization: strip accents, drop ( ) , . +, collapse spaces. Hyphens kept.
   // Bandleader folder: strip accents + drop apostrophes/punctuation: "Juan D'Arienzo" -> "DArienzoJuan".
-  // Title segment: strip accents, Title-Case each word, spaces -> hyphens: "Desde el Alma" -> "Desde-El-Alma".
+  // Title segment: strip accents, replace any run of non-alphanumerics (spaces and
+  //   punctuation alike) with a single hyphen, Title-Case each segment: "Pa' Que Bailen" -> "Pa-Que-Bailen", "Colorao, Colorao" -> "Colorao-Colorao".
   // Last-name suffix: strip accents, apostrophe -> hyphen: "D'Arienzo" -> "D-Arienzo".
   // Year-only dates use the bare year as the date segment: "1928" -> 1928_Title_Suffix.webp.
   // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires + "50-54 T.K. (Figari)" ->
@@ -731,9 +732,12 @@
     } else {
       return null;
     }
-    var title = stripAccents(row.Title).trim()
-      .replace(/\S+/g, function (w) { return w.charAt(0).toUpperCase() + w.slice(1); })
-      .replace(/\s+/g, '-');
+    var title = stripAccents(row.Title)
+      .replace(/[^A-Za-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .split('-')
+      .map(function (w) { return w ? w.charAt(0).toUpperCase() + w.slice(1) : w; })
+      .join('-');
     return IMAGE_BASE + '/' + folder + '/Singles/' + groupingFolder + '/' + iso + '_' + title + '_' + suffix + '.webp';
   }
 
@@ -1093,7 +1097,9 @@
     if (!str) return '';
     var div = document.createElement('div');
     div.textContent = str;
-    return div.innerHTML;
+    // div.innerHTML escapes &, <, > but not "; escape quotes too so esc()
+    // output is safe inside double-quoted attributes (e.g. src="...").
+    return div.innerHTML.replace(/"/g, '&quot;');
   }
 
   function scrollToRow(index) {
@@ -1374,6 +1380,7 @@
         document.querySelectorAll('.data-table th').forEach(th => {
           th.addEventListener('click', () => {
             var col = th.getAttribute('data-col');
+            if (!col) return;
             if (col === sortCol) {
               sortAsc = !sortAsc;
             } else {
@@ -1410,7 +1417,9 @@
             scrollToRow(prev);
           } else if (e.key === 'Enter' && selectedRowIndex >= 0) {
             e.preventDefault();
-            onRowClick(selectedRowIndex);
+            var rows = tableBody.querySelectorAll('tr');
+            var expandCell = rows[selectedRowIndex] && rows[selectedRowIndex].querySelector('.col-expand');
+            if (expandCell) openPopover(selectedRowIndex, expandCell);
           } else if (e.key === 'Escape') {
             if (detailPopover.classList.contains('visible')) {
               closePopover();
@@ -1428,12 +1437,12 @@
           }
         });
 
-        window.addEventListener('scroll', () => {
-          backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+        tableContainer.addEventListener('scroll', () => {
+          backToTopBtn.classList.toggle('visible', tableContainer.scrollTop > 300);
         });
 
         backToTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         btnDownloadArtist.addEventListener('click', () => {

@@ -30,6 +30,7 @@ _GENRES = (
     r"vals|candombe|foxtrot|ranchera|zamba|estilo|marcha|polca)"
 )
 _TRAIL_DATE = re.compile(r"[(\[]?\s*\d{1,2}/\d{1,2}/\d{2,4}\s*[)\]]?\s*$")
+_TRAIL_YEAR = re.compile(r"[\s,\-(\[]+(?:19|20)\d{2}\s*[)\]]?$")
 _TRAIL_GENRE = re.compile(
     r"[,\-(\[]\s*" + _GENRES + r"\s*[)\]\-]?\s*$", re.IGNORECASE)
 _PARENS = re.compile(r"[(\[]([^)\]]+)[)\]]")
@@ -45,9 +46,13 @@ def strip_descriptors(title: str) -> str:
     'El Tango Es Una Historia' or a track simply named 'Tango' are left intact.
     """
     s = (title or "").strip()
-    s = _TRAIL_DATE.sub("", s).strip()
     while True:
-        stripped = _TRAIL_GENRE.sub("", s).strip().strip("-,([ ").strip()
+        stripped = _TRAIL_DATE.sub("", s).strip()
+        stripped = _TRAIL_GENRE.sub("", stripped).strip().strip("-,([ ").strip()
+        # Strip a trailing bare year (e.g. 'Nostalgias - Tango - 1936'), but
+        # never reduce a title that is itself just a 4-digit number.
+        if not re.fullmatch(r"\d{4}", stripped):
+            stripped = _TRAIL_YEAR.sub("", stripped).strip().strip("-,([ ").strip()
         if stripped == s or not stripped:
             break
         s = stripped
@@ -189,15 +194,26 @@ def _match_one(title: str, year: str, recs: list[dict]) -> tuple[dict | None, st
             hit, _s, note = _pick(cp, "matched_variant", f"variant of {cp[0]['Title']!r}")
             ynote = f"LP year {year} != recording year {hit['_year']}"
             return hit, "matched_year_flex_variant", f"{note}; {ynote}"
-        best2, best2_r = None, 0.0
+        scored = []
+        best2_r = 0.0
         for r in recs:
+            rr = 0.0
             for c in (r["_nt"], r["_na"]):
                 if not c:
                     continue
                 ratio = SequenceMatcher(None, t, c).ratio()
-                if ratio > best2_r:
-                    best2, best2_r = r, ratio
-        if best2 and best2_r >= FUZZY_MIN:
+                if ratio > rr:
+                    rr = ratio
+            if rr > 0.0:
+                scored.append((r, rr))
+                if rr > best2_r:
+                    best2_r = rr
+        if scored and best2_r >= FUZZY_MIN:
+            # Mirror the exact/variant fallbacks: among the recs tied at (or
+            # within a tiny epsilon of) the top ratio, pick the closest year.
+            eps = 1e-9
+            tied = [r for r, rr in scored if rr >= best2_r - eps]
+            best2 = _closest_year(tied, year)[0]
             ynote = f"LP year {year} != recording year {best2['_year']}"
             return best2, "matched_year_flex_variant", f"fuzzy {best2_r:.2f} of {best2['Title']!r}; {ynote}"
 

@@ -39,6 +39,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p.add_argument("--convert-only", action="store_true")
     p.add_argument("--upload-only", action="store_true")
     p.add_argument("--force", action="store_true")
+    p.add_argument("--prune", action="store_true",
+                   help="After upload, delete local raster originals (.jpg/.jpeg/.png) whose .webp is confirmed on R2")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--quality", type=int, default=85)
     p.add_argument("--lossless", action="store_true", help="Convert to lossless WebP instead of lossy quality")
@@ -88,21 +90,19 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
     do_manifest = run_all or args.manifest_only
     do_upload = run_all or args.upload_only
 
-    pending_deletes: list[tuple[Path, Path]] = []
-
     # ---- Phase 1: Convert ----
     if do_convert:
         print(f"== Convert == {art_root}")
         if args.dry_run:
             n = 0
             for p in art_root.rglob("*"):
-                if p.suffix.lower() in (".jpg", ".jpeg") and not p.with_suffix(".webp").exists():
+                if p.suffix.lower() in (".jpg", ".jpeg", ".png") and not p.with_suffix(".webp").exists():
                     print(f"  would convert: {p}")
                     n += 1
             print(f"  ({n} files would be converted)")
         else:
-            pending_deletes = _convert.convert_tree(art_root, quality=args.quality, lossless=args.lossless)
-            print(f"  converted {len(pending_deletes)} files")
+            converted = _convert.convert_tree(art_root, quality=args.quality, lossless=args.lossless)
+            print(f"  converted {len(converted)} files")
 
     # ---- Phase 2: Manifest ----
     if do_manifest:
@@ -135,36 +135,63 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
             cfg = _r2.load_env()
             client = _r2.make_client(cfg)
 
-            uploaded = skipped = failed = 0
-            succeeded_for_delete: set[Path] = set()
+            uploaded = skipped = failed = unknown = 0
+            # WebPs we have *confirmed* are present on R2 (freshly uploaded or HEAD 200).
+            # Only these make their sibling raster originals safe to delete.
+            confirmed_on_r2: set[Path] = set()
 
             for webp in sorted(art_root.rglob("*.webp")):
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
                 url = _r2.public_url(cfg.public_base, key)
-                if not args.force and _r2.head_exists(url):
-                    skipped += 1
-                    succeeded_for_delete.add(webp)
-                    continue
+                if not args.force:
+                    exists = _r2.head_exists(url)
+                    if exists is True:
+                        skipped += 1
+                        confirmed_on_r2.add(webp)
+                        continue
+                    if exists is _r2.HEAD_UNKNOWN:
+                        # Transient/unknown remote state: do NOT blindly re-upload and do NOT
+                        # treat as confirmed (so its original won't be deleted). Warn and skip.
+                        print(f"  warn: HEAD state unknown for {key}; skipping (no re-upload, no cleanup)", file=sys.stderr)
+                        unknown += 1
+                        continue
+                    # exists is False (404): fall through to upload.
                 try:
                     _r2.upload_file(client, bucket=cfg.bucket, key=key, path=webp)
                     uploaded += 1
-                    succeeded_for_delete.add(webp)
+                    confirmed_on_r2.add(webp)
                 except Exception as e:
                     print(f"  fail: {webp} -> {key}: {e}", file=sys.stderr)
                     failed += 1
 
-            print(f"  uploaded={uploaded} skipped={skipped} failed={failed}")
+            print(f"  uploaded={uploaded} skipped={skipped} unknown={unknown} failed={failed}")
 
-            # Delete JPEGs whose WebP made it to R2.
-            if pending_deletes:
+            # Delete raster originals (.jpg/.jpeg/.png) whose WebP is confirmed on R2.
+            # Gated behind --prune so a normal sync never mass-deletes source rasters;
+            # never delete an original whose webp is not confirmed present.
+            if args.prune:
                 removed = 0
-                for jpeg, webp in pending_deletes:
-                    if webp in succeeded_for_delete and jpeg.exists():
-                        jpeg.unlink()
-                        removed += 1
-                print(f"  cleaned up {removed} JPEG originals")
+                for webp in confirmed_on_r2:
+                    for orig in _sibling_originals(webp):
+                        if orig.exists():
+                            orig.unlink()
+                            removed += 1
+                print(f"  pruned {removed} originals (--prune)")
+            else:
+                pendable = sum(1 for w in confirmed_on_r2 for o in _sibling_originals(w) if o.exists())
+                if pendable:
+                    print(f"  ({pendable} raster originals have a confirmed webp; run with --prune to delete them)")
 
     return 0
+
+
+# Raster suffixes whose presence next to a confirmed .webp marks a deletable original.
+_ORIGINAL_SUFFIXES = (".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG")
+
+
+def _sibling_originals(webp: Path) -> list[Path]:
+    """Sibling raster originals for a given .webp (same stem, raster suffix)."""
+    return [webp.with_suffix(suf) for suf in _ORIGINAL_SUFFIXES]
 
 
 def main(argv: list[str] | None = None) -> int:

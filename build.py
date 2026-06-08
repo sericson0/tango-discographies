@@ -110,14 +110,21 @@ def load_manifests(lp_dir: Path) -> dict:
     return data
 
 
-def apply_lp_images(rows: list[dict], manifests: dict) -> None:
+def apply_lp_images(rows: list[dict], manifests: dict) -> dict:
     """Set LP_Title/LP_Images from each row's Img_* columns + the image manifest.
 
-    Img_Type EP/LP with an Img_Folder gets that release's art attached; the main
-    image is the Back when Img_Side is 'B', else the Front. Manifest entries are
-    filtered to the matching kind (a folder name can exist as both an EP and LP).
-    Img_Type Single / blank -> no LP_Images (single art is built client-side).
+    Img_Type EP/LP with an Img_Folder gets that release's art attached. The main
+    (cover) image is chosen by kind: LPs always lead with the Front cover; EPs
+    lead with the disk label for the track's side (Img_Side 'A' -> Disk 1,
+    'B' -> Disk 2) when that scan exists, else fall back to the Front. Manifest
+    entries are filtered to the matching kind (a folder name can exist as both an
+    EP and LP). Img_Type Single / blank -> no LP_Images (built client-side).
+
+    Returns a {(img_type, folder_name): count} dict of EP/LP rows whose
+    Img_Folder produced an EMPTY LP_Images (no manifest entry matched), so the
+    caller can surface this drift.
     """
+    empty: dict[tuple[str, str], int] = defaultdict(int)
     for row in rows:
         img_type = (row.get("Img_Type") or "").strip().upper()
         folder_name = (row.get("Img_Folder") or "").strip()
@@ -125,18 +132,43 @@ def apply_lp_images(rows: list[dict], manifests: dict) -> None:
             continue
         entry = manifests.get(artist_match_key(row.get("Bandleader", "")))
         if not entry:
+            empty[(img_type, folder_name)] += 1
             continue
         types = [tk for tk in entry.get(folder_name, [])
                  if (tk[1] or "LP").strip().upper() == img_type]
         if not types:
+            empty[(img_type, folder_name)] += 1
             continue
-        main_type = "back" if (row.get("Img_Side") or "").strip().upper() == "B" else "front"
-        ordered = sorted(types, key=lambda tk: 0 if tk[0].strip().lower() == main_type else 1)
+        side = (row.get("Img_Side") or "").strip().upper()
+        if img_type == "EP":
+            # EP cover = the disk label for this track's side, when that scan exists.
+            avail = {t.strip().lower() for t, _ in types}
+            want = {"A": "disk 1", "B": "disk 2"}.get(side)
+            main_type = want if (want and want in avail) else "front"
+        else:  # LP: always lead with the front cover.
+            main_type = "front"
+        # Cover-fallback chain: never silently leave a 'Back' scan as the cover.
+        # Prefer the desired main_type, then front, then disk 1, then side 1.
+        avail = {t.strip().lower() for t, _ in types}
+        cover_type = next(
+            (c for c in (main_type, "front", "disk 1", "side 1") if c in avail),
+            None,
+        )
+        if cover_type is None:
+            cover_type = main_type  # keep current order; warn below
+            print(
+                f"warning: no preferred cover (front/disk 1/side 1) for "
+                f"Img_Folder {folder_name!r} ({img_type}); using "
+                f"{types[0][0]!r} as cover",
+                file=sys.stderr,
+            )
+        ordered = sorted(types, key=lambda tk: 0 if tk[0].strip().lower() == cover_type else 1)
         folder = bandleader_folder(row.get("Bandleader", ""))
         images = [{"type": t, "url": lp_image_url(folder, folder_name, t, kind=k)}
                   for t, k in ordered]
         row["LP_Title"] = (row.get("Img_Album") or "").strip()
         row["LP_Images"] = json.dumps(images, ensure_ascii=False)
+    return dict(empty)
 
 
 def extract_year(date_value: str) -> str:
@@ -176,7 +208,15 @@ def build(csv_dir: Path, output_path: Path, lp_dir: Path) -> tuple[int, list[dic
             seen[key] = row
         consolidated.append(row)
 
-    apply_lp_images(consolidated, load_manifests(lp_dir))
+    empty_folders = apply_lp_images(consolidated, load_manifests(lp_dir))
+    if empty_folders:
+        print(
+            f"warning: {len(empty_folders)} EP/LP Img_Folder(s) produced empty "
+            f"LP_Images (no manifest entry matched):",
+            file=sys.stderr,
+        )
+        for (img_type, folder_name), count in sorted(empty_folders.items()):
+            print(f"  {img_type} {folder_name!r}: {count} row(s)", file=sys.stderr)
     fuzzy_groups = collect_fuzzy_duplicates(consolidated)
 
     with output_path.open("w", encoding="utf-8-sig", newline="") as f:

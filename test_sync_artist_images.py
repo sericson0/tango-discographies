@@ -8,7 +8,6 @@ def test_parse_args_full_run():
     ns = sai.parse_args(["DArienzo"])
     assert ns.artist == "DArienzo"
     assert ns.all is False
-    assert ns.match_only is False
     assert ns.convert_only is False
     assert ns.upload_only is False
     assert ns.force is False
@@ -78,6 +77,30 @@ def test_convert_walks_recursively(tmp_path):
     assert len(pending) == 2
 
 
+def _make_png(path, size=(8, 8), color=(0, 255, 0, 128)):
+    img = Image.new("RGBA", size, color)
+    img.save(path, "PNG")
+
+
+def test_convert_converts_png_to_webp(tmp_path):
+    p = tmp_path / "Front.png"
+    _make_png(p, color=(0, 255, 0, 255))
+    pending = _convert.convert_tree(tmp_path, quality=85)
+    w = tmp_path / "Front.webp"
+    assert w.exists()
+    assert pending == [(p, w)]
+
+
+def test_convert_png_with_alpha_preserves_transparency(tmp_path):
+    p = tmp_path / "Cover.png"
+    _make_png(p, color=(0, 255, 0, 128))  # half-transparent
+    _convert.convert_tree(tmp_path, quality=85, lossless=True)
+    w = tmp_path / "Cover.webp"
+    with Image.open(w) as out:
+        assert out.mode in ("RGBA", "LA")  # alpha kept
+        assert out.getpixel((0, 0))[3] == 128
+
+
 def test_convert_logs_and_continues_on_pil_error(tmp_path, capsys):
     bad = tmp_path / "broken.jpg"
     bad.write_bytes(b"not a real jpeg")
@@ -103,6 +126,31 @@ def test_type_from_filename_returns_empty_when_prefix_missing(capsys):
     # A stray file that doesn't match the convention -> empty type, warning logged.
     t = _manifest.type_from_filename("Armenonville", "weird-file.webp")
     assert t == ""
+
+
+def test_type_from_filename_accepts_intentional_alternate(capsys):
+    assert _manifest.type_from_filename("Foo", "Foo Disk 1 V2.webp") == "Disk 1 V2"
+    assert _manifest.type_from_filename("Foo", "Foo Front Alt.webp") == "Front Alt"
+    assert _manifest.type_from_filename("Foo", "Foo Back Alt 2.webp") == "Back Alt 2"
+
+
+def test_type_from_filename_keeps_nonstandard_type_with_warning(capsys):
+    # A recognized prefix but a non-standard type ('Image 3') -> KEPT (it's a valid
+    # extra gallery image; can never be the cover), with a drift warning.
+    t = _manifest.type_from_filename("Foo", "Foo Image 3.webp")
+    assert t == "Image 3"
+    err = capsys.readouterr().err
+    assert "non-standard cover type" in err
+
+
+def test_walk_keeps_nonstandard_types(tmp_path):
+    lps = tmp_path / "LPs" / "Foo"
+    lps.mkdir(parents=True)
+    (lps / "Foo Front.webp").write_bytes(b"")
+    (lps / "Foo Image 3.webp").write_bytes(b"")  # non-standard, kept as extra gallery image
+    rows = _manifest.walk_collection(tmp_path)
+    assert {"Folder": "Foo", "Type": "Front", "Kind": "LP"} in rows
+    assert {"Folder": "Foo", "Type": "Image 3", "Kind": "LP"} in rows
 
 
 def test_walk_returns_rows_per_folder_per_webp(tmp_path):
@@ -288,6 +336,19 @@ def test_head_exists_returns_false_on_404():
         assert _r2.head_exists("https://x/y.webp") is False
 
 
+def test_head_exists_returns_unknown_on_5xx():
+    with mock.patch("_r2.urllib.request.urlopen") as op:
+        import urllib.error
+        op.side_effect = urllib.error.HTTPError("u", 503, "busy", {}, None)
+        assert _r2.head_exists("https://x/y.webp") is _r2.HEAD_UNKNOWN
+
+
+def test_head_exists_returns_unknown_on_connection_error():
+    with mock.patch("_r2.urllib.request.urlopen") as op:
+        op.side_effect = TimeoutError("timed out")
+        assert _r2.head_exists("https://x/y.webp") is _r2.HEAD_UNKNOWN
+
+
 def test_upload_calls_put_object_with_content_type(tmp_path):
     f = tmp_path / "x.webp"
     f.write_bytes(b"webp-bytes")
@@ -354,6 +415,115 @@ def test_artist_root_under_images(tmp_path):
     root = tmp_path / "images" / "Foo"
     root.mkdir(parents=True)
     assert sai.artist_root("Foo", repo_root=tmp_path) == root
+
+
+def test_sibling_originals_lists_raster_suffixes(tmp_path):
+    w = tmp_path / "X" / "X Front.webp"
+    sibs = sai._sibling_originals(w)
+    names = {s.name for s in sibs}
+    assert "X Front.jpg" in names
+    assert "X Front.png" in names
+    assert "X Front.jpeg" in names
+
+
+def _stub_env_and_artist(tmp_path, monkeypatch):
+    images = tmp_path / "images" / "Foo"
+    monkeypatch.setattr(sai, "ARTIST_DISPLAY", {"Foo": "Foo"})
+    (tmp_path / "csv_files").mkdir(exist_ok=True)
+    (tmp_path / "csv_files" / "Foo.csv").write_text(
+        "Bandleader,Date,Title,AltTitle,Singer,Master,Matrix\n", encoding="utf-8-sig"
+    )
+    monkeypatch.chdir(tmp_path)
+    # Stub R2 layer so no network is needed.
+    cfg = _r2.R2Config("acct", "ak", "sk", "bucket", "https://pub")
+    monkeypatch.setattr(_r2, "load_env", lambda: cfg)
+    monkeypatch.setattr(_r2, "make_client", lambda c: mock.MagicMock())
+    return images
+
+
+def test_upload_only_cleans_confirmed_original(tmp_path, monkeypatch, capsys):
+    images = _stub_env_and_artist(tmp_path, monkeypatch)
+    folder = images / "LPs" / "X"
+    folder.mkdir(parents=True)
+    webp = folder / "X Front.webp"
+    webp.write_bytes(b"webp")
+    jpg = folder / "X Front.jpg"
+    jpg.write_bytes(b"jpg")
+    # HEAD says already-present (confirmed) -> upload skipped, original cleaned.
+    monkeypatch.setattr(_r2, "head_exists", lambda url: True)
+    rc = sai.main(["Foo", "--upload-only", "--prune"])
+    assert rc == 0
+    assert not jpg.exists()  # confirmed -> deleted
+
+
+def test_upload_only_keeps_original_when_head_unknown(tmp_path, monkeypatch, capsys):
+    images = _stub_env_and_artist(tmp_path, monkeypatch)
+    folder = images / "LPs" / "X"
+    folder.mkdir(parents=True)
+    webp = folder / "X Front.webp"
+    webp.write_bytes(b"webp")
+    jpg = folder / "X Front.jpg"
+    jpg.write_bytes(b"jpg")
+    # HEAD unknown -> no upload, no delete.
+    monkeypatch.setattr(_r2, "head_exists", lambda url: _r2.HEAD_UNKNOWN)
+    uploaded = {"n": 0}
+
+    def _fake_upload(*a, **k):
+        uploaded["n"] += 1
+
+    monkeypatch.setattr(_r2, "upload_file", _fake_upload)
+    rc = sai.main(["Foo", "--upload-only", "--prune"])
+    assert rc == 0
+    assert jpg.exists()          # NOT deleted: state unknown
+    assert uploaded["n"] == 0    # NOT re-uploaded
+
+
+def test_upload_only_uploads_then_cleans_on_404(tmp_path, monkeypatch, capsys):
+    images = _stub_env_and_artist(tmp_path, monkeypatch)
+    folder = images / "LPs" / "X"
+    folder.mkdir(parents=True)
+    webp = folder / "X Front.webp"
+    webp.write_bytes(b"webp")
+    png = folder / "X Front.png"
+    png.write_bytes(b"png")
+    monkeypatch.setattr(_r2, "head_exists", lambda url: False)  # missing -> upload
+    monkeypatch.setattr(_r2, "upload_file", lambda *a, **k: None)
+    rc = sai.main(["Foo", "--upload-only", "--prune"])
+    assert rc == 0
+    assert not png.exists()  # uploaded successfully -> original cleaned
+
+
+def test_upload_only_keeps_original_when_upload_fails(tmp_path, monkeypatch, capsys):
+    images = _stub_env_and_artist(tmp_path, monkeypatch)
+    folder = images / "LPs" / "X"
+    folder.mkdir(parents=True)
+    webp = folder / "X Front.webp"
+    webp.write_bytes(b"webp")
+    jpg = folder / "X Front.jpg"
+    jpg.write_bytes(b"jpg")
+    monkeypatch.setattr(_r2, "head_exists", lambda url: False)
+
+    def _boom(*a, **k):
+        raise RuntimeError("upload failed")
+
+    monkeypatch.setattr(_r2, "upload_file", _boom)
+    rc = sai.main(["Foo", "--upload-only", "--prune"])
+    assert rc == 0
+    assert jpg.exists()  # upload failed -> original kept
+
+
+def test_upload_only_without_prune_keeps_originals(tmp_path, monkeypatch, capsys):
+    # Default (no --prune): a confirmed webp does NOT cause its original to be deleted.
+    images = _stub_env_and_artist(tmp_path, monkeypatch)
+    folder = images / "LPs" / "X"
+    folder.mkdir(parents=True)
+    (folder / "X Front.webp").write_bytes(b"webp")
+    jpg = folder / "X Front.jpg"
+    jpg.write_bytes(b"jpg")
+    monkeypatch.setattr(_r2, "head_exists", lambda url: True)
+    rc = sai.main(["Foo", "--upload-only"])
+    assert rc == 0
+    assert jpg.exists()  # no --prune -> original retained
 
 
 def test_dry_run_does_not_create_files(tmp_path, monkeypatch, capsys):
