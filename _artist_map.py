@@ -8,4 +8,5 @@ ARTIST_DISPLAY = {
     "Calo": "Miguel Calo",
     "Laurenz": "Pedro Laurenz",
     "Tanturi": "Ricardo Tanturi",
+    "Troilo": "Anibal Troilo",
 }
