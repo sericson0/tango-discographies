@@ -297,8 +297,8 @@
       border-radius: 6px;
       padding: 18px 24px 20px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-      width: min(600px, calc(100vw - 40px));
-      max-height: 80vh;
+      width: min(820px, calc(100vw - 40px));
+      max-height: 90vh;
       overflow-y: auto;
     }
     .detail-popover.visible { display: block; }
@@ -316,20 +316,6 @@
       padding: 2px 6px;
     }
     .detail-popover-close:hover { color: var(--accent-hover); }
-    .detail-row1 {
-      margin-bottom: 12px;
-      line-height: 1.5;
-      padding-right: 28px;
-    }
-    .detail-row1 .detail-alt { font-style: italic; font-weight: 400; color: var(--text-soft); }
-    .detail-row1 .detail-year { font-weight: 400; color: var(--text-soft); font-size: 15px; }
-    .detail-row1 .detail-orchestra { color: var(--text-mute); margin-left: 16px; font-size: 15px; font-weight: 400; }
-    .detail-row1 .detail-orchestra-label { text-transform: uppercase; font-size: 10px; letter-spacing: 1px; color: var(--accent-hover); }
-    .detail-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text);
-    }
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -347,6 +333,17 @@
     .detail-field-value.empty { color: var(--text-faint); }
     .detail-field.span2 { grid-column: span 2; }
     .detail-field.span3 { grid-column: 1 / -1; }
+    .detail-section-header {
+      grid-column: 1 / -1;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-hover);
+      font-weight: 700;
+      border-top: 2px solid var(--accent-hover);
+      padding-top: 14px;
+      margin-top: 8px;
+    }
     .col-expand {
       text-align: center;
       width: 48px;
@@ -359,6 +356,145 @@
     }
     .col-expand:hover { color: var(--accent); }
     .th-expand { width: 48px; text-align: center !important; cursor: default !important; font-size: 11px !important; }
+
+    /* --- Thumbnail column --- */
+    .th-thumb { width: 48px; text-align: center !important; cursor: default !important; font-size: 11px !important; }
+    .col-thumb {
+      width: 48px;
+      padding: 4px;
+      text-align: center;
+      vertical-align: middle;
+      cursor: zoom-in;
+    }
+    .col-thumb img {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 3px;
+      display: block;
+      margin: 0 auto;
+      background: var(--border-soft);
+      border: 1px solid var(--border);
+      transition: transform 0.1s ease, border-color 0.1s ease;
+    }
+    .col-thumb:hover img {
+      transform: scale(1.08);
+      border-color: var(--accent);
+    }
+    /* Medium thumbnails */
+    body.thumbs-m .th-thumb,
+    body.thumbs-m .col-thumb { width: 90px; padding: 8px; }
+    body.thumbs-m .col-thumb img { width: 68px; height: 68px; }
+    /* Large thumbnails */
+    body.thumbs-l .th-thumb,
+    body.thumbs-l .col-thumb { width: 135px; padding: 11px; }
+    body.thumbs-l .col-thumb img { width: 101px; height: 101px; }
+
+    /* Thumb-size segmented control (S | M | L) */
+    .thumb-size-group {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-right: 8px;
+    }
+    .thumb-size-btn {
+      background: transparent;
+      border: 0;
+      border-right: 1px solid var(--border);
+      color: var(--text-soft);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-family: inherit;
+      min-width: 28px;
+    }
+    .thumb-size-btn:last-child { border-right: 0; }
+    .thumb-size-btn:hover { color: var(--text); background: color-mix(in srgb, var(--accent), transparent 95%); }
+    .thumb-size-btn.active { color: var(--accent); background: color-mix(in srgb, var(--accent), transparent 88%); }
+
+    /* --- Detail popover image --- */
+    .detail-header {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    /* Header metadata column (right of image) */
+    .detail-meta {
+      flex: 1;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 8px 14px;
+      align-content: start;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .detail-meta-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-hover);
+      align-self: center;
+      white-space: nowrap;
+    }
+    .detail-meta-value { color: var(--text); word-wrap: break-word; }
+    .detail-meta-value.empty { color: var(--text-faint); }
+    .detail-meta-value .meta-title { font-size: 18px; font-weight: 600; }
+    .detail-meta-value .meta-alt { font-style: italic; color: var(--text-soft); margin-left: 6px; font-weight: 400; font-size: 14px; }
+    .detail-thumb {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--border-soft);
+      cursor: zoom-in;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    /* --- LP image viewer (detail popover) --- */
+    .lp-viewer { flex-shrink: 0; width: 200px; }
+    .lp-viewer .lp-main { margin-bottom: 8px; }
+    .lp-thumbs { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+    .lp-thumb {
+      font-size: 10px;
+      padding: 2px 7px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--surface);
+      color: var(--text-mute);
+      cursor: pointer;
+      font-family: inherit;
+      line-height: 1.4;
+    }
+    .lp-thumb.selected {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      background: color-mix(in srgb, var(--accent), transparent 90%);
+    }
+    /* --- Lightbox --- */
+    .lightbox-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox-backdrop.visible { display: flex; }
+    .lightbox-image {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
 
     /* --- Back to Top Button --- */
     .back-to-top {
@@ -413,6 +549,9 @@
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
       .detail-popover { padding-left: 16px; padding-right: 16px; }
       .detail-grid { grid-template-columns: 1fr 1fr; }
+      .detail-thumb { width: 125px; height: 125px; }
+      .lp-viewer { width: 125px; }
+      .detail-header { gap: 12px; }
     }
   </style>
 </head>
@@ -463,6 +602,11 @@
 
     <!-- Stats Line with inline filter chips -->
     <div class="stats-line" id="statsLine">
+      <div id="thumbSizeGroup" class="thumb-size-group" role="group" aria-label="Label size">
+        <button type="button" class="thumb-size-btn" data-size="S" title="Small labels">S</button>
+        <button type="button" class="thumb-size-btn" data-size="M" title="Medium labels">M</button>
+        <button type="button" class="thumb-size-btn" data-size="L" title="Large labels">L</button>
+      </div>
       <span id="statsText"></span>
       <div id="chipsRow" class="chips-row"></div>
     </div>
@@ -472,6 +616,7 @@
       <table class="data-table">
         <thead>
           <tr>
+            <th class="th-thumb"></th>
             <th data-col="Date">Date <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Bandleader" class="th-bandleader">Bandleader <span class="sort-arrow">&#9650;</span></th>
             <th data-col="Title">Title <span class="sort-arrow">&#9650;</span></th>
@@ -498,6 +643,11 @@
     <div id="detailContent"></div>
   </div>
 
+  <!-- Image Lightbox -->
+  <div id="lightboxBackdrop" class="lightbox-backdrop">
+    <img id="lightboxImage" class="lightbox-image" alt="">
+  </div>
+
   <!-- Back to Top -->
   <button id="backToTop" class="back-to-top" title="Back to top">&#9650;</button>
 
@@ -512,6 +662,8 @@
   let selectedRowIndex = -1;
   let sortCol = 'Date';
   let sortAsc = true;
+  let lightboxSet = null;
+  let lightboxIdx = -1;
 
   // --- DOM refs ---
   const $ = id => document.getElementById(id);
@@ -527,6 +679,7 @@
   const chipsRow = $('chipsRow');
   const statsLine = $('statsLine');
   const statsText = $('statsText');
+  const thumbSizeGroup = $('thumbSizeGroup');
   const tableBody = $('tableBody');
   const tableContainer = $('tableContainer');
   const scrollIndicator = $('scrollIndicator');
@@ -534,6 +687,8 @@
   const detailPopover = $('detailPopover');
   const detailPopoverClose = $('detailPopoverClose');
   const detailContent = $('detailContent');
+  const lightboxBackdrop = $('lightboxBackdrop');
+  const lightboxImage = $('lightboxImage');
   const backToTopBtn = $('backToTop');
   const btnDownloadArtist = $('btnDownloadArtist');
   const btnDownloadAll = $('btnDownloadAll');
@@ -541,6 +696,65 @@
   // --- Accent-insensitive normalization ---
   function stripAccents(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  // --- Image URL construction ---
+  // Convention: {LastFirst}/Singles/{GroupingNormalized}/{YYYY-MM-DD}_{Title-TitleCased}_{Suffix}.webp
+  // Grouping normalization: strip accents, drop ( ) , . +, collapse spaces. Hyphens kept.
+  // Bandleader folder: strip accents + drop apostrophes/punctuation: "Juan D'Arienzo" -> "DArienzoJuan".
+  // Title segment: strip accents, replace any run of non-alphanumerics (spaces and
+  //   punctuation alike) with a single hyphen, Title-Case each segment: "Pa' Que Bailen" -> "Pa-Que-Bailen", "Colorao, Colorao" -> "Colorao-Colorao".
+  // Last-name suffix: strip accents, apostrophe -> hyphen: "D'Arienzo" -> "D-Arienzo".
+  // Year-only dates use the bare year as the date segment: "1928" -> 1928_Title_Suffix.webp.
+  // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires + "50-54 T.K. (Figari)" ->
+  //   TroiloAnibal/Singles/50-54 TK Figari/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
+  const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
+  function normalizeGroupingFolder(g) {
+    return stripAccents(g).replace(/[(),.+]/g, '').replace(/\s+/g, ' ').trim();
+  }
+  function imageUrl(row) {
+    if (!row || !row.Bandleader || !row.Date || !row.Title || !row.Grouping) return null;
+    var nameParts = stripAccents(row.Bandleader).trim().split(/\s+/);
+    if (nameParts.length === 0 || nameParts[0] === '') return null;
+    var lastName = nameParts[nameParts.length - 1];
+    var folder = lastName.replace(/[^\w]/g, '') + nameParts.slice(0, -1).join('').replace(/[^\w]/g, '');
+    var suffix = lastName.replace(/'/g, '-');
+    var groupingFolder = normalizeGroupingFolder(row.Grouping);
+    if (!groupingFolder) return null;
+    var d = row.Date.trim();
+    var iso, m;
+    if ((m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(d))) {
+      iso = m[3] + '-' + m[1].padStart(2, '0') + '-' + m[2].padStart(2, '0');
+    } else if ((m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(d))) {
+      iso = m[1] + '-' + m[2].padStart(2, '0') + '-' + m[3].padStart(2, '0');
+    } else if (/^\d{4}$/.test(d)) {
+      iso = d;
+    } else {
+      return null;
+    }
+    var title = stripAccents(row.Title)
+      .replace(/[^A-Za-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .split('-')
+      .map(function (w) { return w ? w.charAt(0).toUpperCase() + w.slice(1) : w; })
+      .join('-');
+    return IMAGE_BASE + '/' + folder + '/Singles/' + groupingFolder + '/' + iso + '_' + title + '_' + suffix + '.webp';
+  }
+
+  // --- LP images (from the LP_Images JSON column produced by build.py) ---
+  function parseLpImages(row) {
+    if (!row || !row.LP_Images) return [];
+    try {
+      var arr = JSON.parse(row.LP_Images);
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function lpCover(row) {
+    var imgs = parseLpImages(row);
+    if (!imgs.length) return null;
+    return imgs[0].url || null;
   }
 
   // --- Date parsing ---
@@ -846,7 +1060,12 @@
     filteredData.forEach((row, i) => {
       var tr = document.createElement('tr');
       if (i === selectedRowIndex) tr.classList.add('selected');
+      var imgSrc = lpCover(row) || imageUrl(row);
+      var thumbCell = imgSrc
+        ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(imgSrc) + '" alt="" onerror="this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\'"></td>'
+        : '<td class="col-thumb" data-noimg="1"></td>';
       tr.innerHTML =
+        thumbCell +
         '<td class="col-date">' + esc(formatDate(row.Date)) + '</td>' +
         '<td class="col-bandleader">' + esc(row.Bandleader) + '</td>' +
         '<td class="col-title">' + esc(row.Title) + '</td>' +
@@ -862,6 +1081,13 @@
         e.stopPropagation();
         openPopover(i, e.currentTarget);
       });
+      tr.querySelector('.col-thumb').addEventListener('click', (e) => {
+        e.stopPropagation();
+        var td = e.currentTarget;
+        if (td.dataset.noimg) return;
+        var img = td.querySelector('img');
+        if (img && img.src) openLightbox(img.src);
+      });
       tableBody.appendChild(tr);
     });
     checkScrollIndicator();
@@ -871,7 +1097,9 @@
     if (!str) return '';
     var div = document.createElement('div');
     div.textContent = str;
-    return div.innerHTML;
+    // div.innerHTML escapes &, <, > but not "; escape quotes too so esc()
+    // output is safe inside double-quoted attributes (e.g. src="...").
+    return div.innerHTML.replace(/"/g, '&quot;');
   }
 
   function scrollToRow(index) {
@@ -879,6 +1107,14 @@
     if (rows[index]) {
       rows[index].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
+  }
+
+  function stripLpImages(rows) {
+    return rows.map(function (r) {
+      var copy = Object.assign({}, r);
+      delete copy.LP_Images;
+      return copy;
+    });
   }
 
   function downloadCSV(data, filename) {
@@ -945,20 +1181,54 @@
     var row = filteredData[index];
     if (!row) return;
     var year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
+    var lpImgs = parseLpImages(row);
+    var imgSrc = lpImgs.length ? lpImgs[0].url : imageUrl(row);
 
-    var html = '<div class="detail-row1"><span class="detail-title">' + esc(row.Title || '') + '</span>';
-    if (row.AltTitle) html += ' <span class="detail-alt">' + esc(row.AltTitle) + '</span>';
-    if (year) html += ' <span class="detail-year">(' + year + ')</span>';
-    html += '</div>';
+    var html = '<div class="detail-header">';
+    if (lpImgs.length) {
+      html += '<div class="lp-viewer">' +
+        '<img class="detail-thumb lp-main" src="' + esc(lpImgs[0].url) + '" data-idx="0" alt="" ' +
+        'onerror="this.style.visibility=\'hidden\'">' +
+        '<div class="lp-thumbs">';
+      lpImgs.forEach(function (im, i) {
+        var label = (im.type || ('#' + (i + 1))).replace(/\bDisk\b/gi, 'Disc');
+        html += '<button type="button" class="lp-thumb" data-idx="' + i + '">' + esc(label) + '</button>';
+      });
+      html += '</div></div>';
+    } else if (imgSrc) {
+      html += '<img class="detail-thumb" src="' + esc(imgSrc) + '" alt="" ' +
+        'onerror="this.style.display=\'none\'">';
+    }
 
-    var fields = [
+    // Right-of-image metadata column
+    var titleHtml = '<span class="meta-title">' + esc(row.Title || '') + '</span>' +
+      (row.AltTitle ? '<span class="meta-alt">' + esc(row.AltTitle) + '</span>' : '');
+    var headerFields = [
+      { label: 'Title', value: titleHtml, raw: true },
+      { label: 'Bandleader', value: row.Bandleader },
+      { label: 'Date', value: formatDate(row.Date) },
+      { label: 'Orchestra', value: row.Orchestra },
       { label: 'Genre', value: row.Genre },
-      { label: 'Orchestra', value: row.Orchestra, span2: true },
-      { label: 'Master', value: row.Master },
+      { label: 'Singer', value: row.Singer },
       { label: 'Matrix', value: row.Matrix },
       { label: 'Disk', value: row.Disc },
+    ];
+    html += '<div class="detail-meta">';
+    headerFields.forEach(function (f) {
+      var hasVal = f.raw ? !!f.value : !!(f.value && String(f.value).trim());
+      var val = hasVal ? (f.raw ? f.value : esc(f.value)) : '—';
+      html += '<div class="detail-meta-label">' + esc(f.label) + '</div>' +
+        '<div class="detail-meta-value' + (hasVal ? '' : ' empty') + '">' + val + '</div>';
+    });
+    html += '</div></div>';
+
+    var fields = [
+      { label: 'Label', value: row.Label },
+      { label: 'Master', value: row.Master },
+      { label: 'Grouping', value: row.Grouping },
       { label: 'Composer', value: row.Composer },
-      { label: 'Author', value: row.Author },
+      { label: 'Author', value: row.Author, span2: true },
+      { header: 'Band Members' },
       { label: 'Lineup', value: row.Lineup, span3: true },
       { label: 'Pianist', value: row.Pianist },
       { label: 'Bassist', value: row.Bassist },
@@ -968,6 +1238,10 @@
 
     html += '<div class="detail-grid">';
     fields.forEach(f => {
+      if (f.header) {
+        html += '<div class="detail-section-header">' + esc(f.header) + '</div>';
+        return;
+      }
       var cls = f.span3 ? ' span3' : (f.span2 ? ' span2' : '');
       var val = f.value ? esc(f.value) : '<span class="empty">\u2014</span>';
       var valCls = f.value ? '' : ' empty';
@@ -979,6 +1253,31 @@
     html += '</div>';
 
     detailContent.innerHTML = html;
+
+    if (lpImgs.length) {
+      var mainImg = detailContent.querySelector('.lp-main');
+      var thumbBtns = detailContent.querySelectorAll('.lp-thumb');
+      var selectImage = function (idx) {
+        var im = lpImgs[idx];
+        if (!im) return;
+        mainImg.src = im.url;
+        mainImg.style.visibility = '';
+        mainImg.dataset.idx = idx;
+        thumbBtns.forEach(function (b) { b.classList.toggle('selected', +b.dataset.idx === idx); });
+      };
+      thumbBtns.forEach(function (b) {
+        b.addEventListener('click', function () { selectImage(+b.dataset.idx); });
+      });
+      mainImg.addEventListener('click', function () {
+        openLightbox(mainImg.src, lpImgs, +mainImg.dataset.idx);
+      });
+      selectImage(0);
+    } else {
+      var detailThumb = detailContent.querySelector('.detail-thumb');
+      if (detailThumb) {
+        detailThumb.addEventListener('click', function () { openLightbox(detailThumb.src); });
+      }
+    }
 
     // Position near the anchor row
     var rect = anchorEl.getBoundingClientRect();
@@ -1008,6 +1307,27 @@
   function closePopover() {
     detailPopover.classList.remove('visible');
     detailBackdrop.classList.remove('visible');
+  }
+
+  function openLightbox(src, set, idx) {
+    if (!src) return;
+    lightboxSet = (set && set.length) ? set : null;
+    lightboxIdx = lightboxSet ? (idx || 0) : -1;
+    lightboxImage.src = src;
+    lightboxBackdrop.classList.add('visible');
+  }
+
+  function lightboxNav(delta) {
+    if (!lightboxSet) return;
+    lightboxIdx = (lightboxIdx + delta + lightboxSet.length) % lightboxSet.length;
+    lightboxImage.src = lightboxSet[lightboxIdx].url;
+  }
+
+  function closeLightbox() {
+    lightboxBackdrop.classList.remove('visible');
+    lightboxImage.src = '';
+    lightboxSet = null;
+    lightboxIdx = -1;
   }
 
   function checkScrollIndicator() {
@@ -1060,6 +1380,7 @@
         document.querySelectorAll('.data-table th').forEach(th => {
           th.addEventListener('click', () => {
             var col = th.getAttribute('data-col');
+            if (!col) return;
             if (col === sortCol) {
               sortAsc = !sortAsc;
             } else {
@@ -1074,6 +1395,14 @@
 
         document.addEventListener('keydown', (e) => {
           if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+          if (lightboxBackdrop.classList.contains('visible')) {
+            if (e.key === 'Escape') { closeLightbox(); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); lightboxNav(-1); }
+            else if (e.key === 'ArrowRight') { e.preventDefault(); lightboxNav(1); }
+            return;
+          }
+
           if (filteredData.length === 0) return;
 
           if (e.key === 'ArrowDown') {
@@ -1088,7 +1417,9 @@
             scrollToRow(prev);
           } else if (e.key === 'Enter' && selectedRowIndex >= 0) {
             e.preventDefault();
-            onRowClick(selectedRowIndex);
+            var rows = tableBody.querySelectorAll('tr');
+            var expandCell = rows[selectedRowIndex] && rows[selectedRowIndex].querySelector('.col-expand');
+            if (expandCell) openPopover(selectedRowIndex, expandCell);
           } else if (e.key === 'Escape') {
             if (detailPopover.classList.contains('visible')) {
               closePopover();
@@ -1106,25 +1437,45 @@
           }
         });
 
-        window.addEventListener('scroll', () => {
-          backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+        tableContainer.addEventListener('scroll', () => {
+          backToTopBtn.classList.toggle('visible', tableContainer.scrollTop > 300);
         });
 
         backToTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         btnDownloadArtist.addEventListener('click', () => {
           var name = bandleaderSelect.value || 'artist';
-          downloadCSV(filteredData, name + '.csv');
+          downloadCSV(stripLpImages(filteredData), name + '.csv');
         });
 
         btnDownloadAll.addEventListener('click', () => {
-          downloadCSV(allData, 'tango-discographies-all.csv');
+          downloadCSV(stripLpImages(allData), 'tango-discographies-all.csv');
         });
 
         detailPopoverClose.addEventListener('click', closePopover);
         detailBackdrop.addEventListener('click', closePopover);
+        lightboxBackdrop.addEventListener('click', closeLightbox);
+
+        // Label-size segmented control (S / M / L), persisted in localStorage
+        var thumbSize = localStorage.getItem('thumbSize') || 'S';
+        if (!['S', 'M', 'L'].includes(thumbSize)) thumbSize = 'S';
+        applyThumbSize(thumbSize);
+        thumbSizeGroup.addEventListener('click', (e) => {
+          var btn = e.target.closest('.thumb-size-btn');
+          if (!btn) return;
+          thumbSize = btn.dataset.size;
+          localStorage.setItem('thumbSize', thumbSize);
+          applyThumbSize(thumbSize);
+        });
+        function applyThumbSize(size) {
+          document.body.classList.toggle('thumbs-m', size === 'M');
+          document.body.classList.toggle('thumbs-l', size === 'L');
+          thumbSizeGroup.querySelectorAll('.thumb-size-btn').forEach((b) => {
+            b.classList.toggle('active', b.dataset.size === size);
+          });
+        }
       },
       error: function() {
         loadingEl.style.display = 'none';
