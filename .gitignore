@@ -56,18 +56,15 @@ test_match.py
 test_match_store.py
 test_verify_singles.py
 
-# One-off image reports and new lp_matches artifacts
+# One-off image reports
 MISSING_IMAGES_DiSarli.md
 MISSING_IMAGES_DiSarli_singles.csv
+# Retired per-artist track-match store (build.py only reads "<Artist> images.csv"
+# manifests, which ARE tracked so CI can build LP/EP image URLs without the
+# gitignored image tree).
 lp_matches/Carlos Di Sarli.csv
-lp_matches/Carlos Di Sarli images.csv
 lp_matches/Miguel Calo.csv
-lp_matches/Miguel Calo images.csv
 lp_matches/Osvaldo Pugliese.csv
-lp_matches/Osvaldo Pugliese images.csv
 lp_matches/Pedro Laurenz.csv
-lp_matches/Pedro Laurenz images.csv
 lp_matches/Ricardo Tanturi.csv
-lp_matches/Ricardo Tanturi images.csv
 lp_matches/Rodolfo Biagi.csv
-lp_matches/Rodolfo Biagi images.csv
