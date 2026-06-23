@@ -9,4 +9,5 @@ ARTIST_DISPLAY = {
     "Laurenz": "Pedro Laurenz",
     "Tanturi": "Ricardo Tanturi",
     "Troilo": "Anibal Troilo",
+    "Castillo": "Alberto Castillo",
 }
