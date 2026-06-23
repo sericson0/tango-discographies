@@ -28,6 +28,13 @@ CANONICAL_HEADERS = [
     "Lineup",
 ]
 
+# Image-association columns, round-tripped verbatim. Excluded from
+# CANONICAL_HEADERS (and thus from every per-field fix function above) because
+# folder/album names must stay literal to match the R2 bucket paths — see the
+# same exclusion in normalize_csvs.py's VERBATIM_FIELDS.
+IMG_HEADERS = ["Img_Type", "Img_Folder", "Img_Side", "Img_Album"]
+ALL_HEADERS = CANONICAL_HEADERS + IMG_HEADERS
+
 
 # ----------------------------------------------------------------------------
 # Item 1 — Genre cleanup and row filter
@@ -1798,10 +1805,10 @@ def load_csv(path: Path) -> list[dict[str, str]]:
 
 def write_csv(path: Path, rows: list[dict[str, str]]) -> None:
     with path.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=CANONICAL_HEADERS)
+        writer = csv.DictWriter(f, fieldnames=ALL_HEADERS)
         writer.writeheader()
         for row in rows:
-            writer.writerow({h: row.get(h, "") for h in CANONICAL_HEADERS})
+            writer.writerow({h: row.get(h, "") for h in ALL_HEADERS})
 
 
 def main() -> int:
