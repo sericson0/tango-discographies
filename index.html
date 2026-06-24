@@ -58,6 +58,7 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
+      height: 100dvh;
       overflow: hidden;
     }
 
@@ -544,7 +545,8 @@
     }
     @media (max-width: 600px) {
       .col-grouping, .th-grouping { display: none; }
-      .header { padding: 12px 16px; }
+      .header { padding: 8px 16px; gap: 8px; }
+      .btn-download { padding: 7px 10px; font-size: 12px; }
       .filters-section, .stats-line { padding-left: 16px; padding-right: 16px; }
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
       .detail-popover { padding-left: 16px; padding-right: 16px; }
@@ -552,6 +554,30 @@
       .detail-thumb { width: 125px; height: 125px; }
       .lp-viewer { width: 125px; }
       .detail-header { gap: 12px; }
+
+      /* Compact filters: 3 selects side by side, search full-width, tighter spacing */
+      .filters-section { padding-top: 8px; padding-bottom: 8px; }
+      .filters-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px 8px;
+      }
+      .filter-group.search { grid-column: 1 / -1; }
+      .clear-filters { grid-column: 1 / -1; justify-self: end; padding: 2px 0; }
+      .field-label { margin-bottom: 2px; font-size: 11px; }
+      .filter-select, .filter-input {
+        min-width: 0;
+        width: 100%;
+        padding: 7px 8px;
+        font-size: 14px;
+        background-position: right 6px center;
+      }
+      #singerFilter { min-width: 0; }
+      .stats-line { padding-top: 5px; padding-bottom: 5px; }
+
+      /* Tighter table rows so more fit on screen */
+      .data-table th { padding: 7px 6px 6px; }
+      .data-table td { padding: 5px 6px; font-size: 14px; }
     }
   </style>
 </head>
@@ -712,13 +738,20 @@
   function normalizeGroupingFolder(g) {
     return stripAccents(g).replace(/[(),.+]/g, '').replace(/\s+/g, ' ').trim();
   }
+  var LAST_NAME_PARTICLES = ['de', 'di', 'del', 'la', 'las', 'los'];
   function imageUrl(row) {
     if (!row || !row.Bandleader || !row.Date || !row.Title || !row.Grouping) return null;
     var nameParts = stripAccents(row.Bandleader).trim().split(/\s+/);
     if (nameParts.length === 0 || nameParts[0] === '') return null;
     var lastName = nameParts[nameParts.length - 1];
     var folder = lastName.replace(/[^\w]/g, '') + nameParts.slice(0, -1).join('').replace(/[^\w]/g, '');
-    var suffix = lastName.replace(/'/g, '-');
+    // Filename suffix is the full surname including leading particles (Di, De, ...),
+    // mirroring artist_suffix() in _discogs_drivers.py: 'Carlos Di Sarli' -> 'Di-Sarli'.
+    var suffixStart = nameParts.length - 1;
+    for (var pi = 1; pi < nameParts.length; pi++) {
+      if (LAST_NAME_PARTICLES.indexOf(nameParts[pi].toLowerCase()) >= 0) { suffixStart = pi; break; }
+    }
+    var suffix = nameParts.slice(suffixStart).join('-').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
     var groupingFolder = normalizeGroupingFolder(row.Grouping);
     if (!groupingFolder) return null;
     var d = row.Date.trim();
@@ -894,8 +927,6 @@
   }
 
   // --- Bandleader dropdown (Last, First sorted by last name with letter sections) ---
-  var LAST_NAME_PARTICLES = ['de', 'di', 'del', 'la', 'las', 'los'];
-
   function getLastName(name) {
     var parts = name.trim().split(/\s+/);
     if (parts.length <= 1) return name;
