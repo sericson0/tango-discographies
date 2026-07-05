@@ -114,6 +114,56 @@
       padding-right: 36px;
     }
 
+    /* --- Era filter pills (in header) --- */
+    .era-group { flex: 0 1 auto; }
+    .era-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+    .era-pill input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+    }
+    .era-pill label {
+      display: inline-block;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      line-height: 1.2;
+      color: var(--text-soft);
+      background: var(--bg);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .era-pill label:hover { border-color: color-mix(in srgb, var(--accent), transparent 50%); }
+    .era-pill input:checked + label {
+      background: color-mix(in srgb, var(--accent), transparent 88%);
+      border-color: color-mix(in srgb, var(--accent), transparent 60%);
+      color: var(--accent-hover);
+      font-weight: 600;
+    }
+    .era-pill input:focus-visible + label {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    /* --- Era badges (stats line, for the selected artist) --- */
+    .era-badges { display: inline-flex; gap: 6px; }
+    .era-badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid color-mix(in srgb, var(--accent), transparent 70%);
+      border-radius: 3px;
+      padding: 2px 8px;
+      color: var(--accent-hover);
+      background: color-mix(in srgb, var(--accent), transparent 94%);
+      white-space: nowrap;
+    }
+
     /* --- Filters Row --- */
     .filters-section {
       padding: 12px 32px;
@@ -207,11 +257,29 @@
     }
 
     /* --- Data Table --- */
+    /* The scrollbar is inset from the window edge and visibly styled so it
+       doesn't overlap/blend with the host page's own scrollbar when embedded. */
     .table-container {
       overflow-y: auto;
       position: relative;
       flex: 1 1 0;
       min-height: 0;
+      margin-right: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, var(--text), transparent 55%) var(--surface-alt);
+    }
+    .table-container::-webkit-scrollbar { width: 12px; }
+    .table-container::-webkit-scrollbar-track {
+      background: var(--surface-alt);
+      border-radius: 6px;
+    }
+    .table-container::-webkit-scrollbar-thumb {
+      background: color-mix(in srgb, var(--text), transparent 55%);
+      border-radius: 6px;
+      border: 2px solid var(--surface-alt);
+    }
+    .table-container::-webkit-scrollbar-thumb:hover {
+      background: color-mix(in srgb, var(--text), transparent 35%);
     }
     .data-table {
       width: 100%;
@@ -249,6 +317,20 @@
       box-shadow: inset 4px 0 0 var(--accent);
     }
     .data-table tbody tr.selected:hover { background: color-mix(in srgb, var(--accent), transparent 72%); }
+    /* Year divider rows (shown when sorted by date) */
+    .data-table tbody tr.year-divider,
+    .data-table tbody tr.year-divider:hover {
+      background: var(--surface-alt);
+      cursor: default;
+    }
+    .year-divider td {
+      padding: 6px 10px 5px 32px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent-muted);
+      border-bottom: 1px solid var(--border);
+    }
     .col-date { color: var(--text-mute); }
     .col-bandleader, .th-bandleader { display: none; }
     .data-table.show-bandleader .col-bandleader,
@@ -547,6 +629,8 @@
       .col-grouping, .th-grouping { display: none; }
       .header { padding: 8px 16px; gap: 8px; }
       .btn-download { padding: 7px 10px; font-size: 12px; }
+      .era-pill label { padding: 5px 9px; font-size: 12px; }
+      .year-divider td { padding-left: 16px; }
       .filters-section, .stats-line { padding-left: 16px; padding-right: 16px; }
       .data-table th:first-child, .data-table td:first-child { padding-left: 16px; }
       .detail-popover { padding-left: 16px; padding-right: 16px; }
@@ -597,6 +681,26 @@
       <div class="bandleader-group">
         <select id="bandleaderSelect" class="bandleader-select"></select>
       </div>
+      <div class="era-group">
+        <div class="era-pills" id="eraPills">
+          <span class="era-pill">
+            <input type="checkbox" id="eraAcoustic" data-era="acoustic" checked>
+            <label for="eraAcoustic" title="Orchestras with over 25% of recordings before 1927">Acoustic</label>
+          </span>
+          <span class="era-pill">
+            <input type="checkbox" id="eraGuardia" data-era="guardia" checked>
+            <label for="eraGuardia" title="Orchestras with over 25% of recordings from 1927&#8211;1934">Guardia Vieja</label>
+          </span>
+          <span class="era-pill">
+            <input type="checkbox" id="eraGolden" data-era="golden" checked>
+            <label for="eraGolden" title="Orchestras with over 25% of recordings from 1935&#8211;1955">Golden Age</label>
+          </span>
+          <span class="era-pill">
+            <input type="checkbox" id="eraModern" data-era="modern" checked>
+            <label for="eraModern" title="Orchestras with over 25% of recordings after 1955">Modern</label>
+          </span>
+        </div>
+      </div>
       <div class="header-actions">
         <button class="btn-download" id="btnDownloadArtist">Download Artist CSV</button>
         <button class="btn-download" id="btnDownloadAll">Download All CSV</button>
@@ -634,6 +738,7 @@
         <button type="button" class="thumb-size-btn" data-size="L" title="Large labels">L</button>
       </div>
       <span id="statsText"></span>
+      <span id="eraBadges" class="era-badges"></span>
       <div id="chipsRow" class="chips-row"></div>
     </div>
 
@@ -690,6 +795,8 @@
   let sortAsc = true;
   let lightboxSet = null;
   let lightboxIdx = -1;
+  let artistEras = {};   // Bandleader -> array of era keys (>25% of dated recordings)
+  let renderToken = 0;   // invalidates in-flight chunked renders
 
   // --- DOM refs ---
   const $ = id => document.getElementById(id);
@@ -718,6 +825,8 @@
   const backToTopBtn = $('backToTop');
   const btnDownloadArtist = $('btnDownloadArtist');
   const btnDownloadAll = $('btnDownloadAll');
+  const eraPills = $('eraPills');
+  const eraBadges = $('eraBadges');
 
   // --- Accent-insensitive normalization ---
   function stripAccents(str) {
@@ -926,6 +1035,64 @@
     });
   }
 
+  // --- Eras ---
+  // An artist belongs to an era when more than 25% of its dated recordings
+  // fall inside it; artists can belong to several eras.
+  var ERA_DEFS = [
+    { key: 'acoustic', label: 'Acoustic',      test: function (y) { return y < 1927; } },
+    { key: 'guardia',  label: 'Guardia Vieja', test: function (y) { return y >= 1927 && y < 1935; } },
+    { key: 'golden',   label: 'Golden Age',    test: function (y) { return y >= 1935 && y <= 1955; } },
+    { key: 'modern',   label: 'Modern',        test: function (y) { return y > 1955; } }
+  ];
+
+  function computeArtistEras() {
+    var tallies = {};
+    allData.forEach(r => {
+      var d = parseDate(r.Date);
+      if (!d) return;
+      var y = d.getFullYear();
+      var t = tallies[r.Bandleader] || (tallies[r.Bandleader] = { total: 0, counts: [0, 0, 0, 0] });
+      t.total++;
+      ERA_DEFS.forEach(function (e, i) { if (e.test(y)) t.counts[i]++; });
+    });
+    artistEras = {};
+    Object.keys(tallies).forEach(function (name) {
+      var t = tallies[name];
+      var eras = [];
+      ERA_DEFS.forEach(function (e, i) { if (t.counts[i] / t.total > 0.25) eras.push(e.key); });
+      // Fallback (e.g. an exact 4-way split): use the era(s) with the most recordings.
+      if (!eras.length) {
+        var max = Math.max.apply(null, t.counts);
+        ERA_DEFS.forEach(function (e, i) { if (t.counts[i] === max) eras.push(e.key); });
+      }
+      artistEras[name] = eras;
+    });
+  }
+
+  function selectedEras() {
+    return Array.from(eraPills.querySelectorAll('input:checked')).map(cb => cb.dataset.era);
+  }
+
+  function artistVisible(name) {
+    var eras = artistEras[name];
+    if (!eras || !eras.length) return true; // no dated recordings: always list
+    var sel = selectedEras();
+    return eras.some(e => sel.indexOf(e) >= 0);
+  }
+
+  function updateEraBadges(bandleader) {
+    eraBadges.innerHTML = '';
+    var eras = bandleader && artistEras[bandleader];
+    if (!eras) return;
+    ERA_DEFS.forEach(function (e) {
+      if (eras.indexOf(e.key) < 0) return;
+      var span = document.createElement('span');
+      span.className = 'era-badge';
+      span.textContent = e.label;
+      eraBadges.appendChild(span);
+    });
+  }
+
   // --- Bandleader dropdown (Last, First sorted by last name with letter sections) ---
   function getLastName(name) {
     var parts = name.trim().split(/\s+/);
@@ -948,12 +1115,13 @@
   }
 
   function populateBandleaderDropdown() {
+    var prev = bandleaderSelect.value;
     var counts = {};
     allData.forEach(r => {
       var bl = r.Bandleader;
       counts[bl] = (counts[bl] || 0) + 1;
     });
-    var names = Object.keys(counts);
+    var names = Object.keys(counts).filter(artistVisible);
     names.sort((a, b) => {
       var lastA = stripAccents(getLastName(a)).toLowerCase();
       var lastB = stripAccents(getLastName(b)).toLowerCase();
@@ -996,6 +1164,12 @@
       opt.textContent = padWithCount(toLastFirst(name), counts[name], maxLen);
       bandleaderSelect.appendChild(opt);
     });
+
+    // Keep the current selection if it survived the era filter; otherwise the
+    // placeholder shows but the table keeps displaying the current artist.
+    if (prev && (prev === '__all__' || names.indexOf(prev) >= 0)) {
+      bandleaderSelect.value = prev;
+    }
   }
 
   // --- Bandleader change ---
@@ -1005,6 +1179,7 @@
     var isAll = bl === '__all__';
     artistData = isAll ? allData.slice() : allData.filter(r => r.Bandleader === bl);
     document.querySelector('.data-table').classList.toggle('show-bandleader', isAll);
+    updateEraBadges(isAll ? null : bl);
 
     populateSelect(genreFilter, uniqueSorted(artistData, 'Genre'), 'All');
     populateSingerDropdown(artistData);
@@ -1081,47 +1256,82 @@
     });
   }
 
+  function buildRow(row, i) {
+    var tr = document.createElement('tr');
+    tr.dataset.i = i;
+    if (i === selectedRowIndex) tr.classList.add('selected');
+    var imgSrc = lpCover(row) || imageUrl(row);
+    var thumbCell = imgSrc
+      ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(imgSrc) + '" alt="" onerror="this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\'"></td>'
+      : '<td class="col-thumb" data-noimg="1"></td>';
+    tr.innerHTML =
+      thumbCell +
+      '<td class="col-date">' + esc(formatDate(row.Date)) + '</td>' +
+      '<td class="col-bandleader">' + esc(row.Bandleader) + '</td>' +
+      '<td class="col-title">' + esc(row.Title) + '</td>' +
+      '<td class="col-genre">' + esc(row.Genre) + '</td>' +
+      '<td class="col-singer">' + esc(row.Singer) + '</td>' +
+      '<td class="col-label">' + esc(row.Label) + '</td>' +
+      '<td class="col-grouping">' + esc(row.Grouping) + '</td>' +
+      '<td class="col-composer">' + esc(row.Composer) + '</td>' +
+      '<td class="col-author">' + esc(row.Author) + '</td>' +
+      '<td class="col-expand" title="Details">+</td>';
+    tr.addEventListener('click', () => onRowClick(i));
+    tr.querySelector('.col-expand').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openPopover(i, e.currentTarget);
+    });
+    tr.querySelector('.col-thumb').addEventListener('click', (e) => {
+      e.stopPropagation();
+      var td = e.currentTarget;
+      if (td.dataset.noimg) return;
+      var img = td.querySelector('img');
+      if (img && img.src) openLightbox(img.src);
+    });
+    return tr;
+  }
+
+  // Rows are appended in chunks so large views (e.g. All Orchestras, ~17k rows)
+  // don't freeze the page. When sorted by date, year divider rows are inserted.
+  var RENDER_CHUNK = 400;
   function renderTable() {
+    var token = ++renderToken;
     tableBody.innerHTML = '';
     if (filteredData.length === 0) {
-      tableBody.innerHTML = '<tr><td colspan="10" class="table-message">No recordings match your filters</td></tr>';
+      tableBody.innerHTML = '<tr><td colspan="11" class="table-message">No recordings match your filters</td></tr>';
       scrollIndicator.classList.remove('visible');
       return;
     }
-    filteredData.forEach((row, i) => {
-      var tr = document.createElement('tr');
-      if (i === selectedRowIndex) tr.classList.add('selected');
-      var imgSrc = lpCover(row) || imageUrl(row);
-      var thumbCell = imgSrc
-        ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(imgSrc) + '" alt="" onerror="this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\'"></td>'
-        : '<td class="col-thumb" data-noimg="1"></td>';
-      tr.innerHTML =
-        thumbCell +
-        '<td class="col-date">' + esc(formatDate(row.Date)) + '</td>' +
-        '<td class="col-bandleader">' + esc(row.Bandleader) + '</td>' +
-        '<td class="col-title">' + esc(row.Title) + '</td>' +
-        '<td class="col-genre">' + esc(row.Genre) + '</td>' +
-        '<td class="col-singer">' + esc(row.Singer) + '</td>' +
-        '<td class="col-label">' + esc(row.Label) + '</td>' +
-        '<td class="col-grouping">' + esc(row.Grouping) + '</td>' +
-        '<td class="col-composer">' + esc(row.Composer) + '</td>' +
-        '<td class="col-author">' + esc(row.Author) + '</td>' +
-        '<td class="col-expand" title="Details">+</td>';
-      tr.addEventListener('click', () => onRowClick(i));
-      tr.querySelector('.col-expand').addEventListener('click', (e) => {
-        e.stopPropagation();
-        openPopover(i, e.currentTarget);
-      });
-      tr.querySelector('.col-thumb').addEventListener('click', (e) => {
-        e.stopPropagation();
-        var td = e.currentTarget;
-        if (td.dataset.noimg) return;
-        var img = td.querySelector('img');
-        if (img && img.src) openLightbox(img.src);
-      });
-      tableBody.appendChild(tr);
-    });
-    checkScrollIndicator();
+    var showDividers = sortCol === 'Date';
+    var idx = 0;
+    var lastYear = null;
+    function appendChunk() {
+      if (token !== renderToken) return; // a newer render started
+      var frag = document.createDocumentFragment();
+      var end = Math.min(idx + RENDER_CHUNK, filteredData.length);
+      for (; idx < end; idx++) {
+        var row = filteredData[idx];
+        if (showDividers) {
+          var d = parseDate(row.Date);
+          var year = d ? d.getFullYear() : 'Undated';
+          if (year !== lastYear) {
+            lastYear = year;
+            var div = document.createElement('tr');
+            div.className = 'year-divider';
+            div.innerHTML = '<td colspan="11">' + esc(String(year)) + '</td>';
+            frag.appendChild(div);
+          }
+        }
+        frag.appendChild(buildRow(row, idx));
+      }
+      tableBody.appendChild(frag);
+      if (idx < filteredData.length) {
+        requestAnimationFrame(appendChunk);
+      } else {
+        checkScrollIndicator();
+      }
+    }
+    appendChunk();
   }
 
   function esc(str) {
@@ -1133,11 +1343,13 @@
     return div.innerHTML.replace(/"/g, '&quot;');
   }
 
+  function dataRow(index) {
+    return tableBody.querySelector('tr[data-i="' + index + '"]');
+  }
+
   function scrollToRow(index) {
-    var rows = tableBody.querySelectorAll('tr');
-    if (rows[index]) {
-      rows[index].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-    }
+    var row = dataRow(index);
+    if (row) row.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
   function stripLpImages(rows) {
@@ -1204,8 +1416,9 @@
       return;
     }
     selectedRowIndex = index;
-    var rows = tableBody.querySelectorAll('tr');
-    rows.forEach((r, i) => r.classList.toggle('selected', i === index));
+    tableBody.querySelectorAll('tr.selected').forEach(r => r.classList.remove('selected'));
+    var row = dataRow(index);
+    if (row) row.classList.add('selected');
   }
 
   function openPopover(index, anchorEl) {
@@ -1384,11 +1597,15 @@
           return;
         }
         allData = results.data;
+        computeArtistEras();
         populateBandleaderDropdown();
         loadingEl.style.display = 'none';
         appEl.style.display = 'flex';
+        tableBody.innerHTML = '<tr><td colspan="11" class="table-message">Select an orchestra above to browse its discography</td></tr>';
 
         bandleaderSelect.addEventListener('change', onBandleaderChange);
+
+        eraPills.addEventListener('change', populateBandleaderDropdown);
 
         genreFilter.addEventListener('change', applyFilters);
         singerFilter.addEventListener('change', applyFilters);
@@ -1448,8 +1665,8 @@
             scrollToRow(prev);
           } else if (e.key === 'Enter' && selectedRowIndex >= 0) {
             e.preventDefault();
-            var rows = tableBody.querySelectorAll('tr');
-            var expandCell = rows[selectedRowIndex] && rows[selectedRowIndex].querySelector('.col-expand');
+            var selRow = dataRow(selectedRowIndex);
+            var expandCell = selRow && selRow.querySelector('.col-expand');
             if (expandCell) openPopover(selectedRowIndex, expandCell);
           } else if (e.key === 'Escape') {
             if (detailPopover.classList.contains('visible')) {
