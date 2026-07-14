@@ -127,6 +127,8 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
         if args.dry_run:
             n = 0
             for webp in sorted(art_root.rglob("*.webp")):
+                if "_suspect" in webp.parts or "Incorrect" in webp.parts:  # quarantined / hand-set-aside
+                    continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
                 print(f"  would upload: {webp} -> {key}")
                 n += 1
@@ -141,6 +143,8 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
             confirmed_on_r2: set[Path] = set()
 
             for webp in sorted(art_root.rglob("*.webp")):
+                if "_suspect" in webp.parts or "Incorrect" in webp.parts:  # quarantined / hand-set-aside
+                    continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
                 url = _r2.public_url(cfg.public_base, key)
                 if not args.force:
