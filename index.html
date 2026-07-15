@@ -834,22 +834,24 @@
   }
 
   // --- Image URL construction ---
-  // Convention: {LastFirst}/Singles/{GroupingNormalized}/{YYYY-MM-DD}_{Title-TitleCased}_{Suffix}.webp
-  // Grouping normalization: strip accents, drop ( ) , . +, collapse spaces. Hyphens kept.
+  // Convention: {LastFirst}/Singles/{YYYY-YYYY 5-year bucket}/{YYYY-MM-DD}_{Title-TitleCased}_{Suffix}.webp
   // Bandleader folder: strip accents + drop apostrophes/punctuation: "Juan D'Arienzo" -> "DArienzoJuan".
   // Title segment: strip accents, replace any run of non-alphanumerics (spaces and
   //   punctuation alike) with a single hyphen, Title-Case each segment: "Pa' Que Bailen" -> "Pa-Que-Bailen", "Colorao, Colorao" -> "Colorao-Colorao".
   // Last-name suffix: strip accents, apostrophe -> hyphen: "D'Arienzo" -> "D-Arienzo".
   // Year-only dates use the bare year as the date segment: "1928" -> 1928_Title_Suffix.webp.
-  // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires + "50-54 T.K. (Figari)" ->
-  //   TroiloAnibal/Singles/50-54 TK Figari/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
+  // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires ->
+  //   TroiloAnibal/Singles/1940-1944/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
   const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
-  function normalizeGroupingFolder(g) {
-    return stripAccents(g).replace(/[(),.+]/g, '').replace(/\s+/g, ' ').trim();
+  function yearBucket(iso) {
+    var m = /^(\d{4})/.exec(iso);
+    if (!m) return null;
+    var y = parseInt(m[1], 10), b = Math.floor(y / 5) * 5;
+    return b + '-' + (b + 4);
   }
   var LAST_NAME_PARTICLES = ['de', 'di', 'del', 'la', 'las', 'los'];
   function imageUrl(row) {
-    if (!row || !row.Bandleader || !row.Date || !row.Title || !row.Grouping) return null;
+    if (!row || !row.Bandleader || !row.Date || !row.Title) return null;
     var nameParts = stripAccents(row.Bandleader).trim().split(/\s+/);
     if (nameParts.length === 0 || nameParts[0] === '') return null;
     var lastName = nameParts[nameParts.length - 1];
@@ -861,8 +863,6 @@
       if (LAST_NAME_PARTICLES.indexOf(nameParts[pi].toLowerCase()) >= 0) { suffixStart = pi; break; }
     }
     var suffix = nameParts.slice(suffixStart).join('-').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    var groupingFolder = normalizeGroupingFolder(row.Grouping);
-    if (!groupingFolder) return null;
     var d = row.Date.trim();
     var iso, m;
     if ((m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(d))) {
@@ -874,13 +874,15 @@
     } else {
       return null;
     }
+    var bucket = yearBucket(iso);
+    if (!bucket) return null;
     var title = stripAccents(row.Title)
       .replace(/[^A-Za-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '')
       .split('-')
       .map(function (w) { return w ? w.charAt(0).toUpperCase() + w.slice(1) : w; })
       .join('-');
-    return IMAGE_BASE + '/' + folder + '/Singles/' + groupingFolder + '/' + iso + '_' + title + '_' + suffix + '.webp';
+    return IMAGE_BASE + '/' + folder + '/Singles/' + bucket + '/' + iso + '_' + title + '_' + suffix + '.webp';
   }
 
   // --- LP images (from the LP_Images JSON column produced by build.py) ---
@@ -897,6 +899,27 @@
     var imgs = parseLpImages(row);
     if (!imgs.length) return null;
     return imgs[0].url || null;
+  }
+
+  // Artists whose EP reissue art is the canonical image and should outrank the 78
+  // single. Di Sarli's EP sleeves are the well-known covers; most artists prefer
+  // the original 78. Keyed by exact Bandleader value.
+  var EP_PREFERRED = { 'Carlos Di Sarli': true };
+
+  // Ordered image set for a row: normally the original 78 rpm single first (when a
+  // URL is constructable), then any LP/EP reissue scans. For an EP-preferred artist
+  // on a row backed by an EP, the EP art leads and the 78 becomes the fallback.
+  // The single URL is only a guess (we can't know from the CSV whether it was
+  // uploaded), so callers fall back through the list on load error rather than
+  // assuming any one image exists.
+  function imageList(row) {
+    var single = imageUrl(row);
+    var singleItems = single ? [{ type: '78 rpm', url: single }] : [];
+    var lp = parseLpImages(row).filter(function (im) { return im && im.url; });
+    if (lp.length && EP_PREFERRED[row.Bandleader] && /\/EPs\//.test(lp[0].url)) {
+      return lp.concat(singleItems);
+    }
+    return singleItems.concat(lp);
   }
 
   // --- Date parsing ---
@@ -1260,9 +1283,15 @@
     var tr = document.createElement('tr');
     tr.dataset.i = i;
     if (i === selectedRowIndex) tr.classList.add('selected');
-    var imgSrc = lpCover(row) || imageUrl(row);
-    var thumbCell = imgSrc
-      ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(imgSrc) + '" alt="" onerror="this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\'"></td>'
+    // Show the row's preferred image (see imageList); if it isn't uploaded (load
+    // error) fall back to the next candidate, then hide the cell if none resolve.
+    var imgs = imageList(row);
+    var primary = imgs.length ? imgs[0].url : null;
+    var fallback = imgs.length > 1 ? imgs[1].url : null;
+    var thumbCell = primary
+      ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(primary) + '"' +
+          (fallback ? ' data-fallback="' + esc(fallback) + '"' : '') +
+          ' alt="" onerror="if(this.dataset.fallback){var u=this.dataset.fallback;this.removeAttribute(\'data-fallback\');this.src=u;}else{this.onerror=null;this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\';}"></td>'
       : '<td class="col-thumb" data-noimg="1"></td>';
     tr.innerHTML =
       thumbCell +
@@ -1425,23 +1454,14 @@
     var row = filteredData[index];
     if (!row) return;
     var year = parseDate(row.Date) ? parseDate(row.Date).getFullYear() : '';
-    var lpImgs = parseLpImages(row);
-    var imgSrc = lpImgs.length ? lpImgs[0].url : imageUrl(row);
+    var imgs = imageList(row);
 
     var html = '<div class="detail-header">';
-    if (lpImgs.length) {
+    if (imgs.length) {
+      // Thumb buttons + error-fallback are wired up after insertion (see below).
       html += '<div class="lp-viewer">' +
-        '<img class="detail-thumb lp-main" src="' + esc(lpImgs[0].url) + '" data-idx="0" alt="" ' +
-        'onerror="this.style.visibility=\'hidden\'">' +
-        '<div class="lp-thumbs">';
-      lpImgs.forEach(function (im, i) {
-        var label = (im.type || ('#' + (i + 1))).replace(/\bDisk\b/gi, 'Disc');
-        html += '<button type="button" class="lp-thumb" data-idx="' + i + '">' + esc(label) + '</button>';
-      });
-      html += '</div></div>';
-    } else if (imgSrc) {
-      html += '<img class="detail-thumb" src="' + esc(imgSrc) + '" alt="" ' +
-        'onerror="this.style.display=\'none\'">';
+        '<img class="detail-thumb lp-main" src="' + esc(imgs[0].url) + '" data-idx="0" alt="">' +
+        '<div class="lp-thumbs"></div></div>';
     }
 
     // Right-of-image metadata column
@@ -1498,29 +1518,47 @@
 
     detailContent.innerHTML = html;
 
-    if (lpImgs.length) {
+    if (imgs.length) {
       var mainImg = detailContent.querySelector('.lp-main');
-      var thumbBtns = detailContent.querySelectorAll('.lp-thumb');
+      var thumbsWrap = detailContent.querySelector('.lp-thumbs');
+      var curIdx = 0;
+      var renderThumbs = function () {
+        thumbsWrap.innerHTML = '';
+        if (imgs.length < 2) return;  // lone image: no selector row
+        imgs.forEach(function (im, i) {
+          var label = (im.type || ('#' + (i + 1))).replace(/\bDisk\b/gi, 'Disc');
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'lp-thumb' + (i === curIdx ? ' selected' : '');
+          b.textContent = label;
+          b.addEventListener('click', function () { selectImage(i); });
+          thumbsWrap.appendChild(b);
+        });
+      };
       var selectImage = function (idx) {
-        var im = lpImgs[idx];
-        if (!im) return;
-        mainImg.src = im.url;
+        if (!imgs[idx]) return;
+        curIdx = idx;
+        mainImg.src = imgs[idx].url;
         mainImg.style.visibility = '';
         mainImg.dataset.idx = idx;
-        thumbBtns.forEach(function (b) { b.classList.toggle('selected', +b.dataset.idx === idx); });
+        renderThumbs();
       };
-      thumbBtns.forEach(function (b) {
-        b.addEventListener('click', function () { selectImage(+b.dataset.idx); });
+      // The 78 single is tried first but may not be uploaded; on load error drop
+      // the current image and fall back to the next (album art), hiding if none remain.
+      mainImg.addEventListener('error', function () {
+        if (!imgs.length) return;
+        imgs.splice(curIdx, 1);
+        if (imgs.length) {
+          selectImage(Math.min(curIdx, imgs.length - 1));
+        } else {
+          mainImg.style.visibility = 'hidden';
+          thumbsWrap.innerHTML = '';
+        }
       });
       mainImg.addEventListener('click', function () {
-        openLightbox(mainImg.src, lpImgs, +mainImg.dataset.idx);
+        openLightbox(mainImg.src, imgs, curIdx);
       });
-      selectImage(0);
-    } else {
-      var detailThumb = detailContent.querySelector('.detail-thumb');
-      if (detailThumb) {
-        detailThumb.addEventListener('click', function () { openLightbox(detailThumb.src); });
-      }
+      renderThumbs();
     }
 
     // Position near the anchor row
