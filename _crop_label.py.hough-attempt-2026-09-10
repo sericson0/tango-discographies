@@ -126,12 +126,7 @@ _ALT_MAX_RFRAC = 0.26
 # low-fill discs, not smaller ones.
 _HOUGH_MIN_RFRAC = _FULL_MIN_RFRAC
 _HOUGH_MAX_RFRAC = 0.40     # same ceiling as the generic full-disc bar
-# NOT relaxed either. Measured over the whole pending backlog: every genuine
-# rescue sat at frame centre (0.50, 0.50), while every destructive false crop
-# was centred at y 0.20-0.31 -- Hough locking onto the label's upper ARC, whose
-# outer side is real shellac, so even the reach guard is satisfied. Centring is
-# the signal that separates them, so it keeps the tuned default.
-_HOUGH_CENTER_OFF = _MAX_CENTER_OFF
+_HOUGH_CENTER_OFF = 0.34    # a disc laid off-centre on a seller's table
 _HOUGH_EDGE = 100           # Canny high threshold for the gradient stage
 _HOUGH_ACC = 30             # accumulator bar; lower finds more, vetting is unchanged
 _HOUGH_MAX_CANDIDATES = 6   # best-accumulator-first, so this is a cost bound

@@ -37,4 +37,10 @@ ARTIST_DISPLAY = {
     "Maderna": "Osmar Maderna",
     "Varela": "Héctor Varela",
     "Salgan": "Horacio Salgan",
+    "Corsini": "Ignacio Corsini",
+    "Magaldi": "Agustín Magaldi",
+    "Villoldo": "Angel Villoldo",
+    "Greco": "Vicente Greco",
+    "Quiroga": "Rosita Quiroga",
+    "Delfino": "Enrique Delfino",
 }

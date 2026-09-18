@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import shutil
 import sys
 from collections import Counter
 from pathlib import Path
@@ -36,7 +37,29 @@ def _detail(bbox) -> str:
     return f"center=({cx},{cy}) r={r}"
 
 
-def process(files: list[Path], apply: bool, quality: int) -> tuple[Counter, list[list[str]]]:
+def _backup(path: Path, root: Path, backup_dir: Path) -> None:
+    """Copy ``path`` under ``backup_dir``, mirroring its path below ``root``.
+
+    The crop is destructive and irreversible (it re-encodes WEBP over the
+    original), so this runs BEFORE the write and any failure aborts that file
+    rather than proceeding unbacked. An existing backup is never overwritten:
+    re-running the tool must not replace a pristine original with an
+    already-cropped one.
+    """
+    try:
+        rel = path.relative_to(root)
+    except ValueError:
+        rel = Path(path.name)
+    dest = backup_dir / rel
+    if dest.exists():
+        return
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(path, dest)
+
+
+def process(files: list[Path], apply: bool, quality: int,
+            root: Path | None = None,
+            backup_dir: Path | None = None) -> tuple[Counter, list[list[str]]]:
     """Classify (and optionally crop) each file; return (verdict counts, report rows)."""
     counts: Counter = Counter()
     rows: list[list[str]] = []
@@ -48,6 +71,8 @@ def process(files: list[Path], apply: bool, quality: int) -> tuple[Counter, list
                 action = "none"
                 if verdict == "full_disc" and bbox is not None:
                     if apply:
+                        if backup_dir is not None:
+                            _backup(p, root or p.parent, backup_dir)
                         crop_to_label(im.convert("RGB"), bbox).save(p, "WEBP", quality=quality)
                         action = "cropped"
                     else:
@@ -69,6 +94,12 @@ def main() -> int:
     ap.add_argument("--dir", help="crop an arbitrary directory instead of an artist folder")
     ap.add_argument("--apply", action="store_true", help="crop full_disc files in place")
     ap.add_argument("--quality", type=int, default=90, help="WEBP quality for re-encode")
+    ap.add_argument("--backup-dir", help="copy each file here before cropping it "
+                                         "(mirrors the tree; never overwrites an "
+                                         "existing backup). Strongly recommended "
+                                         "with --apply: the crop is irreversible.")
+    ap.add_argument("--no-backup", action="store_true",
+                    help="crop without saving originals (refused by default)")
     args = ap.parse_args()
 
     if args.dir:
@@ -84,9 +115,20 @@ def main() -> int:
         print(f"error: {root} is not a directory", file=sys.stderr)
         return 2
 
+    # Cropping rewrites the original in place. Require the operator to either
+    # name a backup directory or say out loud that they do not want one, rather
+    # than making irreversibility the quiet default.
+    backup_dir = Path(args.backup_dir) if args.backup_dir else None
+    if args.apply and backup_dir is None and not args.no_backup:
+        ap.error("--apply rewrites originals irreversibly: pass --backup-dir DIR "
+                 "(recommended) or --no-backup to proceed without saving them")
+
     files = collect(root)
     print(f"scanning {len(files)} webp under {root}")
-    counts, rows = process(files, args.apply, args.quality)
+    if args.apply and backup_dir is not None:
+        print(f"originals will be copied to {backup_dir} before cropping")
+    counts, rows = process(files, args.apply, args.quality,
+                           root=root, backup_dir=backup_dir)
 
     report.parent.mkdir(parents=True, exist_ok=True)
     with report.open("w", encoding="utf-8", newline="") as f:

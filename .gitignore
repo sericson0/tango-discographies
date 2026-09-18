@@ -68,3 +68,7 @@ lp_matches/Osvaldo Pugliese.csv
 lp_matches/Pedro Laurenz.csv
 lp_matches/Ricardo Tanturi.csv
 lp_matches/Rodolfo Biagi.csv
+scrape_canaro.py
+canaro_review.csv
+.gitignore
+canaro_fill_report.csv

@@ -840,6 +840,7 @@
   //   punctuation alike) with a single hyphen, Title-Case each segment: "Pa' Que Bailen" -> "Pa-Que-Bailen", "Colorao, Colorao" -> "Colorao-Colorao".
   // Last-name suffix: strip accents, apostrophe -> hyphen: "D'Arienzo" -> "D-Arienzo".
   // Year-only dates use the bare year as the date segment: "1928" -> 1928_Title_Suffix.webp.
+  // Month-precision dates keep the month: "1952-05" -> 1952-05_Title_Suffix.webp.
   // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires ->
   //   TroiloAnibal/Singles/1940-1944/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
   const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
@@ -869,6 +870,12 @@
       iso = m[3] + '-' + m[1].padStart(2, '0') + '-' + m[2].padStart(2, '0');
     } else if ((m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(d))) {
       iso = m[1] + '-' + m[2].padStart(2, '0') + '-' + m[3].padStart(2, '0');
+    } else if ((m = /^(\d{4})-(\d{1,2})$/.exec(d))) {
+      // Month precision, kept as-is. Must mirror iso_date() in
+      // import_singles.py exactly: this function builds the URL the
+      // importer's filename has to satisfy, so any disagreement means a
+      // file that exists on R2 is never requested.
+      iso = m[1] + '-' + m[2].padStart(2, '0');
     } else if (/^\d{4}$/.test(d)) {
       iso = d;
     } else {

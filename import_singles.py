@@ -45,8 +45,13 @@ if hasattr(sys.stdout, "reconfigure"):
 LAST_NAME_PARTICLES = {"de", "di", "del", "la", "las", "los"}
 IMG_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 # Source image filename shape: {date}_{Title-Slug}_{Suffix}[_dupN].ext
+# The date carries whatever precision the discography has: YYYY, YYYY-MM or
+# YYYY-MM-DD. Month precision is not a curiosity -- 277 rows across csv_files
+# have it (109 Pugliese, 84 Di Sarli), and while it was unrepresentable those
+# rows could never be given a single at all: iso_date returned None, so emit
+# skipped them and the client built no URL for them.
 FNAME_RE = re.compile(
-    r"^(?P<date>\d{4}(?:-\d{2}-\d{2})?)_(?P<title>.+?)_(?P<suffix>[A-Za-z][A-Za-z-]*?)(?:_\d+)?\.(?P<ext>jpg|jpeg|png|webp)$",
+    r"^(?P<date>\d{4}(?:-\d{2}(?:-\d{2})?)?)_(?P<title>.+?)_(?P<suffix>[A-Za-z][A-Za-z-]*?)(?:_\d+)?\.(?P<ext>jpg|jpeg|png|webp)$",
     re.IGNORECASE,
 )
 
@@ -89,12 +94,23 @@ def title_segment(title: str) -> str:
 
 
 def iso_date(date: str) -> str | None:
+    """Normalize a discography Date to the filename's date segment, or None.
+
+    Returns the date at the precision the CSV states it -- YYYY, YYYY-MM or
+    YYYY-MM-DD -- because that segment is both the filename key and the key
+    a row is looked up by. Downgrading YYYY-MM to YYYY would silently merge
+    it with a bare-year row of the same title, so precision is preserved
+    rather than truncated.
+    """
     d = (date or "").strip()
     m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})$", d)
     if m:
         return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
     if re.match(r"^\d{4}-\d{2}-\d{2}$", d):
         return d
+    m = re.match(r"^(\d{4})-(\d{1,2})$", d)
+    if m:
+        return f"{m.group(1)}-{int(m.group(2)):02d}"
     if re.match(r"^\d{4}$", d):
         return d
     return None
@@ -270,26 +286,34 @@ def source_dirs(cfg: dict) -> list[Path]:
         dirs.append(PARSE / "DAHR Parsing" / "output" / cfg["dahr"] / "images")
     if cfg.get("discogs"):
         dirs.append(PARSE / "Tangos78" / "matched_discography" / cfg["discogs"])
+    if cfg.get("harvest"):
+        dirs.append(PARSE / "Marketplace Harvest" / "matched" / cfg["harvest"])
     return dirs
 
 
-# local folder -> {display, csv, tangoinfo, dahr, discogs}
+# local folder -> {display, csv, tangoinfo, dahr, discogs, harvest}
 # tangoinfo: TangoInfo data/ScrapeShellac/out/<name>/images
 # dahr:      DAHR Parsing/output/<name>/images   (omit if the artist isn't in DAHR)
 # discogs:   Tangos78/matched_discography/<slug>
+# harvest:   Marketplace Harvest/matched/<Key>   (appended LAST: curated sources win)
 ARTISTS = {
     "Gardel":    {"display": "Carlos Gardel",     "csv": "Carlos Gardel.csv",
-                  "tangoinfo": "Carlos_Gardel",    "dahr": "Gardel_Carlos",     "discogs": "carlos-gardel"},
+                  "tangoinfo": "Carlos_Gardel",    "dahr": "Gardel_Carlos",     "discogs": "carlos-gardel",
+                  "harvest": "Gardel"},
     "Canaro":    {"display": "Francisco Canaro",   "csv": "Francisco Canaro.csv",
-                  "tangoinfo": "Francisco_Canaro", "dahr": "Canaro_Francisco",  "discogs": "francisco-canaro"},
+                  "tangoinfo": "Francisco_Canaro", "dahr": "Canaro_Francisco",  "discogs": "francisco-canaro",
+                  "harvest": "Canaro"},
     "Firpo":     {"display": "Roberto Firpo",      "csv": "Roberto Firpo.csv",
-                  "tangoinfo": "Roberto_Firpo",    "dahr": "Firpo_Roberto",     "discogs": "roberto-firpo"},
+                  "tangoinfo": "Roberto_Firpo",    "dahr": "Firpo_Roberto",     "discogs": "roberto-firpo",
+                  "harvest": "Firpo"},
     "Fresedo":   {"display": "Osvaldo Fresedo",    "csv": "Osvaldo Fresedo.csv",
-                  "tangoinfo": "Osvaldo_Fresedo",  "dahr": "Fresedo_Osvaldo",   "discogs": "osvaldo-fresedo"},
+                  "tangoinfo": "Osvaldo_Fresedo",  "dahr": "Fresedo_Osvaldo",   "discogs": "osvaldo-fresedo",
+                  "harvest": "Fresedo"},
     "DeCaro":    {"display": "Julio De Caro",      "csv": "Julio De Caro.csv",
                   "tangoinfo": "Julio_De_Caro",    "dahr": "Caro_Julio_de",     "discogs": "julio-de-caro"},
     "Lomuto":    {"display": "Francisco Lomuto",   "csv": "Francisco Lomuto.csv",
-                  "tangoinfo": "Francisco_Lomuto", "dahr": "Lomuto_Francisco_J", "discogs": "francisco-lomuto"},
+                  "tangoinfo": "Francisco_Lomuto", "dahr": "Lomuto_Francisco_J", "discogs": "francisco-lomuto",
+                  "harvest": "Lomuto"},
     "Demare":    {"display": "Lucio Demare",       "csv": "Lucio Demare.csv",
                   "tangoinfo": "Lucio_Demare",     "dahr": "Demare_Lucio",      "discogs": "lucio-demare"},
     "DeAngelis": {"display": "Alfredo De Angelis", "csv": "Alfredo De Angelis.csv",
@@ -302,9 +326,11 @@ ARTISTS = {
                   "tangoinfo": "Enrique_Francini", "discogs": "enrique-francini"},
     # --- expanded coverage (folder keys reuse existing images/<key> where present) ---
     "DArienzo":  {"display": "Juan D'Arienzo",     "csv": "Juan D'Arienzo.csv",
-                  "tangoinfo": "Juan_DArienzo",    "dahr": "DArienzo_Juan",     "discogs": "juan-d-arienzo"},
+                  "tangoinfo": "Juan_DArienzo",    "dahr": "DArienzo_Juan",     "discogs": "juan-d-arienzo",
+                  "harvest": "DArienzo"},
     "DiSarli":   {"display": "Carlos Di Sarli",    "csv": "Carlos Di Sarli.csv",
-                  "tangoinfo": "Carlos_Di_Sarli",  "dahr": "Di_Sarli_Carlos",   "discogs": "carlos-di-sarli"},
+                  "tangoinfo": "Carlos_Di_Sarli",  "dahr": "Di_Sarli_Carlos",   "discogs": "carlos-di-sarli",
+                  "harvest": "DiSarli"},
     "Troilo":    {"display": "Anibal Troilo",      "csv": "Anibal Troilo.csv",
                   "tangoinfo": "Anibal_Troilo",    "dahr": "Orquesta_Tpica_Anibal_Troilo", "discogs": "anibal-troilo"},
     "Tanturi":   {"display": "Ricardo Tanturi",    "csv": "Ricardo Tanturi.csv",
@@ -318,17 +344,21 @@ ARTISTS = {
     "Calo":      {"display": "Miguel Calo",        "csv": "Miguel Calo.csv",
                   "tangoinfo": "Miguel_Calo",      "discogs": "miguel-calo"},
     "Castillo":  {"display": "Alberto Castillo",   "csv": "Alberto Castillo.csv",
-                  "tangoinfo": "Alberto_Castillo", "discogs": "alberto-castillo"},
+                  "tangoinfo": "Alberto_Castillo", "discogs": "alberto-castillo",
+                  "harvest": "Castillo"},
     "DAgostino": {"display": "Angel D'Agostino",   "csv": "Angel D'Agostino.csv",
-                  "dahr": "Agostino_Angel_d",      "discogs": "angel-d-agostino"},
+                  "dahr": "Agostino_Angel_d",      "discogs": "angel-d-agostino",
+                  "harvest": "DAgostino"},
     "Vargas":    {"display": "Angel Vargas",       "csv": "Angel Vargas.csv",
                   "dahr": "Vargas_Angel",          "discogs": "angel-vargas"},
     "Rodriguez": {"display": "Enrique Rodriguez",  "csv": "Enrique Rodriguez.csv",
                   "dahr": "Rodrguez_Enrique",      "discogs": "enrique-rodriguez"},
     "Donato":    {"display": "Edgardo Donato",     "csv": "Edgardo Donato.csv",
-                  "dahr": "Donato_Edgardo",        "discogs": "edgardo-donato"},
+                  "dahr": "Donato_Edgardo",        "discogs": "edgardo-donato",
+                  "harvest": "Donato"},
     "Maglio":    {"display": "Juan Maglio",        "csv": "Juan Maglio.csv",
-                  "dahr": "Maglio_Juan",           "discogs": "juan-maglio"},
+                  "dahr": "Maglio_Juan",           "discogs": "juan-maglio",
+                  "harvest": "Maglio"},
     "Maffia":    {"display": "Pedro Maffia",       "csv": "Pedro Maffia.csv",
                   "dahr": "Maffia_Pedro",          "discogs": "pedro-maffia"},
     "Carabelli": {"display": "Adolfo Carabelli",   "csv": "Adolfo Carabelli.csv",
@@ -338,7 +368,8 @@ ARTISTS = {
     "Cobian":    {"display": "Juan Carlos Cobian", "csv": "Juan Carlos Cobain.csv",  # csv filename misspells Cobián as "Cobain"
                   "tangoinfo": "Juan_Carlos_Cobian", "dahr": "Cobin_Juan_Carlos", "discogs": "juan-carlos-cobian"},
     "OTVictor":  {"display": "Orquesta Típica Victor", "csv": "Orquesta Típica Victor.csv",
-                  "dahr": "Orquesta_Tpica_Victor", "discogs": "orquesta-tipica-victor"},
+                  "dahr": "Orquesta_Tpica_Victor", "discogs": "orquesta-tipica-victor",
+                  "harvest": "OTVictor"},
     "Gobbi":     {"display": "Alfredo Gobbi",      "csv": "Alfredo Gobbi.csv",
                   "tangoinfo": "Alfredo_J_Gobbi",  "discogs": "alfredo-gobbi"},
     "Pontier":   {"display": "Armando Pontier",    "csv": "Armando Pontier.csv",
@@ -348,9 +379,23 @@ ARTISTS = {
     "Maderna":   {"display": "Osmar Maderna",      "csv": "Osmar Maderna.csv",
                   "tangoinfo": "Osmar_Maderna",    "discogs": "osmar-maderna"},
     "Varela":    {"display": "Héctor Varela",      "csv": "Héctor Varela.csv",
-                  "discogs": "hector-varela"},
+                  "discogs": "hector-varela",      "harvest": "Varela"},
     "Salgan":    {"display": "Horacio Salgan",     "csv": "Horacio Salgan.csv",
                   "discogs": "horacio-salgan"},
+    # Acoustic-era artists added Aug 2026. Magaldi has no DAHR talent page
+    # (he never recorded for a US-linked label), so tangos78rpm is his only source.
+    "Corsini":   {"display": "Ignacio Corsini",    "csv": "Ignacio Corsini.csv",
+                  "dahr": "Corsini_Ignacio",       "discogs": "ignacio-corsini"},
+    "Magaldi":   {"display": "Agustín Magaldi",    "csv": "Agustín Magaldi.csv",
+                  "discogs": "agustin-magaldi"},
+    "Villoldo":  {"display": "Angel Villoldo",     "csv": "Angel Villoldo.csv",
+                  "dahr": "Villoldo_Angel_Gregorio", "discogs": "angel-villoldo"},
+    "Greco":     {"display": "Vicente Greco",      "csv": "Vicente Greco.csv",
+                  "dahr": "Greco_Vicente",         "discogs": "vicente-greco"},
+    "Quiroga":   {"display": "Rosita Quiroga",     "csv": "Rosita Quiroga.csv",
+                  "dahr": "Quiroga_Rosita",        "discogs": "rosita-quiroga"},
+    "Delfino":   {"display": "Enrique Delfino",    "csv": "Enrique Delfino.csv",
+                  "dahr": "Delfino_Enrique",       "discogs": "enrique-delfino"},
 }
 
 
@@ -371,9 +416,13 @@ def run(local: str, args) -> int:
 
     # Source priority for tie-breaks: tangoinfo (0) > dahr (1) > discogs (2), by dir order.
     src_priority: dict[Path, int] = {d: i for i, d in enumerate(source_dirs(cfg))}
+    harvest_dir = source_dirs(cfg)[-1] if cfg.get("harvest") else None
 
     def priority_of(path: Path) -> int:
         return src_priority.get(path.parent, len(src_priority))
+
+    def is_harvest(path: Path) -> bool:
+        return harvest_dir is not None and path.parent == harvest_dir
 
     _long_edge_cache: dict[Path, int] = {}
 
@@ -402,9 +451,18 @@ def run(local: str, args) -> int:
     MIN_EDGE = 250  # skip tiny scans when a usable candidate exists
 
     def score(path: Path):
-        # Bigger is better: bucket the long edge (//400) so near-ties fall through to
-        # source priority; negate priority so tangoinfo (0) sorts ahead of discogs (2).
-        return (long_edge(path) // 400, -priority_of(path))
+        # A harvest crop outranks everything, resolution included. It is the only
+        # candidate whose *identity* was established rather than inferred: a vision
+        # pass read the title and catalog number off that label and match.py tied
+        # them to this discography row. Every other source is matched on a filename's
+        # date+title, which cannot tell two recordings of one title apart. Trading
+        # that for a larger unverified scan is how the wrong pressing gets served
+        # (see the popsike Caminito del Taller, which lost to a Discogs scan of a
+        # target a previous vision pass had already quarantined).
+        # Then: bigger is better, bucketing the long edge (//400) so near-ties fall
+        # through to source priority; negate priority so tangoinfo (0) sorts ahead
+        # of discogs (2).
+        return (is_harvest(path), long_edge(path) // 400, -priority_of(path))
 
     chosen: dict[tuple, Path] = {}
     runner_ups: list[tuple[str, str, str]] = []  # (target, chosen_path, alt_paths)

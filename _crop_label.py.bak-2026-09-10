@@ -111,40 +111,6 @@ _SAT_MIN_THR = 45           # Otsu floor for the saturation-only map (shellac S 
 # primary path any of its tuned detections.
 _ALT_MAX_RFRAC = 0.26
 
-# --- Hough fallback. CANDIDATE GENERATION ONLY: every circle it proposes is
-# --- still vetted by _full_disc_bbox, so the dark-shellac ring, the sector
-# --- wrap and the label/ring contrast all still have to hold. It is reached
-# --- only after every colour and texture path above has failed, so it cannot
-# --- change a detection the tuned paths already make -- it can only turn an
-# --- 'unknown' (which costs the caller the crop entirely, handing the vision
-# --- pass a whole uncropped frame) into a vetted crop.
-# NOT lowered below _FULL_MIN_RFRAC. That floor is load-bearing: on a
-# label-only scan Hough happily locks onto a small printed inner ring, whose
-# surrounding dark INK then satisfies the shellac-ring, sector and contrast
-# guards (measured: rfrac 0.119, dark_frac 0.94, 12/12 sectors, +35 contrast --
-# a clean false positive). Edge-based candidates buy us off-centre and
-# low-fill discs, not smaller ones.
-_HOUGH_MIN_RFRAC = _FULL_MIN_RFRAC
-_HOUGH_MAX_RFRAC = 0.40     # same ceiling as the generic full-disc bar
-# NOT relaxed either. Measured over the whole pending backlog: every genuine
-# rescue sat at frame centre (0.50, 0.50), while every destructive false crop
-# was centred at y 0.20-0.31 -- Hough locking onto the label's upper ARC, whose
-# outer side is real shellac, so even the reach guard is satisfied. Centring is
-# the signal that separates them, so it keeps the tuned default.
-_HOUGH_CENTER_OFF = _MAX_CENTER_OFF
-_HOUGH_EDGE = 100           # Canny high threshold for the gradient stage
-_HOUGH_ACC = 30             # accumulator bar; lower finds more, vetting is unchanged
-_HOUGH_MAX_CANDIDATES = 6   # best-accumulator-first, so this is a cost bound
-# Shellac-reach corroboration, required of Hough candidates only. A 10" disc
-# carries a ~3.25" label, so real shellac runs out to ~3x the label radius. On
-# a label-only scan a bogus inner circle has dark INK just outside it but paper
-# or scan margin further out, and ink is not desaturated the way shellac is.
-_REACH_OUT = 3.0            # corroborate shellac out to this multiple of r ...
-_REACH_FROM = 2.2           # ... starting beyond the near band already checked
-_REACH_MAX_FRAC = 0.49      # clipped to the frame
-_REACH_DARK = 0.60          # fraction of the far band that must be dark
-_REACH_SAT = 70.0           # ... and its mean saturation must stay below this
-
 # --- texture-collapse path (see module docstring). Tuned on the 218 delivered
 # --- harvest crops and validated against an 800-image random sample of the
 # --- ~5,700 served label scans, where it fired on 19 and all 19 were genuine
@@ -351,9 +317,7 @@ def _label_circle(comp: np.ndarray) -> tuple[float, float, float, float] | None:
 
 
 def _full_disc_bbox(V: np.ndarray, S: np.ndarray, circle, scale: float,
-                    H: int, W: int, max_rfrac: float = _FULL_MAX_RFRAC,
-                    min_rfrac: float = _FULL_MIN_RFRAC,
-                    max_center_off: float = _MAX_CENTER_OFF) -> BBox | None:
+                    H: int, W: int, max_rfrac: float = _FULL_MAX_RFRAC) -> BBox | None:
     """Vet a candidate label circle as a full-disc photo; return its crop box.
 
     Every anti-false-positive guard lives here, so a candidate found by any
@@ -366,9 +330,9 @@ def _full_disc_bbox(V: np.ndarray, S: np.ndarray, circle, scale: float,
 
     # too small / too big / not roughly round to be a trustworthy label island.
     center_off = np.hypot(cx - w / 2, cy - h / 2) / mind
-    if not (min_rfrac <= r_frac <= max_rfrac):
+    if not (_FULL_MIN_RFRAC <= r_frac <= max_rfrac):
         return None
-    if fill < 0.62 or center_off > max_center_off:
+    if fill < 0.62 or center_off > _MAX_CENTER_OFF:
         return None
 
     # corroborate full_disc: a wide DARK shellac band must sit just outside the
@@ -470,73 +434,6 @@ def _texture_bbox(work: np.ndarray, scale: float, H: int, W: int) -> BBox | None
     return left, top, right, bottom
 
 
-def _shellac_reaches_out(V: np.ndarray, S: np.ndarray,
-                         cx: float, cy: float, r: float) -> bool:
-    """True when dark, desaturated shellac still surrounds the circle far out.
-
-    The guards in _full_disc_bbox only probe out to ~2.2r, which on a label-only
-    scan can sit entirely inside the label -- dark printed ink there reads as
-    shellac and the candidate passes (measured: dark_frac 0.94, 12/12 sectors).
-    A real full-disc photo keeps its shellac out to ~3r, and shellac is both
-    dark AND desaturated, which ink over paper is not. Requiring the band to
-    survive that far is what separates the two cases.
-
-    Returns False when the band would fall outside the frame: unprovable is
-    treated as unproven, because a wrong crop is worse than no crop.
-    """
-    h, w = V.shape
-    mind = float(min(h, w))
-    r_in, r_out = r * _REACH_FROM, min(r * _REACH_OUT, _REACH_MAX_FRAC * mind)
-    if r_out <= r_in:
-        return False
-    dark_frac, _ = _ring_dark_fraction(V, cx, cy, r_in, r_out)
-    if dark_frac < _REACH_DARK:
-        return False
-    if _dark_sector_count(V, cx, cy, r_in, r_out) < _MIN_DARK_SECTORS:
-        return False
-    yy, xx = np.mgrid[0:h, 0:w]
-    rr = np.hypot(xx - cx, yy - cy)
-    band = (rr >= r_in) & (rr <= r_out)
-    return bool(band.sum()) and float(S[band].mean()) < _REACH_SAT
-
-
-def _hough_label_circles(work: np.ndarray) -> list[tuple[float, float, float, float]]:
-    """Label-circle candidates from a Hough transform, best accumulator first.
-
-    The colour and texture paths both locate the label as a *region*: a bright
-    island owning the frame centre, or a collapse in print texture around it.
-    Both assume the disc is roughly centred and reasonably large. A marketplace
-    photo often satisfies neither -- the disc sits off to one side, or fills a
-    small part of a wide shot -- so the label lands under _FULL_MIN_RFRAC or
-    outside _MAX_CENTER_OFF, nothing is returned, and the caller hands the
-    vision pass an uncropped frame with a label a few hundred pixels across.
-
-    Hough finds a circle by its EDGE, so neither centring nor size matters.
-    This is deliberately only a candidate generator: the caller vets every
-    circle through _full_disc_bbox, which demands the dark shellac ring, the
-    sector wrap and the label/ring contrast. That is what keeps rule 1 of this
-    module intact -- a label-only scan must never come back 'full_disc' --
-    because a scan with no surrounding shellac cannot clear those guards no
-    matter what circle Hough proposes.
-
-    ``fill`` is reported as 1.0: a Hough circle is circular by construction,
-    which is the one property ``fill`` exists to measure.
-    """
-    gray = cv2.cvtColor(work, cv2.COLOR_BGR2GRAY)
-    gray = cv2.medianBlur(gray, 5)
-    mind = float(min(gray.shape[:2]))
-    found = cv2.HoughCircles(
-        gray, cv2.HOUGH_GRADIENT, dp=1.0, minDist=mind * 0.25,
-        param1=_HOUGH_EDGE, param2=_HOUGH_ACC,
-        minRadius=int(mind * _HOUGH_MIN_RFRAC),
-        maxRadius=int(mind * _HOUGH_MAX_RFRAC),
-    )
-    if found is None:
-        return []
-    return [(float(c[0]), float(c[1]), float(c[2]), 1.0)
-            for c in found[0][:_HOUGH_MAX_CANDIDATES]]
-
-
 def classify_and_detect(img) -> tuple[Verdict, BBox | None]:
     """Classify a record image and, for 'full_disc', return the label crop box.
 
@@ -606,20 +503,6 @@ def classify_and_detect(img) -> tuple[Verdict, BBox | None]:
     bbox = _texture_bbox(work, scale, H, W)
     if bbox is not None:
         return "full_disc", bbox
-
-    # Every region-based path has now failed, and returning 'unknown' costs the
-    # caller the crop outright. Edge-based candidates get the last word, held to
-    # exactly the same corroboration bar.
-    for circle in _hough_label_circles(work):
-        if not _shellac_reaches_out(V, S, circle[0], circle[1], circle[2]):
-            continue
-        bbox = _full_disc_bbox(V, S, circle, scale, H, W,
-                               max_rfrac=_HOUGH_MAX_RFRAC,
-                               min_rfrac=_HOUGH_MIN_RFRAC,
-                               max_center_off=_HOUGH_CENTER_OFF)
-        if bbox is not None:
-            return "full_disc", bbox
-
     return "unknown", None
 
 
