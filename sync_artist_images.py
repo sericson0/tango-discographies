@@ -127,7 +127,7 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
         if args.dry_run:
             n = 0
             for webp in sorted(art_root.rglob("*.webp")):
-                if "_suspect" in webp.parts or "Incorrect" in webp.parts:  # quarantined / hand-set-aside
+                if _excluded_from_upload(webp):
                     continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
                 print(f"  would upload: {webp} -> {key}")
@@ -143,7 +143,7 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
             confirmed_on_r2: set[Path] = set()
 
             for webp in sorted(art_root.rglob("*.webp")):
-                if "_suspect" in webp.parts or "Incorrect" in webp.parts:  # quarantined / hand-set-aside
+                if _excluded_from_upload(webp):
                     continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
                 url = _r2.public_url(cfg.public_base, key)
@@ -196,6 +196,21 @@ _ORIGINAL_SUFFIXES = (".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG")
 def _sibling_originals(webp: Path) -> list[Path]:
     """Sibling raster originals for a given .webp (same stem, raster suffix)."""
     return [webp.with_suffix(suf) for suf in _ORIGINAL_SUFFIXES]
+
+
+# Never uploaded: the vision quarantine (_suspect), the maintainer's hand
+# set-aside folder (Incorrect) and the reissues import_singles.py
+# --replace-reissues backed up before overwriting them (_replaced), and the
+# too-small originals parked when such a replacement was reverted
+# (_small-originals, 2026-09-29e).
+_NO_UPLOAD_DIRS = {"_suspect", "Incorrect", "_replaced", "_small-originals"}
+
+
+def _excluded_from_upload(webp: Path) -> bool:
+    # Any other `_`-prefixed folder (e.g. _orphaned-*) is a set-aside too,
+    # matching verify_singles' build_worklist convention.
+    return any(part in _NO_UPLOAD_DIRS or part.startswith("_")
+               for part in webp.parent.parts)
 
 
 def main(argv: list[str] | None = None) -> int:

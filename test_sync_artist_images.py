@@ -547,3 +547,35 @@ def test_dry_run_does_not_create_files(tmp_path, monkeypatch, capsys):
     assert (images / "LPs" / "X" / "X Front.jpg").exists()
     assert not (images / "LPs" / "X" / "X Front.webp").exists()
     assert not (tmp_path / "lp_matches" / "Foo.csv").exists()
+
+
+def test_replaced_reissue_backups_are_never_uploaded():
+    """import_singles --replace-reissues moves the served reissue into
+    Singles/_replaced/ before writing the original; like _suspect and
+    Incorrect, that folder must never reach R2."""
+    from pathlib import Path
+
+    import sync_artist_images as sai
+
+    root = Path("images/Troilo/Singles")
+    assert sai._excluded_from_upload(root / "_replaced/1940-1944/x.webp")
+    assert sai._excluded_from_upload(root / "_suspect/x.webp")
+    assert sai._excluded_from_upload(root / "Incorrect/x.webp")
+    assert not sai._excluded_from_upload(root / "1940-1944/x.webp")
+
+
+def test_small_originals_parked_by_a_revert_are_never_uploaded():
+    root = Path("images/Canaro/Singles")
+    assert sai._excluded_from_upload(root / "_small-originals/1930-1934/x.webp")
+
+
+def test_any_underscore_setaside_folder_is_never_uploaded():
+    """Ad-hoc set-aside folders such as _orphaned-2026-09-29 (files whose CSV
+    row was merged away) must not reach R2 on a blanket sync."""
+    from pathlib import Path
+
+    import sync_artist_images as sai
+
+    root = Path("images/Magaldi/Singles")
+    assert sai._excluded_from_upload(root / "_orphaned-2026-09-29/x.webp")
+    assert not sai._excluded_from_upload(root / "1925-1929/x.webp")

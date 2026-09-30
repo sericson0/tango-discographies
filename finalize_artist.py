@@ -10,6 +10,7 @@ Usage: python finalize_artist.py <Artist> <vision_dir_for_artist>
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -46,8 +47,12 @@ def main() -> int:
         merged.update(json.loads(outb.read_text(encoding="utf-8")))
     verdicts_path = REPO / "verdicts" / f"{artist}_verdicts.json"
     verdicts_path.parent.mkdir(exist_ok=True)
-    verdicts_path.write_text(json.dumps(merged, ensure_ascii=False, indent=1),
-                             encoding="utf-8")
+    # atomic: apply/reclassify may be reading verdicts/ concurrently. The
+    # report itself is read and written only through verify_singles
+    # (apply/purge), which key rows canonically (_verify_singles.report_key).
+    tmp = verdicts_path.with_name(verdicts_path.name + ".tmp")
+    tmp.write_text(json.dumps(merged, ensure_ascii=False, indent=1), encoding="utf-8")
+    os.replace(tmp, verdicts_path)
     print(f"merged {len(merged)} verdicts (from {expect} worklist rows) -> {verdicts_path.name}")
 
     py = sys.executable
