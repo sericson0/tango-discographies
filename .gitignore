@@ -42,6 +42,8 @@ fetch_discogs_images.py
 verify_singles.py
 match_ui.py
 match_ui.html
+match_albums.py
+.discogs_cache/
 
 # One-time migration / rename scripts and their plans
 _migrate_lp_matches.py

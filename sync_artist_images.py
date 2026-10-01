@@ -44,6 +44,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--quality", type=int, default=85)
     p.add_argument("--lossless", action="store_true", help="Convert to lossless WebP instead of lossy quality")
+    p.add_argument("--albums-only", action="store_true",
+                   help="Only convert/upload images under LPs/ and EPs/ (never touch Singles/)")
     return p.parse_args(argv)
 
 
@@ -90,18 +92,26 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
     do_manifest = run_all or args.manifest_only
     do_upload = run_all or args.upload_only
 
+    # --albums-only: restrict convert + upload to the LPs/ and EPs/ subtrees.
+    scan_roots = [art_root]
+    if getattr(args, "albums_only", False):
+        scan_roots = [d for d in (art_root / "LPs", art_root / "EPs") if d.is_dir()]
+
     # ---- Phase 1: Convert ----
     if do_convert:
-        print(f"== Convert == {art_root}")
+        print(f"== Convert == {art_root}" + (" (albums only)" if getattr(args, "albums_only", False) else ""))
         if args.dry_run:
             n = 0
-            for p in art_root.rglob("*"):
-                if p.suffix.lower() in (".jpg", ".jpeg", ".png") and not p.with_suffix(".webp").exists():
-                    print(f"  would convert: {p}")
-                    n += 1
+            for root in scan_roots:
+                for p in root.rglob("*"):
+                    if p.suffix.lower() in (".jpg", ".jpeg", ".png") and not p.with_suffix(".webp").exists():
+                        print(f"  would convert: {p}")
+                        n += 1
             print(f"  ({n} files would be converted)")
         else:
-            converted = _convert.convert_tree(art_root, quality=args.quality, lossless=args.lossless)
+            converted = []
+            for root in scan_roots:
+                converted += list(_convert.convert_tree(root, quality=args.quality, lossless=args.lossless))
             print(f"  converted {len(converted)} files")
 
     # ---- Phase 2: Manifest ----
@@ -124,9 +134,11 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
         print("== Upload ==")
         bandleader_folder_name = _bandleader_folder(display)
 
+        upload_webps = sorted(w for root in scan_roots for w in root.rglob("*.webp"))
+
         if args.dry_run:
             n = 0
-            for webp in sorted(art_root.rglob("*.webp")):
+            for webp in upload_webps:
                 if _excluded_from_upload(webp):
                     continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
@@ -142,7 +154,7 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
             # Only these make their sibling raster originals safe to delete.
             confirmed_on_r2: set[Path] = set()
 
-            for webp in sorted(art_root.rglob("*.webp")):
+            for webp in upload_webps:
                 if _excluded_from_upload(webp):
                     continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
