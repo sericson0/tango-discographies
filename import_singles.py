@@ -1212,6 +1212,8 @@ def run(local: str, args) -> int:
             print("  note: replaced files need a forced upload: "
                   f"python upload_files.py (or sync_artist_images.py {local} --force)")
         rc = subprocess.call(cmd, cwd=str(REPO))
+        print("next: python sync_thumbs.py --apply (thumbnails + singles_manifest.txt), "
+              "then commit singles_manifest.txt -- the site only shows singles listed in it")
         return rc
     return 0
 

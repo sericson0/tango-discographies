@@ -16,6 +16,11 @@ from dotenv import load_dotenv
 
 UA = "Mozilla/5.0 (compatible; tango-sync/1.0)"
 
+# Cache-Control for every object we write to R2 (originals and thumbs/). A day
+# fresh, then a week of stale-while-revalidate, so repeat visits skip the
+# network while a re-upload still propagates within a day.
+CACHE_CONTROL = "public, max-age=86400, stale-while-revalidate=604800"
+
 
 @dataclass(frozen=True)
 class R2Config:
@@ -102,7 +107,8 @@ def upload_file(client, bucket: str, key: str, path: Path, sleeper: Callable[[fl
         try:
             import io
             data = path.read_bytes()
-            client.put_object(Bucket=bucket, Key=key, Body=io.BytesIO(data), ContentType="image/webp")
+            client.put_object(Bucket=bucket, Key=key, Body=io.BytesIO(data), ContentType="image/webp",
+                              CacheControl=CACHE_CONTROL)
             return
         except (EndpointConnectionError, BotoCoreError) as e:
             last_err = e

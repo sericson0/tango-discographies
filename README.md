@@ -81,6 +81,33 @@ thorough_data_audit.py   deeper data audit
 index.html          the viewer (plain HTML/CSS/JS, no build step)
 ```
 
+### Label images, thumbnails and `singles_manifest.txt`
+
+Record-label images live in a Cloudflare R2 bucket, not in this repo. The
+viewer only requests what the bucket really holds:
+
+- **`singles_manifest.txt`** lists every served single key
+  (`<Folder>/Singles/<YYYY-YYYY>/<file>.webp`), one per line. A single not in
+  the manifest is not shown, so the site never guesses URLs that 404.
+- **`thumbs/<key>`** holds a small (240 px max, WEBP) copy of every served
+  single and LP/EP image. Table rows load the thumb; the full-size original
+  loads only in the detail popup.
+
+Run `sync_thumbs.py` after **any** change to the bucket (`import_singles.py
+--upload`, `sync_artist_images.py`, `upload_files.py`, `verify_singles.py
+purge --apply`; `finalize_artist.py` runs it for you), then commit
+`singles_manifest.txt`:
+
+```bash
+python sync_thumbs.py                  # dry run: what would change
+python sync_thumbs.py --apply          # write missing/stale thumbs, delete orphans, write manifest
+python sync_thumbs.py --manifest-only  # just regenerate singles_manifest.txt
+```
+
+It only ever writes or deletes keys under `thumbs/`. The one exception is
+`--set-cache-control --apply`, a one-off that rewrites the served originals in
+place (same bytes) so they carry the shared `Cache-Control` header.
+
 ## License
 
 [MIT](LICENSE) — (c) 2026 Sean Ericson

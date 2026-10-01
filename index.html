@@ -843,6 +843,13 @@
   // Month-precision dates keep the month: "1952-05" -> 1952-05_Title_Suffix.webp.
   // Example: An\u00edbal Troilo + 9/1/1942 + Lejos De Buenos Aires ->
   //   TroiloAnibal/Singles/1940-1944/1942-09-01_Lejos-De-Buenos-Aires_Troilo.webp
+  // Only a fraction of rows have a single, so singles_manifest.txt (site root, one
+  // R2 key per line, written by sync_thumbs.py) lists the keys that exist; a row's
+  // single is only requested when its key is listed. If the manifest can't be
+  // loaded we fall back to guessing and relying on load errors.
+  // Thumbnails: every served image (singles and LP/EP art) has a <=240px copy at
+  // IMAGE_BASE/thumbs/<same key>. The table shows thumbs (falling back to the
+  // full image if a thumb is missing); the popover and lightbox use full size.
   const IMAGE_BASE = 'https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev';
   function yearBucket(iso) {
     var m = /^(\d{4})/.exec(iso);
@@ -892,6 +899,31 @@
     return IMAGE_BASE + '/' + folder + '/Singles/' + bucket + '/' + iso + '_' + title + '_' + suffix + '.webp';
   }
 
+  // Set of single keys from singles_manifest.txt; null = not loaded (guess instead).
+  var singlesManifest = null;
+  // Fetched in parallel with the CSV (see init). Never rejects: resolves to the
+  // Set, or null (with one console.warn) on network error / 404 / empty file.
+  function loadSinglesManifest() {
+    function fail(why) {
+      console.warn('singles_manifest.txt unavailable (' + why + '); guessing single image URLs instead.');
+      return null;
+    }
+    if (!window.fetch) return Promise.resolve(fail('no fetch'));
+    return fetch('singles_manifest.txt').then(function (res) {
+      if (!res.ok) return fail('HTTP ' + res.status);
+      return res.text().then(function (text) {
+        var keys = text.split(/\r?\n/).map(function (s) { return s.trim(); }).filter(Boolean);
+        return keys.length ? new Set(keys) : fail('empty');
+      });
+    }).catch(function (e) { return fail(e && e.message ? e.message : 'network error'); });
+  }
+
+  // Thumbnail URL for a full-size R2 image URL, or null if it isn't on R2.
+  function thumbUrl(url) {
+    var prefix = IMAGE_BASE + '/';
+    return url && url.indexOf(prefix) === 0 ? prefix + 'thumbs/' + url.slice(prefix.length) : null;
+  }
+
   // --- LP images (from the LP_Images JSON column produced by build.py) ---
   function parseLpImages(row) {
     if (!row || !row.LP_Images) return [];
@@ -916,11 +948,12 @@
   // Ordered image set for a row: normally the original 78 rpm single first (when a
   // URL is constructable), then any LP/EP reissue scans. For an EP-preferred artist
   // on a row backed by an EP, the EP art leads and the 78 becomes the fallback.
-  // The single URL is only a guess (we can't know from the CSV whether it was
-  // uploaded), so callers fall back through the list on load error rather than
-  // assuming any one image exists.
+  // The single is only included when singles_manifest.txt lists it (or, if the
+  // manifest is unavailable, as a guess); callers still fall back through the list
+  // on load error rather than assuming any one image exists.
   function imageList(row) {
     var single = imageUrl(row);
+    if (single && singlesManifest && !singlesManifest.has(single.slice(IMAGE_BASE.length + 1))) single = null;
     var singleItems = single ? [{ type: '78 rpm', url: single }] : [];
     var lp = parseLpImages(row).filter(function (im) { return im && im.url; });
     if (lp.length && EP_PREFERRED[row.Bandleader] && /\/EPs\//.test(lp[0].url)) {
@@ -1290,15 +1323,14 @@
     var tr = document.createElement('tr');
     tr.dataset.i = i;
     if (i === selectedRowIndex) tr.classList.add('selected');
-    // Show the row's preferred image (see imageList); if it isn't uploaded (load
-    // error) fall back to the next candidate, then hide the cell if none resolve.
+    // Show the thumb of the row's preferred image (see imageList); on load error
+    // walk the chain via onThumbError, hiding the cell if nothing resolves.
     var imgs = imageList(row);
     var primary = imgs.length ? imgs[0].url : null;
-    var fallback = imgs.length > 1 ? imgs[1].url : null;
+    var primaryThumb = thumbUrl(primary);
     var thumbCell = primary
-      ? '<td class="col-thumb" title="View image"><img loading="lazy" src="' + esc(primary) + '"' +
-          (fallback ? ' data-fallback="' + esc(fallback) + '"' : '') +
-          ' alt="" onerror="if(this.dataset.fallback){var u=this.dataset.fallback;this.removeAttribute(\'data-fallback\');this.src=u;}else{this.onerror=null;this.parentNode.style.cursor=\'default\';this.style.display=\'none\';this.parentNode.dataset.noimg=\'1\';}"></td>'
+      ? '<td class="col-thumb" title="View image"><img loading="lazy" decoding="async" src="' +
+          esc(primaryThumb || primary) + '" data-full="' + esc(primary) + '" alt=""></td>'
       : '<td class="col-thumb" data-noimg="1"></td>';
     tr.innerHTML =
       thumbCell +
@@ -1317,14 +1349,43 @@
       e.stopPropagation();
       openPopover(i, e.currentTarget);
     });
+    if (primary) {
+      var thumbImg = tr.querySelector('.col-thumb img');
+      thumbImg._imgs = imgs;
+      thumbImg._step = primaryThumb ? 0 : 1;
+      thumbImg.onerror = onThumbError;
+    }
     tr.querySelector('.col-thumb').addEventListener('click', (e) => {
       e.stopPropagation();
       var td = e.currentTarget;
       if (td.dataset.noimg) return;
       var img = td.querySelector('img');
-      if (img && img.src) openLightbox(img.src);
+      // Open the full-size version of whichever image is showing; earlier images
+      // in the list already failed, so the lightbox set starts at this one.
+      if (img && img.dataset.full) openLightbox(img.dataset.full, img._imgs.slice(img._step >> 1), 0);
     });
     return tr;
+  }
+
+  // Table thumb fallback chain, shared by every row (no per-row closures):
+  // step 2k = thumb of image k, step 2k+1 = full-size image k. Thumbs can be
+  // missing (not generated yet) and images can be absent from R2, so on each
+  // error advance to the next candidate; when exhausted, hide the cell.
+  function onThumbError() {
+    var img = this, imgs = img._imgs;
+    for (var step = img._step + 1; step < imgs.length * 2; step++) {
+      var full = imgs[step >> 1].url;
+      var url = (step & 1) ? full : thumbUrl(full);
+      if (!url) continue;
+      img._step = step;
+      img.dataset.full = full;
+      img.src = url;
+      return;
+    }
+    img.onerror = null;
+    img.parentNode.style.cursor = 'default';
+    img.style.display = 'none';
+    img.parentNode.dataset.noimg = '1';
   }
 
   // Rows are appended in chunks so large views (e.g. All Orchestras, ~17k rows)
@@ -1630,145 +1691,15 @@
 
   // --- Init ---
   function init() {
+    // Fetch the singles manifest alongside the CSV; the UI starts once both are
+    // in, so no row is ever rendered with a guessed single URL.
+    var manifestReady = loadSinglesManifest().then(function (set) { singlesManifest = set; });
     Papa.parse('discographies.csv', {
       download: true,
       header: true,
       skipEmptyLines: true,
       complete: function(results) {
-        if (!results.data || results.data.length === 0) {
-          loadingEl.style.display = 'none';
-          errorEl.style.display = 'block';
-          errorEl.textContent = 'Could not load discography data. Please try refreshing.';
-          return;
-        }
-        allData = results.data;
-        computeArtistEras();
-        populateBandleaderDropdown();
-        loadingEl.style.display = 'none';
-        appEl.style.display = 'flex';
-        tableBody.innerHTML = '<tr><td colspan="11" class="table-message">Select an orchestra above to browse its discography</td></tr>';
-
-        bandleaderSelect.addEventListener('change', onBandleaderChange);
-
-        eraPills.addEventListener('change', populateBandleaderDropdown);
-
-        genreFilter.addEventListener('change', applyFilters);
-        singerFilter.addEventListener('change', applyFilters);
-        groupingFilter.addEventListener('change', applyFilters);
-
-        var searchTimeout;
-        searchInput.addEventListener('input', () => {
-          clearTimeout(searchTimeout);
-          searchTimeout = setTimeout(applyFilters, 300);
-        });
-
-        clearFiltersBtn.addEventListener('click', () => {
-          genreFilter.value = '';
-          singerFilter.value = '';
-          groupingFilter.value = '';
-          searchInput.value = '';
-          applyFilters();
-        });
-
-        document.querySelectorAll('.data-table th').forEach(th => {
-          th.addEventListener('click', () => {
-            var col = th.getAttribute('data-col');
-            if (!col) return;
-            if (col === sortCol) {
-              sortAsc = !sortAsc;
-            } else {
-              sortCol = col;
-              sortAsc = true;
-            }
-            sortData();
-            updateSortHeaders();
-            renderTable();
-          });
-        });
-
-        document.addEventListener('keydown', (e) => {
-          if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
-
-          if (lightboxBackdrop.classList.contains('visible')) {
-            if (e.key === 'Escape') { closeLightbox(); }
-            else if (e.key === 'ArrowLeft') { e.preventDefault(); lightboxNav(-1); }
-            else if (e.key === 'ArrowRight') { e.preventDefault(); lightboxNav(1); }
-            return;
-          }
-
-          if (filteredData.length === 0) return;
-
-          if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            var next = selectedRowIndex < filteredData.length - 1 ? selectedRowIndex + 1 : 0;
-            onRowClick(next);
-            scrollToRow(next);
-          } else if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            var prev = selectedRowIndex > 0 ? selectedRowIndex - 1 : filteredData.length - 1;
-            onRowClick(prev);
-            scrollToRow(prev);
-          } else if (e.key === 'Enter' && selectedRowIndex >= 0) {
-            e.preventDefault();
-            var selRow = dataRow(selectedRowIndex);
-            var expandCell = selRow && selRow.querySelector('.col-expand');
-            if (expandCell) openPopover(selectedRowIndex, expandCell);
-          } else if (e.key === 'Escape') {
-            if (detailPopover.classList.contains('visible')) {
-              closePopover();
-            } else {
-              clearSelection();
-            }
-          }
-        });
-
-        tableContainer.addEventListener('scroll', () => {
-          var el = tableContainer;
-          var nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 20;
-          if (nearBottom) {
-            scrollIndicator.classList.remove('visible');
-          }
-        });
-
-        tableContainer.addEventListener('scroll', () => {
-          backToTopBtn.classList.toggle('visible', tableContainer.scrollTop > 300);
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-          tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        btnDownloadArtist.addEventListener('click', () => {
-          var name = bandleaderSelect.value || 'artist';
-          downloadCSV(stripLpImages(filteredData), name + '.csv');
-        });
-
-        btnDownloadAll.addEventListener('click', () => {
-          downloadCSV(stripLpImages(allData), 'tango-discographies-all.csv');
-        });
-
-        detailPopoverClose.addEventListener('click', closePopover);
-        detailBackdrop.addEventListener('click', closePopover);
-        lightboxBackdrop.addEventListener('click', closeLightbox);
-
-        // Label-size segmented control (S / M / L), persisted in localStorage
-        var thumbSize = localStorage.getItem('thumbSize') || 'S';
-        if (!['S', 'M', 'L'].includes(thumbSize)) thumbSize = 'S';
-        applyThumbSize(thumbSize);
-        thumbSizeGroup.addEventListener('click', (e) => {
-          var btn = e.target.closest('.thumb-size-btn');
-          if (!btn) return;
-          thumbSize = btn.dataset.size;
-          localStorage.setItem('thumbSize', thumbSize);
-          applyThumbSize(thumbSize);
-        });
-        function applyThumbSize(size) {
-          document.body.classList.toggle('thumbs-m', size === 'M');
-          document.body.classList.toggle('thumbs-l', size === 'L');
-          thumbSizeGroup.querySelectorAll('.thumb-size-btn').forEach((b) => {
-            b.classList.toggle('active', b.dataset.size === size);
-          });
-        }
+        manifestReady.then(function () { onDataLoaded(results); });
       },
       error: function() {
         loadingEl.style.display = 'none';
@@ -1776,6 +1707,143 @@
         errorEl.textContent = 'Could not load discography data. Please try refreshing.';
       }
     });
+  }
+
+  function onDataLoaded(results) {
+    if (!results.data || results.data.length === 0) {
+      loadingEl.style.display = 'none';
+      errorEl.style.display = 'block';
+      errorEl.textContent = 'Could not load discography data. Please try refreshing.';
+      return;
+    }
+    allData = results.data;
+    computeArtistEras();
+    populateBandleaderDropdown();
+    loadingEl.style.display = 'none';
+    appEl.style.display = 'flex';
+    tableBody.innerHTML = '<tr><td colspan="11" class="table-message">Select an orchestra above to browse its discography</td></tr>';
+
+    bandleaderSelect.addEventListener('change', onBandleaderChange);
+
+    eraPills.addEventListener('change', populateBandleaderDropdown);
+
+    genreFilter.addEventListener('change', applyFilters);
+    singerFilter.addEventListener('change', applyFilters);
+    groupingFilter.addEventListener('change', applyFilters);
+
+    var searchTimeout;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(applyFilters, 300);
+    });
+
+    clearFiltersBtn.addEventListener('click', () => {
+      genreFilter.value = '';
+      singerFilter.value = '';
+      groupingFilter.value = '';
+      searchInput.value = '';
+      applyFilters();
+    });
+
+    document.querySelectorAll('.data-table th').forEach(th => {
+      th.addEventListener('click', () => {
+        var col = th.getAttribute('data-col');
+        if (!col) return;
+        if (col === sortCol) {
+          sortAsc = !sortAsc;
+        } else {
+          sortCol = col;
+          sortAsc = true;
+        }
+        sortData();
+        updateSortHeaders();
+        renderTable();
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+      if (lightboxBackdrop.classList.contains('visible')) {
+        if (e.key === 'Escape') { closeLightbox(); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); lightboxNav(-1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); lightboxNav(1); }
+        return;
+      }
+
+      if (filteredData.length === 0) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        var next = selectedRowIndex < filteredData.length - 1 ? selectedRowIndex + 1 : 0;
+        onRowClick(next);
+        scrollToRow(next);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        var prev = selectedRowIndex > 0 ? selectedRowIndex - 1 : filteredData.length - 1;
+        onRowClick(prev);
+        scrollToRow(prev);
+      } else if (e.key === 'Enter' && selectedRowIndex >= 0) {
+        e.preventDefault();
+        var selRow = dataRow(selectedRowIndex);
+        var expandCell = selRow && selRow.querySelector('.col-expand');
+        if (expandCell) openPopover(selectedRowIndex, expandCell);
+      } else if (e.key === 'Escape') {
+        if (detailPopover.classList.contains('visible')) {
+          closePopover();
+        } else {
+          clearSelection();
+        }
+      }
+    });
+
+    tableContainer.addEventListener('scroll', () => {
+      var el = tableContainer;
+      var nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 20;
+      if (nearBottom) {
+        scrollIndicator.classList.remove('visible');
+      }
+    });
+
+    tableContainer.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('visible', tableContainer.scrollTop > 300);
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    btnDownloadArtist.addEventListener('click', () => {
+      var name = bandleaderSelect.value || 'artist';
+      downloadCSV(stripLpImages(filteredData), name + '.csv');
+    });
+
+    btnDownloadAll.addEventListener('click', () => {
+      downloadCSV(stripLpImages(allData), 'tango-discographies-all.csv');
+    });
+
+    detailPopoverClose.addEventListener('click', closePopover);
+    detailBackdrop.addEventListener('click', closePopover);
+    lightboxBackdrop.addEventListener('click', closeLightbox);
+
+    // Label-size segmented control (S / M / L), persisted in localStorage
+    var thumbSize = localStorage.getItem('thumbSize') || 'S';
+    if (!['S', 'M', 'L'].includes(thumbSize)) thumbSize = 'S';
+    applyThumbSize(thumbSize);
+    thumbSizeGroup.addEventListener('click', (e) => {
+      var btn = e.target.closest('.thumb-size-btn');
+      if (!btn) return;
+      thumbSize = btn.dataset.size;
+      localStorage.setItem('thumbSize', thumbSize);
+      applyThumbSize(thumbSize);
+    });
+    function applyThumbSize(size) {
+      document.body.classList.toggle('thumbs-m', size === 'M');
+      document.body.classList.toggle('thumbs-l', size === 'L');
+      thumbSizeGroup.querySelectorAll('.thumb-size-btn').forEach((b) => {
+        b.classList.toggle('active', b.dataset.size === size);
+      });
+    }
   }
 
   init();
