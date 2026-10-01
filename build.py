@@ -32,7 +32,7 @@ DEDUPE_KEY_FIELDS = ("Orchestra", "Title", "Date", "Singer")
 
 YEAR_RE = re.compile(r"(\d{4})")
 
-IMAGE_BASE = "https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev"
+IMAGE_BASE = "https://images.tangotoolkit.com"
 
 
 def strip_accents(text: str) -> str:
