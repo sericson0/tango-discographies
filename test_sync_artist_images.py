@@ -359,6 +359,7 @@ def test_upload_calls_put_object_with_content_type(tmp_path):
     assert kwargs["Bucket"] == "b"
     assert kwargs["Key"] == "k/x.webp"
     assert kwargs["ContentType"] == "image/webp"
+    assert kwargs["CacheControl"] == _r2.CACHE_CONTROL
     assert kwargs["Body"].read() == b"webp-bytes"
 
 

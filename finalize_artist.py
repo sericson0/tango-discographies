@@ -3,7 +3,9 @@
 
 Merges scratchpad batch verdicts -> verdicts/<Artist>_verdicts.json, then:
 apply (report + quarantine), purge --apply (delete suspect keys from R2),
-sync (upload new/changed), and a targeted re-upload of recropped files.
+sync (upload new/changed), a targeted re-upload of recropped files, and
+sync_thumbs.py --apply (thumbnails + singles_manifest.txt -- commit the
+manifest afterwards).
 
 Usage: python finalize_artist.py <Artist> <vision_dir_for_artist>
 """
@@ -65,6 +67,9 @@ def main() -> int:
     crop_report = REPO / "images" / artist / "_crop_report.csv"
     if crop_report.exists():
         run("recrop refresh", py, "upload_files.py", "--from-crop-report", artist)
+    if run("thumbs", py, "sync_thumbs.py", "--apply"):
+        return 1
+    print("   note: commit singles_manifest.txt -- the site only shows singles listed in it")
     print(f"== {artist} finalized ==")
     return 0
 

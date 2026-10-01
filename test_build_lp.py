@@ -41,7 +41,7 @@ def test_catalog_sort_value_uses_longest_digit_run():
 def test_lp_image_url_encodes_segments():
     url = build.lp_image_url("DArienzoJuan", "Tigre Viejo", "Front")
     assert url == (
-        "https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev"
+        "https://images.tangotoolkit.com"
         "/DArienzoJuan/LPs/Tigre%20Viejo/Tigre%20Viejo%20Front.webp"
     )
     url2 = build.lp_image_url("DArienzoJuan", "Tigre Viejo", "Disk 1")
@@ -50,7 +50,7 @@ def test_lp_image_url_encodes_segments():
 
 def test_lp_image_url_routes_to_eps_when_kind_ep():
     url = build.lp_image_url("DArienzoJuan", "Bien Porteno", "Front", kind="EP")
-    assert url == "https://pub-df59ead2b87f40468ed4dcba1d274efa.r2.dev/DArienzoJuan/EPs/Bien%20Porteno/Bien%20Porteno%20Front.webp"
+    assert url == "https://images.tangotoolkit.com/DArienzoJuan/EPs/Bien%20Porteno/Bien%20Porteno%20Front.webp"
 
 
 def test_lp_image_url_defaults_to_lps_when_kind_missing():

@@ -56,6 +56,9 @@ def upload(paths: list[Path]) -> int:
             print(f"  fail: {p} -> {key}: {e}", file=sys.stderr)
             failed += 1
     print(f"uploaded={ok} failed={failed}")
+    if ok:
+        print("next: python sync_thumbs.py --apply (refresh thumbnails + singles_manifest.txt), "
+              "then commit singles_manifest.txt")
     return 1 if failed else 0
 
 
