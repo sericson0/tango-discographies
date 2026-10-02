@@ -77,4 +77,13 @@ ARTIST_DISPLAY = {
     "SextetoMilonguero": "Sexteto Milonguero",
     "Pedevilla": "Ricardo Pedevilla",
     "Malerba": "Ricardo Malerba",
+    "TangoBardo": "Tango Bardo",
+    "LaJuanDArienzo": "La Juan D'Arienzo",
+    "Villasboas": "Miguel Villasboas",
+    "Andariega": "Orquesta Tipica Andariega",
+    "SextetoTango": "Sexteto Tango",
+    "SextetoFantasma": "Sexteto Fantasma",
+    "PabloValle": "Pablo Valle Sexteto",
+    "Tanghetto": "Tanghetto",
+    "Narcotango": "Narcotango",
 }
