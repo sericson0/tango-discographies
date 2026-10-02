@@ -23,6 +23,7 @@ import _convert
 import _manifest
 import _r2
 from _artist_map import ARTIST_DISPLAY
+from build import artist_match_key as _artist_match_key
 from build import bandleader_folder as _bandleader_folder
 
 # Force UTF-8 stdout/stderr on Windows so accented LP/EP folder names print cleanly.
@@ -67,6 +68,21 @@ def _load_discography(path: Path) -> list[dict]:
     return list(csv.DictReader(path.open(encoding="utf-8-sig")))
 
 
+def discography_bandleader(discog_csv: Path, display: str) -> str:
+    """Bandleader of the first data row (build.py derives image URLs from it).
+
+    Usually equals the display name, but not always (csv_files/Sexteto
+    Milonguero.csv credits 'Javier Di Ciriaco'). Falls back to ``display`` when
+    the CSV is missing or has no data rows.
+    """
+    try:
+        rows = _load_discography(discog_csv)
+    except FileNotFoundError:
+        return display
+    bandleader = (rows[0].get("Bandleader") or "").strip() if rows else ""
+    return bandleader or display
+
+
 def _local_folder_names(artist_root_path: Path) -> dict[str, dict[str, str]]:
     """Return {kind_subdir: {lowercase_name: actual_name}} for LPs/ and EPs/."""
     out: dict[str, dict[str, str]] = {"LPs": {}, "EPs": {}}
@@ -80,12 +96,34 @@ def _local_folder_names(artist_root_path: Path) -> dict[str, dict[str, str]]:
     return out
 
 
+def manifest_path_for(bandleader: str, repo_root: Path) -> Path:
+    """lp_matches/<Artist> images.csv for this Bandleader.
+
+    build.py pairs manifests with rows by artist_match_key (accents and
+    punctuation stripped), so an existing manifest whose stem already matches
+    is reused -- 'Miguel Calo images.csv' keeps serving 'Miguel Caló' rather
+    than a second, duplicate manifest appearing beside it. A new artist gets
+    '<Bandleader without apostrophes> images.csv' (historical convention).
+    """
+    lp_dir = repo_root / "lp_matches"
+    want = _artist_match_key(bandleader)
+    if lp_dir.is_dir():
+        for existing in sorted(lp_dir.glob("* images.csv")):
+            if _artist_match_key(existing.stem[: -len(" images")]) == want:
+                return existing
+    return lp_dir / f"{bandleader.replace(chr(39), '')} images.csv"
+
+
 def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -> int:
     display, discog_csv = resolve_artist(local_name, repo_root)
     art_root = artist_root(local_name, repo_root)
     if not art_root.is_dir():
         print(f"error: {art_root} does not exist", file=sys.stderr)
         return 1
+
+    # R2 folder + manifest name follow the CSV's Bandleader, exactly as build.py
+    # resolves them (bandleader_folder / artist_match_key of row["Bandleader"]).
+    bandleader = discography_bandleader(discog_csv, display)
 
     run_all = not (args.manifest_only or args.convert_only or args.upload_only)
     do_convert = run_all or args.convert_only
@@ -119,8 +157,7 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
         print(f"== Manifest == {art_root}")
         manifest_rows = _manifest.walk_collection(art_root)
 
-        lp_match_name = display.replace("'", "")  # lp_matches/ filenames drop the apostrophe by historical convention
-        manifest_path = repo_root / "lp_matches" / f"{lp_match_name} images.csv"
+        manifest_path = manifest_path_for(bandleader, repo_root)
 
         if args.dry_run:
             print(f"  would write {len(manifest_rows)} manifest rows to {manifest_path}")
@@ -132,7 +169,7 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
     # ---- Phase 3: Upload ----
     if do_upload:
         print("== Upload ==")
-        bandleader_folder_name = _bandleader_folder(display)
+        bandleader_folder_name = _bandleader_folder(bandleader)
 
         upload_webps = sorted(w for root in scan_roots for w in root.rglob("*.webp"))
 

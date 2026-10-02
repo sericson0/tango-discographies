@@ -580,3 +580,27 @@ def test_any_underscore_setaside_folder_is_never_uploaded():
     root = Path("images/Magaldi/Singles")
     assert sai._excluded_from_upload(root / "_orphaned-2026-09-29/x.webp")
     assert not sai._excluded_from_upload(root / "1925-1929/x.webp")
+
+
+def test_upload_folder_follows_csv_bandleader_not_display(tmp_path, monkeypatch, capsys):
+    # build.py derives image URLs from row["Bandleader"]; uploads must agree
+    # (csv_files/Sexteto Milonguero.csv credits Javier Di Ciriaco).
+    images = tmp_path / "images" / "SextetoMilonguero"
+    (images / "LPs" / "X").mkdir(parents=True)
+    (images / "LPs" / "X" / "X Front.webp").write_bytes(b"webp")
+    monkeypatch.setattr(sai, "ARTIST_DISPLAY", {"SextetoMilonguero": "Sexteto Milonguero"})
+    (tmp_path / "csv_files").mkdir()
+    (tmp_path / "csv_files" / "Sexteto Milonguero.csv").write_text(
+        "Bandleader,Date,Title\nJavier Di Ciriaco,2007,Tres Esquinas\n", encoding="utf-8-sig")
+    monkeypatch.chdir(tmp_path)
+    assert sai.main(["SextetoMilonguero", "--dry-run"]) == 0
+    out = capsys.readouterr().out
+    assert "CiriacoJavierDi/LPs/X/X Front.webp" in out
+    assert "Javier Di Ciriaco images.csv" in out
+
+
+def test_discography_bandleader_falls_back_to_display(tmp_path):
+    empty = tmp_path / "Foo.csv"
+    empty.write_text("Bandleader,Date,Title\n", encoding="utf-8-sig")
+    assert sai.discography_bandleader(empty, "Foo") == "Foo"
+    assert sai.discography_bandleader(tmp_path / "missing.csv", "Foo") == "Foo"

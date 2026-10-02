@@ -74,6 +74,7 @@ ARTIST_DISPLAY = {
     "Pizarro": "Manuel Pizarro",
     "ReyesDelTango": "Los Reyes del Tango",
     "SextetoCristal": "Sexteto Cristal",
+    "SextetoMilonguero": "Sexteto Milonguero",
     "Pedevilla": "Ricardo Pedevilla",
     "Malerba": "Ricardo Malerba",
 }
