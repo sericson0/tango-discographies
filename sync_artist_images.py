@@ -23,6 +23,7 @@ import _convert
 import _manifest
 import _r2
 from _artist_map import ARTIST_DISPLAY
+from build import artist_match_key as _artist_match_key
 from build import bandleader_folder as _bandleader_folder
 
 # Force UTF-8 stdout/stderr on Windows so accented LP/EP folder names print cleanly.
@@ -44,6 +45,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--quality", type=int, default=85)
     p.add_argument("--lossless", action="store_true", help="Convert to lossless WebP instead of lossy quality")
+    p.add_argument("--albums-only", action="store_true",
+                   help="Only convert/upload images under LPs/ and EPs/ (never touch Singles/)")
     return p.parse_args(argv)
 
 
@@ -65,6 +68,21 @@ def _load_discography(path: Path) -> list[dict]:
     return list(csv.DictReader(path.open(encoding="utf-8-sig")))
 
 
+def discography_bandleader(discog_csv: Path, display: str) -> str:
+    """Bandleader of the first data row (build.py derives image URLs from it).
+
+    Usually equals the display name, but not always (csv_files/Sexteto
+    Milonguero.csv credits 'Javier Di Ciriaco'). Falls back to ``display`` when
+    the CSV is missing or has no data rows.
+    """
+    try:
+        rows = _load_discography(discog_csv)
+    except FileNotFoundError:
+        return display
+    bandleader = (rows[0].get("Bandleader") or "").strip() if rows else ""
+    return bandleader or display
+
+
 def _local_folder_names(artist_root_path: Path) -> dict[str, dict[str, str]]:
     """Return {kind_subdir: {lowercase_name: actual_name}} for LPs/ and EPs/."""
     out: dict[str, dict[str, str]] = {"LPs": {}, "EPs": {}}
@@ -78,6 +96,24 @@ def _local_folder_names(artist_root_path: Path) -> dict[str, dict[str, str]]:
     return out
 
 
+def manifest_path_for(bandleader: str, repo_root: Path) -> Path:
+    """lp_matches/<Artist> images.csv for this Bandleader.
+
+    build.py pairs manifests with rows by artist_match_key (accents and
+    punctuation stripped), so an existing manifest whose stem already matches
+    is reused -- 'Miguel Calo images.csv' keeps serving 'Miguel Caló' rather
+    than a second, duplicate manifest appearing beside it. A new artist gets
+    '<Bandleader without apostrophes> images.csv' (historical convention).
+    """
+    lp_dir = repo_root / "lp_matches"
+    want = _artist_match_key(bandleader)
+    if lp_dir.is_dir():
+        for existing in sorted(lp_dir.glob("* images.csv")):
+            if _artist_match_key(existing.stem[: -len(" images")]) == want:
+                return existing
+    return lp_dir / f"{bandleader.replace(chr(39), '')} images.csv"
+
+
 def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -> int:
     display, discog_csv = resolve_artist(local_name, repo_root)
     art_root = artist_root(local_name, repo_root)
@@ -85,23 +121,35 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
         print(f"error: {art_root} does not exist", file=sys.stderr)
         return 1
 
+    # R2 folder + manifest name follow the CSV's Bandleader, exactly as build.py
+    # resolves them (bandleader_folder / artist_match_key of row["Bandleader"]).
+    bandleader = discography_bandleader(discog_csv, display)
+
     run_all = not (args.manifest_only or args.convert_only or args.upload_only)
     do_convert = run_all or args.convert_only
     do_manifest = run_all or args.manifest_only
     do_upload = run_all or args.upload_only
 
+    # --albums-only: restrict convert + upload to the LPs/ and EPs/ subtrees.
+    scan_roots = [art_root]
+    if getattr(args, "albums_only", False):
+        scan_roots = [d for d in (art_root / "LPs", art_root / "EPs") if d.is_dir()]
+
     # ---- Phase 1: Convert ----
     if do_convert:
-        print(f"== Convert == {art_root}")
+        print(f"== Convert == {art_root}" + (" (albums only)" if getattr(args, "albums_only", False) else ""))
         if args.dry_run:
             n = 0
-            for p in art_root.rglob("*"):
-                if p.suffix.lower() in (".jpg", ".jpeg", ".png") and not p.with_suffix(".webp").exists():
-                    print(f"  would convert: {p}")
-                    n += 1
+            for root in scan_roots:
+                for p in root.rglob("*"):
+                    if p.suffix.lower() in (".jpg", ".jpeg", ".png") and not p.with_suffix(".webp").exists():
+                        print(f"  would convert: {p}")
+                        n += 1
             print(f"  ({n} files would be converted)")
         else:
-            converted = _convert.convert_tree(art_root, quality=args.quality, lossless=args.lossless)
+            converted = []
+            for root in scan_roots:
+                converted += list(_convert.convert_tree(root, quality=args.quality, lossless=args.lossless))
             print(f"  converted {len(converted)} files")
 
     # ---- Phase 2: Manifest ----
@@ -109,8 +157,7 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
         print(f"== Manifest == {art_root}")
         manifest_rows = _manifest.walk_collection(art_root)
 
-        lp_match_name = display.replace("'", "")  # lp_matches/ filenames drop the apostrophe by historical convention
-        manifest_path = repo_root / "lp_matches" / f"{lp_match_name} images.csv"
+        manifest_path = manifest_path_for(bandleader, repo_root)
 
         if args.dry_run:
             print(f"  would write {len(manifest_rows)} manifest rows to {manifest_path}")
@@ -122,11 +169,13 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
     # ---- Phase 3: Upload ----
     if do_upload:
         print("== Upload ==")
-        bandleader_folder_name = _bandleader_folder(display)
+        bandleader_folder_name = _bandleader_folder(bandleader)
+
+        upload_webps = sorted(w for root in scan_roots for w in root.rglob("*.webp"))
 
         if args.dry_run:
             n = 0
-            for webp in sorted(art_root.rglob("*.webp")):
+            for webp in upload_webps:
                 if _excluded_from_upload(webp):
                     continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)
@@ -142,7 +191,7 @@ def process_artist(local_name: str, args: argparse.Namespace, repo_root: Path) -
             # Only these make their sibling raster originals safe to delete.
             confirmed_on_r2: set[Path] = set()
 
-            for webp in sorted(art_root.rglob("*.webp")):
+            for webp in upload_webps:
                 if _excluded_from_upload(webp):
                     continue
                 key = _r2.key_for_local(webp, artist_root=art_root, bandleader_folder_name=bandleader_folder_name)

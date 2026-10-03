@@ -42,6 +42,19 @@ fetch_discogs_images.py
 verify_singles.py
 match_ui.py
 match_ui.html
+match_albums.py
+.discogs_cache/
+fetch_itunes_images.py
+_itunes.py
+_itunes_drivers.py
+.itunes_cache/
+fetch_bandcamp_images.py
+_bandcamp.py
+.bandcamp_cache/
+fetch_deezer_images.py
+_deezer.py
+_deezer_drivers.py
+.deezer_cache/
 
 # One-time migration / rename scripts and their plans
 _migrate_lp_matches.py
@@ -52,6 +65,12 @@ _rename_singles_plan.csv
 test_classify.py
 test_discogs.py
 test_discogs_drivers.py
+test_itunes.py
+test_itunes_drivers.py
+test_bandcamp.py
+test_deezer.py
+test_deezer_drivers.py
+test_match_albums.py
 test_match.py
 test_match_store.py
 test_verify_singles.py

@@ -137,21 +137,35 @@ def _closest_year(cands: list[dict], year: str) -> list[dict]:
 def match_track(title: str, year: str, recs: list[dict]) -> tuple[dict | None, str, str]:
     """Match a track title against the prepared discography.
 
-    The raw LP title is first reduced to candidates (genre/date labels stripped,
+    The whole title (parentheticals kept) is tried first with the exact and
+    compact passes only, so a recording literally titled 'Buenos Aires Va
+    (Acoustic)' or 'Like a Tango 2024' is found before the title is split. The
+    raw LP title is then reduced to candidates (genre/date labels stripped,
     parenthetical alternates split out); each is tried in turn and the first to
     match wins. See _match_one for the per-candidate cascade.
 
     Returns (hit, status, note). When no candidate matches, hit is None,
     status is 'no_title_match', and note is ''.
     """
-    for cand in title_candidates(title):
+    cands = title_candidates(title)
+    first_key = norm(cands[0]) if cands else ""
+    seen: set[str] = set()
+    for whole in ((title or "").strip(), strip_descriptors(title)):
+        key = norm(whole)
+        if not key or key == first_key or key in seen:
+            continue
+        seen.add(key)
+        hit, status, note = _match_one(whole, year, recs, fuzzy=False)
+        if hit:
+            return hit, status, note
+    for cand in cands:
         hit, status, note = _match_one(cand, year, recs)
         if hit:
             return hit, status, note
     return None, "no_title_match", ""
 
 
-def _match_one(title: str, year: str, recs: list[dict]) -> tuple[dict | None, str, str]:
+def _match_one(title: str, year: str, recs: list[dict], fuzzy: bool = True) -> tuple[dict | None, str, str]:
     """Match a single cleaned title against the prepared discography.
 
     Tries exact -> compact (no-spaces) -> fuzzy (ratio >= 0.84) within the
@@ -171,7 +185,7 @@ def _match_one(title: str, year: str, recs: list[dict]) -> tuple[dict | None, st
     if cp:
         return _pick(cp, "matched_variant", f"variant of {cp[0]['Title']!r}")
     best, best_r = None, 0.0
-    for r in pool_year:
+    for r in (pool_year if fuzzy else []):
         for c in (r["_nt"], r["_na"]):
             if not c:
                 continue
@@ -196,7 +210,7 @@ def _match_one(title: str, year: str, recs: list[dict]) -> tuple[dict | None, st
             return hit, "matched_year_flex_variant", f"{note}; {ynote}"
         scored = []
         best2_r = 0.0
-        for r in recs:
+        for r in (recs if fuzzy else []):
             rr = 0.0
             for c in (r["_nt"], r["_na"]):
                 if not c:

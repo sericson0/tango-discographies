@@ -559,6 +559,19 @@
       color: var(--accent-hover);
       background: color-mix(in srgb, var(--accent), transparent 90%);
     }
+    /* --- Image source credit (detail popover + lightbox) --- */
+    .image-credit {
+      margin-top: 6px;
+      font-size: 10px;
+      line-height: 1.35;
+      text-align: center;
+      color: var(--text-soft);
+      overflow-wrap: anywhere;
+    }
+    .image-credit:empty { display: none; }
+    .image-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .image-credit a:hover { color: var(--accent-hover); }
+
     /* --- Lightbox --- */
     .lightbox-backdrop {
       display: none;
@@ -566,6 +579,7 @@
       inset: 0;
       background: rgba(0, 0, 0, 0.85);
       z-index: 100;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       cursor: zoom-out;
@@ -573,11 +587,53 @@
     .lightbox-backdrop.visible { display: flex; }
     .lightbox-image {
       max-width: 90vw;
-      max-height: 90vh;
+      max-height: 88vh;
       object-fit: contain;
       border-radius: 4px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
+    .lightbox-credit {
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.75);
+      cursor: default;
+    }
+    .lightbox-credit:empty { display: none; }
+    .lightbox-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .lightbox-credit a:hover { color: #fff; }
+
+    /* --- Image sources (site-level credits) --- */
+    .credits-link {
+      margin-left: auto;
+      padding: 0;
+      font-size: 12px;
+      font-family: inherit;
+      color: var(--text-soft);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      white-space: nowrap;
+    }
+    .credits-link:hover { color: var(--accent-hover); }
+    .credits-panel {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(640px, calc(100vw - 40px));
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
+      overflow-wrap: anywhere;
+    }
+    .credits-panel h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .credits-panel p { margin-bottom: 10px; color: var(--text-mute); }
+    .credits-panel ul { margin: 0 0 12px 18px; }
+    .credits-panel li { margin-bottom: 6px; }
+    .credits-panel a { color: var(--accent-hover); }
+    .credits-panel .credits-cite { display: block; font-size: 12px; color: var(--text-soft); }
 
     /* --- Back to Top Button --- */
     .back-to-top {
@@ -740,6 +796,7 @@
       <span id="statsText"></span>
       <span id="eraBadges" class="era-badges"></span>
       <div id="chipsRow" class="chips-row"></div>
+      <button type="button" id="creditsLink" class="credits-link">Image sources</button>
     </div>
 
     <!-- Data Table -->
@@ -777,6 +834,48 @@
   <!-- Image Lightbox -->
   <div id="lightboxBackdrop" class="lightbox-backdrop">
     <img id="lightboxImage" class="lightbox-image" alt="">
+    <div id="lightboxCredit" class="lightbox-credit"></div>
+  </div>
+
+  <!-- Image sources (site-level credits; keep in step with README.md "Image sources") -->
+  <div id="creditsBackdrop" class="detail-backdrop"></div>
+  <div id="creditsPanel" class="detail-popover credits-panel" role="dialog" aria-labelledby="creditsTitle">
+    <button id="creditsClose" class="detail-popover-close" title="Close">&times;</button>
+    <h2 id="creditsTitle">Image sources</h2>
+    <p>The record-label and album-cover images shown here come from the collectors, archives and
+      catalogues below. Where the source of an individual image is on record, it is credited under
+      that image in the detail view. The images remain the property of their respective owners and
+      are shown for discographic reference; no licence is claimed for them.</p>
+    <ul>
+      <li><strong>Jos&eacute; Manuel Araque &mdash; GuardiaVieja.org</strong>: 78 rpm label scans from his
+        discography blogs for Fresedo, Pizarro, Cobi&aacute;n, De Caro and Maffia&ndash;Laurenz
+        (<a href="https://www.fresedo.de/" target="_blank" rel="noopener noreferrer">fresedo.de</a>,
+        <a href="https://tangodiscography.blogspot.com/" target="_blank" rel="noopener noreferrer">tangodiscography.blogspot.com</a>)</li>
+      <li><strong>Discography of American Historical Recordings (DAHR)</strong>, UC Santa Barbara Library
+        (<a href="https://adp.library.ucsb.edu/" target="_blank" rel="noopener noreferrer">adp.library.ucsb.edu</a>)
+        <span class="credits-cite">Cited in DAHR&rsquo;s own form, e.g.: Discography of American Historical
+        Recordings, s.v. &ldquo;Victor matrix BAVE-012762. Arrabalero / Orquesta T&iacute;pica Osvaldo
+        Fresedo,&rdquo; https://adp.library.ucsb.edu/index.php/matrix/detail/2000441980/BAVE-012762-Arrabalero.
+        Each DAHR credit links to the matrix page of that recording.</span></li>
+      <li><strong>tango.info</strong>
+        (<a href="https://tango.info/" target="_blank" rel="noopener noreferrer">tango.info</a>)</li>
+      <li><strong>Discogs</strong>, for most LP, EP and CD covers
+        (<a href="https://www.discogs.com/" target="_blank" rel="noopener noreferrer">discogs.com</a>)</li>
+      <li><strong>tangos78rpm.com</strong>
+        (<a href="https://www.tangos78rpm.com/" target="_blank" rel="noopener noreferrer">tangos78rpm.com</a>)</li>
+      <li><strong>Internet Archive</strong>, Great 78 Project
+        (<a href="https://great78.archive.org/" target="_blank" rel="noopener noreferrer">great78.archive.org</a>)</li>
+      <li><strong>45cat</strong>
+        (<a href="https://www.45cat.com/" target="_blank" rel="noopener noreferrer">45cat.com</a>) and
+        <strong>astorpiazzolla.com</strong>
+        (<a href="https://astorpiazzolla.com/" target="_blank" rel="noopener noreferrer">astorpiazzolla.com</a>)</li>
+      <li>Listing photographs from <strong>eBay</strong>, <strong>Mercado Libre</strong> and
+        <strong>popsike</strong></li>
+      <li>Album covers from <strong>Apple Music / iTunes</strong>, <strong>Bandcamp</strong>,
+        <strong>Deezer</strong> and the artists&rsquo; official sites</li>
+    </ul>
+    <p>If you hold the rights to an image and would like its credit corrected or the image removed,
+      please write to <a href="mailto:TangoToolkit@gmail.com">TangoToolkit@gmail.com</a>.</p>
   </div>
 
   <!-- Back to Top -->
@@ -822,6 +921,11 @@
   const detailContent = $('detailContent');
   const lightboxBackdrop = $('lightboxBackdrop');
   const lightboxImage = $('lightboxImage');
+  const lightboxCredit = $('lightboxCredit');
+  const creditsLink = $('creditsLink');
+  const creditsBackdrop = $('creditsBackdrop');
+  const creditsPanel = $('creditsPanel');
+  const creditsClose = $('creditsClose');
   const backToTopBtn = $('backToTop');
   const btnDownloadArtist = $('btnDownloadArtist');
   const btnDownloadAll = $('btnDownloadAll');
@@ -916,6 +1020,116 @@
         return keys.length ? new Set(keys) : fail('empty');
       });
     }).catch(function (e) { return fail(e && e.message ? e.message : 'network error'); });
+  }
+
+  // --- Image source credits (image_credits.txt, written by build_image_credits.py) ---
+  // Map of R2 key -> [source code, ref]; null = not loaded (then no credit is
+  // shown anywhere). A single is keyed by its full key, an LP/EP image by its
+  // album folder ("<Artist>/LPs/<Album>"). Only images whose source is on record
+  // are listed; everything else is covered by the "Image sources" panel alone.
+  var imageCredits = null;
+  // Source code -> display name, home page, and how a ref becomes the per-image
+  // link. Links are built from these fixed templates only, and a ref that does
+  // not match its source's pattern is ignored (the credit then links the home
+  // page), so the data file can never point anywhere but the listed sites.
+  // Codes mirror SOURCES in build_image_credits.py.
+  function creditPrefix(prefix, suffix) {
+    return function (ref) { return prefix + ref + (suffix || ''); };
+  }
+  function creditSubdomain(domain, suffix) {
+    return function (ref) {
+      var i = ref.indexOf('/');
+      return 'https://' + ref.slice(0, i) + '.' + domain + '/' + ref.slice(i + 1) + (suffix || '');
+    };
+  }
+  var CREDIT_SOURCES = {
+    'a':   { name: 'Jos\u00e9 Manuel Araque / GuardiaVieja.org', home: 'https://www.fresedo.de/',
+             re: /^(fresedotracks|pizarrotracks|cobiantracks|decarotracks|maffia-laurenztracks)\/\d{4}\/\d{2}\/[A-Za-z0-9_-]+$/,
+             link: creditSubdomain('blogspot.com', '.html') },
+    'd':   { name: 'DAHR, UC Santa Barbara Library', home: 'https://adp.library.ucsb.edu/',
+             re: /^\d+$/, link: creditPrefix('https://adp.library.ucsb.edu/index.php/matrix/refer/') },
+    'ti':  { name: 'tango.info', home: 'https://tango.info/',
+             re: /^\d{8,14}$/, link: creditPrefix('https://tango.info/') },
+    't78': { name: 'tangos78rpm.com', home: 'https://www.tangos78rpm.com/',
+             re: /^[a-z0-9-]+$/, link: creditPrefix('https://www.tangos78rpm.com/', '/') },
+    'ia':  { name: 'Internet Archive (Great 78 Project)', home: 'https://great78.archive.org/',
+             re: /^[A-Za-z0-9_.-]+$/, link: creditPrefix('https://archive.org/details/') },
+    '45':  { name: '45cat', home: 'https://www.45cat.com/',
+             re: /^78rpm\/record\/[A-Za-z0-9]+$/, link: creditPrefix('https://www.45cat.com/') },
+    'ap':  { name: 'astorpiazzolla.com', home: 'https://astorpiazzolla.com/' },
+    'eb':  { name: 'eBay listing', home: 'https://www.ebay.com/',
+             re: /^\d+$/, link: creditPrefix('https://www.ebay.com/itm/') },
+    'ml':  { name: 'Mercado Libre listing', home: 'https://www.mercadolibre.com.ar/',
+             re: /^[A-Za-z0-9\/_-]+$/, link: creditPrefix('https://www.mercadolibre.com.ar/') },
+    'ps':  { name: 'popsike', home: 'https://www.popsike.com/',
+             re: /^[A-Za-z0-9_-]+\/\d+$/, link: creditPrefix('https://www.popsike.com/', '.html') },
+    'dg':  { name: 'Discogs', home: 'https://www.discogs.com/',
+             re: /^\d+$/, link: creditPrefix('https://www.discogs.com/release/') },
+    'it':  { name: 'Apple Music / iTunes', home: 'https://music.apple.com/',
+             re: /^[a-z]{2}\/\d+$/,
+             link: function (ref) { return 'https://music.apple.com/' + ref.replace('/', '/album/'); } },
+    'bc':  { name: 'Bandcamp', home: 'https://bandcamp.com/',
+             re: /^[a-z0-9-]+\/(album|track)\/[a-z0-9-]+$/, link: creditSubdomain('bandcamp.com') },
+    'dz':  { name: 'Deezer', home: 'https://www.deezer.com/',
+             re: /^\d+$/, link: creditPrefix('https://www.deezer.com/album/') }
+  };
+  // Fetched in parallel with the CSV and never awaited. Never rejects: resolves
+  // to the Map, or null (with one console.warn) on network error / 404 / empty
+  // file -- like the manifest, except that a missing credits file costs nothing
+  // but the credit lines. Format: ">prefix|suffix" opens a group; a line
+  // "\tname\tcode[\tref]" is an entry whose key is prefix + name + suffix.
+  function loadImageCredits() {
+    function fail(why) {
+      console.warn('image_credits.txt unavailable (' + why + '); image credits are not shown.');
+      return null;
+    }
+    if (!window.fetch) return Promise.resolve(fail('no fetch'));
+    return fetch('image_credits.txt').then(function (res) {
+      if (!res.ok) return fail('HTTP ' + res.status);
+      return res.text().then(function (text) {
+        var map = new Map(), prefix = null, suffix = '';
+        text.split(/\r?\n/).forEach(function (line) {
+          if (line.charAt(0) === '>') {
+            var bar = line.lastIndexOf('|');
+            prefix = bar < 1 ? null : line.slice(1, bar);
+            suffix = line.slice(bar + 1);
+          } else if (line.charAt(0) === '\t' && prefix !== null) {
+            var parts = line.slice(1).split('\t');
+            if (parts.length >= 2 && parts[0]) map.set(prefix + parts[0] + suffix, [parts[1], parts[2] || '']);
+          }
+        });
+        return map.size ? map : fail('empty');
+      });
+    }).catch(function (e) { return fail(e && e.message ? e.message : 'network error'); });
+  }
+  // { name, href } for an image URL, or null when its source is not on record.
+  function creditFor(url) {
+    var prefix = IMAGE_BASE + '/';
+    if (!imageCredits || !url || url.indexOf(prefix) !== 0) return null;
+    var key;
+    try { key = decodeURIComponent(url.slice(prefix.length)); } catch (e) { return null; }
+    var hit = imageCredits.get(key);
+    if (!hit) {
+      var m = /^([^\/]+\/(?:LPs|EPs)\/[^\/]+)\//.exec(key);
+      if (m) hit = imageCredits.get(m[1]);
+    }
+    var src = hit && Object.prototype.hasOwnProperty.call(CREDIT_SOURCES, hit[0]) ? CREDIT_SOURCES[hit[0]] : null;
+    if (!src) return null;
+    var ref = hit[1];
+    return { name: src.name, href: (ref && src.link && src.re.test(ref)) ? src.link(ref) : src.home };
+  }
+  // Fill a credit element for an image URL ("Image: <linked source>"), or empty it.
+  function renderCredit(el, url) {
+    el.textContent = '';
+    var c = creditFor(url);
+    if (!c) return;
+    el.appendChild(document.createTextNode('Image: '));
+    var a = document.createElement('a');
+    a.href = c.href;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = c.name;
+    el.appendChild(a);
   }
 
   // Thumbnail URL for a full-size R2 image URL, or null if it isn't on R2.
@@ -1529,7 +1743,7 @@
       // Thumb buttons + error-fallback are wired up after insertion (see below).
       html += '<div class="lp-viewer">' +
         '<img class="detail-thumb lp-main" src="' + esc(imgs[0].url) + '" data-idx="0" alt="">' +
-        '<div class="lp-thumbs"></div></div>';
+        '<div class="lp-thumbs"></div><div class="image-credit"></div></div>';
     }
 
     // Right-of-image metadata column
@@ -1589,6 +1803,7 @@
     if (imgs.length) {
       var mainImg = detailContent.querySelector('.lp-main');
       var thumbsWrap = detailContent.querySelector('.lp-thumbs');
+      var creditEl = detailContent.querySelector('.image-credit');
       var curIdx = 0;
       var renderThumbs = function () {
         thumbsWrap.innerHTML = '';
@@ -1610,6 +1825,7 @@
         mainImg.style.visibility = '';
         mainImg.dataset.idx = idx;
         renderThumbs();
+        renderCredit(creditEl, imgs[idx].url);
       };
       // The 78 single is tried first but may not be uploaded; on load error drop
       // the current image and fall back to the next (album art), hiding if none remain.
@@ -1621,12 +1837,14 @@
         } else {
           mainImg.style.visibility = 'hidden';
           thumbsWrap.innerHTML = '';
+          creditEl.textContent = '';
         }
       });
       mainImg.addEventListener('click', function () {
         openLightbox(mainImg.src, imgs, curIdx);
       });
       renderThumbs();
+      renderCredit(creditEl, imgs[0].url);
     }
 
     // Position near the anchor row
@@ -1664,6 +1882,7 @@
     lightboxSet = (set && set.length) ? set : null;
     lightboxIdx = lightboxSet ? (idx || 0) : -1;
     lightboxImage.src = src;
+    renderCredit(lightboxCredit, lightboxSet && lightboxSet[lightboxIdx] ? lightboxSet[lightboxIdx].url : src);
     lightboxBackdrop.classList.add('visible');
   }
 
@@ -1671,13 +1890,25 @@
     if (!lightboxSet) return;
     lightboxIdx = (lightboxIdx + delta + lightboxSet.length) % lightboxSet.length;
     lightboxImage.src = lightboxSet[lightboxIdx].url;
+    renderCredit(lightboxCredit, lightboxSet[lightboxIdx].url);
   }
 
   function closeLightbox() {
     lightboxBackdrop.classList.remove('visible');
     lightboxImage.src = '';
+    lightboxCredit.textContent = '';
     lightboxSet = null;
     lightboxIdx = -1;
+  }
+
+  function openCredits() {
+    creditsPanel.classList.add('visible');
+    creditsBackdrop.classList.add('visible');
+  }
+
+  function closeCredits() {
+    creditsPanel.classList.remove('visible');
+    creditsBackdrop.classList.remove('visible');
   }
 
   function checkScrollIndicator() {
@@ -1694,6 +1925,8 @@
     // Fetch the singles manifest alongside the CSV; the UI starts once both are
     // in, so no row is ever rendered with a guessed single URL.
     var manifestReady = loadSinglesManifest().then(function (set) { singlesManifest = set; });
+    // Credits are optional decoration: loaded in parallel, never waited for.
+    loadImageCredits().then(function (map) { imageCredits = map; });
     Papa.parse('discographies.csv', {
       download: true,
       header: true,
@@ -1764,6 +1997,11 @@
     document.addEventListener('keydown', (e) => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
 
+      if (creditsPanel.classList.contains('visible')) {
+        if (e.key === 'Escape') closeCredits();
+        return;
+      }
+
       if (lightboxBackdrop.classList.contains('visible')) {
         if (e.key === 'Escape') { closeLightbox(); }
         else if (e.key === 'ArrowLeft') { e.preventDefault(); lightboxNav(-1); }
@@ -1825,6 +2063,11 @@
     detailPopoverClose.addEventListener('click', closePopover);
     detailBackdrop.addEventListener('click', closePopover);
     lightboxBackdrop.addEventListener('click', closeLightbox);
+    // The credit is a link out, not part of the click-anywhere-to-close area.
+    lightboxCredit.addEventListener('click', function (e) { e.stopPropagation(); });
+    creditsLink.addEventListener('click', openCredits);
+    creditsClose.addEventListener('click', closeCredits);
+    creditsBackdrop.addEventListener('click', closeCredits);
 
     // Label-size segmented control (S / M / L), persisted in localStorage
     var thumbSize = localStorage.getItem('thumbSize') || 'S';
