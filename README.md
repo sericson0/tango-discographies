@@ -22,6 +22,48 @@ tango resources. Entries may contain errors, omissions, or transcription
 inconsistencies — corrections and additions are warmly welcomed. See
 [CONTRIBUTING.md](CONTRIBUTING.md) to help improve the data.
 
+## Image sources
+
+The record-label and album-cover images shown in the viewer come from the
+collectors, archives and catalogues below. Where the source of an individual
+image is on record, the viewer credits it under that image in the detail popup
+and the full-size view (see [`image_credits.txt`](#image-credits-image_creditstxt)).
+The images remain the property of their respective owners and are shown for
+discographic reference; this project claims no licence for them, and the MIT
+licence below covers the code and the discography data only.
+
+- **José Manuel Araque — GuardiaVieja.org**: 78 rpm label scans from his
+  discography blogs for Fresedo, Pizarro, Cobián, De Caro and Maffia–Laurenz
+  ([fresedo.de](https://www.fresedo.de/),
+  [tangodiscography.blogspot.com](https://tangodiscography.blogspot.com/)).
+  Each credited image links to the blog post it comes from.
+- **Discography of American Historical Recordings (DAHR)**, UC Santa Barbara
+  Library ([adp.library.ucsb.edu](https://adp.library.ucsb.edu/)). Each credited
+  image links to the DAHR matrix page of that recording. DAHR's own citation
+  form, for example:
+  > Discography of American Historical Recordings, s.v. "Victor matrix
+  > BAVE-012762. Arrabalero / Orquesta Típica Osvaldo Fresedo," accessed
+  > May 10, 2026, https://adp.library.ucsb.edu/index.php/matrix/detail/2000441980/BAVE-012762-Arrabalero.
+
+  DAHR notes that its information on many of these recordings derives from
+  data compiled and provided by Enrique Binda, as well as disc labels examined
+  by DAHR editors.
+- **tango.info** ([tango.info](https://tango.info/))
+- **Discogs** ([discogs.com](https://www.discogs.com/)), for most LP, EP and CD
+  covers
+- **tangos78rpm.com** ([tangos78rpm.com](https://www.tangos78rpm.com/))
+- **Internet Archive**, Great 78 Project
+  ([great78.archive.org](https://great78.archive.org/))
+- **45cat** ([45cat.com](https://www.45cat.com/)) and **astorpiazzolla.com**
+  ([astorpiazzolla.com](https://astorpiazzolla.com/))
+- Listing photographs from **eBay**, **Mercado Libre** and **popsike**
+- Album covers from **Apple Music / iTunes**, **Bandcamp**, **Deezer** and the
+  artists' official sites
+
+If you hold the rights to an image and would like its credit corrected or the
+image removed, please write to
+[TangoToolkit@gmail.com](mailto:TangoToolkit@gmail.com).
+
 ## Contributing
 
 Three ways to contribute:
@@ -107,6 +149,29 @@ python sync_thumbs.py --manifest-only  # just regenerate singles_manifest.txt
 It only ever writes or deletes keys under `thumbs/`. The one exception is
 `--set-cache-control --apply`, a one-off that rewrites the served originals in
 place (same bytes) so they carry the shared `Cache-Control` header.
+
+### Image credits (`image_credits.txt`)
+
+`image_credits.txt` maps served images to the source they came from: every
+78 rpm single by its key, every LP/EP/CD cover by its album folder. The viewer
+fetches it next to the manifest and shows "Image: <source>" (linked to the
+blog post, matrix page, release… when one is known) under the image. Like the
+manifest it fails soft: without the file the site works, just without credit
+lines.
+
+```bash
+python build_image_credits.py           # rebuild image_credits.txt
+python build_image_credits.py --check   # report only, write nothing
+```
+
+Run it after `sync_thumbs.py --apply` and `build.py`, then commit the file. It
+needs the local `images/` tree and the sibling `parse-tango-discographies`
+repo, reads both, and never touches R2. It never guesses: a single is credited
+only when the served file is the same photograph as a file in one of that
+artist's source folders, an album cover only when a fetch log records the
+download into that folder. Everything else gets no entry and is covered by the
+[Image sources](#image-sources) section alone. The run prints per-source and
+per-artist counts, including how many images remain uncredited.
 
 ## License
 

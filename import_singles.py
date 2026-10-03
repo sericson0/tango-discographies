@@ -807,7 +807,8 @@ ARTISTS = {
     "Laurenz":   {"display": "Pedro Laurenz",      "csv": "Pedro Laurenz.csv",
                   "dahr": "Laurenz_Pedro",         "discogs": "pedro-laurenz"},
     "Pugliese":  {"display": "Osvaldo Pugliese",   "csv": "Osvaldo Pugliese.csv",
-                  "tangoinfo": "Osvaldo_Pugliese", "discogs": "osvaldo-pugliese"},
+                  "tangoinfo": "Osvaldo_Pugliese", "discogs": "osvaldo-pugliese",
+                  "harvest": "Pugliese"},
     "Biagi":     {"display": "Rodolfo Biagi",      "csv": "Rodolfo Biagi.csv",
                   "tangoinfo": "Rodolfo_Biagi",    "discogs": "rodolfo-biagi",
                   "harvest": "Biagi"},
@@ -839,7 +840,7 @@ ARTISTS = {
     "Aieta":     {"display": "Anselmo Aieta",      "csv": "Anselmo Aieta.csv",
                   "dahr": "Aieta_Anselmo",         "discogs": "anselmo-aieta",
                   "harvest": "Aieta"},
-    "Cobian":    {"display": "Juan Carlos Cobian", "csv": "Juan Carlos Cobain.csv",  # csv filename misspells Cobián as "Cobain"
+    "Cobian":    {"display": "Juan Carlos Cobian", "csv": "Juan Carlos Cobian.csv",
                   "tangoinfo": "Juan_Carlos_Cobian", "dahr": "Cobin_Juan_Carlos", "discogs": "juan-carlos-cobian",
                   "harvest": "Cobian"},
     "OTVictor":  {"display": "Orquesta Típica Victor", "csv": "Orquesta Típica Victor.csv",
@@ -856,21 +857,78 @@ ARTISTS = {
     "Varela":    {"display": "Héctor Varela",      "csv": "Héctor Varela.csv",
                   "discogs": "hector-varela",      "harvest": "Varela"},
     "Salgan":    {"display": "Horacio Salgan",     "csv": "Horacio Salgan.csv",
-                  "discogs": "horacio-salgan"},
+                  "discogs": "horacio-salgan",     "harvest": "Salgan"},
     # Acoustic-era artists added Aug 2026. Magaldi has no DAHR talent page
     # (he never recorded for a US-linked label), so tangos78rpm is his only source.
     "Corsini":   {"display": "Ignacio Corsini",    "csv": "Ignacio Corsini.csv",
-                  "dahr": "Corsini_Ignacio",       "discogs": "ignacio-corsini"},
+                  "dahr": "Corsini_Ignacio",       "discogs": "ignacio-corsini",
+                  "harvest": "Corsini"},
+    # 2026-10-02: the note above is stale — Magaldi DOES have a DAHR page
+    # (mastertalent 107868, scraped to DAHR Parsing/output/Magaldi_Agustn).
+    # Its raw-ID scans reach the site only through the harvest funnel, so
+    # there is deliberately no "dahr" key; import new ones with --harvest-only.
     "Magaldi":   {"display": "Agustín Magaldi",    "csv": "Agustín Magaldi.csv",
-                  "discogs": "agustin-magaldi"},
+                  "discogs": "agustin-magaldi",    "harvest": "Magaldi"},
+    "Lamarque":  {"display": "Libertad Lamarque",  "csv": "Libertad Lamarque.csv",
+                  "harvest": "Lamarque"},
     "Villoldo":  {"display": "Angel Villoldo",     "csv": "Angel Villoldo.csv",
-                  "dahr": "Villoldo_Angel_Gregorio", "discogs": "angel-villoldo"},
+                  "dahr": "Villoldo_Angel_Gregorio", "discogs": "angel-villoldo",
+                  "harvest": "Villoldo"},
     "Greco":     {"display": "Vicente Greco",      "csv": "Vicente Greco.csv",
-                  "dahr": "Greco_Vicente",         "discogs": "vicente-greco"},
+                  "dahr": "Greco_Vicente",         "discogs": "vicente-greco",
+                  "harvest": "Greco"},
     "Quiroga":   {"display": "Rosita Quiroga",     "csv": "Rosita Quiroga.csv",
-                  "dahr": "Quiroga_Rosita",        "discogs": "rosita-quiroga"},
+                  "dahr": "Quiroga_Rosita",        "discogs": "rosita-quiroga",
+                  "harvest": "Quiroga"},
     "Delfino":   {"display": "Enrique Delfino",    "csv": "Enrique Delfino.csv",
-                  "dahr": "Delfino_Enrique",       "discogs": "enrique-delfino"},
+                  "dahr": "Delfino_Enrique",       "discogs": "enrique-delfino",
+                  "harvest": "Delfino"},
+    # Wired 2026-10-02 (TangoInfo singer-named folders + tangos78rpm/DAHR scans
+    # on disk), through the harvest funnel only: the TangoInfo files are raw
+    # `<Singer>__<tinp>__sideN__<title>.jpg` names that carry no date, so there
+    # is no filename-matched source to list. Import with --harvest-only.
+    "Charlo":    {"display": "Charlo",             "csv": "Charlo.csv",
+                  "harvest": "Charlo"},
+    "Simone":    {"display": "Mercedes Simone",    "csv": "Mercedes Simone.csv",
+                  "harvest": "Simone"},
+    # Wired 2026-10-02 from the tangos78rpm/DAHR scans already on disk, through
+    # the harvest funnel only (vision-read catalog/matrix): their DAHR folders
+    # hold raw-ID filenames and composer-credit discs, so there is no
+    # filename-matched source to list. Import with --harvest-only.
+    "Ferrer":    {"display": "Celestino Ferrer",   "csv": "Celestino Ferrer.csv",
+                  "harvest": "Ferrer"},
+    "Esposito":  {"display": "Gennaro Esposito",   "csv": "Genaro Esposito.csv",  # csv filename has one n
+                  "harvest": "Esposito"},
+    "Ferrazzano": {"display": "Agesilao Ferrazzano", "csv": "Agesilao Ferrazzano.csv",
+                  "harvest": "Ferrazzano"},
+    "Bianco":    {"display": "Eduardo Bianco",     "csv": "Eduardo Bianco.csv",
+                  "harvest": "Bianco"},
+    "BiancoBachicha": {"display": "Bianco-Bachicha", "csv": "Bianco-Bachicha.csv",
+                  "harvest": "BiancoBachicha"},
+    "CanaroRafael": {"display": "Rafael Canaro",   "csv": "Rafael Canaro.csv",
+                  "harvest": "CanaroRafael"},
+    "Berto":     {"display": "Augusto Berto",      "csv": "Augusto Berto.csv",
+                  "harvest": "Berto"},
+    "Rotundo":   {"display": "Francisco Rotundo",  "csv": "Francisco Rotundo.csv",
+                  "harvest": "Rotundo"},
+    "Arolas":    {"display": "Eduardo Arolas",     "csv": "Eduardo Arolas.csv",
+                  "harvest": "Arolas"},
+    "Pollero":   {"display": "Julio Pollero",      "csv": "Julio Pollero.csv",
+                  "harvest": "Pollero"},
+    "DiCicco":   {"display": "Minotto Di Cicco",   "csv": "Minotto Di Cicco.csv",
+                  "harvest": "DiCicco"},
+    "Maizani":   {"display": "Azucena Maizani",    "csv": "Azucena Maizani.csv",
+                  "harvest": "Maizani"},
+    "Falcon":    {"display": "Ada Falcón",         "csv": "Ada Falcón.csv",
+                  "harvest": "Falcon"},
+    # Wired 2026-10-02 (Araque blogs + tangos78rpm/DAHR scans on disk), through
+    # the harvest funnel only -- every image vision-read. Import with --harvest-only.
+    "Pizarro":   {"display": "Manuel Pizarro",     "csv": "Manuel Pizarro.csv",
+                  "harvest": "Pizarro"},
+    "OTSelect":  {"display": "Orquesta Típica Select", "csv": "Orquesta Típica Select.csv",
+                  "harvest": "OTSelect"},
+    "Loduca":    {"display": "Vicente Loduca",     "csv": "Vicente Loduca.csv",
+                  "harvest": "Loduca"},
 }
 
 

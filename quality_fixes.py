@@ -1234,18 +1234,18 @@ def fix_glosa_and_instrumental(rows: list[dict[str, str]]) -> int:
 def recover_instrumentals(rows: list[dict[str, str]], filename: str) -> int:
     """For known files+eras where empty Singer means instrumental, fill in.
 
-    - Juan Carlos Cobain.csv: all 1922 rows are pre-singer era (Cobián was
+    - Juan Carlos Cobian.csv: all 1922 rows are pre-singer era (Cobián was
       leading instrumental orchestras then). 48 empty cells recoverable.
     - Horacio Salgan.csv: 1963-64 empty Singer rows are instrumentals.
     """
-    if filename not in {"Juan Carlos Cobain.csv", "Horacio Salgan.csv"}:
+    if filename not in {"Juan Carlos Cobian.csv", "Horacio Salgan.csv"}:
         return 0
     changes = 0
     for row in rows:
         if row.get("Singer", "").strip():
             continue
         d = row.get("Date", "")
-        if filename == "Juan Carlos Cobain.csv" and d.startswith("1922"):
+        if filename == "Juan Carlos Cobian.csv" and d.startswith("1922"):
             row["Singer"] = "Instrumental"
             changes += 1
         elif filename == "Horacio Salgan.csv" and (d.startswith("1963") or d.startswith("1964")):

@@ -51,6 +51,10 @@ _itunes_drivers.py
 fetch_bandcamp_images.py
 _bandcamp.py
 .bandcamp_cache/
+fetch_deezer_images.py
+_deezer.py
+_deezer_drivers.py
+.deezer_cache/
 
 # One-time migration / rename scripts and their plans
 _migrate_lp_matches.py
@@ -64,6 +68,8 @@ test_discogs_drivers.py
 test_itunes.py
 test_itunes_drivers.py
 test_bandcamp.py
+test_deezer.py
+test_deezer_drivers.py
 test_match_albums.py
 test_match.py
 test_match_store.py
