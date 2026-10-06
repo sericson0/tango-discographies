@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import re
+from datetime import date
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -34,6 +35,10 @@ CANONICAL_COLUMNS = [
     "Bandoneons",
     "Strings",
     "Lineup",
+    "Img_Type",
+    "Img_Folder",
+    "Img_Side",
+    "Img_Album",
 ]
 
 REQUIRED_COLUMNS = ["Bandleader", "Orchestra", "Title", "Genre", "Date"]
@@ -54,10 +59,10 @@ HEADER_ALIASES = {
     "Matrix_Number": "Matrix",
 }
 
-DATE_PATTERNS = (
-    re.compile(r"^\d{1,2}/\d{1,2}/\d{4}$"),
-    re.compile(r"^\d{4}$"),
-)
+ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+ISO_MONTH = re.compile(r"^\d{4}-\d{2}$")
+YEAR = re.compile(r"^\d{4}$")
+SLASH_DATE = re.compile(r"^\d{1,2}/\d{1,2}/\d{4}$")
 
 UNKNOWN_TOKENS = {"unknown", "unknwon", "unnamed", "unnamed student"}
 
@@ -88,7 +93,21 @@ def normalize_header(header: str) -> str:
 
 def looks_like_valid_date(value: str) -> bool:
     value = value.strip()
-    return any(pattern.match(value) for pattern in DATE_PATTERNS)
+    try:
+        if ISO_DATE.fullmatch(value):
+            date.fromisoformat(value)
+        elif ISO_MONTH.fullmatch(value):
+            date(int(value[:4]), int(value[5:7]), 1)
+        elif YEAR.fullmatch(value):
+            date(int(value), 1, 1)
+        elif SLASH_DATE.fullmatch(value):
+            month, day, year = map(int, value.split("/"))
+            date(year, month, day)
+        else:
+            return False
+    except ValueError:
+        return False
+    return True
 
 
 def norm_key(value: str) -> str:
@@ -229,16 +248,15 @@ def build_report(results: Dict[str, FileIssueSummary]) -> Dict[str, object]:
         singer_counter.update(summary.singer_variants)
 
     recommendations = []
-    if totals["schema_variants"] > 1:
+    if totals["files_with_schema_mismatch"]:
         recommendations.append(
-            "Standardize all files to one canonical header order and names; map aliases "
-            "(AltTitle->Alternative_Title, OrchestraSub->Orchestra, Master->Medium, "
-            "Pianist->Piano, Bandoneon->Bandoneons) and remove blank trailing columns."
+            "Review files with blank, duplicate, missing required, or unexpected columns. "
+            "The current source schema includes Img_Type, Img_Folder, Img_Side, and Img_Album."
         )
     if totals["total_bad_dates"]:
         recommendations.append(
-            "Normalize Date to either YYYY or M/D/YYYY. Convert partial/placeholder values "
-            "(for example YYYY-MM, YYYY-00-00) to a consistent unknown-date policy."
+            "Correct invalid dates. Supported formats are YYYY, YYYY-MM, YYYY-MM-DD, "
+            "and M/D/YYYY."
         )
     if totals["total_padded_values"]:
         recommendations.append(
