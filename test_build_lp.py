@@ -89,6 +89,17 @@ def test_apply_lp_images_no_img_type_leaves_empty():
     assert rows[0].get("LP_Images", "") == ""
 
 
+def test_pre1950_reissue_cover_is_not_exposed_as_recording_artwork():
+    rows = [{"Bandleader": "Anibal Troilo", "Date": "1949-03-31", "Img_Type": "LP",
+             "Img_Folder": "Compilation", "Img_Album": "Compilation", "LP_Images": "stale"},
+            {"Bandleader": "Anibal Troilo", "Date": "1950-01-01", "Img_Type": "LP",
+             "Img_Folder": "Compilation", "Img_Album": "Compilation"}]
+    build.apply_lp_images(rows, {"anibal troilo": {"Compilation": [("Front", "LP")]}})
+    assert rows[0]["LP_Images"] == ""
+    assert rows[0]["LP_Title"] == ""
+    assert json.loads(rows[1]["LP_Images"])[0]["type"] == "Front"
+
+
 def test_apply_lp_images_other_artist_untouched():
     manifests = {"juan darienzo": {"Tigre Viejo": [("Front", "LP")]}}
     rows = [{"Bandleader": "Aníbal Troilo", "Img_Type": "LP",

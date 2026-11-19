@@ -865,6 +865,20 @@
         (<a href="https://www.tangos78rpm.com/" target="_blank" rel="noopener noreferrer">tangos78rpm.com</a>)</li>
       <li><strong>Internet Archive</strong>, Great 78 Project
         (<a href="https://great78.archive.org/" target="_blank" rel="noopener noreferrer">great78.archive.org</a>)</li>
+      <li><strong>Strachwitz Frontera Collection / UCLA</strong>, for 78 rpm label scans
+        (<a href="https://frontera.library.ucla.edu/" target="_blank" rel="noopener noreferrer">frontera.library.ucla.edu</a>)</li>
+      <li><strong>Fabio Cernuda</strong>, discography blogs
+        (<a href="https://ignaciocorsinigrabaciones.blogspot.com/" target="_blank" rel="noopener noreferrer">Ignacio Corsini</a>;
+        <a href="https://sellosdiscograficos.blogspot.com/" target="_blank" rel="noopener noreferrer">Sellos discogr&aacute;ficos de la Argentina</a>)</li>
+      <li><strong>Gustavo Segu</strong>,
+        <a href="https://ignaciocorsini.blogspot.com/" target="_blank" rel="noopener noreferrer">Ignacio Corsini blog</a></li>
+      <li><a href="https://discosyotrascosas.blogspot.com/" target="_blank" rel="noopener noreferrer"><strong>Discos y otras cosas</strong></a></li>
+      <li><a href="https://rauldeloshoyos.com/" target="_blank" rel="noopener noreferrer"><strong>Ra&uacute;l de los Hoyos</strong></a></li>
+      <li><a href="https://note.com/mitsu_sa" target="_blank" rel="noopener noreferrer"><strong>Mitsumasa Saito / note</strong></a></li>
+      <li><a href="https://www.freshsoundrecords.com/" target="_blank" rel="noopener noreferrer"><strong>Fresh Sound Records / El Bandoneon</strong></a></li>
+      <li><a href="https://tangoenvinilo.com/" target="_blank" rel="noopener noreferrer"><strong>Tango en Vinilo / Cavalieri TDJ</strong></a>, for reviewed LP and EP sleeve photographs</li>
+      <li><a href="https://tangotimetravel.be/" target="_blank" rel="noopener noreferrer"><strong>Tango Time Travel</strong></a></li>
+      <li><a href="https://genaroesposito.weebly.com/discografia.html" target="_blank" rel="noopener noreferrer"><strong>The Life of Genaro Esposito</strong></a></li>
       <li><strong>45cat</strong>
         (<a href="https://www.45cat.com/" target="_blank" rel="noopener noreferrer">45cat.com</a>) and
         <strong>astorpiazzolla.com</strong>
@@ -963,6 +977,16 @@
   }
   var LAST_NAME_PARTICLES = ['de', 'di', 'del', 'la', 'las', 'los'];
   function imageUrl(row) {
+    // Compiled associations are authoritative. Held, empty, or unknown statuses
+    // must never fall through to the historical date/title guess.
+    if (row && (Object.prototype.hasOwnProperty.call(row, 'Single_Image_Status') ||
+                Object.prototype.hasOwnProperty.call(row, 'Single_Image_Key'))) {
+      if (row.Single_Image_Status !== 'reviewed' && row.Single_Image_Status !== 'legacy_unverified') return null;
+      var explicitKey = row.Single_Image_Key || '';
+      if (!/^[^/\\?#%\x00-\x1f]+\/Singles\/[^/\\?#%\x00-\x1f]+\/[^/\\?#%\x00-\x1f]+\.webp$/.test(explicitKey) ||
+          explicitKey.split('/').some(function (part) { return part === '.' || part === '..'; })) return null;
+      return IMAGE_BASE + '/' + explicitKey.split('/').map(encodeURIComponent).join('/');
+    }
     if (!row || !row.Bandleader || !row.Date || !row.Title) return null;
     var nameParts = stripAccents(row.Bandleader).trim().split(/\s+/);
     if (nameParts.length === 0 || nameParts[0] === '') return null;
@@ -1057,12 +1081,41 @@
     '45':  { name: '45cat', home: 'https://www.45cat.com/',
              re: /^78rpm\/record\/[A-Za-z0-9]+$/, link: creditPrefix('https://www.45cat.com/') },
     'ap':  { name: 'astorpiazzolla.com', home: 'https://astorpiazzolla.com/' },
+    'jb':  { name: 'Instituto Antonio Carlos Jobim', home: 'https://www.jobim.org/',
+             re: /^2010\.2\/1479(?![\s\S])/, link: creditPrefix('https://www.jobim.org/chico/handle/') },
+    'tv':  { name: 'Tango en Vinilo / Cavalieri TDJ', home: 'https://tangoenvinilo.com/',
+             re: /^\d+$/, link: creditPrefix('https://tangoenvinilo.com/tangoenvinilo/disco.php?id=') },
+    'fs':  { name: 'Fresh Sound Records / El Bandoneon', home: 'https://www.freshsoundrecords.com/',
+             re: /^[a-z0-9-]+-albums\/\d+-[a-z0-9-]+$/, link: creditPrefix('https://www.freshsoundrecords.com/', '.html') },
+    'ttt': { name: 'Tango Time Travel', home: 'https://tangotimetravel.be/',
+             re: /^release-notes-[a-z0-9-]+$/, link: creditPrefix('https://tangotimetravel.be/', '/') },
+    'ge':  { name: 'The Life of Genaro Esposito', home: 'https://genaroesposito.weebly.com/discografia.html',
+             re: /^discografia$/, link: creditPrefix('https://genaroesposito.weebly.com/', '.html') },
+    'fr':  { name: 'Strachwitz Frontera Collection / UCLA', home: 'https://frontera.library.ucla.edu/',
+             re: /^(es\/)?(recordings\/[A-Za-z0-9%_-]+|node\/\d+)$/, link: creditPrefix('https://frontera.library.ucla.edu/') },
+    'ce':  { name: 'Fabio Cernuda / discography blogs', home: 'https://ignaciocorsinigrabaciones.blogspot.com/',
+             re: /^(ignaciocorsinigrabaciones|sellosdiscograficos)\/\d{4}\/\d{2}\/[A-Za-z0-9_-]+$/,
+             link: creditSubdomain('blogspot.com', '.html') },
+    'gs':  { name: 'Gustavo Segu / Ignacio Corsini blog', home: 'https://ignaciocorsini.blogspot.com/',
+             re: /^\d{4}\/\d{2}\/[A-Za-z0-9_-]+$/, link: creditPrefix('https://ignaciocorsini.blogspot.com/', '.html') },
+    'mr':  { name: 'Discos y otras cosas', home: 'https://discosyotrascosas.blogspot.com/',
+             re: /^\d{4}\/\d{2}\/[A-Za-z0-9_-]+$/, link: creditPrefix('https://discosyotrascosas.blogspot.com/', '.html') },
+    'rh':  { name: 'Ra\u00fal de los Hoyos', home: 'https://rauldeloshoyos.com/',
+             re: /^[a-z0-9-]+$/, link: creditPrefix('https://rauldeloshoyos.com/', '/') },
+    'ns':  { name: 'Mitsumasa Saito / note', home: 'https://note.com/mitsu_sa',
+             re: /^n[a-f0-9]{12}(?![\s\S])/, link: creditPrefix('https://note.com/mitsu_sa/n/') },
     'eb':  { name: 'eBay listing', home: 'https://www.ebay.com/',
              re: /^\d+$/, link: creditPrefix('https://www.ebay.com/itm/') },
+    'ebp': { name: 'eBay listing', home: 'https://www.ebay.com/',
+             re: /^(com|de|ca)\/\d+$/,
+             link: function (ref) { var parts = ref.split('/'); return 'https://www.ebay.' + parts[0] + '/itm/' + parts[1]; } },
     'ml':  { name: 'Mercado Libre listing', home: 'https://www.mercadolibre.com.ar/',
              re: /^[A-Za-z0-9\/_-]+$/, link: creditPrefix('https://www.mercadolibre.com.ar/') },
     'ps':  { name: 'popsike', home: 'https://www.popsike.com/',
              re: /^[A-Za-z0-9_-]+\/\d+$/, link: creditPrefix('https://www.popsike.com/', '.html') },
+    'tc':  { name: 'todocoleccion listing', home: 'https://www.todocoleccion.net/',
+             re: /^(www|en)\/[A-Za-z0-9/_~-]+~x\d+$/,
+             link: function (ref) { var slash = ref.indexOf('/'); return 'https://' + ref.slice(0, slash) + '.todocoleccion.net/' + ref.slice(slash + 1); } },
     'dg':  { name: 'Discogs', home: 'https://www.discogs.com/',
              re: /^\d+$/, link: creditPrefix('https://www.discogs.com/release/') },
     'it':  { name: 'Apple Music / iTunes', home: 'https://music.apple.com/',
@@ -1070,6 +1123,8 @@
              link: function (ref) { return 'https://music.apple.com/' + ref.replace('/', '/album/'); } },
     'bc':  { name: 'Bandcamp', home: 'https://bandcamp.com/',
              re: /^[a-z0-9-]+\/(album|track)\/[a-z0-9-]+$/, link: creditSubdomain('bandcamp.com') },
+    'lj':  { name: 'La Juan D\u0027Arienzo (official)', home: 'https://www.lajuandarienzo.com/discos/',
+             re: /^discos$/, link: function () { return 'https://www.lajuandarienzo.com/discos/'; } },
     'dz':  { name: 'Deezer', home: 'https://www.deezer.com/',
              re: /^\d+$/, link: creditPrefix('https://www.deezer.com/album/') }
   };
@@ -1167,8 +1222,18 @@
   // on load error rather than assuming any one image exists.
   function imageList(row) {
     var single = imageUrl(row);
-    if (single && singlesManifest && !singlesManifest.has(single.slice(IMAGE_BASE.length + 1))) single = null;
-    var singleItems = single ? [{ type: '78 rpm', url: single }] : [];
+    if (single && singlesManifest && !singlesManifest.has(decodeURIComponent(single.slice(IMAGE_BASE.length + 1)))) single = null;
+    var singleType = row.Single_Image_Status ? (row.Image_Physical_Format || 'Single label') : '78 rpm';
+    if (row.Image_Issue_Status && row.Image_Issue_Status !== 'unverified') {
+      singleType += ' (' + row.Image_Issue_Status.replace(/_/g, ' ') + ')';
+    }
+    if (row.Image_Recording_Match === 'supported') {
+      singleType += ' · recording matched';
+      singleType += row.Image_Take_Match === 'supported' ? ' · take verified' : ' · take unverified';
+      singleType += row.Image_Release_Match === 'supported' ? ' · release matched' : ' · release unverified';
+      if (!row.Image_Issue_Status || row.Image_Issue_Status === 'unverified') singleType += ' · original issue unverified';
+    }
+    var singleItems = single ? [{ type: singleType, url: single }] : [];
     var lp = parseLpImages(row).filter(function (im) { return im && im.url; });
     if (lp.length && EP_PREFERRED[row.Bandleader] && /\/EPs\//.test(lp[0].url)) {
       return lp.concat(singleItems);

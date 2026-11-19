@@ -61,6 +61,7 @@
 	Volumen N° 30	dg	17513851
 >AngelisAlfredoDe/LPs/|
 	2 Colosos Del Tango	dg	36017623
+	40 Grandes Éxitos	it	us/1046245694
 	A La Criolla	dg	37629681
 	Alfredo De Angelis Y El Tango 20 Exitos	dg	28365865
 	Amor De Verano - Volumen No. 18	dg	25271482
@@ -68,17 +69,38 @@
 	Bodas De Oro Con El Tango	dg	13864654
 	Carlos Gardel Con La Orquesta De Alfredo De Angelis	dg	5809199
 	Compro Un Corazon	dg	16926249
+	Con la Voz De... Carlos Dante	it	us/713228574
+	De Angelis y Sus Cantores	it	us/713179578
 	El Beso Que Te Di	dg	18324664
 	El Tango Se Viene Con Todo	dg	17770279
+	En Tiempo de Tango	it	us/839479095
 	Entre Tu Amor Y Mi Amor	dg	14103511
+	Farolas de Cielo	it	us/963001006
+	Grandes Del Tango 20 - Alfredo De Angelis 2	it	us/333931317
+	Grandes Del Tango 42 - Alfredo De Angelis 3	it	us/320999305
 	Instrumentales Inolvidables	dg	10138121
 	La Mariposa	dg	32550408
 	La Piel De Buenos Aires	dg	31751012
 	La Resurreccion De Gardel Vol. 2	dg	30497494
+	Los Dúos de Dante & Martel	it	us/712652675
 	Novedoso	dg	18010477
 	Palpitar De Buenos Aires	dg	12351992
 	Rincon De Sueño	dg	30448205
 	Sus Mejores Interpretaciones Vol. 1	dg	13942989
+	TEV 102 - Se te nota en los ojos	tv	102
+	TEV 11041 - Bonita	tv	11041
+	TEV 11045 - Entre Tu Amor Y Mi Amor	tv	11045
+	TEV 11049 - Los Mejores De Alfredo de Angelis	tv	11049
+	TEV 12191 - Alfredo De Angelis y el tango	tv	12191
+	TEV 132 - Nobleza de arrabal	tv	132
+	TEV 197 - Corazón Encadenado	tv	197
+	TEV 209 - VIejo Rincon	tv	209
+	TEV 56034 - Alfredo De Angelis	tv	56034
+	TEV 56036 - Alfredo De Angelis	tv	56036
+	TEV 56038 - Alfredo De Angelis	tv	56038
+	TEV 714 - Alfredo De Angelis y su orquesta típica con sus cantore	tv	714
+	TEV 858 - Estrictamente Instrumental	tv	858
+	Tangos para el Pueblo	it	us/925587190
 	Una Piba Como Vos	dg	10529079
 	Y Su Gran Orquesta En El 80	dg	12404194
 >AngelisAlfredoDe/Singles/1940-1944/|_De-Angelis.webp
@@ -107,6 +129,7 @@
 	1946-03-01_Carnaval	t78	carnaval-odeon-no-3793-b
 	1946-03-29_Para-Mi-Lo-Mismo-Da	ti	02480002725138
 	1946-03-29_Y-No-Volvio	ti	02480002725138
+	1946-04-26_La-Brisa	rh	alfredo-de-angelis-raul-de-los-hoyos
 	1946-05-24_Esa-Noche	ti	02480002725169
 	1946-05-24_Remolino	eb	125319254123
 	1946-06-28_Con-Alma-De-Tango	ti	02480002725046
@@ -165,12 +188,24 @@
 	1960-12-22_Maldito-Corazon	ti	02480002725114
 	1961-12-21_Locura-Locura	ti	02480002725107
 	1961-12-21_Yira-Yira	ti	02480002725107
+>ArolasEduardo/Singles/1910-1914/|_Arolas.webp
+	1913_Muy-Agradecido	t78	muy-agradecido-premier-record-no-126
+	1913_Noche-De-Farra	t78	noche-de-farra-sonora-no-9006
+	1913_Pabellon-De-Las-Rosas	t78	pabellon-de-las-rosas-odeon-no-a-86131
 >ArolasEduardo/Singles/1915-1919/|_Arolas.webp
 	1917-04-26_El-Chanar	d	600001045
 	1917-04-26_Marron-Glace	d	600001044
 	1917-04-30_El-Gaucho-Nestor	d	600001073
 	1917-05-15_La-Regina-Del-Fonografo	d	600001187
 	1917-05-15_Longchamps-Fleuris	d	600001188
+>BaffaBerlingieri/EPs/|
+	TEV 11182 - Nuestro Balance	tv	11182
+>BaffaBerlingieri/LPs/|
+	Ciudad Dormida (RCA Victor AVLP-3895)	dg	12780318
+	Goyeneche CAL-CAS3157 Discogs14639862	dg	14639862
+	Gran Encuentro (RCA Camden CAL-CAS-3215)	dg	7247140
+	TEV 501 - Baffa - Berlingieri for export	tv	501
+	TEV 532 - 3 para el tango	tv	532
 >Bajofondo/LPs/|
 	Aura	dg	15906274
 	Bajofondo Tango Club	dg	255719
@@ -208,6 +243,8 @@
 	Rustico	bc	tangobardo/album/rustico
 >BassoJose/EPs/|
 	De Diez Siete	dg	15951757
+	TEV 12045 - José Basso y su orquesta típica	tv	12045
+	TEV 745 - José Basso y su orquesta típica	tv	745
 >BassoJose/LPs/|
 	Argentine Tango Golden Prize	dg	34693728
 	Argentine Tango Golden Prize Vol. 2	dg	7172392
@@ -224,6 +261,11 @@
 	Paisaje De Tango	dg	8515483
 	Poker De Ases	dg	32301624
 	Sabor A Tango	dg	12182537
+	TEV 261 - Exitos de José Basso	tv	261
+	TEV 633 - Por la vuelta	tv	633
+	TEV 686 - Lo mejor de	tv	686
+	TEV 93 - Inspiracion	tv	93
+	TEV 948 - José Basso Volumen Nro2	tv	948
 	Tangos	dg	25960936
 	Éxitos De Oro	dg	30025135
 >BassoJose/Singles/1945-1949/|_Basso.webp
@@ -239,11 +281,16 @@
 	1950-01-20_Entrada-Prohibida	ti	02480002729976
 	1950-01-20_Venganza	ti	02480002729976
 	1950-11-17_Mi-Vieja-Viola	ti	02480002729938
+	1951-05-17_El-Patio-De-La-Morocha	ebp	ca/358888575337
+	1951-05-17_Preparense	ebp	ca/358888575337
 	1951-07-26_En-La-Via	ti	02480002729921
 	1951-07-26_Sera-Una-Noche	ti	02480002729921
 >BassoJose/Singles/1955-1959/|_Basso.webp
 	1959-07-21_El-Peluquero	ti	02480002729983
 	1959-07-21_Y-No-Le-Erre	ti	02480002729983
+>BernsteinArturo/Singles/1910-1914/|_Bernstein.webp
+	1913_El-Apache-Porteno	t78	el-apache-porteno-atlanta-no-912
+	1913_Rosarina	dg	7060117
 >BertoAugusto/Singles/1910-1914/|_Berto.webp
 	1913_Amelia	t78	amelia-atlanta-no-t738
 	1913_Cabana-Laura	t78	cabana-laura-atlanta-disco-no-736
@@ -261,22 +308,20 @@
 >BiagiRodolfo/EPs/|
 	Rodolfo Biagi	dg	16140725
 >BiagiRodolfo/LPs/|
-	Canción De Rango	dg	11715298
-	Canta Andres Falgas	dg	7189042
-	D'Arienzo - Biagi - (1936-1938)	dg	6906900
 	El Inconfundible Estilo De Rodolfo Biagi	dg	24527177
 	El Inconfundible Ritmo De... Rodolfo Biagi	dg	23895443
 	En El Recuedo	dg	31470839
 	Estrella	dz	421967537
 	Grandes Éxitos	dg	11326260
 	Los Cantores De Rodolfo Biagi Vol. 5	dg	27994404
-	Los Indispensables De Biagi	dg	7187989
-	Manos Brujas	dg	7188967
 	Os Reis Do Tango	dg	23064830
-	Rodolfo Biagi Y Jorge Ortiz	dg	13815639
 	Rodolfo Biagi y Sus Exitos Volumen No. 4	dg	13055831
+	TEV 12246 - Aquí está Rodolfo Biagi	tv	12246
+	TEV 206 - La copa del olvido	tv	206
+	TEV 481 - Rodolfo Biagi y su orquesta tipica Vol Nro 3	tv	481
+	TEV 713 - Los mas grandes exitos de Rodolfo Biagi	tv	713
+	TEV 772 - El irresistible	tv	772
 	Tango	dg	22376659
-	¿Te Acuerdas ... Que Tangos Aquellos! - Vol. 1	dg	30236258
 	Éxitos De Oro	dg	19636891
 >BiagiRodolfo/Singles/1935-1939/|_Biagi.webp
 	1938-08-15_El-Incendio	ti	02480002700289
@@ -411,10 +456,6 @@
 	A Mí Me Llaman Juan Tango	dg	11825021
 	Calo En Colombia	dg	16500174
 	En El Recuedo	dg	31343845
-	La Boca	dg	13157579
-	La Orquesta De Las Estrellas Vol. 3	dg	29516632
-	La Orquesta De Las Estrellas Vol.2	dg	12774465
-	La Orquesta De Las Estrellas Vol.4	dg	17464240
 	Los Cantores De Miguel Calo	dg	25577971
 	Los Tres Ases Del Tango	dg	12106901
 	Miguel Calo ... Para Siempre	dg	29972269
@@ -425,9 +466,16 @@
 	Ranko Fujisawa En Buenos Aires = ブエノス・アイレスの藤沢嵐子	dg	13596698
 	Samba Em Tempo De Tango - Miguel Calo Visita Sao Paulo	dg	7112177
 	Sans Souci	dg	18990553
+	TEV 11121 - Calo En Colombia	tv	11121
+	TEV 11122 - Doce Voces En El Recuerdo	tv	11122
+	TEV 12026 - Sambas en tiempo de tango	tv	12026
+	TEV 353 - Tangos por Lucho Gatica	tv	353
+	TEV 56020 - Miguel Calo	tv	56020
+	TEV 761 - Un destino... y un nombre	tv	761
+	TEV 921 - Los tres ases del tango	tv	921
+	TEV 98 - Distincion en tango	tv	98
 	Tangos Por El Mundo	dg	13133980
 	Un Destino... Y Un Nombre	dg	17464432
-	¿Te Acuerdas ... Que Tangos Aquellos! - Vol. 1	dg	30236258
 >CaloMiguel/Singles/1935-1939/|_Calo.webp
 	1936-10-23_La-Pequena-Shirley	ti	02480002703174
 >CaloMiguel/Singles/1940-1944/|_Calo.webp
@@ -459,7 +507,14 @@
 >CaloMiguel/Singles/1950-1954/|_Calo.webp
 	1954-06-15_Como-Le-Digo-A-La-Vieja	ti	02480002703020
 	1954-06-23_Boca-Juniors	ti	02480002703020
+>CaloRoberto/LPs/|
+	TEV 373 - El que atrasó el reloj	tv	373
+	TEV 777 - Roberto Calo y su orquesta típica	tv	777
+>CaloRoberto/Singles/1950-1954/|_Calo.webp
+	1951_Cualquier-Cosa	dg	11773216
+	1951_La-Tablada	dg	11773216
 >CanaroFrancisco/EPs/|
+	TEV 11165 - Isto è Tango	tv	11165
 	Un Recuerdo... Nada Mas !	dg	19278196
 	Volumen No. 12	dg	37696329
 	Volumen N° 7	dg	28838926
@@ -473,6 +528,34 @@
 	Los Éxitos De Francisco Canaro	dg	9605934
 	Quinteto Pirincho Dir Francisco Canaro	dg	32371095
 	Recordando El Ayer . Volumen No. 8	dg	25370647
+	TEV 11017 - Francisco Canaro Et Son Orchestre Argentin	tv	11017
+	TEV 11018 - Francisco Canaro Y Su Exitos De Todos Los Tiempos	tv	11018
+	TEV 116 - Quinteto Pirincho	tv	116
+	TEV 277 - Argentino Ledesma interpreta a Carlos Gardel	tv	277
+	TEV 400 - Tangolandia Francisco Canaro y su orquesta tipica Vol N	tv	400
+	TEV 487 - Recordando el 900 Volumen Nro7	tv	487
+	TEV 50054 - Canaro en Teatro Koma en Tokyo	tv	50054
+	TEV 50059 - Alma del Tango Porteño	tv	50059
+	TEV 50064 - Mis Bodas de Oro Con el Tango	tv	50064
+	TEV 50072 - Francisco Canaro	tv	50072
+	TEV 50076 - Las Famosas Obras de Fco. Canaro	tv	50076
+	TEV 50090 - Francisco Canaro	tv	50090
+	TEV 50099 - Adiós Pampa Mía	tv	50099
+	TEV 50106 - Francisco Canaro y su orquesta típica	tv	50106
+	TEV 50119 - Francisco Canaro	tv	50119
+	TEV 50122 - Memento de Quinteto Pirincho	tv	50122
+	TEV 50131 - Historia del Quinteto Pirincho Vol.1	tv	50131
+	TEV 50132 - Historia del Quinteto Pirincho Vol.2	tv	50132
+	TEV 50133 - Historia del Quinteto Pirincho Vol.3	tv	50133
+	TEV 50134 - Historia del Quinteto Pirincho Vol.4	tv	50134
+	TEV 56021 - Francisco Canaro y su orquesta tipica	tv	56021
+	TEV 56022 - Francisco Canaro Halcon Negro	tv	56022
+	TEV 57 - Destellos	tv	57
+	TEV 642 - La vida de F. Canaro Vol9	tv	642
+	TEV 643 - La vida de F. Canaro Vol10	tv	643
+	TEV 644 - Canaro en Japón	tv	644
+	TEV 650 - La vida de F. Canaro Vol8	tv	650
+	TEV 940 - Mano Brava	tv	940
 	Tangolandia - Volumen N° 10	dg	9058709
 	Tres Joyas Del Tango En La Epocha	dg	34012215
 	Una Vida Con El Tango	dg	32341326
@@ -497,14 +580,18 @@
 	1920_Simari	d	2000118982
 	1922_El-Huerfano	ti	02480002741527
 	1923_Ave-Maria	ti	02480002742432
+	1923_Cachonguita	dg	15014404
 	1923_Desolacion	ti	02480002743798
 	1923_La-Ratonera	ti	02480002743323
 	1923_Lo-Que-Fuiste	ps	TRIO-CANARO-Odeon-6905-Lo-Que-Fuiste-La-Ultima-Cita-RARE-Tango-78-RPM/221167684277
 	1923_Padre-Nuestro	ti	02480002743613
 	1923_Paramount	ti	02480002743460
 	1923_Pelele	ti	02480002743798
+	1923_Perla-Falsa	dg	38826894
+	1923_Principe	dg	15014404
 	1923_Sacate-La-Caretita	t78	sacate-la-caretita-disco-nacional-odeon-no-6947-a
 	1924_Alfredo	ti	02480002743491
+	1924_Amigaso	dg	38827497
 	1924_Cascabelito	ti	02480002740001
 	1924_China	t78	china-disco-nacional-odeon-no-6947-b
 	1924_Colillon	t78	colillon-disco-nacional-odeon-no-6982-b
@@ -521,7 +608,11 @@
 	1924_Macachin-Flor-De-Los-Llanos	ti	02480002742876
 	1924_Marea-Baja	ti	02480002742159
 	1924_Mi-Noche-Alegre	t78	mi-noche-alegre-disco-nacional-odeon-no-1054-b
+	1924_Mia	dg	15127388
+	1924_Perdon	dg	13075746
+	1924_Pico-A-Pico	dg	38826894
 	1924_Porque	ti	02480002743842
+	1924_Puentecito	dg	14627559
 	1924_Ramas-Secas	ti	02480002744078
 	1924_Se-Acuerdan-Muchachos	ti	02480002742036
 	1924_Sentimiento-Gaucho	ti	02480002744375
@@ -533,24 +624,32 @@
 	1924_Un-Caprichito	t78	un-caprichito-disco-nacional-odeon-no-6990-b
 >CanaroFrancisco/Singles/1925-1929/|_Canaro.webp
 	1925_Acuarelita-Del-Arrabal	t78	acuarelita-del-arrabal-disco-nacional-odeon-no-4110-b
+	1925_Adios	dg	14782063
 	1925_Adios-Para-Siempre	ti	02480002740162
 	1925_Callecita-De-Mi-Barrio	t78	callecita-de-mi-barrio-disco-nacional-odeon-no-4107-a
 	1925_Caminito-Del-Taller	ps	ORQUESTA-CANARO-Nacional-4725-TANGO-78-CAMINITO-DEL-TALLER-RECUERDO-DE-PARIS/121504541684
+	1925_Changui	dg	14614485
 	1925_El-Milonguero	ti	02480002741572
+	1925_En-Aquel-Cuartito	eb	225576257360
 	1925_En-Un-Rincon-De-La-Boca	t78	en-un-rincon-de-la-boca-odeon-no-a-86706
 	1925_Entra-Nomas	ti	02480002741855
 	1925_Fea	t78	fea-disco-nacional-odeon-no-11021b
+	1925_Galleguita	eb	236729175828
 	1925_Hasta-La-Vuelta	ti	02480002742111
 	1925_Juguete-De-Placer	t78	juguete-de-placer-disco-nacional-odeon-no-4107-b
 	1925_La-Costurerita-Que-Dio-Aquel-Mal-Paso	t78	la-costurerita-que-dio-aquel-mal-paso-odeon-no-a-86705
 	1925_La-Monjita	ti	02480002743378
+	1925_La-Tinaja	dg	12489302
 	1925_Medias-De-Seda	t78	medias-de-seda-odeon-no-ra-86697
 	1925_Mi-Carino	ti	02480002741855
+	1925_Mi-Querer	dg	14782063
 	1925_No-Te-Quiero-Mas	ti	02480002743392
 	1925_Organito-De-La-Tarde	ti	02480002743569
 	1925_Paris	ps	78-rpm-Orquesta-F-CANARO-Paris-DISCO-NACIONAL-4121-ARGENTINE/385136563977
 	1925_Pobrecita	ti	02480002740162
+	1925_Polo	eb	225576257377
 	1925_Porque-Te-Quise	ti	02480002743392
+	1925_Romantico-Fulero	eb	236729175828
 	1925_Silbando	ti	02480002744481
 	1925_Tierra-Mia	ti	02480002744832
 	1925_Trapito	ti	02480002743361
@@ -573,12 +672,18 @@
 	1926_Calandria	ti	02480002740575
 	1926_Caminito	ti	02480002740599
 	1926_Companero	ti	02480002740858
+	1926_Cuando-Yo-Era-Pibe	dg	12910415
 	1926_El-Circo-Se-Va	ti	02480002741411
 	1926_La-Tristeza-Del-Bulin	ti	02480002740551
 	1926_Ladrillo	ti	02480002740858
 	1926_Maria	ti	02480002745327
+	1926_Mocosita	dg	15027146
 	1926_No-Te-Vayas	ti	02480002743408
+	1926_Quien-Dijo-Miedo	dg	15027146
+	1926_Trago-Amargo	dg	22961774
+	1926_Tus-Besos-Fueron-Mios	dg	7056337
 	1926_Vecinita-Fue-Por-Vos	t78	vecinita-fue-por-vos-disco-nacional-odeon-no-11039-a
+	1926_Ya-Pa-Que	dg	20430949
 	1926_Yo-Te-Bendigo	ti	02480002745327
 	1927-01-10_Angustia	ti	02480002740339
 	1927-01-19_Del-Barrio-De-Las-Latas	eb	298556714825
@@ -596,8 +701,10 @@
 	1927-03-26_La-Malvada	ti	02480002743422
 	1927-03-30_Escucha-Un-Consejo	ti	02480002740247
 	1927-03-30_Fruto-Bendito	ti	02480002742050
+	1927-03-30_Marcelo	dg	11560075
 	1927-04-02_La-Entrerriana	ti	02480002742388
 	1927-04-04_El-Zorzal	ti	02480002741060
+	1927-04-04_Ya-Es-Tarde	dg	15547839
 	1927-04-16_Derecho-Viejo	t78	derecho-viejo-disco-nacional-odeon-no-4280-b
 	1927-04-16_Quejas-De-Bandoneon	ps	FRANCISCO-CANARO-Odeon-4296-TANGO-78-QUEJAS-DE-BANDONEON-EL-CHAMUYO/121869136495
 	1927-04-16_Retintin	ps	78-RPM-ARGENTINA-FRANCISCO-CANARO-RetintinDISCO-NACIONAL-ODEON-4280/391542468917
@@ -627,12 +734,24 @@
 	1927-06-01_El-Pollito	ti	02480002741190
 	1927-06-15_Culpable	ti	02480002741107
 	1927-06-15_Viejita-Mia	ti	02480002740841
+	1927-06-22_El-Comico	dg	35101574
+	1927-06-23_Retirao	dg	7794984
+	1927-07-07_Amigaso	dg	11449341
 	1927-07-07_Asi-Es-El-Mundo	ti	02480002740407
 	1927-07-07_Rodriguez-Pena	ti	02480002740407
 	1927-07-14_Micifuz	ia	78_micifuz_orquesta-tipica-francisco-canaro-a-r-aviles_gbia7036149a
 	1927-07-20_Lejania	ps	TANGO-78-rpm-RECORD-Odeon-ORQUESTA-FRANCISCO-CANARO/290591583712
+	1927-07-20_Letania	dg	33507224
+	1927-07-29_El-Alacran	dg	7794984
 	1927-07-29_Los-Muchachos	ti	02480002742814
+	1927-08-05_Calle-Corrientes	dg	37711959
+	1927-08-05_No-Salgas-De-Tu-Barrio	dg	37711959
+	1927-08-10_Buena-Idea	dg	25138033
 	1927-08-11_Cuando-Volveras	ti	02480002742241
+	1927-08-11_La-Reja	dg	15498941
+	1927-08-16_Amurado	dg	14905825
+	1927-08-16_El-Poncho-Del-Amor	dg	13473239
+	1927-08-20_Viejo-Amor	tc	www/discos-pizarra/disco-pizarra-78rpm-10-odeon-182218-b-orquesta-f-canaro-lejania-viejo-amor-tangos~x293646348
 	1927-08-22_Los-Burros	ti	02480002742814
 	1927-08-22_Los-Indios	ti	02480002745358
 	1927-08-22_Zorro-Gris	ti	02480002745358
@@ -642,6 +761,7 @@
 	1927-09-03_Pebeta-Canyengue	ti	02480002743781
 	1927-09-07_Cuando-Llora-La-Milonga	ti	02480002741039
 	1927-09-07_En-Silencio	ti	02480002743811
+	1927-09-07_Saturnia	dg	17934310
 	1927-09-12_Yo-Tambien-Era-Dichoso	ps	1927-Argentine-DISCO-NACIONAL-78FRANCISCO-CANAROOrquesta-TipicaE/361575174294
 	1927-09-13_El-Mal-Que-Me-Hiciste	ti	02480002744269
 	1927-09-13_Queja-Indiana	t78	queja-indiana-odeon-no-ra-159105-b
@@ -658,15 +778,19 @@
 	1927-10-13_Nostalgias-De-La-Tarde	ti	02480002743781
 	1927-10-13_Tengo-Apuro	t78	tengo-apuro-disco-nacional-odeon-no-4372-a
 	1927-10-13_Tradicion	t78	tradicion-disco-nacional-odeon-no-4834-a
+	1927-10-26_El-Taita-Ladron	tc	www/discos-pizarra/disco-pizarra-taita-ladron-puro-guapo-tango-f-canario-r-iriarte-orquesta-canaro-~x43887191
 	1927-11-01_Gabriela	ti	02480002744009
 	1927-11-01_Ya-Llegara-Tu-Dia	ti	02480002741503
 	1927-11-03_Che-Papusa-Oi	ti	02480002740520
 	1927-11-09_Caballo-De-Oro	ti	02480002740520
+	1927-11-16_De-Puro-Guapo	tc	www/discos-pizarra/disco-pizarra-taita-ladron-puro-guapo-tango-f-canario-r-iriarte-orquesta-canaro-~x43887191
 	1927-11-23_Il-Piccolo-Navio	ti	02480002742166
 	1927-11-23_La-Cabeza-Del-Italiano	ti	02480002742166
 	1927-12-09_Griseta	ti	02480002743347
 	1927-12-09_No-Le-Digas-Que-La-Quiero	ti	02480002743347
 	1927-12-09_Que-Lindo-Es-Estar-Metido	ti	02480002744009
+	1928-01-03_Adios-Muchachos	dg	15276605
+	1928-02-08_Lamento-Criollo	dg	15276605
 	1928-02-13_Mananitas-De-Montmartre	ti	02480002742920
 	1928-03-07_Deja-Que-La-Gente-Diga	ti	02480002741138
 	1928-03-07_Quema-Estas-Cartas	ti	02480002741138
@@ -678,12 +802,16 @@
 	1928-03-21_Che-Bouhier	ti	02480002740735
 	1928-03-21_Chingolito	ti	02480002740735
 	1928-03-21_Malandrin	ti	02480002742920
+	1928-03-21_Viejo-Ciego	dg	12507560
 	1928-03-21_Yo-Me-Quiero-Disfrazar	ti	02480002745259
 	1928-03-28_Eterna-Herida	ti	02480002741923
 	1928-03-28_La-Mujer-De-Anoche	ti	02480002745259
+	1928-03-28_Que-Sabe-La-Gente	dg	36313768
 	1928-04-04_A-Contramano	ti	02480002740087
 	1928-04-04_Esta-Noche-Me-Emborracho	ti	02480002741923
+	1928-04-04_Lindo-Tipo-De-Varon	dg	13037919
 	1928-04-04_Se-Va-La-Lancha	ti	02480002744290
+	1928-04-11_A-Toda-Vela	dg	18873919
 	1928-04-11_Bocas-Ansiosas	ti	02480002745150
 	1928-04-11_El-Espejito	ti	02480002741503
 	1928-04-11_La-Ultima-Morada	ti	02480002745174
@@ -691,6 +819,8 @@
 	1928-04-11_Por-Esta-Cruz	ti	02480002740087
 	1928-04-13_Pretenciosa	ti	02480002740315
 	1928-04-25_Buenos-Aires-Querido	eb	290693873655
+	1928-04-25_El-Carrerito	dg	15012744
+	1928-05-02_Alhaja-Falsa	dg	15012744
 	1928-05-02_Murio-El-Malevo	ti	02480002743255
 	1928-05-02_Siga-El-Tango	ti	02480002743255
 	1928-05-09_Chorra	ti	02480002740766
@@ -711,6 +841,7 @@
 	1928-07-18_Sandia-Calada	ti	02480002744764
 	1928-07-20_Lindo-Tipo-De-Varon	ti	02480002744085
 	1928-07-20_Ramona	ti	02480002744085
+	1928-07-25_El-Panuelito	dg	17021856
 	1928-07-25_En-Las-Nubes	ti	02480002743880
 	1928-07-25_Seguime-Si-Podes	ti	02480002743309
 	1928-07-25_Vibraciones-Del-Alma	ti	02480002745082
@@ -727,11 +858,13 @@
 	1928-08-15_Noviecita-Mia	ti	02480002740360
 	1928-08-15_Pim-Pam-Pum	ti	02480002743880
 	1928-08-15_Senda-Florida	ti	02480002740230
+	1928-08-23_Belcha	dg	27163551
 	1928-08-23_Fierro-Chifle	ti	02480002741695
 	1928-08-31_Haragan	ti	02480002742104
 	1928-09-01_Alma-En-Pena	ti	02480002740230
 	1928-09-01_Piedad	ti	02480002743866
 	1928-09-03_Arco-Iris	ti	02480002740360
+	1928-09-03_Chiquita	dg	14394884
 	1928-09-03_El-Rasgueo	ti	02480002741695
 	1928-09-03_Muneca-Brava	ti	02480002743866
 	1928-09-03_Vieja-Milonga	ti	02480002745112
@@ -739,14 +872,17 @@
 	1928-09-10_Segui-Mi-Consejo	ti	02480002744337
 	1928-09-10_Yo-Soy-Asi	ti	02480002742104
 	1928-09-12_Parque-Patricios	ti	02480002744337
+	1928-09-12_Pata-De-Palo	dg	14394884
 	1928-09-17_Parque-Patricios	ti	02480002743873
 	1928-09-17_Piedad	ti	02480002743873
 	1928-09-18_Barra-Querida	ti	02480002743453
 	1928-09-18_Noviecita-Mia	ti	02480002743453
+	1928-09-19_Cuando-Mi-Barrio-Se-Duerme	dg	17021856
 	1928-09-19_Duelo-Criollo	ti	02480002741282
 	1928-09-19_Tu-Debes-Reir	ti	02480002741282
 	1928-09-25_Te-Aconsejo-Que-Me-Olvides	ti	02480002744757
 	1928-09-26_Mi-Estrella	ti	02480002740711
+	1928-10-03_Las-Vueltas-De-La-Vida	dg	33469625
 	1928-10-03_Pebeta-Elegante	ti	02480002741145
 	1928-10-03_Renacimiento	ti	02480002744474
 	1928-10-03_Yo-Te-Acuso	ti	02480002742852
@@ -786,6 +922,7 @@
 	1928-12-07_Chiquita	ti	02480002740742
 	1928-12-12_Cachadora	t78	cachadora-disco-nacional-odeon-no-4497-a
 	1928-12-12_Estampilla	ti	02480002741954
+	1928-12-12_Mira	dg	11437111
 	1928-12-19_Amigablemente	ti	02480002741121
 	1928-12-19_Cachadora	ti	02480002744436
 	1928-12-19_De-Tierra-Adentro	ti	02480002741121
@@ -795,6 +932,7 @@
 	1929-02-23_Castillo-De-Naipes	ti	02480002740681
 	1929-02-23_Estampa-Del-Suburbio	ti	02480002741947
 	1929-02-23_Zaraza	ti	02480002740681
+	1929-02-27_Carmen	dg	37710519
 	1929-02-27_La-Cieguita-De-Boedo	ti	02480002744597
 	1929-02-27_Palida-Noche	ti	02480002742029
 	1929-02-27_Sos-Bueno-Vos-Tambien	ti	02480002744573
@@ -804,6 +942,7 @@
 	1929-02-28_Zaraza	ti	02480002745334
 	1929-03-01_Chau-Ingrata	ti	02480002740728
 	1929-03-01_Flores-Secas	ti	02480002742029
+	1929-03-01_Primer-Auxilio	dg	7038763
 	1929-03-06_Bajo-Cuerda	ti	02480002744573
 	1929-03-06_Malevaje	ti	02480002742937
 	1929-03-06_Stud-El-Pueblo	ti	02480002743965
@@ -812,6 +951,7 @@
 	1929-03-20_Mientras-Llora-El-Tango	ti	02480002743095
 	1929-03-20_Payador	ti	02480002741947
 	1929-03-20_Torturas	ti	02480002740209
+	1929-03-20_Varoncito	dg	37710519
 	1929-03-27_Adios-Que-Te-Vaya-Bien	ti	02480002740179
 	1929-03-27_Palermo	ti	02480002743668
 	1929-03-27_Soy-Un-Arlequin	ti	02480002744597
@@ -826,6 +966,7 @@
 	1929-04-17_Sali-Sali	ti	02480002744238
 	1929-04-22_El-Entrerriano	ti	02480002741497
 	1929-04-22_No-Me-Olvides	ti	02480002742593
+	1929-04-30_Asi-Es-La-Vida	dg	15810279
 	1929-04-30_Largala-Nomas	ti	02480002740438
 	1929-05-03_Hormiguita	ti	02480002742371
 	1929-05-03_No-Seas-Malita	ti	02480002743385
@@ -834,6 +975,7 @@
 	1929-05-10_Oracion	ti	02480002743552
 	1929-05-15_De-A-Traicion	ti	02480002743552
 	1929-05-15_Flor-De-Rea	ti	02480002743057
+	1929-05-15_Penitencia	dg	14738741
 	1929-05-15_Sentate-Hermano	ti	02480002744160
 	1929-05-22_Sos-Un-Hombre	eb	291987420401
 	1929-06-04_Pasion	ti	02480002741176
@@ -842,6 +984,7 @@
 	1929-06-12_Neura	ti	02480002743385
 	1929-06-12_Palomita-Blanca	ti	02480002743699
 	1929-06-13_Ibis	ti	02480002742142
+	1929-06-19_La-Brisa	tc	en/shellac-records/disco-pizarra-78-rpm-10-odeon-182695-orquesta-argentina-f-canaro-palomita-blanca-brisa~x295501658
 	1929-06-19_Se-Van-A-Armar	ti	02480002744306
 	1929-06-19_Tengo-Miedo	ti	02480002744603
 	1929-06-24_Farolito-De-Papel	ti	02480002743699
@@ -851,6 +994,7 @@
 	1929-07-13_La-Divina-Dama	ti	02480002742371
 	1929-07-24_La-Morocha	ti	02480002741206
 	1929-08-02_Don-Juan	ti	02480002741206
+	1929-08-06_Miau	dg	13320434
 	1929-08-12_Sos-Bueno-Vos-Tambien	t78	sos-bueno-vos-tambien-odeon-no-203-239-b
 	1929-08-14_Misa-Rea	ti	02480002743194
 	1929-08-14_Por-El-Camino	ti	02480002744948
@@ -862,11 +1006,13 @@
 	1929-08-28_Bailarin-Compadrito	ti	02480002743941
 	1929-08-28_La-Guardia-Vieja	ti	02480002742418
 	1929-08-28_Palermo	ti	02480002743675
+	1929-09-04_Cruz-De-Palo	dg	36577522
 	1929-09-04_Piuma-Al-Vento	ti	02480002743187
 	1929-09-11_El-Barbijo	t78	el-barbijo-disco-nacional-odeon-no-4581-a
 	1929-09-11_Prisionero	ti	02480002743941
 	1929-09-18_El-Mago	ti	02480002742296
 	1929-09-18_Misa-De-Once	ti	02480002743187
+	1929-09-19_Alma-De-Bohemio	dg	15205014
 	1929-09-19_La-Virgen-Del-Perdon	t78	la-virgen-del-perdon-odeon-no-prueba
 	1929-09-25_Me-Duele-El-Alma	ti	02480002743040
 	1929-09-25_Noches-De-Plata	t78	noches-de-plata-version-inedita-odeon-no-ined
@@ -880,14 +1026,17 @@
 	1929-10-11_Amor-Pagano	ti	02480002740292
 	1929-10-16_Copando	ti	02480002742999
 	1929-10-16_Noches-De-Plata	t78	noches-de-plata-version-inedita-odeon-no-ined-2
+	1929-11-02_Rancho-Embrujao	dg	6782158
 	1929-11-06_Abuelita	t78	abuelita-disco-nacional-odeon-no-4611-b
 	1929-11-06_Ratoncito	ti	02480002743897
 	1929-11-09_Bells-Of-Hawaii	ti	02480002740483
 	1929-11-13_El-Triunfo	45	78rpm/record/238128
-	1929-11-13_Pretenciosa	t78	pretenciosa-odeon-no-203-239-a
+	1929-11-13_Sueno-Con-El	dg	14600809
 	1929-11-18_El-Tisico	t78	el-tisico-cierra-esa-puerta-disco-nacional-odeon-no-4591-b
+	1929-11-20_Canto-De-Amor	dg	6782158
 	1929-11-20_Del-Pasado	ti	02480002740483
 	1929-11-27_Maria-Luisa	ti	02480002742999
+	1929-11-27_Queja-Melodiosa	dg	14600809
 	1929-12-04_Nueve-De-Julio	t78	9-de-julio-odeon-no-4615-b
 	1929-12-11_Jacqueline	ti	02480002740759
 	1929-12-23_La-Tablada	ti	02480002742685
@@ -904,11 +1053,14 @@
 	1930-03-20_Ojos-Verdes	ti	02480002743514
 	1930-03-21_Vos-Tambien-Tenes-Tu-Historia	t78	vos-tambien-tenes-tu-historia-disco-nacional-no-4624-a
 	1930-03-24_Pajarito-Cantor	ti	02480002743644
+	1930-04-04_Nocturno	dg	25440256
 	1930-04-09_Chirimoya	ti	02480002740759
 	1930-04-11_Nobleza-De-Arrabal	ti	02480002742425
 	1930-04-11_Tradicion	ti	02480002741664
 	1930-04-21_El-Pua	ti	02480002741664
+	1930-04-30_Clavel-Del-Aire	dg	14614394
 	1930-04-30_Cuentan-Las-Viejas	ti	02480002741091
+	1930-04-30_Lamento-Campero	tc	www/discos-pizarra/disco-pizarra-odeon-mentirosa-pericon-orquesta-f-canaro-lamento-campero-tango~x617467734
 	1930-04-30_Nunca-Jamas	ti	02480002741091
 	1930-05-06_Poca-Suerte	ti	02480002743071
 	1930-05-07_Viejo-Espejo	ti	02480002740254
@@ -933,8 +1085,10 @@
 	1930-09-01_Te-Llego-Tu-San-Martin	ti	02480002744771
 	1930-09-05_Alma-De-Bohemio	ti	02480002740216
 	1930-09-05_La-Boleada	ti	02480002740216
+	1930-09-05_Rosita	tc	www/discos-pizarra/78-rpm-odeon-francisco-canaro-rosita-yira-yira-tango~x246045335
 	1930-09-05_Yira-Yira	ti	02480002745235
 	1930-09-13_Vete-A-Dormir	ti	02480002741800
+	1930-09-13_Victoria	dg	12768501
 	1930-09-17_Paquetin-Paqueton	t78	paquetin-paqueton-disco-nacional-odeon-no-4686-a
 	1930-09-17_Yira-Yira	t78	yira-yira-disco-nacional-odeon-no-11197-a
 	1930-09-17_Yo-No-Se-Que-Me-Han-Hecho-Tus-Ojos	ti	02480002745266
@@ -969,6 +1123,7 @@
 	1930-12-05_Senda-Florida	ti	02480002744351
 	1930-12-05_Viejo-Rincon	ps	1930-Argentine-DISCO-NACIONAL-Odeon-78CARLOS-GARDEL-wCanaro-Orq/361570721383
 	1930-12-05_Yo-No-Se-Que-Me-Han-Hecho-Tus-Ojos	ti	02480002745280
+	1930-12-10_Adios-Argentina	eb	128027534028
 	1930-12-12_Confesion	ti	02480002740896
 	1930-12-12_El-Galleguito	ti	02480002745280
 	1930-12-12_Mosquetero-De-Arrabal	t78	mosquetero-de-arrabal-disco-nacional-odeon-no-1201-b
@@ -977,21 +1132,34 @@
 	1931-04-07_Mirella	ti	02480002743170
 	1931-04-17_La-Voz-Del-Bohemio	ti	02480002744207
 	1931-04-17_Rosa-De-Venus	ti	02480002744207
+	1931-04-22_Burrero	tc	www/discos-pizarra/disco-pizarra-odeon-francisco-canaro-besos-miel-burrero~x623011634
+	1931-04-22_Canto-Por-No-Llorar	dg	24786785
 	1931-04-22_La-Ultima-Copa	ti	02480002745266
+	1931-05-06_Amor-Bohemio	dg	24786785
+	1931-05-06_Sabado-Ingles	dg	15012415
+	1931-05-06_Violetas	dg	15120080
 	1931-05-13_La-Ultima-Copa	ti	02480002742708
 	1931-05-13_Quien-Tuviera-18-Anos	ti	02480002744641
 	1931-05-20_El-Maragato	ti	02480002741565
+	1931-05-27_Pimpollo-De-Rosa	dg	15012415
+	1931-06-24_Tipo-Loco	dg	30580243
 	1931-06-30_Yo-No-Se-Que-Me-Han-Hecho-Tus-Ojos	ti	02480002745273
 	1931-07-01_Lo-Que-Nunca-Te-Diran	ti	02480002742777
 	1931-07-02_Amor-De-Payaso	ti	02480002742197
 	1931-07-02_Ilusion-Marina	ti	02480002742197
+	1931-07-15_San-Cristobal	dg	30580243
+	1931-08-05_La-Garconniere	tc	www/discos-pizarra/pizarra-78rpm-odeon-183-413-orquesta-tipica-argentina-f-canaro-garconnere-margarita-silvestre~x299130128
 	1931-08-13_Canto-Por-No-Llorar	t78	canto-por-no-llorar-odeon-no-183-297a
 	1931-08-13_Lo-Que-Nunca-Te-Diran	eb	290478480135
+	1931-08-26_Criollazo	dg	6804249
 	1931-09-02_Madreselva	ti	02480002742906
 	1931-09-02_Sueno-De-Juventud	ti	02480002744641
 	1931-09-03_Confesion	ti	02480002744221
+	1931-10-09_Anclao-En-Paris	tc	www/discos-pizarra/disco-pizarra-odeon-orquesta-canaro-clyde-vals-anclao-paris-tango~x372718074
 	1931-10-09_Sueno-De-Juventud	ti	02480002744627
+	1931-10-09_Taconeando	tc	www/discos-pizarra/francisco-canaro-taconeando-gloria-guapo-tango-odeon-4760-a-1931-gramofono~x587010322
 	1931-10-09_Tomo-Y-Obligo	ps	TANGO-78-rpm-RECORD-Odeon-FRANCISCO-CANARO-Sueo-chino-SPAIN-Tomo-y-obligo/300732170031
+	1931-10-14_Gloria-De-Guapo	tc	www/discos-pizarra/francisco-canaro-taconeando-gloria-guapo-tango-odeon-4760-a-1931-gramofono~x587010322
 	1931-10-23_El-Opio	ti	02480002741596
 	1931-10-23_Porque-Sera	ti	02480002744627
 	1931-10-26_Taconeando	ti	02480002744665
@@ -1001,12 +1169,15 @@
 	1931-11-04_Serenata-Maleva	ti	02480002743583
 	1931-11-21_A-Su-Memoria	ti	02480002741299
 	1931-11-23_El-Aguacero	ti	02480002741299
+	1931-12-04_El-Bailarin-De-Salon	dg	5100020
+	1931-12-24_He-Buscado-En-Cien-Bocas-Tu-Beso	dg	18313312
 	1932-01-12_Il-Piccolo-Navio	ti	02480002745297
 	1932-01-12_Madreselva	ti	02480002745297
 	1932-01-12_Yo-No-Se-Que-Me-Han-Hecho-Tus-Ojos	ti	02480002745297
 	1932-02-17_Crease-O-No	t78	crease-o-no-disco-nacional-odeon-no-4780-a
 	1932-02-17_Punto-Bravo	ti	02480002740964
 	1932-03-18_La-Marcha-Nupcial	ti	02480002740780
+	1932-03-21_Clyde	tc	www/discos-pizarra/disco-pizarra-odeon-orquesta-canaro-clyde-vals-anclao-paris-tango~x372718074
 	1932-03-30_Pan-Duro	ti	02480002742616
 	1932-04-11_Inspiracion	ti	02480002743705
 	1932-04-21_Canto-Por-No-Llorar	t78	canto-por-no-llorar-columbia-no-j-2805
@@ -1017,6 +1188,7 @@
 	1932-05-04_Para-Ti-Madre	ti	02480002743736
 	1932-05-13_Merza-Burrera	ti	02480002742128
 	1932-05-13_Novia-Del-Mar	ti	02480002743446
+	1932-05-27_Sube-Y-Baja	eb	224316342953
 	1932-06-08_Cara-Sucia	ti	02480002744108
 	1932-06-08_Federacion	ti	02480002744108
 	1932-06-08_Ramona	ti	02480002744108
@@ -1036,6 +1208,7 @@
 	1932-10-22_La-Flor-De-Los-Gauchos	ti	02480002744313
 	1932-10-29_Cuando-Vuelva	ti	02480002744320
 	1932-11-07_Pero-Aquel-Muchacho	ti	02480002740506
+	1932-11-24_Recuerdos-Del-Pasado	dg	14285730
 	1932-11-24_Rosa-De-Amor	t78	rosa-de-amor-disco-nacional-odeon-no-4830-a
 	1932-12-05_Botines-Viejos	ti	02480002740506
 	1932-12-12_Rencor	ti	02480002742302
@@ -1049,62 +1222,102 @@
 	1933-03-30_Silencio	ti	02480002744498
 	1933-04-17_Noches-De-Atenas	ti	02480002744498
 	1933-05-12_Vida-Perra	ti	02480002743903
+	1933-06-16_Araca-La-Cana	dg	17059986
 	1933-06-16_Tres-Esperanzas	ti	02480002740056
+	1933-07-19_El-Acomodo	dg	32269812
 	1933-07-19_Plegaria	ti	02480002743903
 	1933-07-26_Acacias	ti	02480002740063
+	1933-08-17_Si-Soy-Asi	dg	12336464
 	1933-09-01_Sufro	ia	78_sufro-i-suffer_orquesta-tipica-francisco-canaro-canaro-blanco_gbia3007687b
 	1933-10-17_Margarita-Flor-Del-Monte	ti	02480002743828
 	1933-10-19_Mar-Adentro	ti	02480002742968
 	1933-10-20_Pajarito-Errante	ti	02480002742968
+	1933-11-13_Que-Haces-Que-Haces	dg	23443199
 	1933-11-13_Telaranas	ti	02480002744801
 	1933-11-21_Promesa	t78	promesa-disco-criollo-odeon-no-4877-b
 	1933-12-11_Campanas-De-Bronce	ti	02480002744054
 	1933-12-11_Milonga	45	78rpm/record/ot122
 	1933-12-11_Puerto-Nuevo	ti	02480002745228
 	1933-12-11_Quisiera-Amarte-Menos	ti	02480002744054
+	1934-01-29_No-Quiero-Verlo-Mas	dg	23443199
 	1934-01-29_Santa-Milonguita	ti	02480002744276
+	1934-02-21_Decime-Adios	dg	12903730
+	1934-02-21_Diez-Anos	dg	14251877
+	1934-03-27_Canto	dg	6908662
 	1934-03-27_Esquinas-Portenas	t78	esquinas-portenas-disco-nacional-odeon-no-4890-b
+	1934-03-27_Farolero	dg	14251877
+	1934-04-30_El-Tigre-Millan	dg	2270157
 	1934-05-04_El-Tango-De-La-Mula	ti	02480002741718
+	1934-05-04_Un-Jardin-De-Ilusion	tc	www/discos-pizarra/pizarra-78rpm-10-odeon-203-649-orquesta-argentina-f-canaro-un-jardin-ilusion-confesion~x285802873
 	1934-05-04_Yo-No-Se-Porque-Te-Quiero	t78	yo-no-se-por-que-te-quiero-odeon-no-250-743
 	1934-05-22_El-Tigre-Millan	t78	el-tigre-millan-disco-criollo-odeon-no-16280-b
 	1934-06-07_Churrasca	t78	churrasca-odeon-no-ra-159-240-a
+	1934-06-07_El-Pescante	dg	13353441
+	1934-06-07_Lirio-Blanco	dg	7810155
+	1934-06-07_Orquideas-A-La-Luz-De-La-Luna	dg	11867810
+	1934-07-20_Barcarola-Del-Riachuelo	dg	29626039
+	1934-08-01_La-Cancion-De-La-Ribera	dg	13353441
 	1934-09-19_Mi-Buenos-Aires-Querido	t78	mi-buenes-aires-querido-odeon-no-ra-159240-b
 	1934-09-21_Ronda-Del-Querer	ti	02480002743682
 	1934-10-20_Madrecita-De-Pompeya	ti	02480002742883
 	1934-10-20_Media-Noche	ti	02480002745204
+	1934-11-14_Mentir-En-Amor-Es-Pecado	dg	6798466
 	1934-11-14_Quien-Mas-Quien-Menos	ti	02480002742890
+	1934-11-16_Negrito	dg	3836985
+	1934-11-16_S-O-S	eb	820248763061
+	1934-11-16_Siempre-Asi	dg	19146253
 	1934-11-21_Charamusca	ti	02480002742258
+	1934-11-21_Tormento	dg	7810155
 >CanaroFrancisco/Singles/1935-1939/|_Canaro.webp
 	1935-03-20_Alma-Del-Bandoneon	ti	02480002740223
+	1935-03-20_Cambalache	dg	6804581
 	1935-03-20_No-Hay-Que-Hacerse-Mala-Sangre	ia	78_no-hay-hacerse-mala-sangre_orquesta-tipica-francisco-canaro-canaro-pelay_gbia3002485a
 	1935-03-25_Soledad	t78	soledad-disco-criollo-odeon-no-4934-a
 	1935-04-23_Noches-De-Buenos-Aires	t78	noches-de-buenos-aires-odeon-no-o-t-185
 	1935-04-25_Ojos-Negros-Que-Fascinan	ti	02480002742333
 	1935-04-25_Sueno-De-Muneca	t78	sueno-de-muneca-odeon-no-4945-a
 	1935-06-11_El-Pinche	ti	02480002740278
+	1935-06-11_Larga-Las-Penas	dg	7623384
 	1935-06-11_Poema	t78	poema-odeon-no-4945-b
 	1935-06-18_Amor-Y-Primavera	ti	02480002740278
+	1935-06-18_Canaro	dg	14991878
+	1935-06-18_Hotel-Victoria	dg	7709290
+	1935-06-18_Los-Patinadores	dg	7709290
 	1935-08-18_Aunque-No-Lo-Crean	ps	10-78-RPM-SHELLAC-RECORD-FRANCISCO-CANARO-ODEON-4953-ARGENTINA/313953086276
 	1935-08-18_Casas-Viejas	ti	02480002740674
 	1935-08-18_Tu-Y-Yo	ti	02480002744931
+	1935-08-21_La-Copla-Portena	dg	7622949
 	1935-09-21_La-Copla-Portena	ti	02480002744719
+	1935-09-30_El-Que-A-Hierro-Mata	dg	14328741
 	1935-10-22_Horizontes	t78	horizontes-parlophone-n-o-t-143
+	1935-10-22_Nena	dg	6804522
 	1935-11-08_Solo-Una-Novia	ti	02480002741114
+	1935-12-03_Donde	dg	12973330
 	1935-12-31_Olvido	ti	02480002743545
 	1936-03-12_Yo-Tambien-Sone	t78	yo-tambien-sone-disco-nacional-odeon-no-279-044
 	1936-03-18_Olvido	t78	olvido-odeon-no-279-044
+	1936-03-31_Canillita	dg	21538753
 	1936-04-03_Las-Doce-Menos-Cinco	ti	02480002742975
+	1936-04-13_El-Cabure	dg	21295033
 	1936-05-12_Como-Las-Flores	ti	02480002741756
 	1936-05-20_Despues-Arreglamos	ti	02480002744450
+	1936-07-14_Amor	dg	6804311
 	1936-08-26_Envidia	ti	02480002741886
 	1936-08-26_Que-Le-Importa-Al-Mundo	ti	02480002743989
 	1936-09-01_Como-Te-Quiero	ti	02480002740834
 	1936-09-01_El-Porteno	ti	02480002741657
+	1936-10-06_Siempre-Unidos	dg	14328741
+	1936-10-25_Etincelles	dg	6958611
+	1936-11-18_Carino-Gaucho	dg	33393176
+	1936-11-20_Milonguita	dg	6958611
 	1937-02-19_En-Voz-Baja	ti	02480002743125
 	1937-02-19_Milagro	ti	02480002743125
+	1937-04-10_Mal-De-Ausencia	dg	35574235
 	1937-04-10_Resentimiento	ti	02480002744146
 	1937-04-19_Desconfiale	t78	desconfiale-odeon-no-ot-154
 	1937-04-19_Mi-Corazon	ti	02480002744146
+	1937-04-26_Novia	dg	21242872
+	1937-05-24_Si-Yo-Te-Contara	dg	2236776
 	1937-05-26_Milonga-De-Mis-Amores	ti	02480002743163
 	1937-07-12_La-Punalada	ti	02480002742609
 	1937-08-06_Cara-Sucia	t78	cara-sucia-disco-criollo-odeon-no-5039-a
@@ -1128,34 +1341,57 @@
 	1938-03-15_Vibraciones-Del-Alma	t78	vibraciones-del-alma-columbia-odeon-no-4106-a
 	1938-03-24_Corazon-De-Oro	t78	corazon-de-oro-odeon-no-5084-b
 	1938-03-24_Lorenzo	ti	02480002742807
+	1938-03-24_Pampa	eb	287383566823
 	1938-03-24_Retintin	ti	02480002742807
 	1938-03-24_Rodriguez-Pena	t78	rodriguez-pena-columbia-odeon-no-4105-b
+	1938-04-21_Historia-Sentimental	dg	6798542
+	1938-04-21_Indiferencia	dg	19255981
 	1938-04-21_Marianito	eb	353781376572
+	1938-04-21_Sueno-De-Amor	dg	32446026
 	1938-04-21_Zorro-Gris	eb	353781376572
+	1938-05-09_Venticinco-De-Mayo	dg	32446026
 	1938-05-23_Por-Tu-Querer	ti	02480002743910
 	1938-06-20_Adios-Muchachos	ti	02480002737001
 	1938-06-20_Pura-Parada	ti	02480002737001
+	1938-07-14_El-Garron	eb	236729181419
+	1938-07-14_La-Maleva	dg	12305947
 	1938-07-26_Frio	ti	02480002742043
 	1938-08-22_Desaliento	ti	02480002742043
 	1938-08-22_Nada-Mas	ti	02480002743262
 	1938-08-22_Tu-Bondad	ti	02480002744955
+	1938-10-07_Ciertos-Amores	dg	12973344
+	1938-10-07_Desprecio	dg	12973344
+	1938-10-07_Vieja-Amiga	dg	12305947
+	1938-11-18_Callecita-De-Mi-Novia	dg	12128677
+	1938-11-18_Madreselva	dg	13179045
+	1938-11-18_Olvidame	dg	12128677
+	1938-11-18_Quebranto	tc	www/discos-pizarra/disco-pizarra-quebranto-tango-sangre-suburbio-tango-orq-f-canaro~x490820882
+	1938-11-18_Sangre-De-Suburbio	dg	15658690
+	1938-11-25_Yo-Sere-Como-Tu-Quieras	dg	17828161
 	1938-11-29_Farolito	ti	02480002741978
+	1938-12-03_Suplicio	dg	17828161
 	1938-12-13_Mano-A-Mano	ti	02480002742944
 	1939-02-27_Por-Vos-Yo-Me-Rompo-Todo	ti	02480002742944
 	1939-03-28_Noche-De-Estrellas	ti	02480002744887
 	1939-03-28_Que-Importa	t78	que-importa-odeon-no-ot-179
 	1939-03-28_Tormenta	ti	02480002744870
+	1939-03-28_Vanidad	dg	13477563
 	1939-03-30_La-Zandunga	ti	02480002740018
 	1939-03-30_Lo-Pasao-Paso	ti	02480002742722
+	1939-03-30_Y-No-Puede-Ser	dg	32269029
 	1939-04-13_Quiero-Verte-Una-Vez-Mas	t78	quiero-verte-una-vez-mas-odeon-no-ot-180
 	1939-05-04_Mas-Alla	t78	mas-alla-odeon-no-ot-180
 	1939-05-04_Te-Quiero-Todavia	ti	02480002742913
+	1939-05-19_Al-Subir-Al-Bajar	dg	16203645
 	1939-05-22_El-Irresistible	t78	el-irresistible-odeon-no-4116-b
 	1939-09-11_Abandonada	ti	02480002740117
+	1939-09-11_Mosterio	dg	21461251
 	1939-09-11_Salud-Dinero-Y-Amor	ti	02480002740117
 	1939-10-09_La-Milonga-De-Buenos-Aires	ti	02480002742524
 	1939-10-09_Todo-Te-Nombra	t78	todo-te-nombra-decca-no-21084-b
+	1939-10-09_Yo-Naci-Para-Querer	dg	6806993
 	1939-10-25_El-Vino-Triste	ti	02480002741763
+	1939-11-23_No-Hay-Tierra-Como-La-Mia	dg	18313264
 	1939-11-23_Sinfonia-De-Arrabal	ti	02480002744542
 >CanaroFrancisco/Singles/1940-1944/|_Canaro.webp
 	1940-03-14_Cuando-Estaba-Enamorado	ti	02480002741909
@@ -1175,12 +1411,16 @@
 	1940-09-30_En-Un-Beso-La-Vida	ti	02480002741817
 	1940-10-03_Parque-Patricios	ti	02480002740827
 	1940-10-14_Un-Amor	ti	02480002741817
+	1940-10-28_Tan-Solo-Tu	dg	14948290
 	1941-01-09_En-La-Noche-Azul	ti	02480002742760
 	1941-01-09_Lo-Que-El-Viento-Se-Llevo	ti	02480002742760
 	1941-01-15_Charlemos	ti	02480002740698
+	1941-02-28_Reliquias-Portenas	dg	14948290
 	1941-05-09_Bajo-El-Cielo-Azul	ti	02480002741725
+	1941-05-09_En-Esta-Tarde-Gris	dg	26218682
 	1941-05-15_El-Recuerdo-De-Los-Tangos	ti	02480002741978
 	1941-05-15_El-Tigre	ti	02480002741725
+	1941-05-30_Mintieron-Tus-Labios	dg	26218682
 	1941-06-06_Tres-Recuerdos	ti	02480002744917
 	1941-06-19_Copa-De-Ajenjo	ti	02480002744917
 	1941-10-06_El-Cuarteador	ti	02480002741466
@@ -1193,9 +1433,12 @@
 	1941-12-17_Sencillo-Y-Compadre	ti	02480002744344
 	1942-01-13_El-Chino-Pantaleon	ti	02480002741350
 	1942-01-16_Rosa-Morena	ti	02480002744702
+	1942-04-06_Amando-En-Silencio	dg	6958592
+	1942-04-06_En-El-Viejo-Cafe	dg	6958592
 	1942-04-22_Los-Ojos-Mas-Lindos	ti	02480002742845
 	1942-04-24_Corazon-Encadenado	ti	02480002740957
 	1942-04-24_Vivire-Con-Tu-Recuerdo	ti	02480002742845
+	1942-06-22_Es-Mejor-Perdonar	dg	6958556
 	1942-06-22_Los-Harapos-De-Mis-Suenos	ti	02480002742821
 	1942-06-22_Maria-Remedios	ti	02480002743019
 	1942-06-22_Mariposa-Nocturna	ti	02480002743019
@@ -1213,15 +1456,19 @@
 	1942-12-30_Nido-Gaucho	ti	02480002741459
 	1943-03-18_Asi-Se-Baila-El-Tango	ti	02480002740414
 	1943-03-18_Mandeme-Mi-General	ti	02480002740414
+	1943-05-05_Sonar-Y-Nada-Mas	dg	13085391
 	1943-05-05_Tango-Brujo	ti	02480002744696
 	1943-05-05_Y-No-La-Puedo-Olvidar	ti	02480002741350
 	1943-05-12_Candombe	ti	02480002744696
+	1943-05-26_Cada-Vez-Que-Me-Recuerdes	dg	23536088
+	1943-05-26_Ojos-Verdes	dg	23536088
 	1943-06-07_Francia	eb	354732436973
 	1943-06-07_Nueve-Puntos	eb	354732436973
 	1943-08-04_Mi-Reflexion	ti	02480002742951
 	1943-08-17_Guitarra	ti	02480002745020
 	1943-08-17_Valsecito-Amigo	ti	02480002745020
 	1943-09-01_Queja-Indiana	ti	02480002741541
+	1943-11-10_Tristeza-Marina	dg	19019518
 	1943-11-17_El-Tropero-Del-Amor	ia	78_el-tropero-del-amor_francisco-canaro-tefilo-lespes-yaravi_gbia3001733b
 	1943-11-25_Sombras-Nada-Mas	t78	sombras-nada-mas-odeon-no-5241-a
 	1943-12-15_Aleluya	t78	aleluya-odeon-no-5241-b
@@ -1236,24 +1483,35 @@
 	1944-06-07_Cristal	ti	02480002740971
 	1944-06-07_Rosa-De-Tango	ti	02480002744191
 	1944-06-14_Serenata	ti	02480002744191
+	1944-06-19_Besame-Mi-Amor	dg	11834835
 	1944-06-19_Dos-Minutos	ti	02480002743279
 	1944-06-28_Esta-Noche-De-Luna	ti	02480002741916
+	1944-06-28_Paloma	dg	13149276
 	1944-07-07_Tres-Amigos	ti	02480002744900
 	1944-07-19_Estampa-Del-800	ti	02480002741930
 	1944-07-21_Naipe	ti	02480002743279
 	1944-07-26_Llamandote	ti	02480002741930
 	1944-11-15_Copas-Amigas-Y-Besos	ti	02480002740919
 	1944-11-15_Incomprension	ti	02480002740919
+	1944-12-06_A-La-Lima-Y-Al-Limon	tc	www/discos-pizarra/78-rpm-odeon-francisco-canaro-lima-limon-torrente-tango~x303829483
+	1944-12-06_Torrente	tc	www/discos-pizarra/78-rpm-odeon-francisco-canaro-lima-limon-torrente-tango~x303829483
 	1944-12-22_Destellos	t78	destellos-odeon-no-5261-a
+	1944-12-22_Tres-Palabras	dg	11462042
 >CanaroFrancisco/Singles/1945-1949/|_Canaro.webp
 	1945-03-09_Cafe-De-Los-Angelitos	ti	02480002744962
 	1945-03-09_Tu-El-Cielo-Y-Tu	ti	02480002744962
 	1945-05-07_Me-Gusta-Bailar-Milonga	ti	02480002743118
 	1945-05-07_Miguel-Angel	ti	02480002743118
+	1945-05-16_Duelo-Criollo	dg	11834835
 	1945-05-23_Se-Llama-Dolores	ti	02480002742517
 	1945-08-24_Adios-Pampa-Mia	ti	02480002740131
 	1945-08-24_Niebla	ti	02480002743354
+	1945-08-31_Serafin-Y-Julia-Paz	tc	www/discos-pizarra/pizarra-odeon-279-917-francisco-canaro-adios-pampa-mia-serafin-julia-paz~x484030817
+	1945-09-04_Pregonera	dg	16216509
+	1945-09-13_Cotorrita-De-La-Suerte	tc	www/discos-pizarra/pizarra-odeon-184-744-francisco-canaro-cotorrita-suerte-preconera~x484248207
 	1945-10-17_Viernes-De-Pasion	ti	02480002744559
+	1945-10-19_Tristeza-Criolla	dg	15582777
+	1945-11-06_Maria	dg	15582777
 	1945-12-14_Margo	ia	78_margo_francisco-canaro-y-su-orquesta-tipica-armando-pontier-homero-a-exposito-guil_gbia0072729a
 	1945-12-21_Cuatro-Lagrimas	ia	78_cuarto-lagrimas_francisco-canaro-y-su-orquesta-tipica-lito-bayardo-alberto-arenas_gbia0072729b
 	1945-12-28_La-Metralla	ti	02480002742517
@@ -1262,26 +1520,36 @@
 	1946-03-21_En-La-Noche-De-Tus-Ojos	ti	02480002744535
 	1946-03-21_Sin-Embargo-No-Estoy-Triste	ti	02480002744535
 	1946-04-09_Yira-Yira	ti	02480002741251
+	1946-06-07_Cuando-Estemos-Lejos	dg	35565799
+	1946-06-07_Para-Que-Lo-Oigan	dg	13085391
+	1946-08-20_Dejame-No-Quiero-Verte-Mas	dg	11424439
+	1946-08-20_Sin-Palabras	dg	11424439
 	1946-09-04_Rosa-De-Otono	ti	02480002742067
 	1946-09-10_La-Tablada	ti	02480002743804
 	1946-09-10_Pena-Gris	ti	02480002743804
 	1946-12-23_Reliquias-Portenas	ti	02480002745105
+	1946-12-23_Si-Tu-Me-Quisieras	dg	14987118
 	1947-01-31_La-Melodia-De-Nuestro-Adios	ti	02480002742494
+	1947-01-31_Paz-En-Mi-Tierra	dg	13436805
 	1947-03-26_Sentimiento-Gaucho	ti	02480002744399
 	1947-03-26_Sus-Ojos-Se-Cerraron	ti	02480002744399
 	1947-05-28_Dejame-No-Quiero-Verte-Mas	eb	354301612551
 	1947-05-28_La-Cancion-De-Buenos-Aires	eb	354301612551
 	1947-06-12_Angelitos-Negros	ti	02480002740322
 	1947-06-12_Vine-A-Verte	ti	02480002740322
+	1947-07-31_El-Pollito	dg	12187149
 	1947-09-15_Yo-Solo-Se	ti	02480002745303
 	1947-10-20_Los-Ejes-De-Mi-Carreta	eb	354301612552
 	1947-10-22_Cantemos-Para-Olvidar	eb	354301612552
+	1947-10-22_Don-Juan	dg	12187149
 	1947-10-22_La-Milonga-De-Buenos-Aires	ps	FRANCISCO-CANARO-78-RPM-La-milonga-de-Buenos-Aires-DON-JUAN/222390133875
 	1948-01-15_El-Choclo	eb	354569460490
 	1948-01-15_La-Ultima-Copa	eb	127736331666
 	1948-04-12_Amemonos	ps	ORQUESTA-TIPICA-FRANCISCO-CANARO-Amemonos-Con-La-Otra-Tango-78-rpm-disc-A/153157285790
 	1948-04-12_Con-La-Otra	ti	02480002740261
 	1948-09-10_Destino-De-Trapo	ti	02480002741152
+	1948-09-10_Naipe-Marcado	dg	16913805
+	1948-09-10_Por-La-Guella	dg	16913805
 	1949-02-17_Ojos-Negros	ti	02480002743507
 	1949-02-17_Re-Fa-Si	ti	02480002743507
 	1949-07-13_Borracho-Por-Que-Digo-La-Verdad	ti	02480002743743
@@ -1302,6 +1570,7 @@
 	1950-12-06_La-Maleva	eb	354734491375
 	1950-12-06_Las-Tres-De-La-Manana	eb	354734491379
 	1950-12-06_Piccolo-Navio	ti	02480002741558
+	1951-06-12_Bandoneon-Arrabalero	dg	13190721
 	1951-06-19_Los-Indios	eb	354734491373
 	1951-06-19_Tierra-Negra	eb	354734491373
 	1951-07-20_El-Esquinazo	eb	354734491380
@@ -1319,7 +1588,9 @@
 	1952-04-07_Jueves	eb	354734491374
 	1952-05-14_El-Entrerriano	eb	354571688084
 	1952-05-14_El-Internado	eb	354734491403
+	1952-05-14_Lo-Han-Visto-Con-Otra	dg	13363976
 	1952-05-14_Lunes	eb	354734491403
+	1952-05-29_Cualquier-Cosa	dg	36856456
 	1952-08-11_Cuna-De-Fango	ti	02480002742005
 	1952-09-16_Felicia	t78	felicia-angel-records-no-oh-9015
 	1952-09-16_La-Barra-Fuerte	eb	298556714825
@@ -1423,6 +1694,12 @@
 	1933-06-20_Cobardia	d	800039737
 	1933-06-20_Oid-El-Vals	d	800039736
 	1934-12-19_Chiribiribi	d	200018565
+>CarelliQuintetoCriollo/Singles/1910-1914/|_Carelli.webp
+	1913_El-Guapo	t78	el-guapo-atlanta-no-65550-2
+	1913_El-Matungo	dg	26776124
+>CaroJulioDe/LPs/|
+	TEV 151 - Julio De Caro y su orquesta típica	tv	151
+	TEV 810 - Mala Junta	tv	810
 >CaroJulioDe/Singles/1920-1924/|_De-Caro.webp
 	1924-12-04_Pobre-Margot	d	600004743
 	1924-12-04_Todo-Corazon	t78	todo-corazon-victor-no-79508-b-2
@@ -1650,11 +1927,13 @@
 	1931_Paginas-Muertas	ti	02480002704751
 	1931_Repeluz	t78	repeluz-magenta-no-pm-101-2
 	1931_Sin-Tacha	ti	02480002704751
+	1931_Tene-Cuidado	dg	34190629
 	1931_Tu-Violin	ti	02480002704737
 	1932_Patria-Querida	t78	patria-querida-brunswick-no-9802-a
 >CaroJulioDe/Singles/1935-1939/|_De-Caro.webp
 	1935-06-18_Ideal	a
 	1935-06-18_Taba-Calzada	a
+	1936-03-13_Yo-No-Se-Si-Me-Queres	a
 	1936-08-10_Derecho-Viejo	t78	derecho-viejo-decca-no-g-20484-b
 	1936-08-10_Pienso-En-Ti	t78	pienso-en-ti-decca-no-g-20484-a
 	1936-12-13_Aquel-Amor	ti	02480002704058
@@ -1720,6 +1999,12 @@
 >CastilloAlberto/LPs/|
 	Al Compás De Un Tango	dg	10871970
 	Barajando Recuerdos	dg	12531284
+>CastilloAlberto/Singles/1940-1944/|_2.webp
+	1944-06-09_Amarras_Castillo	ti	02480002723042
+	1944-06-09_Pajarito_Castillo	ti	02480002723332
+	1944-08-08_Otra-Noche_Castillo	ti	02480002723035
+>CastilloAlberto/Singles/1940-1944/|_4.webp
+	1944-06-09_Amarras_Castillo	ti	02480002723042
 >CastilloAlberto/Singles/1940-1944/|_Castillo.webp
 	1943-12-07_Luna-De-Arrabal	ti	02480002723271
 	1943-12-07_Mano-Blanca	ti	02480002723271
@@ -1740,6 +2025,10 @@
 	1944-08-08_Otra-Noche	ti	02480002723325
 	1944-12-20_Cafe	ti	02480002723134
 	1944-12-20_El-Paseandero	ti	02480002723134
+>CastilloAlberto/Singles/1945-1949/|_2.webp
+	1945-04-24_La-Pulpera-De-Santa-Lucia_Castillo	ti	02480002723219
+	1945-10-22_Silbando_Castillo	ia	78_silbando_alberto-castillo-y-su-orquesta-tpica-alberto-castillo-catulo-castillo-seb_gbia0400689b
+	1946-05-23_Soy-Porteno-Y-Soy-Varon_Castillo	ia	78_soy-porteo-y-soy-varon_alberto-castillo-y-su-orquesta-tpica-roque-m-potenze-el-m_gbia0400687b
 >CastilloAlberto/Singles/1945-1949/|_Castillo.webp
 	1945-04-24_La-Pulpera-De-Santa-Lucia	ti	02480002723219
 	1945-04-24_Menta-Y-Cedron	ti	02480002723219
@@ -1766,6 +2055,8 @@
 	1949-05-06_Alma-De-Bohemio	ti	02480002723127
 	1949-05-06_Con-Permiso-Soy-El-Tango	ti	02480002723103
 	1949-07-14_Pobre-Mi-Madre-Querida	ti	02480002723363
+>CastilloAlberto/Singles/1950-1954/|_2.webp
+	1951-06-15_La-Vieja-Serenata_Castillo	ti	02480002723240
 >CastilloAlberto/Singles/1950-1954/|_Castillo.webp
 	1950-01-25_El-Cachivachero	ti	02480002723172
 	1950-01-25_Ha-Pasado	ti	02480002723172
@@ -1778,6 +2069,8 @@
 	1954-07-19_Ay-Dolores	ti	02480002723073
 	1954-07-19_En-Buenos-Aires	ti	02480002723073
 	1954-07-30_La-Pulguita	ti	02480002723240
+>CastilloAlberto/Singles/1955-1959/|_2.webp
+	1955-11-29_Cuando-Volveras_Castillo	ti	02480002723066
 >CastilloAlberto/Singles/1955-1959/|_Castillo.webp
 	1955-11-18_Mi-Noche-Triste	ti	02480002723295
 	1955-11-24_Muchachitas-De-Madrid	ti	02480002723301
@@ -1847,6 +2140,7 @@
 	1939-09-12_Quiero-Verte-Una-Vez-Mas	ti	02480002732938
 	1939-11-03_Ay-Aurora	t78	ay-aurora-decca-no-21083b
 >Charlo/Singles/1940-1944/|_Charlo.webp
+	1940-03-27_Flor-De-Fango	ti	02480002733317
 	1940-03-27_Las-Vueltas-De-La-Vida	ti	02480002733164
 	1940-03-27_Margot	ti	02480002733317
 >Charlo/Singles/1950-1954/|_Charlo.webp
@@ -1858,6 +2152,8 @@
 	1952-11-27_Rondando-Tu-Esquina	t78	rondando-tu-esquina-angel-records-no-oh-9037
 	1952-11-27_Seis-Dias	t78	seis-dias-angel-records-no-oh-9037
 	1952-11-27_Viejas-Alegrias	ti	02480002732341
+	1954-07-12_Don-Juan	ia	78_don-juan_charlo-ernesto-ponzio-ricardo-j-podest-charlo_gbia0400706a
+	1954-07-12_Sin-Ella	ia	78_sin-ella_charlo-charlo-ctulo-castillo_gbia0400706b
 >CiccoMinottoDi/Singles/1915-1919/|_Di-Cicco.webp
 	1917-05-08_Alma-Gaucha	d	600001151
 	1917-05-08_La-Beba	d	600001157
@@ -1871,13 +2167,24 @@
 	1917-05-10_La-Cumparsita	t78	la-cumparsita-victor-no-69579-a
 >CiccoMinottoDi/Singles/1920-1924/|_Di-Cicco.webp
 	1922-06-29_Pembere	t78	pembere-victor-no-73515-a
+	1922-06-30_Central-05	d	600004336
 >CiccoMinottoDi/Singles/1930-1934/|_Di-Cicco.webp
+	1930_Amarguras-Del-Pasado	d	2000440038
+	1930_Barrabas	d	2000440231
 	1930_Cachito-De-Cielo	d	2000440033
+	1930_Como-Aman-Las-Mujeres	d	2000440419
 	1930_Don-Segundo-Sombra	d	2000388009
+	1930_Grandulon	d	2000440242
+	1930_Ilusiones	d	2000388061
+	1930_Juramento	d	2000440409
+	1930_Tendras-La-Culpa	d	2000440232
+	1930_Ternuras	d	2000388062
 	1931_Mirate-En-Este-Espejo	t78	mirate-en-este-espejo-columbia-no-4935-x
 	1931_Nido-De-Amor	t78	nido-de-amor-columbia-no-a-5027-a
 	1931_Palomita-Blanca	t78	palomita-blanca-columbia-no-4935-x
+	1931_Pucho	d	2000471745
 	1931_Que-Sapa-Senor	t78	que-sapa-el-senor-columbia-no-df-799
+	1931_Si-Tu-Fueras-Mi-Novia	d	2000471743
 >CiriacoJavierDi/LPs/|
 	7	it	us/1603832399
 	Doble o Nada	it	us/1604204199
@@ -1920,7 +2227,6 @@
 	1928_Bati-Que-Si	a	cobiantracks/2024/01/02726-bati-que-si-carlos-cobian-y-su
 	1928_Che-Papusa-Oi	d	2000121233
 	1928_Gato	a	cobiantracks/2024/01/02702-gato-carlos-cobian-y-su-orquesta
-	1928_La-Prisionera	t78	la-prisionera-columbia-no-2953-x
 	1928_Manojo-De-Claveles	a	cobiantracks/2024/01/02714-manojo-de-claveles-carlos-cobian
 	1928_Mujer-De-Fuego	a	cobiantracks/2024/01/02707-mujer-de-fuego-carlos-cobian-y-su
 	1928_Pinta-Brava	a	cobiantracks/2024/01/02723-pinta-brava-carlos-cobian-y-su
@@ -1930,6 +2236,7 @@
 	1944-05-03_La-Casita-De-Mis-Viejos	a	cobiantracks/2024/01/02810-la-casita-de-mis-viejos-juan
 >CorsiniIgnacio/Singles/1910-1914/|_Corsini.webp
 	1912-02-02_Noche-Silenciosa	d	600002648
+	1912-02-03_Acuerdate-De-Mi	d	600002669
 	1912-02-03_En-Mi-Rancho	ti	02480002722304
 	1912-02-03_La-Criollita-Del-Pago	d	600002660
 	1912-02-03_Las-Violetas	d	600002657
@@ -1939,6 +2246,7 @@
 	1912-02-20_A-Mi-Madre	ti	02480002722007
 	1912-02-20_Casta-Paloma	ti	02480002722304
 	1912-02-20_El-Paisano	t78	el-paisano-victor-no-63869-b
+	1912-02-20_La-Conscripcion	gs	2009/04/ignacio-corsini-graba-para-la-victor
 >CorsiniIgnacio/Singles/1920-1924/|_Corsini.webp
 	1921_La-Muerte-De-Milonguita	t78	la-muerte-de-milonguita-disco-nacional-odeon-no-203-a
 	1921_Mis-Ilusiones-Perdidas	t78	mis-ilusiones-perdidas-disco-nacional-odeon-no-203-b
@@ -1949,10 +2257,10 @@
 	1922_El-Poder-De-Tus-Ojos	ti	02480002722595
 	1922_Mi-Guitarra	ti	02480002722212
 	1922_Patotero-Sentimental	t78	el-patotero-sentimental-disco-nacional-odeon-no-18401-a
+	1922_Pobre-Cotorro	ti	02480002722595
 	1923_Cachonguita	t78	cachonguita-el-metejon-disco-nacional-odeon-no-18410-b
 	1923_Cap-Polonio	t78	cap-polonio-disco-nacional-odeon-no-219-a
 	1923_El-Huerfano	ti	02480002722267
-	1923_El-Pericon-De-Martin-Fierro	t78	el-pericon-de-martin-fierro-disco-nacional-odeon-no-18413-a
 	1923_Flor-Marchita	ti	02480002706960
 	1923_La-Cancion-Del-Cabaret	ti	02480002706960
 	1923_Metejon	t78	metejon-el-metejon-disco-nacional-odeon-no-18410-b
@@ -1973,24 +2281,33 @@
 	1925_Alma-Gaucha	ti	02480002722496
 	1925_Cuando-Lloran-Los-Zorzales	ti	02480002722588
 	1925_Destellos	ti	02480002722243
+	1925_Engualichaste-Mi-Corazon	dg	13066275
 	1925_La-Carreta	ti	02480002722373
 	1925_Llora-Tu-Propio-Dolor	t78	llora-tu-propio-dolor-disco-nacional-odeon-no-18444-b-2
 	1925_Muchacho	ti	02480002722496
 	1925_Pelossi	ti	02480002722618
 	1925_Pillerias	ti	02480002722588
 	1925_Puras-Plumas	ti	02480002722618
+	1925_Sarita	gs	2010/02/ediciones-extranjeras-de-ignacio_07
 	1925_Senor	ti	02480002722373
 	1925_Sonrisas	t78	sonrisas-disco-nacional-odeon-no-18431-b
 	1925_Trago-Amargo	ti	02480002722243
 	1926-11-13_No-Te-Enganes-Corazon	t78	no-te-enganes-corazon-disco-nacional-odeon-no-18482-a
+	1926-11-13_Si-La-Ven-Por-Estos-Pagos	ce	ignaciocorsinigrabaciones/2009/03/sobre-las-primeras-grabaciones
+	1926-12-01_Presumida	ce	ignaciocorsinigrabaciones/2009/03/sobre-las-grabaciones-realizadas-por
+	1926-12-02_Eche-Mas-Cana-Patron	ce	ignaciocorsinigrabaciones/2009/03/sobre-las-primeras-grabaciones
 	1926_A-Su-Memoria	t78	a-su-memoria-disco-nacional-odeon-no-18474-a
+	1926_Adorable-Noviecita	dg	19390999
 	1926_Caminito-De-La-Sierra	t78	caminito-de-la-sierra-disco-nacional-odeon-no-18474-b
 	1926_Comandante-Franco	ti	02480002722168
 	1926_En-La-Vieja-Pulperia	ti	02480002722410
+	1926_La-He-Visto-Con-Otro	dg	19390999
 	1926_La-Querencia	ti	02480002722410
 	1926_Los-Ojos-De-La-Grela	t78	los-ojos-de-la-grela-disco-nacional-odeon-no-18480-a
 	1926_Paris	ti	02480002722168
 	1926_Pum-Garibaldi	t78	pum-garibaldi-disco-nacional-odeon-no-18460-a
+	1926_Violetita	gs	2010/02/ediciones-extranjeras-de-ignacio_07
+	1927-01-31_Toda-Mia	ce	ignaciocorsinigrabaciones/2009/03/sobre-las-primeras-grabaciones
 	1927-02-21_Hojarasca	ti	02480002722359
 	1927-02-22_La-Espera	ti	02480002722359
 	1927-05-14_Gabino	ti	02480002722328
@@ -2014,6 +2331,7 @@
 	1927-11-14_Pebeta-Canyengue	t78	pebeta-canyengue-disco-nacional-odeon-no-18523-b
 	1927-11-17_Fumando-Espero	t78	fumando-espero-disco-nacional-odeon-no-18523-a
 	1927-11-21_Altar-Criollo	t78	altar-criollo-disco-nacional-odeon-no-18528-b
+	1927-11-21_La-Carreta	ce	ignaciocorsinigrabaciones/2009/04/sobre-las-grabaciones-realizadas-por
 	1927-11-21_La-Quema	t78	la-quema-disco-nacional-odeon-no-18524-a
 	1927-11-21_Triguenita	t78	triguenita-disco-nacional-odeon-no-18527-b
 	1927-11-21_Vidalita	t78	vidalita-disco-nacional-odeon-no-18528-a
@@ -2022,38 +2340,63 @@
 	1927-11-30_Tradicion-Gaucha	t78	tradicion-gaucha-disco-nacional-odeon-no-18526-b
 	1928-02-07_Adios-Muchachos	ti	02480002722021
 	1928-02-07_Lechuza	t78	lechuza-disco-nacional-odeon-no-18532-a
+	1928-02-10_Huella-Huella	gs	2009/04/ediciones-extranjeras-de-ignacio
+	1928-02-24_Huella-Huella	gs	2009/04/ediciones-extranjeras-de-ignacio
 	1928-02-24_Tradicion	t78	tradicion-disco-nacional-odeon-no-18537-a
 	1928-02-29_Andate-Con-La-Otra	ti	02480002722632
 	1928-02-29_Milonguero-Viejo	ti	02480002722021
 	1928-02-29_Senor-Comisario	ti	02480002722632
 	1928-03-23_Deja-Que-La-Gente-Diga	t78	deja-que-la-gente-diga-disco-nacional-odeon-no-18540-a
+	1928-03-23_Pobre-Gringo	ce	ignaciocorsinigrabaciones/2009/04/sobre-las-grabaciones-realizadas-por
 	1928-04-03_Articulo-De-Lujo	t78	articulo-de-lujo-disco-nacional-odeon-no-18538-a
+	1928-04-03_Cansancio	ce	ignaciocorsinigrabaciones/2009/04/sobre-las-grabaciones-realizadas-por
 	1928-04-03_Malandrin	t78	malandrin-disco-nacional-odeon-no-18545-a
 	1928-04-04_Madre-Mia	t78	madre-mia-disco-nacional-odeon-no-18538-b
 	1928-04-10_Deja-Que-La-Gente-Diga	t78	deja-que-la-gente-diga-disco-nacional-odeon-no-18540-a
 	1928-04-11_Chanta-Cuatro	t78	chanta-cuatro-disco-nacional-odeon-no-18541-b
 	1928-04-11_Organito	t78	organito-disco-nacional-odeon-no-18553-a
+	1928-04-16_El-Mal-Que-Me-Hiciste	ce	ignaciocorsinigrabaciones/2009/04/sobre-las-grabaciones-realizadas-por
+	1928-04-16_Invocacion-Al-Tango	ce	ignaciocorsinigrabaciones/2009/04/sobre-las-grabaciones-realizadas-por
 	1928-04-19_Martin-Fierro	ti	02480002722526
 	1928-06-14_Destellos	ti	02480002722106
+	1928-07-13_Han-De-Llorar-Tus-Ojos-La-Pena-Mia	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
+	1928-08-16_En-Un-Pueblito-De-Espana	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
+	1928-08-27_Abuelita	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
 	1928-08-27_Primera-Ilusion	t78	primera-ilusion-pobre-flor-disco-nacional-odeon-no-18565-a
 	1928-09-04_Bicho-Feo	ti	02480002722106
+	1928-09-04_Mi-Estrella	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
+	1928-09-04_Ramona	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
 	1928-09-24_Cualquier-Cosa	ti	02480002722571
+	1928-09-24_Refusilos	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
+	1928-10-02_De-Tierra-Adentro	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
 	1928-10-02_Piedad	ti	02480002722571
+	1928-10-24_Noviecita-Mia	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
+	1928-11-05_A-Lo-Gaucho	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
 	1928-11-06_Llevatelo-Todo	t78	llevatelo-todo-disco-nacional-odeon-no-18571-a
 	1928-11-26_Llevatelo-Todo	t78	llevatelo-todo-disco-nacional-odeon-no-18571-a
+	1928-11-26_Nunca	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
+	1928-12-11_A-Orillas-Del-Nilo	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
 	1928-12-11_Maria	ti	02480002722434
+	1928-12-11_Vieja-Milonga	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
 	1928-12-19_Alma-De-Malevo	ti	02480002722113
 	1928-12-19_Cachadora	ti	02480002722113
+	1928-12-19_Por-Que-No-Me-Besas	ce	ignaciocorsinigrabaciones/2009/07/sobre-las-grabaciones-realizadas-por
 	1928-12-19_Venite-Conmigo-A-Ella	t78	venite-conmigo-a-ella-disco-nacional-odeon-no-18576-a
+	1929-02-06_Carro-Viejo	ce	ignaciocorsinigrabaciones/2011/04/sobre-las-grabaciones-realizadas-por
 	1929-02-23_Alzame-En-Tus-Brazos	ti	02480002722069
 	1929-02-23_No-Me-Abandones	ti	02480002722069
 	1929-04-05_Se-Casa-Rosina	ti	02480002722366
 	1929-04-05_Ufa	t78	ufa-disco-nacional-odeon-no-18588-b
+	1929-04-22_Gomina	ce	ignaciocorsinigrabaciones/2011/04/sobre-las-grabaciones-realizadas-por
 	1929-04-22_La-Mazorquera-De-Monserrat	t78	la-mazorquera-de-monserrat-disco-nacional-odeon-no-18582-a
 	1929-04-22_La-Pulpera-De-Santa-Lucia	t78	la-pulpera-de-santa-lucia-disco-nacional-odeon-no-18582-b-2
+	1929-04-22_No-Me-Escribas	ce	ignaciocorsinigrabaciones/2011/04/sobre-las-grabaciones-realizadas-por
 	1929-04-22_Por-Una-Mujer	ti	02480002722236
 	1929-05-03_Keri-La-Nieta-De-Japonesita	ti	02480002722366
+	1929-05-03_Madrecita	ce	ignaciocorsinigrabaciones/2011/04/sobre-las-grabaciones-realizadas-por
 	1929-05-22_Del-Pasado	ti	02480002722236
+	1929-05-22_El-Poncho-Gateao	ce	ignaciocorsinigrabaciones/2011/04/sobre-las-grabaciones-realizadas-por
+	1929-05-22_La-Yerra	ce	ignaciocorsinigrabaciones/2011/04/sobre-las-grabaciones-realizadas-por
 	1929-06-19_La-Pulpera-De-Santa-Lucia	t78	la-pulpera-de-santa-lucia-disco-nacional-odeon-no-18582-b-2
 	1929-07-30_La-Mazorquera-De-Monserrat	t78	la-mazorquera-de-monserrat-disco-nacional-odeon-no-18582-a
 	1929-09-26_Hojarasca	t78	hojarasca-disco-nacional-odeon-no-18594-b
@@ -2068,8 +2411,11 @@
 	1930-04-07_Nube-Sombria	t78	nube-sombria-disco-nacional-odeon-no-18610-b
 	1930-04-26_Cuando-Era-Chiquitito	t78	cuando-era-chiquitito-disco-nacional-odeon-no-18608-a
 	1930-04-28_Padrino-Pelao	t78	padrino-pelao-disco-nacional-odeon-no-18608-b
+	1930-05-10_Cuento-Criollo	gs	2009/04/ediciones-extranjeras-de-ignacio
 	1930-06-18_Sombras	ti	02480002722649
 	1930-09-11_Alta-Clase	t78	alta-clase-disco-nacional-odeon-no-18621-a
+	1930-11-04_Abrojos	dg	19390573
+	1930-11-04_Siempre-Te-Recuerdo	dg	19390573
 	1930-11-25_No-Puedo	t78	no-puedo-disco-nacional-odeon-no-18630-b
 	1930-12-12_No-Tenes-Perdon-De-Dios	t78	no-tenes-perdon-de-dios-disco-nacional-odeon-no-18631-b
 	1930_Abrojos	ti	02480002722014
@@ -2110,6 +2456,22 @@
 >CristalSexteto/LPs/|
 	Loca de amor	it	us/1541128785
 	Viento Del Norte	it	us/1484123295
+>CristalSexteto/LPs/Viento Del Norte/|
+	Viento Del Norte Back.webp	dg	15625134
+>CupoArmando/LPs/|
+	TEV 12230 - Nada más que un corazón	tv	12230
+	TEV 12231 - El abrojito	tv	12231
+	TEV 12234 - Alberto Moran - Volumen No 3	tv	12234
+	TEV 12235 - Alberto Moran	tv	12235
+	TEV 12268 - Los exitos de Alberto Moran	tv	12268
+>DAgostinoAngel/LPs/|
+	Angel DAgostino 1942-1953 Coleccion78RPM Discogs15161708	dg	15161708
+	TEV 11054 - Cascabelito	tv	11054
+	TEV 165 - Tangos inolvidables	tv	165
+	TEV 195 - Evocaciones del pasado	tv	195
+	TEV 229 - Adios Arrabal	tv	229
+	TEV 368 - El cuarteador	tv	368
+	TEV 41004 - D´Agostino Vargas - Gorriones	tv	41004
 >DAgostinoAngel/Singles/1940-1944/|_D-Agostino.webp
 	1941-09-09_Adios-Arrabal	t78	adios-arrabal-rca-victor-no-23-0215-b
 	1941-09-09_Ahora-No-Me-Conoces	t78	ahora-no-me-conoces-rca-victor-23-0215a
@@ -2122,9 +2484,10 @@
 >DAgostinoAngel/Singles/1945-1949/|_D-Agostino.webp
 	1945-04-05_Mentira	t78	mentiras-victor-no-60-0664-b
 >DArienzoJuan/EPs/|
-	El Huracan Derecho Viejo Fuegos Artificiales Contra Luz	dg	17393161
 	Laborde Echague	dg	34616500
 	Padre Mio Un Vals Para Mama Papa El Vals De Los 15 Años	dg	5316794
+	TEV 106 - Un solo minuto de amor	tv	106
+	TEV 11162 - Tangos	tv	11162
 	Un Tango Para Mi Vieja D'arienzo - Echagüe	dg	7404809
 >DArienzoJuan/LPs/|
 	14 De Diciembre	dg	8733691
@@ -2139,13 +2502,39 @@
 	Puro Tango	dg	22376758
 	Recuerdame Amor Mío	dg	11824984
 	Su Majestad	dg	15535775
+	TEV 11097 - Gran Obelisco Del Tango	tv	11097
+	TEV 11103 - El Tango No Tiene Contra	tv	11103
+	TEV 11104 - La Puñalada	tv	11104
+	TEV 12025 - Estrella	tv	12025
+	TEV 12205 - Compas de tango	tv	12205
+	TEV 12221 - Juan D'Arienzo	tv	12221
+	TEV 150 - Don Juan, El Irresistible	tv	150
+	TEV 264 - El rey del compas y su orquesta tipica Vol 2	tv	264
+	TEV 266 - Llegando a puerto	tv	266
+	TEV 50013 - Juan D'Arienzo	tv	50013
+	TEV 50015 - El rey del compás en el recuerdo	tv	50015
+	TEV 50040 - El Rey del Compás	tv	50040
+	TEV 50155 - Más Grande Que Nunca	tv	50155
+	TEV 57008 - El Raje	tv	57008
+	TEV 57010 - YO ME QUEDO CON EL TANGO	tv	57010
+	TEV 57011 - EN MEMORIA	tv	57011
+	TEV 667 - Carnaval en Rosario	tv	667
+	TEV 74 - Academia del lunfardo	tv	74
+	TEV 816 - La calesita	tv	816
+	TEV 852 - Con alma de tango	tv	852
+	TEV 880 - Su majestad el rey del compas Juan D'Arienzo	tv	880
+	TEV 912 - Los 14 de D'Arienzo y su orquesta tipica	tv	912
+	TEV 954 - Tigre viejo	tv	954
 	Un Solo Minuto De Amor	dg	8733532
 	Yo Te Canto Buenos Aires Y Otros Temas	dg	17382886
 >DArienzoJuan/Singles/1925-1929/|_D-Arienzo.webp
+	1928-01-01_Chorra	ti	02480002760313
+	1928-01-01_Engominado	ti	02480002761303
+	1928-01-01_Era-Un-Rincon-De-Alegria	ti	02480002760313
+	1928-01-01_La-Muchacha-Del-Circo	ti	02480002761303
 	1928_Chorra	ti	02480002760313
 	1928_Engominado	ti	02480002761303
 	1928_Era-Un-Rincon-De-Alegria	ti	02480002760313
-	1928_La-Cumparsita	ps	JUAN-DARIENZO-Electra-791-TANGO-78-LA-CUMPARSITA/120758538311
 	1928_La-Muchacha-Del-Circo	ti	02480002761303
 	1929-01-01_Victoria	t78	victoria-electra-no-799
 >DArienzoJuan/Singles/1935-1939/|_D-Arienzo.webp
@@ -2496,6 +2885,19 @@
 	Bienvenido a Este Sector	it	us/1493197429
 	Cortando Clavos	it	us/1492215339
 	Siciliano	it	us/1493489885
+>DArienzoLaJuan/LPs/Bienvenido a Este Sector/|
+	Bienvenido a Este Sector Back.webp	lj	discos
+>DArienzoLaJuan/LPs/Cortando Clavos/|
+	Cortando Clavos Back.webp	dg	15267962
+>DArienzoLaJuan/LPs/Siciliano/|
+	Siciliano Back.webp	dg	15268725
+>DArienzoLosSolistasde/LPs/|
+	TEV 12238 - Homenaje al Rey del Compas	tv	12238
+	TEV 12242 - Tangos Al Compás De	tv	12242
+	TEV 12244 - Homenaje a Juan D'Arienzo	tv	12244
+	TEV 405 - Los solistas de D'arienzo	tv	405
+	TEV 418 - Al compas de Los Solistas	tv	418
+	TEV 708 - La esquina de Homero	tv	708
 >DelfinoEnrique/Singles/1915-1919/|_Delfino.webp
 	1917-05-10_El-Garron	t78	el-garron-de-alfredo-y-juanita-victor-no-69813-a
 >DelfinoEnrique/Singles/1920-1924/|_Delfino.webp
@@ -2503,6 +2905,8 @@
 	1920-09-03_Delfy	t78	delfy-victor-no-72831
 	1922_Cap-Polonio	t78
 	1922_My-Sahara-Rose	t78	my-sahara-rose-disco-nacional-odeon-no-6521-b
+>DemareLucio/EPs/|
+	TEV 12276 - Enrique Santos Discepolo en la voz de Tania	tv	12276
 >DemareLucio/Singles/1935-1939/|_Demare.webp
 	1938-07-12_Din-Don	ti	02480002705123
 	1938-07-12_La-Esquina	ti	02480002705123
@@ -2566,6 +2970,12 @@
 	Hugo Diaz En Buenos Aires Vol. 2	dg	6544974
 	Hugo Diaz En Buenos Aires Vol. III	dg	6559409
 	Hugo Díaz Para Gardel 40 Años Después	dg	13897885
+>DonatoEdgardo/EPs/|
+	TEV 17006 - Sangre de mi sangre	tv	17006
+>DonatoEdgardo/LPs/|
+	Mamboreta, Edgardo Donato (1950-1953)	it	us/1130051671
+	TEV 210 - A media luz	tv	210
+	TEV 306 - Las grandes creaciones de Edgardo Donato	tv	306
 >DonatoEdgardo/Singles/1925-1929/|_Donato.webp
 	1929-12-04_Hasta-Cuando	ps	Tango-DonatoZerrillo-Hasta-cuando-Yo-quiero-casarme-78-RPM-Brunswick-500000/374046815078
 	1929-12-28_Yo-Quiero-Casarme	ps	Tango-DonatoZerrillo-Hasta-cuando-Yo-quiero-casarme-78-RPM-Brunswick-500000/374046815078
@@ -2573,6 +2983,7 @@
 >DonatoEdgardo/Singles/1930-1934/|_Donato.webp
 	1930-01-24_Polilla	t78	polilla-brunswick-no-1019-a
 	1930-04-25_Musiquito	eb	354679764203
+	1930_Rayo-De-Luz	tc	www/discos-pizarra/disco-78-rpm-gramofono-edgardo-donato-tango-ma-qui-fu-rayo-luz-brunswick-pizarra~x310257428
 	1931_Desertora	t78	desertora-brunswick-no-41342
 	1931_El-Barrio-Murmura	t78	el-barrio-murmura-brunswick-no-1044-a
 	1931_Mamita-Perdon	d	2000247911
@@ -2590,6 +3001,8 @@
 	1939-03-27_Carnaval-De-Mi-Barrio	d	2000668974
 	1939-03-27_Sombra-Gaucha	d	2000668975
 	1939-08-02_Pasion-Criolla	d	200028786
+	1939-08-31_Chapaleando-Barro	dg	27792762
+	1939-08-31_Soy-Mendigo	dg	27792762
 >DonatoEdgardo/Singles/1940-1944/|_Donato.webp
 	1940-04-05_Campo-Afuera	d	200038464
 	1940-04-05_Sinfonia-De-Arrabal	d	200038463
@@ -2601,11 +3014,16 @@
 	1950-04-14_El-Huracan	eb	356110079771
 	1950-07-07_A-Media-Luz	ps	EDGARDO-DONATO-Pampa-PM-11002-TANGO-78-A-MEDIA-LUZ-MAMBORETA/124171343470
 	1950-07-07_Mamboreta	ia	78_mamboreta_edgardo-donato-y-su-orquesta-tpica-carlos-almada-mara-isolina-godard-fr_gbia0341752b
+	1950-10-16_Por-Que-No-Me-Besas	dg	29332858
+	1950-10-16_Se-Va-La-Vida	dg	29332858
 	1952-06-25_Mi-Serenata	eb	353963077490
 	1952-06-25_Sera-Una-Noche	eb	353963077490
 >EspositoGennaro/Singles/1910-1914/|_Esposito.webp
 	1912-02-28_Felicia	t78	felicia-victor-no-63905-a
 	1912-02-28_Los-Vagabundos	t78	los-vagabundos-victor-no-63734-b
+	1912-02-28_Ya-Vengo	d	600002846
+	1912_Alsina	ge	discografia
+	1912_Che-Bueno-Y-Como-Te-Fue	ge	discografia
 	1912_Curda-Completa	t78	curda-completa-atlanta-no-186-2
 	1912_El-Entrerriano	t78	el-entrerriano-atlanta-disco-no-183
 	1912_Gente-De-Bien	t78	gente-de-bien-columbia-no-t704
@@ -2623,8 +3041,11 @@
 	1912_Tallada	t78	tallada-atlanta-no-183
 	1912_Te-Sol	t78	te-sol-atlanta-disco-no-184
 	1913_Canta-Claro	t78	cantaclaro-atlanta-no-809
+	1913_El-Manantial	ge	discografia
 	1913_El-Soberbio	t78	el-soberbio-era-no-62049
 	1913_Te-Sol	t78	te-sol-era-no-62033
+>EspositoGennaro/Singles/1915-1919/|_Esposito.webp
+	1915_El-Desalojo	t78	el-desalojo-atlanta-no
 >FalconAda/Singles/1925-1929/|_Falcon.webp
 	1929-07-20_Mi-Gaucha-Se-Jue-Con-Dios	t78	mi-gaucha-se-jue-con-dios-odeon-no-11174-b
 >FalconAda/Singles/1930-1934/|_Falcon.webp
@@ -2652,6 +3073,12 @@
 	Festival De Tangos	dg	12688857
 	Frente A Una Copa	dg	16016680
 	Saludos De Domingo Federico	dg	15927929
+	TEV 12266 - Domingo F. Federico y su orquesta típica 1945 - 1953	tv	12266
+	TEV 677 - El estilo de Domingo Federico	tv	677
+	TEV 962 - Al compás del corazón	tv	962
+	TEV 963 - Domingo Federico	tv	963
+	TEV 964 - Ronda Sentimental	tv	964
+	TEV 965 - Tango argentino	tv	965
 	Tango Argentino	dg	12701637
 	Yuyo Verde	dg	13982844
 >FedericoDomingo/Singles/1940-1944/|_Federico.webp
@@ -2737,11 +3164,14 @@
 	1915-07-16_Toda-La-Vida	d	700000921
 	1915-10-13_Ame-Con-Delirio	t78	ame-con-delirio-victor-no-67689-b
 	1915-10-13_Clinicas	t78	clinicas-victor-no-67689-a
+	1915-10-13_L-Atelier	d	700001645
 	1915-10-13_Maria-Angelica	t78	maria-angelica-victor-no-67686-a
+	1915-10-13_Media-Luna	d	700001646
 	1915-10-13_Una-Noche-De-Garufa	t78	una-noche-de-garufa-victor-no-67686-b
 	1915-11-19_Alfonsito	t78	alfonsito-victor-no-67771-b
 	1915-11-19_Titi	t78	titi-victor-no-67771-a
 	1915-12-16_Ca-Ra-Ca-Fu	d	700001923
+	1915-12-16_Un-Buen-Gaucho	d	700001916
 	1916-01-06_Barografo	t78	barografo-victor-no-67600-a
 	1916-01-06_Eres-Mi-Encanto	t78	eres-mi-encanto-victor-no-67769-a
 	1916-01-06_Y-Que-Hay	t78	y-que-hay-victor-no-67769-b-2
@@ -2750,12 +3180,16 @@
 	1916-03-01_Alma-Dolorida	t78	alma-dolorida-victor-no-67783-a
 	1916-03-01_De-Mi-Cosecha	t78	de-mi-cosecha-victor-no-67784-b
 	1916-06-12_Cielito	d	700002879
+	1916-06-12_El-Distinguido-Ciudadano	d	700002876
+	1916-11-15_Esperandote	d	700003725
 	1916-11-15_Noche-Calurosa	d	700003724
 	1917-01-17_El-Pollo-Ricardo	t78	el-pollo-ricardo-victor-no-69421-b
 	1917-01-17_Tomasito	t78	tomasito-victor-no-69418-a
+	1917-04-10_La-Golondrina	d	700004649
 	1918-01-30_De-Raza	t78	de-raza-victor-no-69987-b
 	1918-03-25_La-Payanca	t78	la-payanca-victor-no-69987-a
 	1918-04-17_I-Am-Good	t78	i-am-good-victor-no-72058
+	1918-04-17_Sueno-De-Virgen	d	700006903
 	1918-08-16_23-Contra-La-Yeta	t78	23-contra-la-yeta-victor-no-72161-b
 	1918-08-16_Ivette	t78	ivette-victor-no-72161-a
 	1919-01-22_Triste-Separacion	t78	triste-separacion-victor-no-72293-a
@@ -2763,6 +3197,8 @@
 	1919-01-23_Belgique-Belgica	d	700007694
 	1919-01-23_La-Tacita-De-The-3830	d	700007692
 	1919-03-24_Corazon-Abandonado	t78	corazon-abandonado-victor-no-72300-b
+	1919-03-31_Foxtrot-De-Las-Campanas	d	700007687
+	1919-03-31_Mi-Noche-Triste	d	700007696
 	1919-12-21_Don-Esteban	d	2000108054
 	1919-12-21_El-Pangare	d	2000108236
 	1919-12-21_El-Rascacielo	t78	el-rascacielo-columbia-no-t951
@@ -2782,6 +3218,7 @@
 	1916_Barografo	d	700001128
 	1916_De-Mi-Flor	ti	02480002706427
 	1916_El-Distinguido-Ciudadano	t78	el-distinguido-ciudadano-disco-roberto-firpo-odeon-no-495b
+	1916_El-Espiante	t78	el-espiante-disco-roberto-firpo-odeon-no-495-a
 	1916_El-Flete	ti	02480002706601
 	1916_La-Guitarrita	t78	la-guitarrita-disco-roberto-firpo-no-493-a
 	1916_Lagrimas	ti	02480002707639
@@ -3006,6 +3443,13 @@
 	Canaro En Paris	dg	14917893
 	Enrique Francini - Inspiraciòn	dg	13498745
 	Gran Encuentro	dg	11336504
+	TEV 12080 - Enrique Francini - Armando Pontier con su orquesta y	tv	12080
+	TEV 12081 - Inspiraciòn	tv	12081
+	TEV 419 - Grandes Creaciones	tv	419
+	TEV 498 - Francini - Pontier	tv	498
+	TEV 510 - Julio Sosa en el recuerdo	tv	510
+	TEV 628 - Alma de bohemio	tv	628
+	TEV 663 - Tema otoñal	tv	663
 >FranciniEnrique/Singles/1945-1949/|_Francini.webp
 	1949-01-28_A-Jose-Manuel-Moreno	t78	a-jose-manuel-moreno-rca-victor-no-60-1735-b
 	1949-02-03_Claveles-Blancos	t78	claveles-blancos-rca-victor-no-60-1741-a
@@ -3026,6 +3470,7 @@
 	1958-03-14_Que-Me-Importa-Tu-Pasado	ti	02480002730842
 >FresedoOsvaldo/EPs/|
 	Osvaldo Fresedo Y Su Orquesta	dg	6841019
+	TEV 890 - Osvaldo Fresedo y su Orquesta Típica, canta Héctor Pach	tv	890
 	Tango De Gala	dg	6840937
 >FresedoOsvaldo/LPs/|
 	Bandoneon Amigo	dg	15798965
@@ -3036,6 +3481,13 @@
 	Fresedo 1981	dg	11815482
 	Lo Mejor De Osvaldo Fresedo En Estereo	dg	18242470
 	Los Diez Mandamientos	dg	9782769
+	TEV 186 - Osvaldo Fresedo Volumen 5	tv	186
+	TEV 334 - El dia que me quieras	tv	334
+	TEV 399 - Los diez mandamientos	tv	399
+	TEV 493 - Por que	tv	493
+	TEV 50255 - Solo de Bandoneón	tv	50255
+	TEV 50258 - Bandoneón Amigo	tv	50258
+	TEV 50260 - El Sonido de Fresedo	tv	50260
 	Tango Mío	dg	11397966
 >FresedoOsvaldo/Singles/1920-1924/|_Fresedo.webp
 	1920-09-03_Nueva-York	a	fresedotracks/2023/03/00182-nueva-york-osvaldo-fresedo-1920
@@ -3146,6 +3598,7 @@
 	1924_Destino-De-Mujer	t78	destino-de-mujer-victor-no-79512-b
 	1924_Hollin	d	600004728
 	1924_Mis-Amarguras	ti	02480002701866
+	1924_Negro-El-Viente	a	fresedotracks/2026/05/00478-negro-el-20-orquesta-tipica
 	1924_Tristezas	d	600004718
 	1924_Tu-Nobleza	d	600004719
 >FresedoOsvaldo/Singles/1925-1929/|_Fresedo.webp
@@ -3265,6 +3718,7 @@
 	1927-10-17_Noche-De-Reyes	ti	02480002701224
 	1927-10-18_Felicia	ti	02480002701217
 	1927-10-18_Paso-A-Paso	ti	02480002701217
+	1927-11-04_La-Quema	a	fresedotracks/2023/11/01136-la-quema-orquesta-tipica-fresedo
 	1927-11-12_Compadron	a	fresedotracks/2023/11/01147-compadron-orquesta-tipica-fresedo
 	1927-11-15_Don-Esteban	a	fresedotracks/2023/11/01155-don-esteban-orquesta-tipica
 	1927-11-22_Jueves	a	fresedotracks/2023/11/01162-jueves-dia-de-moda-orquesta
@@ -3300,6 +3754,7 @@
 	1928-08-08_Ramona	ti	02480002701262
 	1928-08-11_Chorra	ti	02480002701279
 	1928-08-11_Dandy	ti	02480002701279
+	1928-09-11_Chorra	a	fresedotracks/2026/03/01344-chorra-orquesta-tipica-fresedo
 	1928-09-25_Al-Hipodromo-Chofer	ti	02480002702610
 	1929-09-30_En-La-Mala	t78	en-la-mala-brunswick-no-40965
 	1929-09-30_Te-Aconsejo-Que-Me-Olvides	t78	te-aconsejo-que-me-olvides-brunswick-no-41053
@@ -3468,6 +3923,7 @@
 	1945-05-24_No-Me-Falles-Corazon	ti	02480002702184
 	1945-05-24_No-Te-Olvides-De-Mi-Corazon	ti	02480002702184
 	1945-07-25_Capullito	a	fresedotracks/2023/11/01778-capullito-osvaldo-fresedo-y-su
+	1945-07-25_Vida-Mia	a	fresedotracks/2023/11/01779-vida-mia-osvaldo-fresedo-y-su
 	1945-08-23_La-Mariposa	a	fresedotracks/2023/11/01780-la-mariposa-osvaldo-fresedo-y-su
 	1945-08-23_Mas-Alla	ti	02480002701668
 	1945-08-23_Mi-Natai	ti	02480002701668
@@ -3556,6 +4012,9 @@
 	1956-07-30_Vida-Mia	a	fresedotracks/2023/11/01894-vida-mia-osvaldo-fresedo-y-su_22
 	1957-09-10_Sollozos	a	fresedotracks/2023/11/01889-sollozos-osvaldo-fresedo-y-su_22
 	1957-09-10_Tema-En-Fa	a	fresedotracks/2023/11/01890-tema-en-fa-osvaldo-fresedo-y-su_22
+>GalvanArgentino/LPs/|
+	TEV 142 - Interpretan a De Caro y Juan Carlos Cobian	tv	142
+	TEV 191 - Interpretan a Delfino y Aieta	tv	191
 >GardelCarlos/Singles/1910-1914/|_Gardel.webp
 	1912_A-Mitre	d	2000087276
 	1912_La-Mananita	ps	1912-CARLOS-GARDEL-Columbia-T594-1st-ACOUSTIC-78-LA-MAANITA-ME-DEJASTE/310620590429
@@ -3653,8 +4112,10 @@
 	1927-02-18_Abuelito	t78	abuelito-odeon-no-184-039-b
 	1927-02-18_Barrio-Reo	t78	barrio-reo-odeon-no-184-039-a-2
 	1927-03-30_Carnaval	eb	353765317793
+	1927-05-05_Federacion	dg	15404714
 	1927-05-05_Insomnio	t78	insomnio-odeon-no-188-005-b
 	1927-05-27_Araca-Corazon	t78	araca-corazon-odeon-no-188-006-a
+	1927-06-14_La-Ultima-Copa	dg	15404714
 	1927-06-21_La-Entrerriana	eb	353865772399
 	1927-06-21_Mala-Entrana	eb	353765317822
 	1927-06-21_Muchachos-Me-Caso	t78	muchachos-me-caso-odeon-no-203-095-b
@@ -3665,9 +4126,7 @@
 	1927-07-20_Rosas-De-Abril	t78	rosas-de-abril-odeon-no-184-053-b
 	1927-07-22_Amurado	t78	amurado-disco-nacional-odeon-no-18215-a
 	1927-07-22_Yo-Te-Imploro-El-Trovero	t78	yo-te-imploro-odeon-no-200-040-a
-	1927-07-29_Caminito	t78	caminito-columbia-no-b-s-76
 	1927-07-30_Salto-Mortal	eb	353965194131
-	1927-08-20_Caminito	t78	caminito-columbia-no-b-s-76
 	1927-08-20_Farolito-Viejo	ia	78_farolito-viejo_carlos-gardel-barbieri-aguilar-riverol-j-e-ri-teisseire_gbia0418737b
 	1927_Hopa-Hopa-Hopa	ps	CARLOS-GARDEL-RAZZANO-HOPA-HOPA-HOPA-POR-DONDE-ANDARA-ARGENTINA-TANGO-78-RPM/361104757077
 	1928-01-09_Asi-Canto-Yo	eb	317498874458
@@ -3676,7 +4135,6 @@
 	1928-01-09_Y-Reias-Como-Una-Loca	eb	353865772372
 	1928-01-10_La-Cieguecita	eb	291680166798
 	1928-01-10_Lobo-De-Mar-Mar-Bravio	eb	291680166798
-	1928-01-10_Mano-A-Mano	t78	mano-a-mano-odeon-no-102-038
 	1928-01-10_Por-Un-Carino	eb	317498874458
 	1928-01-10_Siga-El-Corso	eb	291680166802
 	1928-01-10_Tristeza-Gaucha	eb	127969848971
@@ -3686,6 +4144,7 @@
 	1928-06-20_Dandy	t78	dandy-odeon-no-188-018-b
 	1928-06-20_De-Puro-Guapo	eb	353765317812
 	1928-06-20_Reproche	eb	353960120000
+	1928-06-20_Resignate-Hermano	ebp	de/277914670569
 	1928-06-26_Che-Papusa-Oi	eb	298525885032
 	1928-06-26_Esta-Noche-Me-Emborracho	t78	esta-noche-me-emborracho-odeon-no-188-020-a
 	1928-06-26_Siga-El-Corso	eb	353862240787
@@ -3775,9 +4234,11 @@
 	1930-05-20_Enfunda-La-Mandolina	eb	353765317769
 	1930-05-20_Una-Lagrima	eb	353960119994
 	1930-05-22_Por-Seguidora-Y-Por-Fiel	eb	353765317769
+	1930-05-27_Canchero	fr	recordings/canchero
 	1930-06-17_Tarde-Gris	eb	298525885032
 	1930-06-17_Un-Ano-Mas	eb	353765317809
 	1930-06-28_Pordioseros	t78	pordioseros-odeon-no-18960-a
+	1930-08-21_Chinita	ebp	de/278264617533
 	1930-08-21_Incurable	eb	357881037396
 	1930-08-21_Titiriteros	eb	353765317802
 	1930-08-28_No-Llore-Viejita	eb	290695123541
@@ -3823,6 +4284,7 @@
 	1933-01-13_Sueno-Querido	eb	353862240783
 	1933-01-23_Milonga-Sentimental	eb	317992396068
 	1933-01-25_Melodia-De-Arrabal	eb	301867976580
+	1933-01-25_Rencor	ebp	de/287723793476
 	1933-02-15_Ventarron	eb	353862240789
 	1933-02-22_Al-Mundo-Le-Falta-Un-Tornillo	eb	353862240789
 	1933-02-22_Me-Da-Pena-Confesarlo	eb	353960120001
@@ -3856,6 +4318,10 @@
 	1935_Lejana-Tierra-Mia	eb	353960120005
 	1935_Los-Ojos-De-Mi-Moza	ti	02480002782193
 	1935_Sol-Tropical	ti	02480002782865
+>GobbiAlfredo/LPs/|
+	TEV 13 - El violin romantico del tango ( 1947 - 1957 )	tv	13
+	TEV 145 - La número 5 y otras creaciones	tv	145
+	TEV 179 - Entrador	tv	179
 >GobbiAlfredo/Singles/1945-1949/|_Gobbi.webp
 	1949-10-13_Racing-Club	t78	racing-club-rca-victor-60-1854-a
 >GobbiAlfredo/Singles/1955-1959/|_Gobbi.webp
@@ -3863,9 +4329,15 @@
 	1958-04-17_Garabatos-De-Mujer	ti	02480002733492
 	1958-07-31_Dame-Tiempo	ti	02480002736240
 	1958-07-31_No-Me-Supiste-Amar	ti	02480002736240
+>GorioJuanSanchez/EPs/|
+	TEV 12094 - Juan Sanchez Gorio	tv	12094
 >GorioJuanSanchez/LPs/|
 	Gitana Rusa	dg	17511706
 	Grandes Valores Del Tango Vol. 1	dg	27808248
+	TEV 12093 - Juan Sanchez Gorio y su orquesta típica	tv	12093
+	TEV 12095 - Expotango 78	tv	12095
+	TEV 148 - Juan Sanchez Gorio y su orquesta Típica	tv	148
+	TEV 376 - Gitana Rusa	tv	376
 >GrecoVicente/Singles/1905-1909/|_Greco.webp
 	1909_Ahi-No-Mas	t78	hay-no-mas-columbia-no-t219
 	1909_Caradura	t78	cara-dura-columbia-no-t218
@@ -3874,6 +4346,7 @@
 	1909_El-Morochito	t78	el-morochito-columbia-no-t216
 	1909_El-Otario	t78	el-otario-columbia-no-t220
 	1909_El-Pibe	t78	el-pive-columbia-no-t216
+	1909_El-Talar	d	2000085929
 	1909_Hotel-Victoria	t78	hotel-victoria-columbia-no-t217
 	1909_Joaquina	t78	joaquina-columbia-no-t221
 	1909_La-C-Ara-De-La-Luna	t78	la-cara-de-la-luna-columbia-no-t218
@@ -4018,8 +4491,11 @@
 	1939-09-19_Santa-Lucia-Luntana	d	200028819
 >LamarqueLibertad/Singles/1940-1944/|_Lamarque.webp
 	1940-10-16_Quiero-Verte-Una-Vez-Mas	d	200038626
+	1941-12-05_Cancion-De-Cuna	fr	recordings/canci%C3%B3n-de-cuna-5
+	1941-12-05_Cancion-De-Navidad	fr	recordings/canci%C3%B3n-de-navidad-3
 	1942-10-06_Tristezas-De-La-Calle-Corrientes	t78	tristezas-de-la-calle-corrientes-victor-no-82-50548-a
 	1944-03-15_Despues	t78	despues-victor-no-82-5079-a
+	1944-05-21_Esta-Noche-De-Luna	fr	recordings/esta-noche-de-luna-1
 >LamarqueLibertad/Singles/1945-1949/|_Lamarque.webp
 	1945-07-23_Bien-Criolla-Y-Bien-Portena	t78	bien-criolla-y-bien-portena-rca-victor-no-23-1314-b
 	1945-12-27_Adios-Pampa-Mia	t78	adios-pampa-mia-rca-victor-no-60-0853-b
@@ -4033,7 +4509,6 @@
 	1955_Silencio	t78	silencio-rca-victor-no-23-7015
 >LaurenzPedro/LPs/|
 	Pedro Laurenz Interpreta a Pedro Laurenz	dg	13944778
-	¿Te Acuerdas ... Que Tangos Aquellos! - Vol. 1	dg	30236258
 >LaurenzPedro/Singles/1925-1929/|_Laurenz.webp
 	1926-07-07_Pura-Mana	d	600005089
 	1926-11-24_Alla-En-El-Bajo	d	600005290
@@ -4046,8 +4521,12 @@
 	1938-05-12_Vieja-Amiga	t78	vieja-amiga-victor-no-38460-a
 >LaurenzPedro/Singles/1940-1944/|_Laurenz.webp
 	1940-07-29_Improvisando	d	200038552
+	1941-12-02_Poca-Suerte	ttt	release-notes-todos-de-pedro-laurenz-1937-1968
+	1941-12-02_Quedate-Tranquilo	ttt	release-notes-todos-de-pedro-laurenz-1937-1968
+	1942-01-07_Flores-Del-Alma	ttt	release-notes-todos-de-pedro-laurenz-1937-1968
 	1943-09-22_Que-Nunca-Me-Falte	t78	que-nunca-me-falte-odeon-no-7632-b
 	1943-09-22_Recien	t78	recien-odeon-no-7632-a
+	1944-08-07_Me-Estan-Sobrando-Las-Penas	t78	me-estan-sobrando-las-penas-odeon-no-8074-b
 >LaurenzPedro/Singles/1940-1944/|_laurenz.webp
 	1944-08-07_me-estan-sobrando-las-penas	t78	me-estan-sobrando-las-penas-odeon-no-8074-b
 >LedesmaArgentino/LPs/|
@@ -4077,14 +4556,20 @@
 	1917-05-15_Cara-Sucia	a	fresedotracks/2023/03/00022-cara-sucia-orquesta-tipica-loduca
 	1917-05-15_Penas-De-Amor	d	600001191
 	1917-05-19_El-Pangare	a	fresedotracks/2023/03/00031-el-pangare-orquesta-tipica-loduca
+>LomutoFrancisco/LPs/|
+	Francisco Lomuto 1931-1950 Coleccion78RPM Discogs15150120	dg	15150120
+	Francisco Lomuto 1931-1950 Coleccion78RPM Discogs15162003	dg	15162003
 >LomutoFrancisco/Singles/1920-1924/|_Lomuto.webp
 	1924_Pa-Que-Te-Acordes	ia	78_pa-que-te-acords_orquesta-tpica-f-lomuto_gbia3039097a
 	1924_Quiero-Olvidar	ia	78_quiero-olvidar_orquesta-tpica-f-lomuto_gbia3039097b
 >LomutoFrancisco/Singles/1925-1929/|_Lomuto.webp
+	1925_La-Chirola	dg	7840897
 	1925_La-Cumparsita	t78	la-cumparsita-disco-nacional-odeon-no-7629-b
+	1926_El-Brujo	eb	224323313575
 	1926_El-Circo-Se-Va	t78	el-circo-se-va-disco-nacional-odeon-no-7652-a
 	1926_Espinas-De-Una-Flor	ti	02480002713289
 	1926_Yo-Te-Bendigo	ti	02480002713753
+	1927-04-30_Corazon-De-Portena	dg	7841066
 	1927-06-04_De-Tardecita	ti	02480002713197
 	1927-06-04_Hasta-Luego	ti	02480002713340
 	1927-06-04_La-Ultima-Ficha	ti	02480002713432
@@ -4106,7 +4591,9 @@
 	1927-11-17_Solo-A-Una-Madre	ti	02480002713258
 	1927-12-29_Bandoneon	ps	ORQ-TIPICA-FRANCISCO-LOMUTO-Odeon-7746-Bandoneon-VERY-RARE-Tango-78-RPM/221197888803
 	1928-03-10_A-Contramano	ti	02480002713005
+	1928-03-10_A-Toda-Vela	dg	23575919
 	1928-03-10_Corazon	ti	02480002713005
+	1928-03-10_Flor-Del-Campo	dg	23575919
 	1928-05-03_Flores-Rojas	ti	02480002713586
 	1928-05-03_Que-Vachache	ti	02480002713586
 	1928-07-14_Pero-Yo-Se	t78	pero-yo-se-disco-nacional-odeon-no-7770-a
@@ -4163,6 +4650,7 @@
 	1934-12-27_Tu-Sombra	ti	02480002713036
 	1934-12-27_Y-Haces-El-Novio	ti	02480002713395
 >LomutoFrancisco/Singles/1935-1939/|_Lomuto.webp
+	1935-05-09_Luna-Arrabalera	fr	recordings/luna-arrabalera-0
 	1935-05-09_Monte-Criollo	t78	monte-criollo-victor-no-37756-a
 	1935-06-16_Mi-Pesar	d	200018632
 	1935-06-17_Sus-Ojos-Se-Cerraron	d	200018636
@@ -4247,8 +4735,11 @@
 >MadernaOsmar/EPs/|
 	Escalas En Azul	dg	27667857
 	Orquesta Símbolo Osmar Maderna	dg	16711956
+>MadernaOsmar/LPs/|
+	TEV 514 - Lluvia de estrellas	tv	514
 >MadernaOsmar/Singles/1945-1949/|_Maderna.webp
 	1946-09-24_Don-Juan	t78	don-juan-victor-no-s-147
+	1947-03-20_Tiempo	ns	n4f86f2918d03
 	1948-06-24_El-Bajel	ti	02480002735144
 	1948-06-24_Lluvia-De-Estrellas	ti	02480002735144
 	1949-01-26_El-Pillete	ti	02480002736622
@@ -4363,7 +4854,9 @@
 	1929_Farol-De-Los-Gauchos	t78	farol-de-los-gauchos-brunswick-no-1609-b
 >MagaldiAgustin/Singles/1930-1934/|_Magaldi.webp
 	1930-05-06_Reminiscencias-Cuyanas	t78	reminiscencias-cuyanas-brunswick-no-1622-b
+	1930_Al-Chasquear-De-Las-Ioronas	t78	al-chasquiar-de-las-ioronas-brunswick-no-41363
 	1930_Al-Chasquear-De-Las-Lloronas	t78	al-chasquiar-de-las-ioronas-brunswick-no-41363
+	1930_Asomate-A-La-Ventana	dg	12312579
 	1930_Campeando-Por-Un-Querer	t78	campeando-por-un-querer-brunswick-no-41300
 	1930_Cancion-Del-Olvido	t78	cancion-del-olvido-victor-no-47418-b
 	1930_Cancion-Tucumana	t78	cancion-tucumana-brunswick-no-1621-b
@@ -4371,12 +4864,14 @@
 	1930_Estampa-Serrana	t78	estampa-serrana-brunswick-no-1632-b
 	1930_Llorando-La-Carta	t78	llorando-la-carta-brunswick-no-1620-a
 	1930_Muchachos-Me-Voy	t78	muchachos-me-voy-brunswick-no-1648-a
+	1930_Se-Fue-La-Pobre-Viejita	dg	12312579
 	1930_Se-Va-La-Vida	t78	se-va-la-vida-life-fades-away-brunswick-no-41300
 	1930_Solcito-Mananero	t78	solicito-mananero-sic-brunswick-no-41348
 	1930_Tradicion	t78	tradicion-brunswick-no-1635-b
 	1930_Vieja-Escuela-De-Mi-Barrio	t78	vieja-escuela-de-mi-barrio-brunswick-no-1621-a
 	1931_Amaneciendo	t78	amaneciendo-brunswick-no-1652-b
 	1931_El-Penado-14	t78	el-penado-14-brunswick-no-41332
+	1931_El-Penado-Catorce	t78	el-penado-14-brunswick-no-41332
 	1931_Farol-De-Los-Gauchos	t78	farol-de-los-gauchos-brunswick-no-41332
 	1931_Lamento-Gaucho	t78	lamento-gaucho-brunswick-no-1649-b
 	1931_Martin-Pescador	t78	martin-pescador-se-podra-pasar-brunswick-no-41372
@@ -4384,6 +4879,7 @@
 	1932-09-01_De-Mi-Tierra-Criolla	d	800034215
 	1932-09-02_Mi-Unico-Tesoro	d	800034219
 	1933-01-16_Flor-De-Taupi	t78	flor-de-taupi-victor-no-37341-b
+	1933-01-16_Serafin	fr	recordings/serafin-0
 	1933-04-19_Dios-Te-Salve-M-Hijo	d	800039696
 	1933-05-05_Por-El-Camino	t78	por-el-camino-rca-victor-no-38371-b
 	1933-05-05_Vagabundo	d	800039703
@@ -4394,7 +4890,9 @@
 >MagaldiAgustin/Singles/1935-1939/|_Magaldi.webp
 	1935-10-31_Oro-Copa-Espada-Y-Basto	d	200020873
 	1935-10-31_Sonando	d	200020872
+	1938-01-21_Disfrazado	dg	6953611
 	1938-01-21_Libertad	t78	libertad-victor-no-38371-a
+	1938-01-21_Quien-Eres-Tu	dg	6953611
 >MaglioJuan/Singles/1910-1914/|_Maglio.webp
 	1912_Adelita	d	2000087720
 	1912_American-Cirque-Exelsior	d	2000087721
@@ -4485,7 +4983,11 @@
 	1931_Cafetin-Del-Barrio-Pobre	t78	cafetin-del-barrio-pobre-brunswick-no-2133-a
 	1931_Pensalo-Muchacho	t78	pensalo-muchacho-brunswick-no-2129-a
 >MaizaniAzucena/Singles/1935-1939/|_Maizani.webp
+	1938-11-04_Lejos-De-Mi-Tierra	d	200034430
 	1938-11-04_No-Se-Por-Que-Te-Quiero	t78	no-se-por-que-te-quiero-victor-no-82541-a
+>MalerbaRicardo/LPs/|
+	TEV 12251 - Encuentro Con... Ricardo Malerba	tv	12251
+	TEV 12252 - Ricardo Malerba y su orquesta típica	tv	12252
 >MayorSexteto/LPs/|
 	A La Orden	dg	7366391
 	A Passion For Tango - Authentic Tangos From Argentina	dg	5086457
@@ -4594,6 +5096,20 @@
 	Tango De Invierno (En Vivo)	it	us/1607548168
 	Todo Es Amor	it	us/1693742231
 	Una Noche De Garufa	it	us/1764445199
+>PedevillaRicardo/LPs/|
+	TEV 12267 - Ricardo Pedevilla y su orquesta típica 1950 - 1953	tv	12267
+>PedevillaRicardo/Singles/1950-1954/|_Pedevilla.webp
+	1950-11-28_El-Amanecer	dg	34272142
+	1950-11-28_Ventanita-De-Arrabal	dg	34272142
+	1950-12-27_Marianito	dg	34272112
+	1951-09-03_Mascotita-De-Marfil	dg	34272112
+>PetrucelliLuis/Singles/1925-1929/|_Petrucelli.webp
+	1928-10-31_Cachada	t78	cachada-victor-no-80985-a
+	1928-10-31_El-Cencerro	dg	16105829
+	1928-12-13_Oime-Negro	t78	oime-negro-victor-no-47004-b
+	1929-04-23_Que-Careta	t78	que-careta-victor-no-47074-a
+>PetrucelliLuis/Singles/1930-1934/|_Petrucelli.webp
+	1931-01-08_Catamarca	t78	catamarca-victor-no-47573-b
 >PiazzollaAstor/EPs/|
 	5º Año Nacional - Musica De La Banda De Sonido	dg	7404883
 	Astor Piazzolla - Egle Martin	dg	10503301
@@ -4610,15 +5126,20 @@
 	1943-1982	dg	10068704
 	1944-1964 (20 Años De Vanguardia Con Sus Conjuntos)	dg	6515591
 	57 Minutos Con La Realidad	dg	5207056
+	Armaguedon Trova DA5012 Discogs17079264	dg	17079264
 	Armaguedón	dg	17079264
 	Astor Piazzolla	dg	7644718
+	Astor Piazzolla Y Su Noneto Saludos62050 Discogs2268646	dg	2268646
 	Banda Original De Sonido De La Película Volver	dg	9304243
 	Carosello Italiano 1974-1984 Vol.2 - Citè Tango	dg	10709811
 	Carosello Italiano 1974-1984 Vol.3 - Milonga	dg	10744292
 	Carosello Italiano 1974-1984 Vol.5 - Bandoneon	dg	10752576
 	Concierto De Tango En El Philharmonic Hall De Nueva York	dg	11744826
 	Concierto Para Quinteto	dg	5077387
+	Concierto Para Quinteto Gran Rex 1981 Alfa Discogs5542446	dg	5542446
 	Cristal Collection	dg	12926744
+	Discogs 13030894 - Daniel Riolobos	dg	13030894
+	Discogs 34368112 - Nuevo Tango	dg	34368112
 	El Arte De	dg	12800881
 	El Infierno Tan Temido (Original Film Soundtracks)	dg	7022278
 	El Tango	dg	8595116
@@ -4637,6 +5158,7 @@
 	Lo Que Vendra	dg	8371774
 	Maria De Buenos Aires	dg	2343610
 	Maria de Buenos Aires Primera Parte	dg	16911675
+	Melhores Momentos Chico e Caetano Som Livre 530045 Jobim1479	jb	2010.2/1479
 	Mundial 78	dg	3178631
 	Musiques De Films	dg	4136588
 	Música De Buenos Aires	dg	8864086
@@ -4644,6 +5166,90 @@
 	Nuestro Tango	dg	9969950
 	Nuestro Tiempo	dg	2635203
 	Oblivion	dg	3452776
+	Official 2993 - Tango Progresivo	ap
+	Official 3015 - Tango Moderno	ap
+	Official 3037 - Tango En Hi-Fi	ap
+	Official 3124 - Memorie Di Roma	ap
+	Official 3141 - Take Me Dancing	ap
+	Official 3179 - Vanguardia	ap
+	Official 3183 - Astor Piazzolla	ap
+	Official 3191 - Roberto Yanes Canta Tangos con Astor Piazzolla y su Orquesta	ap
+	Official 3195 - Tango Para Una Ciudad	ap
+	Official 3207 - Tango Contemporaneo	ap
+	Official 3232 - Melenita De Oro	ap
+	Official 3236 - La Historia del Tango Vol.1 - La Guardia Vieja	ap
+	Official 3240 - La Historia del Tango Vol.2 - Epoca Romantica	ap
+	Official 3244 - Seleccion Super Stereo - Grandes Orquestas De Tango	ap
+	Official 3248 - Revolucionario y Retrato De Alfredo Gobbi	ap
+	Official 3252 - Astor Piazzolla Egle Martin	ap
+	Official 3260 - Adios Nonino	ap
+	Official 3268 - Pulsacion	ap
+	Official 3276 - Amelita Baltar	ap
+	Official 3284 - Balada Para Un Loco	ap
+	Official 3288 - Amelita Baltar Interpreta a Piazzolla y Ferrer	ap
+	Official 3292 - Piazzolla En El Teatro Regina	ap
+	Official 3367 - En Persona	ap
+	Official 3378 - Concierto Para Quinteto	ap
+	Official 3383 - Astor Piazzolla 1943-1982	ap
+	Official 3387 - La Bicicleta Blanca	ap
+	Official 3461 - Musica Popular Contemporanea De La Ciudad De Buenos Aires (Vol.1)	ap
+	Official 3465 - Amelita Baltar con Astor Piazzolla	ap
+	Official 3478 - Carosello Italiano 1974-1984 Vol	ap
+	Official 3482 - Rabbia e Tango	ap
+	Official 3486 - Mina Cinquemilaquarantatre	ap
+	Official 3490 - Mina Amor Mio	ap
+	Official 3494 - Musica Popular Contem- Poranea De La Ciudad De Buenos Aires (Vol.2)	ap
+	Official 3514 - Muerte Del Angel	ap
+	Official 3526 - Il Pleut Sur Santiago	ap
+	Official 3535 - Amelita Baltar	ap
+	Official 3539 - Amelita Baltar Fermata	ap
+	Official 3549 - Ney Matogrosso	ap
+	Official 3795 - Moi Je Suis Tango	ap
+	Official 3799 - Il pleut sur Santiago - Band Sonore Original Du Film	ap
+	Official 3807 - Suite Troileana	ap
+	Official 3811 - Lumiere	ap
+	Official 3829 - Piazzolla & José Angel Trelles	ap
+	Official 3837 - Libertango	ap
+	Official 3846 - Moustaki 1976	ap
+	Official 3853 - Marie-Paule Belle	ap
+	Official 3862 - Armaguedon	ap
+	Official 3897 - Mundial 78	ap
+	Official 4108 - Biyuya	ap
+	Official 4114 - El infierno tan temido	ap
+	Official 4130 - Jairo	ap
+	Official 4137 - Morir Enamorado	ap
+	Official 4144 - Mis Mejores Canciones	ap
+	Official 4151 - Este Amor es Como El Viento	ap
+	Official 4189 - Live In Tokyo 1982	ap
+	Official 4194 - Astor Piazzolla en el Teatro Colon	ap
+	Official 4198 - Concierto De Nacar	ap
+	Official 4202 - Aconcagua Tres Tangos	ap
+	Official 4210 - Live In Wien Vol.1	ap
+	Official 4214 - Live - Lugano 13 Ottobre 1983	ap
+	Official 4218 - Libertango	ap
+	Official 4227 - Oblivion	ap
+	Official 4244 - Gardel Como Yo Te Siento	ap
+	Official 4253 - Otoño Porteño	ap
+	Official 4262 - Live At The Bouffes Du Nord	ap
+	Official 4270 - Biyuya	ap
+	Official 4274 - Suite Punta del Este	ap
+	Official 4282 - Narrenlieder	ap
+	Official 4302 - Live In Colonia 1984	ap
+	Official 4312 - Conciertos en Tokio por Segunda Vez	ap
+	Official 4318 - Tango	ap
+	Official 4378 - The New Tango (Recorded at The Montreux Festival)	ap
+	Official 4398 - The Rough Dancer And The Cyclical Night	ap
+	Official 4403 - The Central Park Concert	ap
+	Official 4412 - Concierto para Bandoneon Tres Tangos	ap
+	Official 4420 - Bande Originale Du Film - Sur -	ap
+	Official 4447 - La Camorra	ap
+	Official 4475 - Tres Minutos con la Realidad	ap
+	Official 4483 - Together – Volumen 1 Finally	ap
+	Official 4494 - Live at the BBC 1989Live at the BBC 1989	ap
+	Official 4498 - The Lausanne Concert	ap
+	Official 4518 - Bandoneón Sinfónico	ap
+	Official 4526 - Gary Burton Astor Piazzolla Reunion	ap
+	Official 4532 - Yo-Yo Ma Soul of the Tango	ap
 	Olympia 77	dg	16708908
 	Original Tangos From Argentina Vol. 2	dg	6698194
 	Persecuta	dg	739421
@@ -4652,10 +5258,16 @@
 	Piazzolla Interpreta A Piazzolla	dg	5319701
 	Piazzolla o No Bailable y Apiazolado	dg	9794433
 	Pulsación	dg	4069386
+	Signori Mina Vol 3 Raro Discogs3511515	dg	3511515
 	Sinfonia De Tango	dg	11333841
 	Summit	dg	3460262
 	Sur (Una Pelicula Para Llevar En El Corazon)	dg	1581605
+	TEV 12139 - Lo que vendrá	tv	12139
+	TEV 500 - Octeto Buenos Aires	tv	500
+	TEV 970 - Tango progresivo	tv	970
 	Tangamente (Volume 2 1969,1972)	dg	20093122
+	Tangamente Volume 2 1969 1972 JAM9108 Discogs20093122	dg	20093122
+	Tangamente Volume 3 1972 1973 JAM9109 Discogs20093194	dg	20093194
 	Tango	dg	2169200
 	Tango En El Teatro Colon	dg	13078930
 	Tango Futur	dg	3318070
@@ -4671,12 +5283,71 @@
 	Viaje De Bodas	dg	6428360
 	Vigencia	dg	12548347
 	Woe	dg	4603577
+>PiazzollaAstor/LPs/Official 4194 - Astor Piazzolla en el Teatro Colon/|
+	Official 4194 - Astor Piazzolla en el Teatro Colon Back.webp	dg	8452724
+>PiazzollaAstor/LPs/Official 4198 - Concierto De Nacar/|
+	Official 4198 - Concierto De Nacar Back.webp	dg	8478084
+>PiazzollaAstor/LPs/Official 4494 - Live at the BBC 1989Live at the BBC 1989/|
+	Official 4494 - Live at the BBC 1989Live at the BBC 1989 Back.webp	dg	6752236
+>PiazzollaAstor/Singles/1945-1949/|_Piazzolla.webp
+	1945-05-19_Corrientes-Y-Esmeralda	eb	317116940490
+	1945-05-19_Si-Se-Salva-El-Pibe	ap
+	1945-06-07_Diez-Anos-Pasan	ap
+	1945-07-19_Cotorrita-De-La-Suerte	ap
+	1945-07-19_Rosa-De-Otono	dg	33533574
+	1945-07-30_El-Silbido	t78	el-silbido-la-chiflada-odeon-no-30204-b
+	1945-07-30_En-Las-Noches	ap
+	1945-09-25_Soy-Una-Fiera	ap
+	1945-10-16_Maria	ap
+	1945-11-23_Dolor-De-Tango	ap
+	1945-11-23_Oro-Falso	dg	7714733
+	1945-12-19_Amigasos	ap
+	1946-01-10_El-Trovero	ap
+	1946-01-30_Burbujas	ap
+	1946-03-20_De-Vuelta-Al-Bulin	ap
+	1946-05-21_En-Carne-Propia	ap
+	1946-09-22_El-Recodo	ap
+	1946-09-22_Solo-Se-Quiere-Una-Vez	dg	29342458
+	1946-10-07_Orgullo-Criollo	ap
+	1946-11-26_El-Desbande	t78	el-desbande-odeon-no-30353-b
+	1946-11-28_El-Milagro	ap
+	1947-01-02_El-Pillete	ap
+	1947-01-15_Como-Abrazado-A-Un-Rencor	dg	16115108
+	1947-01-15_Inspiracion	ap
+	1947-01-27_El-Rapido	ap
+	1947-01-27_Pigmalion	dg	16713843
+	1947-04-15_Haragan	ap
+	1947-05-20_En-La-Huella-Del-Adios	dg	27639567
+	1947-05-20_La-Rayuela	ap
+	1947-06-23_De-Mi-Bandoneon	dg	24798638
+	1947-06-23_Se-Armo	ap
+	1947-08-21_Quejas-De-Bandoneon	ap
+	1947-08-21_Tu-Palido-Final	dg	17739856
+	1947-10-03_Taconeando	dg	31654358
+	1947-10-03_Tapera	ap
+	1947-12-10_Che-Bartolo	dg	34035714
+	1947-12-10_Chiclana	ap
+	1948-04-10_Se-Fue-Sin-Decirme-Adios	dg	7573755
+	1948-04-10_Tierra-Querida	ap
+	1948-07-08_Ahi-Va-El-Dulce	ap
+	1948-07-08_Cargamento	dg	25661569
+	1948-11-25_Cafetin-De-Buenos-Aires	ap
+	1948-11-25_Republica-Argentina	dg	14965243
+	1948-12-14_Todo-Corazon	ap
+	1948-12-14_Villeguita	dg	7573768
 >PiazzollaAstor/Singles/1950-1954/|_Piazzolla.webp
 	1950_Chique	ap
+	1950_El-Choclo	ap
+	1950_El-Lloron	ap
+	1950_Triste	dg	30817326
+	1951_Dede	dg	16115055
 	1951_La-Cumparsita	ap
+	1951_La-Misma-Pena	ap
 	1952_Fugitiva	ap
 >PiazzollaAstor/Singles/1955-1959/|_Piazzolla.webp
 	1956-09_Vanguardista	ap
+	1956_Atabache	ap
+	1956_Sensiblero	ap
 >PizarroManuel/Singles/1920-1924/|_Pizarro.webp
 	1924-01-22_Mano-Santa	a	pizarrotracks/2024/09/5000-mano-santa-orchestre-argentin
 	1924-01-22_Mirala-Como-Se-Va	a	pizarrotracks/2024/09/5003-mirala-como-se-va-orchestre
@@ -4852,6 +5523,7 @@
 	Nº 9	dg	18649807
 	Para Siempre	dg	27676794
 	Su Gran Orquesta Con Alberto Podesta Y Hector Dario	dg	28935724
+	TEV 12258 - Cambalache	tv	12258
 >PontierArmando/LPs/|
 	A Don Agustin Bardi	dg	11404988
 	A Los Amigos	dg	9038077
@@ -4867,6 +5539,11 @@
 	Milongueando En El 40	dg	12981626
 	Otra Vez Armando	dg	7327233
 	Reunion Tanguera	dg	7679820
+	TEV 11074 - Tangos en stereo	tv	11074
+	TEV 11159 - Armando Pontier	tv	11159
+	TEV 22 - El tango de oro	tv	22
+	TEV 319 - Tango de siempre	tv	319
+	TEV 586 - Otra vez Armando	tv	586
 	tangos en stereo	dg	11385460
 >PontierArmando/Singles/1955-1959/|_Pontier.webp
 	1958-07-03_Confesion	ti	02480002734086
@@ -4884,6 +5561,15 @@
 >PuglieseOsvaldo/LPs/|
 	50 Años	dg	16226220
 	Amigos	dg	7111164
+	TEV 108 - El tango se llama Osvaldo Pugliese	tv	108
+	TEV 12002 - Osvaldo Pugliese Y Su Orquesta Típica	tv	12002
+	TEV 133 - Adios Corazón (Volumen Nro 14)	tv	133
+	TEV 158 - Canta Alberto Moran (Volumen Nro 13)	tv	158
+	TEV 50191 - Selección de Mejores Tangos por O.Pugliese	tv	50191
+	TEV 706 - Osvaldo Pugliese y su orquesta típica	tv	706
+	TEV 894 - Historiando a Osvaldo Pugliese Vol.1	tv	894
+>PuglieseOsvaldo/LPs/Edición Aniversario 1905-2005/|
+	Edición Aniversario 1905-2005 Front.webp	dg	6775215
 >PuglieseOsvaldo/Singles/1940-1944/|_Pugliese.webp
 	1943-07-15_El-Rodeo	t78	el-rodeo-odeon-no-55142-b
 	1943-07-15_Farol	ti	02480002709138
@@ -4891,51 +5577,78 @@
 	1943-10-21_Milonga-De-Mi-Tierra	t78	milonga-de-mi-tierra-odeon-no-7662-a
 	1944-03-31_Recuerdo	ti	02480002709527
 	1944-03-31_Silbar-De-Boyero	ti	02480002709527
+	1944-03-31_Silbar-de-boyero	ti	02480002709527
 	1944-06-01_El-Remate	ti	02480002709572
 	1944-06-01_Tortazos	ti	02480002709572
 	1944-07-06_El-Dia-De-Tu-Ausencia	ti	02480002709169
+	1944-07-06_El-Dia-de-Tu-Ausencia	ti	02480002709169
 	1944-07-06_Tierra-Querida	ti	02480002709169
+	1944-07-06_Tierra-querida	ti	02480002709169
 	1944-07-20_La-Abandone-Y-No-Sabia	ti	02480002709268
+	1944-07-20_La-abandone-y-no-sabia	ti	02480002709268
 	1944-07-20_Tu-Casa-Ya-No-Esta	ti	02480002709268
+	1944-07-20_Tu-casa-ya-no-esta	ti	02480002709268
 	1944-08-22_El-Arranque	ti	02480002709206
 	1944-08-22_El-Tango-Es-Una-Historia	ti	02480002709206
+	1944-08-22_El-Tango-Es-una-Historia	ti	02480002709206
 	1944-10-17_Adios-Bardi	ti	02480002709091
 	1944-10-17_Corrientes-Y-Esmeralda	ti	02480002709091
+	1944-10-17_Corrientes-y-Esmeralda	ti	02480002709091
 	1944-11-24_Amurado	ti	02480002709039
 	1944-11-24_Nada-Mas-Que-Un-Corazon	ti	02480002709039
+	1944-11-24_Nada-mas-que-un-corazon	ti	02480002709039
 	1944-12-21_Mala-Pinta	ti	02480002709503
+	1944-12-21_Mala-pinta	ti	02480002709503
 	1944-12-21_Puentecito-De-Mi-Rio	ti	02480002709503
+	1944-12-21_Puentecito-de-Mi-Rio	ti	02480002709503
+>PuglieseOsvaldo/Singles/1940-1944/|_pugliese.webp
+	1943-07-15_El-Rodeo	t78	el-rodeo-odeon-no-55142-b
+	1943-10-21_Milonga-De-Mi-Tierra	t78	milonga-de-mi-tierra-odeon-no-7662-a
 >PuglieseOsvaldo/Singles/1945-1949/|_Pugliese-2.webp
 	1945-01-25_Raza-Criolla	ti	02480002709640
 >PuglieseOsvaldo/Singles/1945-1949/|_Pugliese.webp
 	1945-01-25_Raza-Criolla	ti	02480002709183
+	1945-01-25_Raza-criolla	ti	02480002709183
 	1945-01-25_Yuyo-Verde	ti	02480002709640
+	1945-01-25_Yuyo-verde	ti	02480002709640
 	1945-03-22_El-Sueno-Del-Pibe	ti	02480002709190
+	1945-03-22_El-Sueno-del-Pibe	ti	02480002709190
 	1945-08-28_Flor-De-Tango	t78	flor-de-tango-odeon-no-7676-b
 	1945-08-28_Por-Que	ml	disco-de-pasta-osvaldo-pugliese-odeon-7676-tango-78-rpm/up/MLAU135900150
 	1945-09-24_La-Cachila	ti	02480002709114
 	1945-09-24_Mentira	ti	02480002709336
 	1945-12-03_Por-Que-No-Has-Venido	t78	por-que-no-has-venido-odeon-no-7679-a
 	1945-12-18_Hoy-Al-Recordarla	ti	02480002709251
+	1945-12-18_Hoy-al-recordarla	ti	02480002709251
 	1945-12-18_Tiny	ti	02480002709251
 	1946-02-27_Consejo-De-Oro	ti	02480002709107
+	1946-02-27_Consejo-de-Oro	ti	02480002709107
 	1946-02-27_Demasiado-Tarde	ti	02480002709107
 	1946-03-28_Fuimos	ti	02480002709480
 	1946-03-28_Principe	ti	02480002709480
 	1946-06-13_El-Tabano	ti	02480002709602
+	1946-06-13_El-tabano	ti	02480002709602
 	1946-06-21_Vayan-Saliendo	ti	02480002709602
+	1946-06-21_Vayan-saliendo	ti	02480002709602
 	1946-07-31_No-Me-Escribas	ti	02480002709411
+	1946-07-31_No-me-escribas	ti	02480002709411
 	1946-07-31_Tiempo	ti	02480002709411
+	1946-08-21_La-Yumba	dg	34270942
 	1946-08-21_Mal-De-Amores	t78	mal-de-amores-odeon-no-7686-a
+	1946-08-21_Mal-de-Amores	t78	mal-de-amores-odeon-no-7686-a
 	1946-11-08_Una-Vez	t78	una-vez-odeon-no-7687-a
 	1947-01-02_Sin-Palabras	ti	02480002709558
+	1947-01-02_Sin-palabras	ti	02480002709558
 	1947-01-28_Ilusion-Marina	ti	02480002709435
+	1947-01-28_Ilusion-marina	ti	02480002709435
 	1947-01-28_Ojos-Maulas	ti	02480002709435
+	1947-01-28_Ojos-maulas	ti	02480002709435
 	1947-03-27_Cafetin	t78	cafetin-odeon-no-7690-b-2
 	1947-03-27_Yo-Te-Bendigo	ml	disco-de-pasta-78-rpm-osvaldo-pugliese-tango-odeon-7690/up/MLAU132890188
 	1947-04-28_Desilusion	t78	desilusion-odeon-no-7691-a
 	1947-10-14_Cabecitas-Blancas	ti	02480002709176
 	1947-12-01_Anda-Que-Te-Cure-Lola	ti	02480002709046
+	1947-12-01_Anda-que-te-cure-lola	ti	02480002709046
 	1947-12-01_El-Buscapie	ti	02480002709046
 	1947-12-16_Bolero	ti	02480002709060
 	1947-12-16_Entrada-Prohibida	ti	02480002709060
@@ -4943,60 +5656,105 @@
 	1948-07-14_Boedo	ti	02480002709053
 	1949-05-04_Chuzas	ti	02480002709220
 	1949-05-04_Frente-A-Una-Copa	ti	02480002709220
+	1949-05-04_Frente-a-una-copa	ti	02480002709220
 	1949-05-31_Malandraca	ti	02480002709626
 	1949-05-31_Y-Volvemos-A-Querernos	ti	02480002709626
+	1949-05-31_Y-volvemos-a-querernos	ti	02480002709626
 	1949-08-22_Pinta-Brava	ti	02480002709497
 	1949-08-22_Puente-Alsina	ti	02480002709497
 	1949-09-27_Bien-Compadre	ti	02480002709275
 	1949-09-27_La-Cieguita	ti	02480002709275
 	1949-11-28_Canaro-En-Paris	ti	02480002709121
+	1949-11-28_Canaro-en-Paris	ti	02480002709121
 	1949-12-07_Catuzo	ti	02480002709565
 	1949-12-07_Testamento-De-Arrabal	ti	02480002709565
+	1949-12-07_Testamento-de-Arrabal	ti	02480002709565
+>PuglieseOsvaldo/Singles/1945-1949/|_pugliese.webp
+	1945-08-28_Flor-De-Tango	t78	flor-de-tango-odeon-no-7676-b
+	1945-12-03_Por-Que-No-Has-Venido	t78	por-que-no-has-venido-odeon-no-7679-a
+	1946-11-08_Una-Vez	t78	una-vez-odeon-no-7687-a
+	1947-03-27_Cafetin	t78	cafetin-odeon-no-7690-b-2
+>PuglieseOsvaldo/Singles/1950-1954/|_7a954cf40c96d8f8.webp
+	1950-03-07_Ventanita-De-Arrabal_Pugliese__sha256	dg	16238566
 >PuglieseOsvaldo/Singles/1950-1954/|_Pugliese.webp
+	1950-03-07_Quiero-Verte-Una-Vez-Mas	dg	16238566
 	1950-03-07_Ventanita-De-Arrabal	t78	ventanita-de-arrabal-odeon-no-30609-b
 	1950-03-29_De-Floreo	ti	02480002709244
 	1950-03-29_Hacelo-Por-La-Vieja	ti	02480002709244
+	1950-03-29_Hacelo-Por-la-Vieja	ti	02480002709244
 	1950-07-26_Don-Aniceto	ti	02480002709619
+	1950-07-26_Don-aniceto	ti	02480002709619
 	1950-07-26_Y-Mientes-Todavia	ti	02480002709619
+	1950-07-26_Y-mientes-todavia	ti	02480002709619
 	1950-10-24_Cobardia	ti	02480002709084
 	1950-10-24_El-Tobiano	ti	02480002709084
 	1950-11-16_Un-Baile-A-Beneficio	ti	02480002709589
+	1950-11-16_Un-Baile-a-Beneficio	ti	02480002709589
 	1950-11-24_Llevatelo-Todo	ti	02480002709589
 	1951-06-27_Don-Atilio	ti	02480002709145
+	1951-06-27_Don-atilio	ti	02480002709145
 	1951-06-27_El-Mate-Amargo	ti	02480002709145
 	1951-07-31_Bien-Milonga	ti	02480002709442
+	1951-07-31_Bien-milonga	ti	02480002709442
 	1951-07-31_Pasional	ti	02480002709442
 	1951-10-02_El-Cielo-En-Las-Manos	t78	el-cielo-en-las-manos-odeon-no-55304-a
+	1951-10-02_El-Cielo-en-las-Manos	t78	el-cielo-en-las-manos-odeon-no-55304-a
 	1951-12-06_Que-Nunca-Me-Falte	ti	02480002709510
+	1951-12-06_Que-nunca-me-falte	ti	02480002709510
 	1951-12-10_Olivero	ti	02480002709510
 	1952-01-28_Cualquier-Cosa	ti	02480002709305
+	1952-01-28_Cualquier-cosa	ti	02480002709305
 	1952-01-28_La-Noche-Que-Me-Esperes	ti	02480002709305
+	1952-01-28_La-noche-que-me-esperes	ti	02480002709305
 	1952-11-13_El-Embrollo	ti	02480002709350
+	1952-11-13_El-embrollo	ti	02480002709350
+	1952-11-13_La-Yumba	dg	34270942
 	1952-11-18_Manos-Adoradas	ti	02480002709350
+	1952-11-18_Manos-adoradas	ti	02480002709350
 	1952-11-24_Pasional	t78	pasional-odeon-no-55565-b
 	1953-05-28_Chique	t78	chique-angel-records-no-oh-9023
 	1953-07-14_Milonguera	ml	pasta-osvaldo-pugliese-alberto-moran-j-c-cobos-odeon-c306/up/MLAU146573923
 	1953-07-14_San-Jose-De-Flores	ml	pasta-osvaldo-pugliese-alberto-moran-j-c-cobos-odeon-c306/up/MLAU146573923
 	1953-08-16_Desvelo	t78	desvelo-de-flor-en-flor-odeon-no-55766-a
 	1953-11-25_Es-Preciso-Que-Te-Vayas	ti	02480002709312
+	1953-11-25_Es-preciso-que-te-vayas	ti	02480002709312
 	1953-11-25_La-Rayuela	ti	02480002709312
+	1953-11-25_La-rayuela	ti	02480002709312
 	1954-01-05_Picaneao	ti	02480002709473
 	1954-01-05_Porque-No-Te-Tengo-Mas	ti	02480002709473
+	1954-01-05_Porque-no-te-tengo-mas	ti	02480002709473
 	1954-03-17_La-Mentirosa	ti	02480002709299
+	1954-03-17_La-mentirosa	ti	02480002709299
 	1954-03-17_Mi-Lamento	ti	02480002709299
+	1954-03-17_Mi-lamento	ti	02480002709299
 	1954-03-17_No-Es-Mas-Que-Yo	ti	02480002709428
+	1954-03-17_No-es-mas-que-yo	ti	02480002709428
 	1954-05-13_Nueve-De-Julio	ti	02480002709008
+	1954-05-13_Nueve-de-julio	ti	02480002709008
 	1954-05-13_Te-Aconsejo-Que-Me-Olvides	ti	02480002709008
+	1954-05-13_Te-aconsejo-que-me-olvides	ti	02480002709008
 	1954-07-14_A-La-Luz-Del-Candil	ti	02480002709015
+	1954-07-14_A-la-luz-del-candil	ti	02480002709015
 	1954-07-14_La-Guitarrita	ti	02480002709015
+	1954-07-14_La-guitarrita	ti	02480002709015
 	1954-12-13_Mi-Fuelle-Rezonga	ti	02480002709541
+	1954-12-13_Mi-fuelle-rezonga	ti	02480002709541
 	1954-12-13_Si-Yo-Pudiera-Olvidarla	ti	02480002709541
+	1954-12-13_Si-yo-pudiera-olvidarla	ti	02480002709541
+>PuglieseOsvaldo/Singles/1950-1954/|_pugliese.webp
+	1950-03-07_Ventanita-De-Arrabal	t78	ventanita-de-arrabal-odeon-no-30609-b
+	1952-11-24_Pasional	t78	pasional-odeon-no-55565-b
+	1953-05-28_Chique	t78	chique-angel-records-no-oh-9023
+	1953-08-16_Desvelo	t78	desvelo-de-flor-en-flor-odeon-no-55766-a
 >PuglieseOsvaldo/Singles/1955-1959/|_Pugliese.webp
 	1955-09-22_Cascabelito	ti	02480002709077
 	1955-09-22_El-Poncho-Del-Amor	ti	02480002709077
+	1955-09-22_El-Poncho-del-Amor	ti	02480002709077
 	1956-03-20_A-Roberto-Peppe	ti	02480002709022
 	1956-03-20_Que-Te-Pasa-Buenos-Aires	ti	02480002709022
+	1956-03-20_Que-te-pasa-buenos-aires	ti	02480002709022
 	1956-05-30_Muchachos-Mi-Ultimo-Tango	ti	02480002709534
+	1956-05-30_Muchachos-mi-ultimo-tango	ti	02480002709534
 	1956-06-21_Y-Todavia-Te-Quiero	t78	y-todavia-te-quiero-odeon-no-51961-a
 	1956-07-04_Remembranza	ti	02480002709534
 	1956-08-02_Te-Estaba-Esperando	t78	te-estaba-esperando-odeon-no-51989-a
@@ -5008,6 +5766,12 @@
 	1957-06-24_La-Conciencia	ti	02480002709282
 	1957-12-18_Perla-Fina	ti	02480002709466
 	1958-01-02_Corazoneando	ti	02480002709466
+	1958-07-23_Las-Tres-Banderas	dg	10176537
+	1959-07-23_Gallo-Ciego	t78	gallo-ciego-odeon-no-52644-a
+	1959-07-23_Si-Nace-Chancleta	t78	si-nace-chancleta-odeon-no-52644-b
+>PuglieseOsvaldo/Singles/1955-1959/|_pugliese.webp
+	1956-06-21_Y-Todavia-Te-Quiero	t78	y-todavia-te-quiero-odeon-no-51961-a
+	1956-08-02_Te-Estaba-Esperando	t78	te-estaba-esperando-odeon-no-51989-a
 	1959-07-23_Gallo-Ciego	t78	gallo-ciego-odeon-no-52644-a
 	1959-07-23_Si-Nace-Chancleta	t78	si-nace-chancleta-odeon-no-52644-b
 >QuirogaRosita/Singles/1920-1924/|_Quiroga.webp
@@ -5029,6 +5793,8 @@
 	1924_Nunca-Es-Tarde	t78	nunca-es-tarde-victor-no-79522-a
 >QuirogaRosita/Singles/1925-1929/|_Quiroga.webp
 	1925-01-05_Beba	d	600004771
+	1925-02-10_La-Eterna-Herida	ia	la-eterna-herida-quiroga
+	1925-02-10_Quejas-Del-Suburbio	ia	quiroga-quejas-del-suburbio
 	1925-04-13_Estro	d	600004802
 	1925-04-24_Ecos-De-Ausencia	d	600004803
 	1925-06-27_No-Juan-Carlos	d	600004838
@@ -5040,6 +5806,7 @@
 	1925-09-17_Volveras	d	600004880
 	1925-09-28_Callecita-De-Mi-Barrio	d	600004889
 	1925-09-28_Lamento	d	600004890
+	1925-11-04_Alma	d	600004950
 	1925-11-04_Te-Estoy-Sobrando	d	600004949
 	1925-12-11_Oiga-Madre	d	600004941
 	1925-12-11_Tiento-Sobao	d	600004942
@@ -5159,6 +5926,8 @@
 	Recordando A Enrique Santos Discépolo	dg	7488904
 	Sounds Of Seto	dz	451223735
 	Soy Yo	dg	13248578
+	TEV 41002 - Cuando llora la milonga	tv	41002
+	TEV 56003 - Donato Racciatti y su Orquesta Tipica	tv	56003
 	Tangos De La Guardia Vieja Volumen 2	dg	9110337
 >RiveroEdmundo/EPs/|
 	Pelota De Cuero	dg	8793381
@@ -5187,8 +5956,19 @@
 	Romance Para Una Vereda	dg	26757056
 	Tangos Que Hicieron Epoca	dg	26607047
 	Viejo Baldio	dg	12705135
+>RodriguezEnrique/LPs/|
+	TEV 11035 - Todos Los Ritmos	tv	11035
+	TEV 296 - Lo mejor de... Enrique Rodriguez	tv	296
+	TEV 906 - Enrique Rodriguez y su orquesta, canta Armando Moreno	tv	906
+>RodriguezEnrique/Singles/1945-1949/|_Rodriguez.webp
+	1945-09-25_Llora-Corazon	dg	15067703
 >RodriguezEnrique/Singles/1950-1954/|_Rodriguez.webp
+	1951-04-20_Jueves	dg	14895390
 	1954-03-27_El-Rapido	t78
+>RotundoFrancisco/LPs/|
+	TEV 12262 - Francisco Rotundo, canta Floreal Ruiz	tv	12262
+	TEV 12263 - Yo soy aquel muchacho	tv	12263
+	TEV 12264 - Tangos	tv	12264
 >RotundoFrancisco/Singles/1945-1949/|_Rotundo.webp
 	1948-12-14_Sur	t78	sur-odeon-no-30651-a
 >RotundoFrancisco/Singles/1950-1954/|_Rotundo.webp
@@ -5198,6 +5978,18 @@
 	1951-09-10_Llorando-La-Carta	t78	llorando-la-carta-odeon-no-55310-a-2
 	1951-12-10_El-Viejo-Vals	t78	el-viejo-vals-odeon-no-55343-a
 	1951-12-10_Tras-Carton	t78	tras-carton-odeon-no-55343-b
+>RoviraEduardo/EPs/|
+	TEV 12067 - Susana Rinaldi canta al estilo de Eduardo Rovira	tv	12067
+	TEV 12068 - A Roberto Arlt	tv	12068
+	TEV 12075 - Especialidades Medicinales	tv	12075
+>RoviraEduardo/LPs/|
+	Circulo de Amigos del Buen Tango (Microfon I-54)	dg	23002502
+	TEV 12069 - Sonico	tv	12069
+	TEV 12070 - Tangos en una nueva dimensión	tv	12070
+	TEV 12071 - Tango Buenos Aires	tv	12071
+	TEV 12072 - Tango Vanguardia	tv	12072
+	TEV 12073 - Tango en la universidad	tv	12073
+	TEV 12078 - Que lo paren	tv	12078
 >SalamancaFulvio/LPs/|
 	Adiós Corazón	dg	22330831
 	Asi Se Baila Hoy	dg	14244937
@@ -5205,13 +5997,20 @@
 	Continental Tango Golden Album	dg	34089772
 	Golden Tango Double Deluxe	dg	17201410
 	La Noche	dg	16121820
+	TEV 11206 - Chique	tv	11206
+	TEV 12013 - Fulvio Salamanca Y Su Orquesta Típica	tv	12013
+	TEV 12014 - Fulvio Salamanca Y Su Orquesta Típica	tv	12014
+	TEV 12199 - Fulvio Salamanca y su orquesta típica	tv	12199
 	Tangos Para El Amanecer	dg	7377242
 	Tangos Por Fulvio Salamanca	dg	34429654
 	Tangos Tangos Tangos Vol. 2	dg	14691998
 >SalganHoracio/EPs/|
 	Horacio Salgan Y Su Piano, En La Guitarra Ubaldo De Lio	dg	17752531
+	Musica Japonesa en Tiempo de Tango Philips84165 Discogs34733295	dg	34733295
 >SalganHoracio/LPs/|
+	1950-1954 El Bandoneon EBCD42 Discogs15160427	dg	15160427
 	Buenos Aires At 3 AM	dg	15697165
+	Buenos Aires At 3 AM Verve2149 Discogs15697165	dg	15697165
 	Concierto En Vivo En El Buenos Aires Sheraton Hotel	dg	15758130
 	Dos Grandes Del Tango	dg	9783084
 	Dos Virtuosos Del Piano	dg	11815553
@@ -5222,12 +6021,24 @@
 	Horacio Salgán - Edmundo Rivero	dg	13555063
 	Horacio Salgán Roberto Goyeneche Edmundo Rivero Teatro Colón 1972 (En Vivo en Buenos Aires 17 08 1972) [Remastered 2023]	it	us/1721591160
 	Horacio Salgán ∙ Miguel Montero Y Orquesta Típica – Los Cosos De Buenos Aires	dg	6115740
+	Oratorio Carlos Gardel ABR TI003 Discogs10802468	dg	10802468
 	Presente Y Futuro Del Tango	dg	9921062
 	Quinteto Real	dg	6335781
 	Quinteto Real En Japon Vol. 1	dg	14945364
 	Quinteto Réal En Japon Vol. 2	dg	12684616
 	Salgan Tango	dg	16133527
 	Su Majestad El Tango	dg	7919557
+	TEV 12018 - Las Grandes Creaciones	tv	12018
+	TEV 12085 - Salgan - Amicarelli - Dos virtuosos del piano	tv	12085
+	TEV 12236 - Horacio Salgán y sus cantores	tv	12236
+	TEV 507 - Quinteto Real in Akasaka	tv	507
+	TEV 595 - Quinteto Real en Japon Vol 1	tv	595
+	TEV 596 - Quinteto Real en Japon Vol 2	tv	596
+	TEV 598 - Quinteto Real	tv	598
+	TEV 658 - Malevaje	tv	658
+	TEV 659 - Horacio Salgan y su orquesta típica	tv	659
+	TEV 666 - Salgan Tango	tv	666
+	TEV 862 - Nuevo Gran Quinteto Real	tv	862
 	Tango	dg	7290264
 	Tango Aux Trottoirs De Buenos Aires Vol. 1	dg	6916764
 	Tangos	dg	7011681
@@ -5248,9 +6059,26 @@
 	1955_Sus-Ojos-Se-Cerraron	ti	02480002724742
 	1956_Retirao	ti	02480002724735
 	1956_Un-Cielo-Para-Los-Dos	t78	un-cielo-para-los-dos-tk-no-e-10095-b
+>SarliCarlosDi/EPs/|
+	Exitos De Carlos Di Sarli Volumen II	dg	12301641
+	Exitos de Carlos Di Sarli - Volumen 3	dg	6831313
 >SarliCarlosDi/LPs/|
+	Adios, Maestro, Adios!	dg	34516645
+	El Rey Y El Señor = リズムの王様とタンゴの紳士	dg	34088518
+	Jubileo Disarliano	dg	15934078
 	Los Tangos Más Buscados	dz	421961157
+	TEV 11086 - Jubileo Disarliano	tv	11086
+	TEV 204 - Nubes de humo	tv	204
+	TEV 307 - Soñemos	tv	307
+	TEV 466 - El señor del tango	tv	466
+	TEV 50165 - Gran Obelisco Del Tango - Di Sarli	tv	50165
+	TEV 720 - Carlos Di Sarli	tv	720
+	TEV 73 - El señor del tango	tv	73
 	Tiempo De Carlos Di Sarli	dz	421954577
+>SarliCarlosDi/LPs/El Señor Del Tango - 30 Años De Exitos A Traves De Sus Discos En RCA Victor/|
+	El Señor Del Tango - 30 Años De Exitos A Traves De Sus Discos En RCA Victor Front.webp	dg	27160947
+>SarliCarlosDi/LPs/Los Famosos Cantores de Carlos Di Sarli/|
+	Los Famosos Cantores de Carlos Di Sarli Front.webp	dg	15929653
 >SarliCarlosDi/Singles/1925-1929/|_Di-Sarli.webp
 	1929-03-01_Cuando-Bronca-El-Temporal	ti	02480002718895
 	1929-08-14_Flor-Marchita	ti	02480002718628
@@ -5268,7 +6096,9 @@
 	1930-06-16_Palito	ti	02480002718833
 	1931_Lupe	ti	02480002735700
 	1931_Raul	ti	02480002738510
+	1931_Tango-Mio	t78	tango-mio-brunswick-no-2200-a
 	1931_Volve	ti	02480002738510
+	1932_Soy-Tu-Esclavo	t78	soy-tu-esclavo-brunswick-no-2210-a
 >SarliCarlosDi/Singles/1935-1939/|_Di-Sarli.webp
 	1939-12-11_El-Retirao	ti	02480002718192
 >SarliCarlosDi/Singles/1940-1944/|_Di-Sarli.webp
@@ -5444,10 +6274,17 @@
 	Ribera Sud	dg	7246794
 	Sassone Internacional	dg	13035929
 	Sassoneando	dg	7290447
+	TEV 12027 - Sassone Internacional	tv	12027
+	TEV 502 - Brindamos para su tango favorito	tv	502
 	Tangazos	dg	13055700
+	Tango Internacional (EPSA 19001)	dg	19774171
 	Tangos Para La Historia	dg	16669944
 	Volumen 2	dg	16188844
 	ラ・クンパルシータ アルゼンチン・タンゴ決定盤	dg	25856878
+>SassoneFlorindo/LPs/Grandes Del Tango 46/|
+	Grandes Del Tango 46 Front.webp	dg	15328893
+>SassoneFlorindo/LPs/La canción de Buenos Aires (1947-53)/|
+	La canción de Buenos Aires (1947-53) Front.webp	it	us/1094688312
 >SelectOrquestaTipica/Singles/1920-1924/|_Select.webp
 	1920-08-24_Curupayti	a	fresedotracks/2023/03/00102-curupayti-orquesta-tipica-select
 	1920-08-24_Don-Esteban	a	fresedotracks/2023/03/00100-don-esteban-orquesta-tipica
@@ -5528,6 +6365,9 @@
 	1929-11-25_Pifiaste	ti	02480002716341
 	1929-11-25_Vieja-Calesita	ti	02480002716341
 >SimoneMercedes/Singles/1930-1934/|_Simone.webp
+	1930-03-27_No-Llores-Madre	d	800030660
+	1930-04-16_Dejemonos-De-Pavadas	d	800030712
+	1930-04-16_La-Copla-Andaluza	d	800030710
 	1930-04-16_Se-Casa-Marieta	ti	02480002716075
 	1930-06-06_El-Gaucho-Don-Ramon	ti	02480002716075
 	1930-07-02_La-Tartamuda	ti	02480002716129
@@ -5548,23 +6388,37 @@
 	1931-06-16_Recordar	ti	02480002716242
 	1931-08-13_Cantando	ti	02480002716006
 	1931-08-14_Circo-Criollo	ti	02480002716006
+	1931-08-28_Si-Tu-Fueras-Mi-Novia	d	800031375
+	1931-10-02_Canta-Guitarra	d	800031439
+	1931-10-02_Celosa	d	800031440
 	1931-11-03_Marieta-Se-Escapo-Con-Un-Gallego	ti	02480002716143
 	1931-11-03_Me-Vuelves-Loco	ti	02480002716143
 	1932-01-07_Trifon-Y-Sisebuta	t78	trifon-y-sisebuta-victor-no-37131-b
 	1932-03-22_Rodadas-Del-Alma	t78	rodadas-del-alma-victor-no-37170-b
+	1932-05-06_Lazos-De-Amores	d	800034092
 	1932-05-24_Por-Culpa-Del-Cine	t78	por-culpa-del-cine-victor-no-37215-a
 	1932-05-24_Queja-Gaucha	t78	queja-gaucha-odeon-37215-b
+	1932-07-04_Castanuelas	d	800034169
 	1932-07-04_Pobre-Novia	t78	pobre-novia-victor-no-37239-b
 	1932-10-04_El-Gateao-De-Don-Secundino	ti	02480002716150
 	1932-10-04_Milonga-Sentimental	ti	02480002716150
+	1933-01-30_Con-Casa-Y-Sin-Mujer	d	800039650
 	1933-01-30_La-Ultima-Cita	t78	la-ultima-cita-victor-no-37350-b
 	1933-03-08_Justicia-Baturra	ti	02480002716105
 	1933-03-08_Mia	ti	02480002716105
 	1933-04-27_Cuando-Canta-Mi-Guitarra	ti	02480002716167
 	1933-04-27_Mirame-A-Mi	ti	02480002716167
+	1933-06-08_Cadenas	d	800039730
+	1933-06-08_La-Gaucha-Petrona	d	800039731
+	1933-08-11_Acacias	d	800039783
+	1933-09-08_Plegaria	d	800039790
+	1933-09-12_Canto-Siboney	d	800039791
 	1933-11-30_La-Llorona	t78	la-llorona-victor-no-37525-b
+	1933-11-30_No-Quiero-Verlo-Mas	d	2000645576
 	1934-04-12_Gloria-Chilena	ti	02480002716297
 	1934-04-12_Serenata	ti	02480002716297
+	1934-04-25_Esquinas-Portenas	d	2000249440
+	1934-04-25_La-Flor-Del-Palmar	d	2000249441
 	1934-10-23_Dimelo-Al-Oido	ti	02480002716051
 	1934-10-23_Negrito	ti	02480002716051
 >SimoneMercedes/Singles/1935-1939/|_Simone.webp
@@ -5582,6 +6436,7 @@
 	1936-10-09_Damisela-Encantadora	ti	02480002716044
 	1936-10-09_He-Venido-A-Verte	ti	02480002716044
 	1937-02-24_Cantando	t78	cantando-victor-no-dc-38-b
+	1937-02-24_Inocencia	d	200021080
 	1937-05-11_No-Mas	ti	02480002716181
 	1937-05-11_Noche-De-Ronda	ti	02480002716181
 	1937-06-17_Mi-Obsesion	t78	mi-obsesion-columbia-no-j-2958
@@ -5590,6 +6445,7 @@
 >SimoneMercedes/Singles/1950-1954/|_Simone.webp
 	1950_Yira-Yira	ti	02480002716358
 	1951_Milonga-Del-900	t78	milonga-del-900-tk-no-s-504-b
+	1951_Milonguita	eb	353795573801
 	1952_Tiempos-Viejos	ti	02480002716334
 	1953_Patio-Mio	ti	02480002716228
 	1953_Sonsa	ti	02480002716228
@@ -5600,6 +6456,13 @@
 	Para Osmar Maderna (Tanda de Milongas)	it	us/1882565950
 	Para Osmar Maderna (Tanda de Valses)	it	us/1808206247
 	Porteñísimo	it	us/1537213659
+>StamponeAtilio/LPs/|
+	Personalidad Y Tango AVS4211 Discogs4593149	dg	4593149
+	TEV 12098 - Soy del 40	tv	12098
+	TEV 12099 - Tango Argentino	tv	12099
+	TEV 12101 - Concepto	tv	12101
+	TEV 256 - Vivencias	tv	256
+	TEV 426 - Goyeneche 73	tv	426
 >Tanghetto/LPs/|
 	ARGENTINXS	it	us/1684996303
 	Alas De Tango	it	us/1684286467
@@ -5631,6 +6494,7 @@
 >TangoLosReyesdel/LPs/|
 	A Don Juan	it	us/251047165
 	A Su Estilo	it	us/323183453
+	La Ventana Buenos Aires Argentina EPSA17023 Discogs15348668	dg	15348668
 >TangoSexteto/LPs/|
 	De Villoldo Al Sexteto Tango	dg	7301557
 	For Export	dg	7188153
@@ -5649,21 +6513,20 @@
 >TanturiRicardo/EPs/|
 	Madre Con Los Cabellos de Plata	dg	26948126
 >TanturiRicardo/LPs/|
-	Cafetín De Buenos Aires	dg	15556495
-	Discos De Gardel	dg	13982740
-	El Tango Es El Tango	dg	13982686
-	Encuentro	dg	12571632
 	Esto Es El Tango	dg	22229689
-	Los grandes exitos	dg	9248189
-	Más Tanturi Castilllo	dg	10658576
-	Sollozo De Bandoneon	dg	13982711
+	TEV 903 - El caballero del tango y su orquesta	tv	903
+	TEV 911 - Ricardo Tanturi y sus cantores	tv	911
 >TanturiRicardo/Singles/1940-1944/|_Tanturi.webp
 	1940-11-18_Arganaraz	ti	02480002734208
 	1940-11-18_La-Cumparsita	ti	02480002734208
+	1941-06-16_Pocas-Palabras	fr	recordings/pocas-palabras-2
+	1942-08-14_Esta-Noche-Me-Emborracho	eb	355467134996
 	1942-12-04_Me-Llaman-El-Zorro	t78	me-llaman-el-zorro-rca-victor-no-68-0459-b
 	1943-03-02_A-Otra-Cosa-Che-Pebeta	t78	a-otra-cosa-che-pebeta-victor-no-60-0014-a
 	1943-03-02_Con-Los-Amigos	t78	con-los-amigos-victor-no-39362-b
 	1943-03-02_Que-Podran-Decir	t78	que-podran-decir-victor-no-60-0014-b
+	1943-05-07_Bailongo-De-Los-Domingos	eb	354835254168
+	1943-05-07_Barajando-Recuerdos	eb	354835254168
 	1943-11-17_Una-Emocion	t78	una-emocion-victor-no-60-0258-a-2
 	1944-11-14_Prisionero	t78	prisionero-victor-no-60-0575-a
 >TanturiRicardo/Singles/1945-1949/|_Tanturi.webp
@@ -5671,6 +6534,12 @@
 >TroiloAnibal/LPs/|
 	Ayer, hoy y siempre	dz	421956537
 	Recordando A Aníbal Troilo	dz	421956027
+	TEV 120 - Latitud de Buenos Aires	tv	120
+	TEV 234 - El polaco y yo	tv	234
+	TEV 423 - Bien Milonga	tv	423
+	TEV 50231 - Fraternal	tv	50231
+	TEV 639 - Anibal Troilo... .... Soy yo	tv	639
+	TEV 900 - Esencia del tango Anibal Troilo	tv	900
 	Tiempo de Anibal Troilo	dz	421956357
 >TroiloAnibal/Singles/1940-1944/|_Troilo.webp
 	1941-05-28_Tabernero	t78	tabernero-victor-no-39299-a-2
@@ -5740,12 +6609,19 @@
 	1952-03-28_Cualquier-Cosa	eb	318571166308
 	1952-03-28_El-Marne	t78	el-marne-tk-no-s-5101-b
 	1952-05-08_Medianoche	t78	media-noche-tk-s-5108-b
+	1952-08-07_Ventanita-De-Arrabal	dg	36862537
 	1952-08-18_El-Entrerriano	eb	356365261513
+	1952-08-18_Malena	dg	38368560
 	1952-09-11_Barrio-Viejo	eb	356365261513
 	1952-12-12_Inspiracion	t78	inspiracion-tk-no-s-5150-a
 	1952-12-12_La-Cumparsita	t78	la-cumparsita-tk-no-s-5150-b
 >VarelaHector/EPs/|
 	Matinee De Tango	dg	18899779
+	TEV 12182 - La Cumparsita	tv	12182
+	TEV 12183 - Que Tiempos Aquellos Tangos De La Guardia Vieja	tv	12183
+	TEV 12271 - Héctor Varela – El as del tango	tv	12271
+	TEV 17021 - Rodriguez Peña	tv	17021
+	TEV 566 - Hector Varela	tv	566
 >VarelaHector/LPs/|
 	A Toda Marcha	dg	10442119
 	Amar Es Solamente Amar	dg	13947986
@@ -5767,6 +6643,12 @@
 	Más Exitos De Héctor Varela	dg	18271600
 	Más Varela Que Nunca	dg	27656694
 	Recordando	dg	13070154
+	TEV 173 - Hector Varela Vol 2	tv	173
+	TEV 24 - Los mas grandes exitos	tv	24
+	TEV 406 - Mas Exitos de Hector Varela con Argentino Ledesma y Rod	tv	406
+	TEV 876 - Criolla Linda - Serie PAMPA	tv	876
+	TEV 898 - Héctor Varela - El as del tango - Haceme cu cu	tv	898
+	TEV 949 - El as de los ases	tv	949
 	Tango	dg	22376659
 	Tangos De Siempre	dg	18769789
 	Tangueando Con Hector Varela Y Su Orquesta Típica	dg	25562065
@@ -5808,6 +6690,8 @@
 	1927-10-26_Malquerida	d	600005755
 	1927-12-19_Estampa-Rea	d	600005869
 	1927-12-19_Rosa-Marchita	d	600005870
+	1928-04-09_Nino-Bien	dg	36479728
+	1928-04-09_Olvidaste	dg	36479728
 	1928-09-13_Canas-De-Plata	d	800018422
 	1928-09-13_Fanfarron	d	800018423
 	1928-09-20_Muneca-De-Percal	d	800018435
@@ -5818,6 +6702,8 @@
 	1929-03-21_Debes-Reir	d	800018605
 	1929-05-18_Dios-Momo	d	800018688
 	1929-05-18_Sacate-El-Berretin	d	800018689
+	1929-06-17_Ingrata	dg	32029955
+	1929-06-17_Mi-Angelina	dg	32029955
 	1929-06-19_Coqueta	d	800018728
 	1929-06-19_Donde-Vas	d	800018729
 	1929-11-06_Fulerias	d	800019017
@@ -5927,25 +6813,32 @@
 >VilloldoAngel/Singles/1905-1909/|_Villoldo.webp
 	1905_Declaracion-De-Un-Mudo	d	2000085597
 	1905_Los-Atorrantes	d	2000085688
-	1905_Los-Bailecitos	d	2000085592
 	1905_Pica-Pica-El-Compadrito	t78	pica-pica-el-compadrito-columbia-no-55052
 	1905_Que-Se-Lo-Cuente-A-Su-Abuela	t78	que-se-lo-cuente-a-su-abuela-columbia-no-55171
 	1906_El-Portenito	d	2000371520
+	1907-12-23_La-Piedra-Del-Escandalo	gs	2009/04/ignacio-corsini-representa-la-piedra-de
+	1907-12-23_Los-Amores-De-Un-Ingles	d	600000360
 	1907-12-24_Mi-Morocha	d	600000365
 	1907-12-26_El-Negro-Alegre	t78	el-negro-alegre-victor-no-62133
 	1907_Batifondo-En-Un-Chantant	t78	batifondo-en-un-chantant-odeon-no-41774
 	1907_Contrapunto-Criollo-Genoves	t78	contrapunto-de-criollo-y-genoves-odeon-no-41618
+	1907_El-Compadrito-De-Pica-Pica	t78	pica-pica-el-compadrito-columbia-no-08766
 	1907_El-Moscardon	d	1000014849
 	1907_El-Tachero-Remendador	d	1000014846
 	1907_En-El-Pecado-La-Penitencia	t78	en-el-pecado-la-penitencia-odeon-no-41674
+	1907_La-Farra-De-Don-Giacumin	mr	2011/01/discos-antiguos-odeon-alemania-05-06
+	1907_Las-Fatigas-De-Bartolo	mr	2011/01/discos-antguos-odeon-alemania-fin-de-la
 	1907_Mi-Suegra	d	1000014848
 	1907_Pica-Pica-El-Compadrito	t78	pica-pica-el-compadrito-columbia-no-08766
+	1907_Pica-Pica-El-Compadritro	t78	pica-pica-el-compadrito-columbia-no-08766
 	1907_Remate-De-Muebles-Importados	t78	remate-de-muebles-importados-odeon-no-41565
+	1907_Remate-De-Ropa-Usada	mr	2011/01/discos-antguos-odeon-alemania-fin-de-la
 	1908_Ensalada-Criolla	d	2000385090
 	1908_La-Moral-Y-Los-50	t78	la-moral-y-los-50-victor-no-62139-a
 	1909_A-San-Martin	d	2000085913
 	1909_Arturito-El-Risueno	t78
 	1909_Carcajada-Callejera	d	2000085894
+	1909_Conocido-Y-Gracias	mr	2011/01/discos-antiguos-odeon-alemania-pacheco
 	1909_Despedida	t78	despedida-phone-dart-no-60145
 	1909_Domine	t78	domine-columbia-no-t143
 	1909_El-Carrero-Y-El-Cochero	t78	el-carrero-y-el-cochero-columbia-no-t140-2
@@ -5966,3 +6859,5 @@
 >VilloldoAngel/Singles/1910-1914/|_Villoldo.webp
 	1910-03-17_La-Suba-De-Alquileres	t78	la-suba-de-alquileres-victor-no-62844-a
 	1910-03-30_Don-Nicanor-El-Tartamudo	t78	don-nicanor-el-tartamudo-victor-no-62866-b
+>ZerrilloRoberto/Singles/1930-1934/|_Zerrillo.webp
+	1933_Usted-Sabe-Senor-Juez	t78	usted-sabe-senor-juez-victor-no-dc-43-a

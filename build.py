@@ -21,12 +21,17 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote
 
+from _image_policy import album_art_allowed
+from _recording_identity import (
+    ASSOCIATION_OUTPUT_FIELDS, apply_repo_image_associations,
+)
+
 OUTPUT_HEADERS = [
     "Bandleader", "Orchestra", "Date", "Title", "AltTitle", "Genre",
     "Singer", "Label", "Master", "Matrix", "Disc", "Composer", "Author",
     "Arranger", "Grouping", "Pianist", "Bassist", "Bandoneons", "Strings",
     "Lineup", "LP_Title", "LP_Images",
-]
+] + list(ASSOCIATION_OUTPUT_FIELDS)
 
 DEDUPE_KEY_FIELDS = ("Orchestra", "Title", "Date", "Singer")
 
@@ -130,6 +135,10 @@ def apply_lp_images(rows: list[dict], manifests: dict) -> dict:
         folder_name = (row.get("Img_Folder") or "").strip()
         if img_type not in ("EP", "LP") or not folder_name:
             continue
+        if not album_art_allowed(row.get("Bandleader", ""), row.get("Date")):
+            row["LP_Title"] = ""
+            row["LP_Images"] = ""
+            continue
         entry = manifests.get(artist_match_key(row.get("Bandleader", "")))
         if not entry:
             empty[(img_type, folder_name)] += 1
@@ -176,7 +185,8 @@ def extract_year(date_value: str) -> str:
     return match.group(1) if match else ""
 
 
-def build(csv_dir: Path, output_path: Path, lp_dir: Path) -> tuple[int, list[dict]]:
+def build(csv_dir: Path, output_path: Path, lp_dir: Path,
+          associations_path: Path | None = None) -> tuple[int, list[dict]]:
     """Concatenate all CSVs in csv_dir into output_path, deduping across files.
 
     Returns the number of rows written and a list of fuzzy-duplicate group
@@ -208,6 +218,12 @@ def build(csv_dir: Path, output_path: Path, lp_dir: Path) -> tuple[int, list[dic
             seen[key] = row
         consolidated.append(row)
 
+    registry = associations_path if associations_path is not None else csv_dir.parent / "recording_image_associations.json"
+    association_counts = apply_repo_image_associations(consolidated, csv_dir.parent, registry)
+    if association_counts.get("held_conflict"):
+        print(f"warning: held single-label associations for {association_counts['held_conflict']} "
+              "rows sharing ambiguous legacy filenames; review recording_image_associations.json",
+              file=sys.stderr)
     empty_folders = apply_lp_images(consolidated, load_manifests(lp_dir))
     if empty_folders:
         print(

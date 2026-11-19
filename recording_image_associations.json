@@ -1,0 +1,688 @@
+{
+  "version": 1,
+  "associations": {
+    "rec_v1_e2aed68fea860da84455a701b34c281b89a5e7f3f4ad98819506cc79695d3ed5": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Agustín Magaldi",
+        "Orchestra": "Guitarras",
+        "Date": "1929",
+        "Title": "Boca Abierta",
+        "Singer": "Agustín Magaldi",
+        "Label": "Brunswick",
+        "Master": "78rpm",
+        "Matrix": "258",
+        "Disc": "1606-A"
+      },
+      "image_key": "MagaldiAgustin/Singles/1925-1929/1929_Boca-Abierta_Magaldi.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Magaldi\\Singles\\1925-1929\\1929_Boca-Abierta_Magaldi.webp SHA-256 c6a4883829db9981b2de0186b85a91b1132e59dd08119034905039da1cb11cdf. Read title 'Boca abierta', label 'Brunswick; Fabricacion Argentina', catalogue/side '1606 A', matrix/take 'not visible', performers 'Agustin Magaldi; solo con guitarras'. 1606A, title and solo/guitars credit match issued first row; sibling259 is Inedita. Matrix258 retained canonical metadata, not photographic reading. Source attribution unresolved in current credits; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key MagaldiAgustin/Singles/1925-1929/1929_Boca-Abierta_Magaldi.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_cffaf4bd6f9fc0951e95107e37f4e15ab9a6dd979519dfcdff90d4a499576b61": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Agustín Magaldi",
+        "Orchestra": "Guitarras",
+        "Date": "1929",
+        "Title": "Farol de los Gauchos",
+        "Singer": "Agustín Magaldi, Pedro Noda",
+        "Label": "Brunswick",
+        "Master": "78rpm",
+        "Matrix": "174",
+        "Disc": "1609-B"
+      },
+      "image_key": "MagaldiAgustin/Singles/1925-1929/1929_Farol-De-Los-Gauchos_Magaldi.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Magaldi\\Singles\\1925-1929\\1929_Farol-De-Los-Gauchos_Magaldi.webp SHA-256 31a9207a68662ad95f48ce511721773d0878d39c2fdbc01a1b179689bcbcb2d6. Read title 'Farol de los gauchos', label 'Brunswick; Fabricacion Argentina', catalogue/side '1609 B', matrix/take 'not visible', performers 'Magaldi-Noda; duo con guitarras'. 1609B and named Magaldi-Noda guitar duo distinguish second row from1601B. Matrix174 retained canonical metadata, not photographic reading. Source attribution https://www.tangos78rpm.com/farol-de-los-gauchos-brunswick-no-1609-b/; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key MagaldiAgustin/Singles/1925-1929/1929_Farol-De-Los-Gauchos_Magaldi.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_7cf79e52be43757794da3f01c9360695f5a9097a7d84762bffbda56dd6007bd0": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Agustín Magaldi",
+        "Orchestra": "Guitarras",
+        "Date": "1930",
+        "Title": "El Penado 14",
+        "Singer": "Agustín Magaldi",
+        "Label": "Brunswick",
+        "Master": "78rpm",
+        "Matrix": "938",
+        "Disc": "1628-A"
+      },
+      "image_key": "MagaldiAgustin/Singles/1930-1934/1930_El-Penado-14_Magaldi.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Magaldi\\Singles\\1930-1934\\1930_El-Penado-14_Magaldi.webp SHA-256 129d60d508dd04fcce0f039da01a04b5855fb6a9ecbbdc103b9c49bbfadab2b1. Read title 'El penado14', label 'Brunswick; Fabricacion Argentina', catalogue/side '1628 A', matrix/take 'not visible', performers 'Agustin Magaldi; solo con guitarras'. 1628A is the photographed catalogue, distinct from64007-A CH sibling. Both current rows matrix938, but only1628A association proposed. Source attribution https://www.tangos78rpm.com/el-penado-14-brunswick-no-1628-a/; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key MagaldiAgustin/Singles/1930-1934/1930_El-Penado-14_Magaldi.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_2c36fc1529db4645d91c90e4c1a40218f494a14e14f7271778decdc857cd2ecc": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Agustín Magaldi",
+        "Orchestra": "Guitarras",
+        "Date": "1930",
+        "Title": "Tradicion",
+        "Singer": "Agustín Magaldi, Pedro Noda",
+        "Label": "Brunswick",
+        "Master": "78rpm",
+        "Matrix": "1107",
+        "Disc": "1635-B"
+      },
+      "image_key": "MagaldiAgustin/Singles/1930-1934/1930_Tradicion_Magaldi.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Magaldi\\Singles\\1930-1934\\1930_Tradicion_Magaldi.webp SHA-256 a66dbc9a3fc533c952a62e4adea5f3c2e46386d65d6812376be68e0a9aa27d0d. Read title 'Tradicion', label 'Brunswick; Fabricacion Argentina', catalogue/side '1635 B', matrix/take 'not visible', performers 'Magaldi-Noda; duo con guitarras'. 1635B and named guitar duo identify issued row, distinct from1206 Inedita sibling. Matrix1107 retained canonical metadata, not photograph reading. Source attribution https://www.tangos78rpm.com/tradicion-brunswick-no-1635-b/; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key MagaldiAgustin/Singles/1930-1934/1930_Tradicion_Magaldi.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_bbace2c269c610b7debc2d94b09e3bea6526fbab1fb502c370c897f675b91f43": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Agustín Magaldi",
+        "Orchestra": "Guitarras",
+        "Date": "1931",
+        "Title": "Lamento Gaucho",
+        "Singer": "Agustín Magaldi, Pedro Noda",
+        "Label": "Brunswick",
+        "Master": "78rpm",
+        "Matrix": "1778",
+        "Disc": "1649-B"
+      },
+      "image_key": "MagaldiAgustin/Singles/1930-1934/1931_Lamento-Gaucho_Magaldi.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Magaldi\\Singles\\1930-1934\\1931_Lamento-Gaucho_Magaldi.webp SHA-256 7b014cbaebf95afa4e0873ca92540055f67a68f2e3e7fbcecb0f4e4ec7fef31e. Read title 'Lamento gaucho', label 'Brunswick; Fabricacion Argentina', catalogue/side '1649 B', matrix/take 'not visible', performers 'Magaldi-Noda; duo con guitarras'. 1649B and named guitar duo identify issued row, distinct from1779 Inedita sibling. Matrix1778 retained canonical metadata, not photograph reading. Source attribution https://www.tangos78rpm.com/lamento-gaucho-brunswick-no-1649-b/; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key MagaldiAgustin/Singles/1930-1934/1931_Lamento-Gaucho_Magaldi.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_7cc1d510ae94af60234177a0a646f0399c59c512c971083f6f000c9c77c2b8a8": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Agustín Magaldi",
+        "Orchestra": "Guitarras",
+        "Date": "1935-07-25",
+        "Title": "Arreando Ensueños",
+        "Singer": "Agustín Magaldi, Pedro Noda",
+        "Label": "Víctor",
+        "Master": "78rpm",
+        "Matrix": "86910",
+        "Disc": "37798-B"
+      },
+      "image_key": "MagaldiAgustin/Singles/1935-1939/1935-07-25_Arreando-Ensuenos_Magaldi.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Magaldi\\Singles\\1935-1939\\1935-07-25_Arreando-Ensuenos_Magaldi.webp SHA-256 69630f3350a49b9026df32b101339798a93fcddf1f11b3e04c98e96c41803b88. Read title 'Arreando ensuenos', label 'Victor', catalogue/side '37798-B', matrix/take 'not readable', performers 'Magaldi-Noda; con guitarras'. 37798B, title and duo/guitars credit identify issued row, distinct from86911 Inedita sibling. Matrix86910 retained canonical metadata, not photograph transcription. Source attribution unresolved in current credits; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key MagaldiAgustin/Singles/1935-1939/1935-07-25_Arreando-Ensuenos_Magaldi.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_0b140bcf11de20befc927934aefc26d54e28347e452944fa0cb763b45094e833": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Angel Villoldo",
+        "Orchestra": "Angel Villoldo",
+        "Date": "1907",
+        "Title": "El Moscardón",
+        "Singer": "Angel Villoldo",
+        "Label": "Víctor",
+        "Master": "Acoustic",
+        "Matrix": "",
+        "Disc": "62137-B"
+      },
+      "image_key": "VilloldoAngel/Singles/1905-1909/1907_El-Moscardon_Villoldo.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Villoldo\\Singles\\1905-1909\\1907_El-Moscardon_Villoldo.webp SHA-256 685034278b561ceffc3c169007768a51821669ee227ddfe03e928e930dc9ff60. Read title 'El moscardon (Villoldo)', label 'Victor Record', catalogue/side '62137-B', matrix/take 'catalogue stamped in runout; no separate matrix', performers 'Angel G. Villoldo con orquesta'. Victor62137B, title and Villoldo identify Victor row with blankmatrix; alternativeOdeon41666/XBAunknown excluded. Ensemble detail 'con orquesta' explicitly recorded; canonical Orchestra is generic performer name. Source attribution https://adp.library.ucsb.edu/index.php/matrix/refer/1000014849; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key VilloldoAngel/Singles/1905-1909/1907_El-Moscardon_Villoldo.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_b22f6ca05dcc6cb08f551b9c091c88a5791ec515693f62a2a787ce40ac3d2f14": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Angel Villoldo",
+        "Orchestra": "Angel Villoldo",
+        "Date": "1907",
+        "Title": "Mi Suegra",
+        "Singer": "Angel Villoldo",
+        "Label": "Víctor",
+        "Master": "Acoustic",
+        "Matrix": "",
+        "Disc": "62137-A"
+      },
+      "image_key": "VilloldoAngel/Singles/1905-1909/1907_Mi-Suegra_Villoldo.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Villoldo\\Singles\\1905-1909\\1907_Mi-Suegra_Villoldo.webp SHA-256 4f24cb711323159af8f68b1abf986cb84c9567eaa2c1a00cb0c26af374b5b0a1. Read title 'Mi suegra', label 'Victor Record', catalogue/side '62137-A', matrix/take 'catalogue stamped in runout; no separate matrix', performers 'Angel G. Villoldo con guitarra'. Victor62137A and guitar vocal credit distinguish second row from ColumbiaMarconi08887 and Odeon41575. Canonical matrix is blank; none invented. Source attribution https://adp.library.ucsb.edu/index.php/matrix/refer/1000014848; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key VilloldoAngel/Singles/1905-1909/1907_Mi-Suegra_Villoldo.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_d0d339decc1e77416f7f3a78ced39ed2993d718ed7d3989abaf5fc20d0382ea5": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Aníbal Troilo",
+        "Orchestra": "Aníbal Troilo y su Orquesta Típica",
+        "Date": "1946-03-12",
+        "Title": "Recuerdos de Bohemia",
+        "Singer": "Instrumental",
+        "Label": "Víctor",
+        "Master": "78rpm",
+        "Matrix": "82028",
+        "Disc": "60-0900 A"
+      },
+      "image_key": "TroiloAnibal/Singles/1945-1949/1946-03-12_Recuerdos-De-Bohemia_Troilo.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Troilo\\Singles\\1945-1949\\1946-03-12_Recuerdos-De-Bohemia_Troilo.webp SHA-256 b1f9c994f097af29745fa9930f253fc99a03191007b2f72aff5134fa44217ff0. Read title 'Recuerdos de bohemia / Parte1', label 'Victor; Industria Argentina', catalogue/side '60-0900-A', matrix/take 'not visible', performers 'Anibal Troilo (Pichuco) y su Orquesta Tipica'. ExplicitParte1 andA-side distinguish first instrumental row from vocalMarino second part/B-side. No second-part or sibling approval; matrix82028 retained canonical metadata, not photograph transcription. Source attribution unresolved in current credits; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key TroiloAnibal/Singles/1945-1949/1946-03-12_Recuerdos-De-Bohemia_Troilo.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_3cc37b78d714f177d61ca18e1fde132bb329240cbca26792c1aa5823e92bd2b4": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Charlo",
+        "Orchestra": "Orquesta Típica Francisco Canaro",
+        "Date": "1928-09-18",
+        "Title": "Venite Conmigo",
+        "Singer": "Charlo",
+        "Label": "Odeón",
+        "Master": "78rpm",
+        "Matrix": "3180 e",
+        "Disc": "16210-A"
+      },
+      "image_key": "Charlo/Singles/1925-1929/1928-09-18_Venite-Conmigo_Charlo.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Charlo\\Singles\\1925-1929\\1928-09-18_Venite-Conmigo_Charlo.webp SHA-256 bc8daf8be95ce0221fce9a3d71a5ac126ae24c4df7472189d21c1cbfe9a4e03a. Read title 'Venite conmigo / A ella', label 'Disco Nacional Odeon', catalogue/side '16210 A', matrix/take 'E 3180 (no take suffix visible)', performers 'Charlo con acomp. de Orquesta Francisco Canaro'. Catalogue 16210 A and base matrix E3180 match the row with no asserted take suffix. The sibling is 16206-B / 3180-1e and is not approved. Source attribution https://tango.info/02480002745051; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key Charlo/Singles/1925-1929/1928-09-18_Venite-Conmigo_Charlo.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_69b0b68de29be15f17b8b9f122d4eb05a143f0bb74697cf89c3ed1f5d4bcfdbd": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Edgardo Donato",
+        "Orchestra": "Edgardo Donato y Sus Muchachos",
+        "Date": "1932-12-09",
+        "Title": "El Huracán",
+        "Singer": "Félix Gutiérrez",
+        "Label": "Víctor",
+        "Master": "78rpm",
+        "Matrix": "66980",
+        "Disc": "37326-A"
+      },
+      "image_key": "DonatoEdgardo/Singles/1930-1934/1932-12-09_El-Huracan_Donato.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Donato\\Singles\\1930-1934\\1932-12-09_El-Huracan_Donato.webp SHA-256 b1535883796a8bfb36b3b647824fae6c8a0f242aecc3cce12b5febc0c7f362eb. Read title 'El huracan', label 'Victor', catalogue/side '37326-A', matrix/take 'runout1 at left; complete matrix not readable', performers 'Edgardo Donato y sus Muchachos; estribillo cantado por Felix Gutierrez'. Catalogue37326-A and named vocalist/ensemble identify first row, distinguished from39139-A take2. Cached DAHR matrix800034298 lists BAVE66980 take1 issued37326 and scanned photo is the same physical disc. No take2 approval. Source attribution https://adp.library.ucsb.edu/index.php/matrix/refer/800034298; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key DonatoEdgardo/Singles/1930-1934/1932-12-09_El-Huracan_Donato.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_3795adc80fdd944b2b686fcf7ae352ccc32de82ece7e6c49afe181642de0d605": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Edgardo Donato",
+        "Orchestra": "Edgardo Donato y Sus Muchachos",
+        "Date": "1950-04-14",
+        "Title": "El Huracán",
+        "Singer": "Carlos Almada",
+        "Label": "RCA Victor",
+        "Master": "78rpm",
+        "Matrix": "MAI 3",
+        "Disc": "PM 11001-A"
+      },
+      "image_key": "DonatoEdgardo/Singles/1950-1954/1950-04-14_El-Huracan_Donato.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Donato\\Singles\\1950-1954\\1950-04-14_El-Huracan_Donato.webp SHA-256 1c8de114eb34cb9084cb7cb2be36759fb7f48ce2e360679f3481289bad04688b. Read title 'El huracan', label 'Pampa', catalogue/side 'PM 11001 A', matrix/take 'MAI 3', performers 'Edgardo Donato y su Orquesta Tipica; canta Carlos Almada'. Printed MAI3 and PM11001A agree with second row's matrix/catalogue; first row P003/1 is not approved. Canonical ensemble wording differs slightly ('sus Muchachos') from printed 'su Orquesta Tipica' and is retained as current metadata, not transcribed verbatim. Source attribution https://www.ebay.com/itm/356110079771; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key DonatoEdgardo/Singles/1950-1954/1950-04-14_El-Huracan_Donato.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_0b24feb309209ec3a961d860ade612c9fcb78994f1395d8142280c536fee89a2": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Francisco Canaro",
+        "Orchestra": "Orquesta Francisco Canaro",
+        "Date": "1930-11-21",
+        "Title": "El Payador",
+        "Singer": "Charlo",
+        "Label": "Odeón",
+        "Master": "",
+        "Matrix": "6379",
+        "Disc": "4702 A"
+      },
+      "image_key": "CanaroFrancisco/Singles/1930-1934/1930-11-21_El-Payador_Canaro.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Canaro\\Singles\\1930-1934\\1930-11-21_El-Payador_Canaro.webp SHA-256 c0b8b32138087dbad6a22ee3ac2e3973ad9f108d285fb94c09d69abe4b595e9c. Read title 'El payador', label 'Disco Nacional Odeon', catalogue/side '4702 A', matrix/take 'e 6379', performers 'Orquesta Tipica F. Canaro; con estribillo (vocalist not named)'. Printed catalogue and matrix distinguish second row from 16263 A / 6385. Charlo is canonical credit, not independently printed on this label. Source attribution https://tango.info/02480002741619; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key CanaroFrancisco/Singles/1930-1934/1930-11-21_El-Payador_Canaro.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_555bdb7928e4110e7c372d8c76983915bff1a8b58e841f3d1ec8de9acf844e09": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Francisco Lomuto",
+        "Orchestra": "Orquesta Francisco Lomuto",
+        "Date": "1934-02-19",
+        "Title": "Dímelo Al Oído",
+        "Singer": "Fernando Díaz",
+        "Label": "Víctor",
+        "Master": "",
+        "Matrix": "BAVE-74444",
+        "Disc": "Victor 37551"
+      },
+      "image_key": "LomutoFrancisco/Singles/1930-1934/1934-02-19_Dimelo-Al-Oido_Lomuto.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Lomuto\\Singles\\1930-1934\\1934-02-19_Dimelo-Al-Oido_Lomuto.webp SHA-256 b3126fadf6bf518ba532693008907518a7089c0dddc6712915ccde68f3b17902. Read title 'Dimelo al oido', label 'Victor; Industria Argentina', catalogue/side '37551-A', matrix/take 'not visible', performers 'Francisco J. Lomuto y su Orq. Tipica; estribillo cantado por Fernando Diaz'. Printed37551-A, title, leader/orchestra and FernandoDiaz match second row, distinct from first row catalogueVictor1680. MatrixBAVE74444 retained as canonical metadata, not image transcription. Source attribution unresolved in current credits; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key LomutoFrancisco/Singles/1930-1934/1934-02-19_Dimelo-Al-Oido_Lomuto.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_b219e09d429024a9f33e357d14a2fb68ec49853c15f3c7c940bb8f5cf7ac14b1": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Francisco Lomuto",
+        "Orchestra": "Orquesta Francisco Lomuto",
+        "Date": "1936-03-12",
+        "Title": "Qué Fácil Es Decir",
+        "Singer": "Juan Arvizu",
+        "Label": "Víctor",
+        "Master": "",
+        "Matrix": "BAVE-93221",
+        "Disc": "Victor 37951"
+      },
+      "image_key": "LomutoFrancisco/Singles/1935-1939/1936-03-12_Que-Facil-Es-Decir_Lomuto.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Lomuto\\Singles\\1935-1939\\1936-03-12_Que-Facil-Es-Decir_Lomuto.webp SHA-256 cc595791df22e8e7c802f5de7e3dfdec3947e58c3381b05b14b14634b6a78c31. Read title 'Que facil es decir!', label 'Victor; Industria Argentina', catalogue/side '37951-B', matrix/take 'not visible', performers 'Juan Arvizu con acomp. de la Orquesta Tipica dirigida por Francisco Lomuto'. 37951-B and named JuanArvizu/Lomuto distinguish first row from JorgeOmar/37885 sibling. MatrixBAVE93221 remains canonical metadata, not label transcription. Source attribution https://www.tangos78rpm.com/que-facil-es-decir-victor-no-37951-b/; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key LomutoFrancisco/Singles/1935-1939/1936-03-12_Que-Facil-Es-Decir_Lomuto.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_a2e7a858563de308cad8e676d2e17b353aab6a33b7954786f2ffb9f142552995": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Ignacio Corsini",
+        "Orchestra": "Ignacio Corsini y sus Guitarras",
+        "Date": "1926",
+        "Title": "La Querencia",
+        "Singer": "Ignacio Corsini",
+        "Label": "Odeón",
+        "Master": "78rpm",
+        "Matrix": "4054",
+        "Disc": "18468-A"
+      },
+      "image_key": "CorsiniIgnacio/Singles/1925-1929/1926_La-Querencia_Corsini.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Corsini\\Singles\\1925-1929\\1926_La-Querencia_Corsini.webp SHA-256 2d808803a795a37bbeccd8ce1c119352556ea3c65df50bc8a1fc84cfa01574a6. Read title 'La querencia', label 'Disco Nacional Odeon', catalogue/side '18468 A', matrix/take 'not printed in visible label area', performers 'Ignacio Corsini; tenor con 3 guitarras'. Catalogue-side, title, singer and guitar accompaniment distinguish 18468-A from sibling 18475-A; neither date nor take is inferred from title. Matrix4054 is canonical metadata, not a literal photographic reading. Source attribution https://tango.info/02480002722410; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key CorsiniIgnacio/Singles/1925-1929/1926_La-Querencia_Corsini.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_8439cbb29aa3933f211aacdf3a582921d23530ba379d61541aab3e1ada041759": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Ignacio Corsini",
+        "Orchestra": "Ignacio Corsini y sus Guitarras",
+        "Date": "1929-05-03",
+        "Title": "Keri (la Nieta de Japonesita)",
+        "Singer": "Ignacio Corsini",
+        "Label": "Odeón",
+        "Master": "78rpm",
+        "Matrix": "4053 e",
+        "Disc": "18584-A"
+      },
+      "image_key": "CorsiniIgnacio/Singles/1925-1929/1929-05-03_Keri-La-Nieta-De-Japonesita_Corsini.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Corsini\\Singles\\1925-1929\\1929-05-03_Keri-La-Nieta-De-Japonesita_Corsini.webp SHA-256 b4208f2d98df0d46048f3ed1f05c27e449e4b54ae3189312fc5ea41795835e02. Read title 'Keri (La nieta de Japonesita)', label 'Disco Nacional Odeon Veroton', catalogue/side '18584 A', matrix/take 'E 4053', performers 'Ignacio Corsini; 3 guitarras Pagez-Pesoa y Maciel'. Clear catalogue, base matrix and performer/ensemble match first row without asserted take. Inedita4053-1 sibling remains held. Source attribution https://tango.info/02480002722366; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key CorsiniIgnacio/Singles/1925-1929/1929-05-03_Keri-La-Nieta-De-Japonesita_Corsini.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_d8fe57a4096a02944eb57cd8d6823d5a98dc0f4fcda1e46e3eb816e366b98430": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Manuel Pizarro",
+        "Orchestra": "Orquesta Típica Argentina Pizarro",
+        "Date": "1930",
+        "Title": "Corazón",
+        "Singer": "",
+        "Label": "Decca",
+        "Master": "78rpm",
+        "Matrix": "FMB 14xx",
+        "Disc": "F.1825"
+      },
+      "image_key": "PizarroManuel/Singles/1930-1934/1930_Corazon_Pizarro.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Pizarro\\Singles\\1930-1934\\1930_Corazon_Pizarro.webp SHA-256 5520c9a65953c0675b555ab272cfa73ec9b55f1af537e8c25242206fb277b3de. Read title 'Corazon', label 'Decca; Made in England', catalogue/side 'F.1825', matrix/take 'FMB.14... partly obscured/too small', performers 'Orquesta Tipica Argentina Pizarro; Tango Band with Vocal Refrain'. DeccaF1825, title and exact Pizarro ensemble match first row; alternativeX8731/N300679 belongs to another issue. First canonical matrix is already approximateFMB14xx; photograph does not narrow it. Source attribution https://pizarrotracks.blogspot.com/2024/11/05408-corazon-orquesta-tipica-argentina.html; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key PizarroManuel/Singles/1930-1934/1930_Corazon_Pizarro.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_79405ef8ddc206a8f426f8eaae350eff7ca86145ed09aff3301d920c2413bfc7": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Miguel Caló",
+        "Orchestra": "Miguel Caló y su Orquesta Típica",
+        "Date": "1944-08-28",
+        "Title": "Mi Tango Es Triste",
+        "Singer": "Raúl Iriarte",
+        "Label": "Odeón",
+        "Master": "78rpm",
+        "Matrix": "14056",
+        "Disc": "8392"
+      },
+      "image_key": "CaloMiguel/Singles/1940-1944/1944-08-28_Mi-Tango-Es-Triste_Calo.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Calo\\Singles\\1940-1944\\1944-08-28_Mi-Tango-Es-Triste_Calo.webp SHA-256 653a16348fea3c5d9a0a33324dfff1ae16e4a2b0b6533edabcd8a481b45b6886. Read title 'Mi tango es triste', label 'Odeon', catalogue/side '8392 B', matrix/take 'e 14056', performers 'Miguel Calo y su Orquesta Tipica; Estribillo por Raul Iriarte'. Printed catalogue, matrix, singer and orchestra agree with first row; second row names Marino, matrix 33482 and LDB-126. Source attribution https://tango.info/02480002703099; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key CaloMiguel/Singles/1940-1944/1944-08-28_Mi-Tango-Es-Triste_Calo.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_8fe1fe647e42e5328240e77f603c437ca03cde0fac103ca0d8e711bdbe18f592": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Osvaldo Fresedo",
+        "Orchestra": "Orquesta Típica Osvaldo Fresedo",
+        "Date": "1929-09-30",
+        "Title": "En la Mala",
+        "Singer": "Instrumental",
+        "Label": "Brunswick",
+        "Master": "78rpm",
+        "Matrix": "E30821",
+        "Disc": "40965"
+      },
+      "image_key": "FresedoOsvaldo/Singles/1925-1929/1929-09-30_En-La-Mala_Fresedo.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Fresedo\\Singles\\1925-1929\\1929-09-30_En-La-Mala_Fresedo.webp SHA-256 c5c6cdcae353281d1c1efa3429b72a09a95305ead682dd9b2f079446ac2c016c. Read title 'En la mala', label 'Brunswick; Made in U.S.A.', catalogue/side '40965 (no side letter)', matrix/take 'not printed in visible label area', performers 'Orquesta Tipica de Osvaldo N. Fresedo; no vocalist printed'. Exact40965 catalogue and ensemble agree with instrumental first row; alternative41029 explicitly names Genaro Veiga and is not approved. MatrixE30821 is retained canonical metadata, not a literal image reading. Source attribution https://www.tangos78rpm.com/en-la-mala-brunswick-no-40965/; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key FresedoOsvaldo/Singles/1925-1929/1929-09-30_En-La-Mala_Fresedo.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_2f2e0d4c254609fd7906162256016f5c98e96582f1fec9976ec265101ddd24f4": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Osvaldo Fresedo",
+        "Orchestra": "Orquesta Típica Osvaldo Fresedo",
+        "Date": "1929-12-13",
+        "Title": "Tango Azul",
+        "Singer": "Genaro Veiga",
+        "Label": "Brunswick",
+        "Master": "78rpm",
+        "Matrix": "E31593",
+        "Disc": "40890"
+      },
+      "image_key": "FresedoOsvaldo/Singles/1925-1929/1929-12-13_Tango-Azul_Fresedo.webp",
+      "reviewed_by": "Codex Sol native review",
+      "reviewed_at": "2026-11-19T00:39:13.353950+00:00",
+      "evidence": "Native supplied-file visual review 2026-11-19T00:39:13.353950+00:00; C:\\Users\\seric\\OneDrive\\Documents\\GitHub\\tango-discographies\\images\\Fresedo\\Singles\\1925-1929\\1929-12-13_Tango-Azul_Fresedo.webp SHA-256 f09bbe280fefcf816ddb25694ce60f12210af5bbbd563867bd61d985fe5f92cb. Read title 'Tango azul (Blue Tango)', label 'Brunswick; Made in U.S.A.', catalogue/side '40890 (no side letter)', matrix/take 'not printed in visible label area', performers 'Genaro Veiga con Orquesta Tipica; baritono con orquesta'. Label explicitly names Genaro Veiga and40890, distinguishing vocal second row from instrumental40889. Fresedo leadership and matrixE31593 remain current canonical metadata, not printed on image. Source attribution https://fresedotracks.blogspot.com/2023/11/01406-tango-azul-orquesta-tipica.html; full source-cache hashes and unresolved metadata limits: research/validation_sol_2026-11-18/identity/decisions.json (legacy key FresedoOsvaldo/Singles/1925-1929/1929-12-13_Tango-Azul_Fresedo.webp). Issue chronology not established; issue_status remains unverified.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_38f72afdbb01d953f30d69581443e3429c4c6dc7493ed81f06ee9d48efdb0680": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Carlos Di Sarli",
+        "Orchestra": "Carlos Di Sarli y su Orquesta Típica",
+        "Date": "1956-02-03",
+        "Title": "Fumando Espero",
+        "Singer": "Argentino Ledesma",
+        "Label": "RCA Victor",
+        "Master": "Tape",
+        "Matrix": "S-004843-1",
+        "Disc": "1A-0752-A"
+      },
+      "image_key": "SarliCarlosDi/Singles/1955-1959/1956-02-03_Fumando-Espero_Di-Sarli.webp",
+      "image_sha256": "7ac48227e98073a48fca865798f225cc4529e26c9b6c3379e135625b0e2fc669",
+      "reviewed_by": "Codex native review; corroborates Sol review",
+      "reviewed_at": "2026-11-19T02:21:38.418676+00:00",
+      "evidence": "Native photograph explicitly names Carlos Di Sarli, Fumando Espero and singer Argentino Ledesma, with catalogue 1A-0752-A and base matrix S-004843. This distinguishes the Roberto Florio row; both canonical rows assert the same take, so there is no competing take in this collision group. Printed base matrix BAVE S-004843 is readable, but the canonical -1 take suffix is not established by this photograph. No exact-take claim. Photo SHA-256 7ac48227e98073a48fca865798f225cc4529e26c9b6c3379e135625b0e2fc669",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label",
+      "assessment": {
+        "recording": {
+          "status": "supported",
+          "evidence": "Native photograph explicitly names Carlos Di Sarli, Fumando Espero and singer Argentino Ledesma, with catalogue 1A-0752-A and base matrix S-004843. This distinguishes the Roberto Florio row; both canonical rows assert the same take, so there is no competing take in this collision group."
+        },
+        "take": {
+          "status": "unverified",
+          "evidence": "Printed base matrix BAVE S-004843 is readable, but the canonical -1 take suffix is not established by this photograph. No exact-take claim."
+        },
+        "release": {
+          "status": "supported",
+          "evidence": "Photograph reads RCA Victor 1A-0752-A. This matches the canonical catalogue/side and label; it does not establish original-issue chronology."
+        }
+      }
+    },
+    "rec_v1_6d741187d286d9c63cc67b654fd31edd29192c3e8d1ffb4d467c3d8bf8a99c31": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Osvaldo Pugliese",
+        "Orchestra": "Osvaldo Pugliese y su Orquesta Típica",
+        "Date": "1950-03-07",
+        "Title": "Ventanita de Arrabal",
+        "Singer": "Jorge Vidal",
+        "Label": "Odeón",
+        "Master": "Micro",
+        "Matrix": "17582",
+        "Disc": ""
+      },
+      "image_key": "PuglieseOsvaldo/Singles/1950-1954/1950-03-07_Ventanita-De-Arrabal_Pugliese__sha256_7a954cf40c96d8f8.webp",
+      "reviewed_by": "pipeline_credits; corroborating pipeline_scraped_backlog and parent native review",
+      "reviewed_at": "2026-11-19T03:09:34.800127+00:00",
+      "evidence": "Native original and prepared derivative individually viewed at 600x600: VENTANITA DE ARRABAL; Antonio Scattasso-Pascual Contursi; OSVALDO PUGLIESE y su Orquesta Tipica; Canta Jorge Vidal; e17582; 30609 B. Exact title, named singer/orchestra and matrix agree the unique current canonical row 96. Date 1950-03-07 comes from canonical only. Canonical Disc remains blank; physical 30609 B is observed evidence, not a CSV edit. No new take suffix is asserted.",
+      "issue_evidence": "Originality remains unverified for both current and candidate photographs. Native photos show the same Argentine Odeon catalogue/side 30609 B, matrix e17582, title, Jorge Vidal credit, Pugliese orchestra, company text and printed label layout. Cached Discogs release 16238566 metadata supports Argentina and physical Shellac 10-inch 78 RPM; its year1950 is not proof of first issue. This proposal only improves legibility of the same issue and does not classify it as original or later reissue. Source metadata is preserved by SHA in native_review_evidence.json.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label"
+    },
+    "rec_v1_15e05e5dd628a16f2bcd1dd69c6afd404d40f79f4ba52514ac2ac2ac518bcee6": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Agustín Magaldi",
+        "Orchestra": "Orquesta",
+        "Date": "1933-05-05",
+        "Title": "Vagabundo",
+        "Singer": "Agustín Magaldi",
+        "Label": "Víctor",
+        "Master": "78rpm",
+        "Matrix": "74118-1",
+        "Disc": "37404-A"
+      },
+      "image_key": "MagaldiAgustin/Singles/1930-1934/1933-05-05_Vagabundo_Magaldi.webp",
+      "image_sha256": "4d329cb17862eab930cdab54ebaad17d15b569da407c3e07adc581b6c9f3fae2",
+      "reviewed_by": "Codex metadata and source-photo reconciliation",
+      "reviewed_at": "2026-11-19T15:14:30.260383+00:00",
+      "evidence": "Existing complete native 1600px Victrola photograph reads Vagabundo, Agustin Magaldi, Solo con Orquesta and 37404-A. It is the same photograph as the preserved 5856px DAHR original 800039703.jpg (matched label wear, scratches and stamped catalogue geometry), not merely another same-title record. Archived primary DAHR matrix 800039703 explicitly links BAVE-74118, take 1, 5 May 1933 and Victor 37404 to that exact Image_URL. This resolves the previous missing source/take crosswalk for canonical orchestral 74118-1. The date and base matrix come from archival metadata, not label lettering. The separate unsuffixed 74118/Guitarras canonical entry remains unselected and unreconciled. Physical pressing chronology is unverified. Evidence and hashes: research/metadata_hold_resolution_2026-11-19/magaldi/evidence/.",
+      "issue_status": "unverified",
+      "physical_format": "78",
+      "image_role": "label",
+      "assessment": {
+        "recording": {
+          "status": "supported",
+          "evidence": "Printed title, vocalist, Solo con Orquesta and 37404-A plus archived DAHR exact-photo, date and BAVE-74118 crosswalk."
+        },
+        "take": {
+          "status": "supported",
+          "evidence": "Archived DAHR row 69 explicitly records master take 1 and binds its exact source-photo URL. Full base matrix is not claimed readable in the label photograph."
+        },
+        "release": {
+          "status": "supported",
+          "evidence": "Photograph explicitly reads 37404-A and DAHR lists Victor 37404. This does not establish original pressing chronology."
+        }
+      }
+    },
+    "rec_v1_04eda79d93167f8c30408382b0e6d316b6211c0312fd853d49cba961bc32003c": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Luis Petrucelli",
+        "Orchestra": "Luis Petrucelli y su Orquesta Típica",
+        "Date": "1928-10-31",
+        "Title": "El Cencerro",
+        "Singer": "Instrumental",
+        "Label": "Victor",
+        "Master": "",
+        "Matrix": "",
+        "Disc": ""
+      },
+      "image_key": "PetrucelliLuis/Singles/1925-1929/1928-10-31_El-Cencerro_Petrucelli.webp",
+      "image_sha256": "06d36812d5775af848c483a17e7b9cafd51835b658abd98acddc4e3208d50380",
+      "reviewed_by": "Codex physical78 metadata hold resolution",
+      "reviewed_at": "2026-11-19T15:15:31.369918+00:00",
+      "evidence": "Photographed performing unit, composer, title and physical Victor issue80985B identify the sole current Petrucelli El Cencerro recording. Independently, UNLP Las guardias del tango p69 transcribes El cencerro by J.Martinez as Sexteto Luis Petrucelli1928 (PDF preserved and page rendered/viewed). This supports the1928 performance family without certifying an exact day. Catalogue80985B is literal source evidence, not silently added to canonical. Canonical1928-10-31 stays unchanged and is not certified by the photo/UNLP year evidence. Indexed Otero posts disagree31Oct/31Dec1928; no day correction proposed. Take and original-issue chronology remain unverified.",
+      "issue_status": "unverified",
+      "issue_evidence": "Supported as the photographed Argentine Victor80985B physical78. Original-issue chronology is unverified; no original status asserted.",
+      "physical_format": "78",
+      "image_role": "label",
+      "assessment": {
+        "recording": {
+          "status": "supported",
+          "evidence": "Photographed performing unit, composer, title and physical Victor issue80985B identify the sole current Petrucelli El Cencerro recording. Independently, UNLP Las guardias del tango p69 transcribes El cencerro by J.Martinez as Sexteto Luis Petrucelli1928 (PDF preserved and page rendered/viewed). This supports the1928 performance family without certifying an exact day. Catalogue80985B is literal source evidence, not silently added to canonical."
+        },
+        "take": {
+          "status": "unverified",
+          "evidence": "Unverified: no take stamp or matrix is read. Current canonical contains one Petrucelli El Cencerro identity and no competing take; all artist title alternatives checked. Unknown take does not block this unique supported recording."
+        },
+        "release": {
+          "status": "supported",
+          "evidence": "Supported as the photographed Argentine Victor80985B physical78. Original-issue chronology is unverified; no original status asserted."
+        }
+      }
+    },
+    "rec_v1_4b190c87b68b58fe3bfe5e540e0ef145ed38cf4d76624eacc784a543edae9ecc": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Rosita Quiroga",
+        "Orchestra": "Guitarras",
+        "Date": "1925-02-10",
+        "Title": "La Eterna Herida",
+        "Singer": "Rosita Quiroga",
+        "Label": "Víctor",
+        "Master": "Acoustic",
+        "Matrix": "BA 563-1",
+        "Disc": "79534-A"
+      },
+      "image_key": "QuirogaRosita/Singles/1925-1929/1925-02-10_La-Eterna-Herida_Quiroga.webp",
+      "image_sha256": "3d0b9699632caf750bd7b8b66060d3a42e84a60ceff0820208b41c0b5a336b6e",
+      "reviewed_by": "Codex physical78 metadata hold resolution",
+      "reviewed_at": "2026-11-19T15:15:31.369918+00:00",
+      "evidence": "Exact79534A/title/voice/guitar accompaniment matches the sole current canonical recording. Archive descriptive metadata transposes matrices between paired sides. Enrique Binda original discography is newly search-indexed with La Eterna Herida79534A / BA563-1 /10Feb1925, matching canonical; separately fetched Grainger discographic table corroborates La Eterna Herida→BA563 and Quejas→BA562. The photo itself supplies79534A and guitars. No competing canonical take exists. Published exact take is not independently read on deadwax. Binda evidence is search-indexed original research rather than a newly downloaded full table. Original pressing chronology unverified.",
+      "issue_status": "unverified",
+      "issue_evidence": "Supported photographed Victor79534A78 label. Original pressing chronology not independently established; issue_status unverified.",
+      "physical_format": "78",
+      "image_role": "label",
+      "assessment": {
+        "recording": {
+          "status": "supported",
+          "evidence": "Exact79534A/title/voice/guitar accompaniment matches the sole current canonical recording. Archive descriptive metadata transposes matrices between paired sides. Enrique Binda original discography is newly search-indexed with La Eterna Herida79534A / BA563-1 /10Feb1925, matching canonical; separately fetched Grainger discographic table corroborates La Eterna Herida→BA563 and Quejas→BA562. The photo itself supplies79534A and guitars. No competing canonical take exists."
+        },
+        "take": {
+          "status": "unverified",
+          "evidence": "Unverified physical take: no563-1 stamp read. Binda indexed issue-to-take row supports the published attribution, but full Academia document body was not fetched because existing host stop was respected. Do not claim a physically observed suffix."
+        },
+        "release": {
+          "status": "supported",
+          "evidence": "Supported photographed Victor79534A78 label. Original pressing chronology not independently established; issue_status unverified."
+        }
+      }
+    },
+    "rec_v1_7d4abec89191427b2ef5449982c9627f15a17e39ab13106fb22424ed62323195": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Ricardo Tanturi",
+        "Orchestra": "Orquesta Típica Ricardo Tanturi",
+        "Date": "1941-06-16",
+        "Title": "Pocas Palabras",
+        "Singer": "Alberto Castillo",
+        "Label": "Víctor",
+        "Master": "78rpm",
+        "Matrix": "59520",
+        "Disc": "39316"
+      },
+      "image_key": "TanturiRicardo/Singles/1940-1944/1941-06-16_Pocas-Palabras_Tanturi.webp",
+      "image_sha256": "5a068ed118a95e1e82af748780d6ce529bb1c2129ad9299d2df024d49cbc47f0",
+      "reviewed_by": "Codex physical78 metadata hold resolution",
+      "reviewed_at": "2026-11-19T15:15:31.369918+00:00",
+      "evidence": "Frontera institutional photograph and catalogue identify Tanturi/Los Indios with Castillo on83688A; fresh TodoTango recording882 independently identifies Pocas palabras, Castillo, Tanturi,16Jun1941, Argentine39316/matrix59520. There is one current Tanturi recording with this title and named vocalist, no known competing canonical take/performance. Qualified historical US pressing illustrates that uniquely supported recording; it does not require equating the two catalogue numbers or asserting a physical59520 stamp. No exact83688A→39316 issued-master table located. Frontera matrix remains explicitly unknown. Release is foreign pressing and take remains unverified; no catalogue/matrix/date changes.",
+      "issue_status": "foreign_pressing",
+      "issue_evidence": "Supported photograph of US83688A78, explicitly different from Argentine canonical39316. Foreign pressing retained as such; no first-issue or same-release claim.",
+      "physical_format": "78",
+      "image_role": "label",
+      "assessment": {
+        "recording": {
+          "status": "supported",
+          "evidence": "Frontera institutional photograph and catalogue identify Tanturi/Los Indios with Castillo on83688A; fresh TodoTango recording882 independently identifies Pocas palabras, Castillo, Tanturi,16Jun1941, Argentine39316/matrix59520. There is one current Tanturi recording with this title and named vocalist, no known competing canonical take/performance. Qualified historical US pressing illustrates that uniquely supported recording; it does not require equating the two catalogue numbers or asserting a physical59520 stamp."
+        },
+        "take": {
+          "status": "unverified",
+          "evidence": "Unverified: no physical take suffix read; canonical59520 has no take suffix and no competing canonical take. No exact-take claim."
+        },
+        "release": {
+          "status": "supported",
+          "evidence": "Supported photograph of US83688A78, explicitly different from Argentine canonical39316. Foreign pressing retained as such; no first-issue or same-release claim."
+        }
+      }
+    },
+    "rec_v1_73ac2a92c3e41ca4bb97757f0f577945237b190c398458491bb505b0e5f874b0": {
+      "reviewed": true,
+      "canonical": {
+        "Bandleader": "Rosita Quiroga",
+        "Orchestra": "Guitarras",
+        "Date": "1925-02-10",
+        "Title": "Quejas del Suburbio",
+        "Singer": "Rosita Quiroga",
+        "Label": "Víctor",
+        "Master": "Acoustic",
+        "Matrix": "BA 562-1",
+        "Disc": "79534-B"
+      },
+      "image_key": "QuirogaRosita/Singles/1925-1929/1925-02-10_Quejas-Del-Suburbio_Quiroga.webp",
+      "image_sha256": "ebe06a79ab56598cb8a11edc559e4041cc2d4f830964cb83aa7391c984823580",
+      "reviewed_by": "Codex physical78 metadata resolution; parent independent native confirmation",
+      "reviewed_at": "2026-11-19T15:19:02.633428+00:00",
+      "evidence": "Physical Victor79534-B explicitly reads Quejas del Suburbio, Rosa Quiroga, Solo con guitarras and Acompto.Aguilar-Pessoa. The parent independently viewed this exact original and authorized correcting only Orchestra=Orquesta toGuitarras. Catalogue/title/singer and now-corrected accompaniment identify the unique current recording; independent Grainger table corroborates baseBA562. Historical date, BA562-1, disc79534B and all other canonical fields remain unchanged. No guitarists are added to canonical personnel.",
+      "physical_format": "78",
+      "image_role": "label",
+      "issue_status": "unverified",
+      "issue_evidence": "Photographed Victor79534B physical78; original-pressing chronology unverified.",
+      "assessment": {
+        "recording": {
+          "status": "supported",
+          "evidence": "Physical Victor79534-B explicitly reads Quejas del Suburbio, Rosa Quiroga, Solo con guitarras and Acompto.Aguilar-Pessoa. The parent independently viewed this exact original and authorized correcting only Orchestra=Orquesta toGuitarras. Catalogue/title/singer and now-corrected accompaniment identify the unique current recording; independent Grainger table corroborates baseBA562. Historical date, BA562-1, disc79534B and all other canonical fields remain unchanged. No guitarists are added to canonical personnel."
+        },
+        "take": {
+          "status": "unverified",
+          "evidence": "No physical BA562-1 take stamp is read. Printed/runout79534B is catalogue. No competing canonical take exists; date/take retained without new assertion."
+        },
+        "release": {
+          "status": "supported",
+          "evidence": "Readable physical Victor79534B, full label rim; no first-issue claim."
+        }
+      }
+    }
+  }
+}
