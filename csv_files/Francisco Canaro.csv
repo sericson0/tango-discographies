@@ -1,4 +1,4 @@
-﻿Bandleader,Orchestra,Date,Title,AltTitle,Genre,Singer,Label,Master,Matrix,Disc,Composer,Author,Arranger,Grouping,Pianist,Bassist,Bandoneons,Strings,Lineup,Img_Type,Img_Folder,Img_Side,Img_Album
+Bandleader,Orchestra,Date,Title,AltTitle,Genre,Singer,Label,Master,Matrix,Disc,Composer,Author,Arranger,Grouping,Pianist,Bassist,Bandoneons,Strings,Lineup,Img_Type,Img_Folder,Img_Side,Img_Album
 Francisco Canaro,Orquesta Francisco Canaro,1916,Amor Puro,,Vals,Instrumental,Atlanta,,45,3022,Pedro Sofía,,,16-20 Accoustic,,,"Pedro Polito, UNKNOWN (Flute)","Francisco Canaro, UNKNOWN, Leopoldo Thompson (Guitar)","Bandoneon, 2 Violins, Flute, Guitar",,,,
 Francisco Canaro,Orquesta Francisco Canaro,1916,Ando Pato,,Tango,Instrumental,Atlanta,,62,3032,Juan Maglio,,,16-20 Accoustic,,,"Pedro Polito, UNKNOWN (Flute)","Francisco Canaro, UNKNOWN, Leopoldo Thompson (Guitar)","Bandoneon, 2 Violins, Flute, Guitar",,,,
 Francisco Canaro,Orquesta Francisco Canaro,1916,Blanca Nieve,,Vals,Instrumental,Atlanta,,37,3018,Juan Labissier,,,16-20 Accoustic,,,"Pedro Polito, UNKNOWN (Flute)","Francisco Canaro, UNKNOWN, Leopoldo Thompson (Guitar)","Bandoneon, 2 Violins, Flute, Guitar",,,,
@@ -2578,14 +2578,14 @@ Francisco Canaro,Quinteto Pirincho,1950-10-03,Arrabalera,,Milonga,Refrán Por Fr
 Francisco Canaro,Orquesta Francisco Canaro,1950-10-03,El Torito,,Tango,Instrumental,Columbia,,MAI 79,301007 A,Ángel Villoldo,"Carlos Pesce, Antonio Polito",,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1950-10-26,Pancho Almada Está de Fiesta,La Garçonnière | la Garzonniere,Tango,Mario Alonso,Odeón,,17850,55170 B,Francisco Canaro,"Juan Caruso, Francisco Canaro",,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1950-12-06,Charamusca,,Tango,Instrumental,Columbia,,MAI 136,301011 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro con Alberto Arenas y Coro,1950-12-06,El Llorón,,Milonga,Alberto Arenas,Odeón,,17925,55194 A,Juan Maglio,Enrique Cadícamo,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro con Alberto Arenas y Coro,1950-12-06,El Llorón,,Milonga,Alberto Arenas,Odeón,,17925,55194 A,Juan Maglio,Enrique Cadícamo,,50-59 50s,,,,,,LP,TEV 50072 - Francisco Canaro,,Francisco Canaro
 Francisco Canaro,Quinteto Pirincho,1950-12-06,La Maleva,,Tango,Instrumental,Columbia,,MAI 138,301016 A,Antonio Buglione,Mario Pardo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1950-12-06,Las Tres de la Mañana,A las Tres de la Mañana,Vals,Instrumental,Columbia,,MAI 137,301011 A,Julián Robledo,Alfredo Pelaia,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1950-12-06,Piccolo Navío,Pícolo Navío | Il Piccolo Navío,Tango,Alberto Arenas,Odeón,,17924,55194 B,Luis Riccardi,Juan Caruso,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1951-05-18,Tomá Mate Tomá Mate,,Milonga,Alberto Arenas,Odeón,,18018,55241 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1951-05-18,Vinacho y Vinagrillo,,Milonga,Alberto Arenas Y Mario Alonso,Odeón,,18019,55241 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1951-06-12,Bandoneón Arrabalero,,Tango,Mario Alonso,Odeón,,18060,55260 A,Juan Deambroggio,Pascual Contursi,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1951-06-12,Federación,,Tango,Alberto Arenas,Odeón,,18061,55260 B,Francisco Riccardi,Juan Caruso,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1951-06-12,Federación,,Tango,Alberto Arenas,Odeón,,18061,55260 B,Francisco Riccardi,Juan Caruso,,50-59 50s,,,,,,LP,TEV 11017 - Francisco Canaro Et Son Orchestre Argentin,,Francisco Canaro Et Son Orchestre Argentin
 Francisco Canaro,Quinteto Pirincho,1951-06-19,Los Indios,,Tango,Instrumental,Columbia,,MAI 260,301022 A,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1951-06-19,Tierra Negra,,Tango,,Columbia,,MAI 261,301022 B,Juan De Leone,Francisco Bastardi,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1951-07-20,El Esquinazo,,Tango,Refrán Por Francisco Canaro,Columbia,,MAI 288,301024 A,Ángel Villoldo,"Carlos Pesce, Antonio Polito",,50-59 50s,,,,,,,,,
@@ -2599,18 +2599,18 @@ Francisco Canaro,Orquesta Francisco Canaro,1951-11-26,Sentimiento Gaucho,,Tango,
 Francisco Canaro,Orquesta Francisco Canaro,1951-11-29,A Media Luz,,Tango,Alberto Arenas,Odeón,,18287,55520 A,Edgardo Donato,Carlos Lenzi,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1951-11-29,Adiós Pampa Mía,,Tango,Alberto Arenas,Odeón,,18288,55563 B,Francisco Mores,Ivo Pelay,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1951-11-29,La Cumparsita,Si Supieras,Tango,Mario Alonso,Odeón,,18285,55424 A,Gerardo Rodríguez,Pascual Maroni,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1951-11-29,La Puñalada,,Milonga,Instrumental,Odeón,,18286,55481 B,Pintín Castellanos,Celedonio Flores,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1951-11-29,La Puñalada,,Milonga,Instrumental,Odeón,,18286,55481 B,Pintín Castellanos,Celedonio Flores,,50-59 50s,,,,,,LP,TEV 57 - Destellos,,Destellos
 Francisco Canaro,Quinteto Pirincho,1951-12-12,A la Gran Muñeca,,Tango,Instrumental,Columbia,,MAI 525,301031 B,Jesús Ventura,Miguel Osés,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1951-12-12,Matasano,,Tango,Instrumental,Columbia,,MAI 526,301031 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1952-04-07,Jueves,,Tango,Instrumental,Columbia,,MAI 613,301039 A,Udelino Rossi,,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1952-05-14,El Entrerriano,El Entrerriano,Tango,Instrumental,Odeón,,18394,55424 B,Rosendo Mendizábal,Ernesto Amor,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1952-05-14,El Internado,,Tango,Instrumental,Columbia,,MAI 646,301042 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1952-05-14,Lo Han Visto con Otra,,Tango,Mario Alonso,Odeón,,18393,55481 A,Horacio Pettorossi,Horacio Pettorossi,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1952-05-14,Lo Han Visto con Otra,,Tango,Mario Alonso,Odeón,,18393,55481 A,Horacio Pettorossi,Horacio Pettorossi,,50-59 50s,,,,,,LP,TEV 650 - La vida de F. Canaro Vol8,,La vida de F. Canaro Vol8
 Francisco Canaro,Orquesta Francisco Canaro,1952-05-14,Lunes,,Tango,Instrumental,Columbia,,MAI 645,301042 A,José Padula,Francisco Jiménez,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1952-05-29,Cualquier Cosa,,Tango,Mario Alonso,Odeón,,18421,55403 A,Herminia Velich,Herminia Velich,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1952-05-29,El Opio,,Tango,Instrumental,Odeón,,18420,55403 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1952-07-15,Alfredo,,Tango,Instrumental,Columbia,,MAI 733,301048 B,Humberto Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1952-07-15,Desde el Alma,,Vals,Instrumental,Columbia,,MAI 734,301048 A,Rosita De Piuma,"Víctor Vélez, Homero Manzi",,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1952-05-29,El Opio,,Tango,Instrumental,Odeón,,18420,55403 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 56021 - Francisco Canaro y su orquesta tipica,,Francisco Canaro y su orquesta tipica
+Francisco Canaro,Quinteto Pirincho,1952-07-15,Alfredo,,Tango,Instrumental,Columbia,,MAI 733,301048 B,Humberto Canaro,,,50-59 50s,,,,,,LP,TEV 50134 - Historia del Quinteto Pirincho Vol.4,,"Historia del Quinteto ""Pirincho"" Vol.4"
+Francisco Canaro,Orquesta Francisco Canaro,1952-07-15,Desde el Alma,,Vals,Instrumental,Columbia,,MAI 734,301048 A,Rosita De Piuma,"Víctor Vélez, Homero Manzi",,50-59 50s,,,,,,LP,TEV 50134 - Historia del Quinteto Pirincho Vol.4,,"Historia del Quinteto ""Pirincho"" Vol.4"
 Francisco Canaro,Orquesta Francisco Canaro,1952-08-11,Cuna de Fango,,Tango,Alberto Arenas,Odeón,,18521,55459 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1952-08-11,Flor de Arrabal,Flor del Arrabal,Milonga,Alberto Arenas Y Mario Alonso,Odeón,,18522,55459 A,Luis Riccardi,Luis Riccardi,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1952-09-16,Felicia,,Tango,Instrumental,Columbia,,MAI 789,301054 A,Enrique Saborido,Carlos Pacheco,,50-59 50s,,,,,,,,,
@@ -2628,88 +2628,88 @@ Francisco Canaro,Orquesta Francisco Canaro,1953-03-17,Rodríguez Peña,Rodrígue
 Francisco Canaro,Orquesta Francisco Canaro,1953-03-20,Esta Noche Me Emborracho,,Tango,Alberto Arenas,Odeón,,18824,55699 B,Enrique Discépolo,Enrique Discépolo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1953-03-20,Mano a Mano,Viejo Bandoneón,Tango,Alberto Arenas,Odeón,,18823,55671 A,Carlos Razzano,Celedonio Flores,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1953-03-25,El Chino Pantaleón,,Milonga,Alberto Arenas Y Mario Alonso,Odeón,,18832,55736 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1953-03-25,Griseta,Grisetta | Grisette,Tango,Mario Alonso,Odeón,,18831,55736 A,Enrique Delfino,José Castillo,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1953-03-31,Cimarrona,,Vals,Alberto Arenas,Odeón,,18845,55658 A,Fausto Frontera,Cátulo Castillo,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1953-03-25,Griseta,Grisetta | Grisette,Tango,Mario Alonso,Odeón,,18831,55736 A,Enrique Delfino,José Castillo,,50-59 50s,,,,,,LP,TEV 56021 - Francisco Canaro y su orquesta tipica,,Francisco Canaro y su orquesta tipica
+Francisco Canaro,Orquesta Francisco Canaro,1953-03-31,Cimarrona,,Vals,Alberto Arenas,Odeón,,18845,55658 A,Fausto Frontera,Cátulo Castillo,,50-59 50s,,,,,,LP,TEV 50090 - Francisco Canaro,,Francisco Canaro
 Francisco Canaro,Orquesta Francisco Canaro,1953-03-31,Compadre Que Le Va a Hacer,,Milonga,Alberto Arenas,Odeón,,18846,55657 B,Aníbal Troilo,José Razzano,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1953-04-10,Aquí Parado en la Esquina,,Tango,Mario Alonso,Odeón,,18859,55658 B,Rafael Rossi,Alfredo Bigeschi,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1953-04-10,Aquí Parado en la Esquina,,Tango,Mario Alonso,Odeón,,18859,55658 B,Rafael Rossi,Alfredo Bigeschi,,50-59 50s,,,,,,LP,TEV 50106 - Francisco Canaro y su orquesta típica,,Francisco Canaro y su orquesta típica
 Francisco Canaro,Orquesta Francisco Canaro,1953-04-10,Con Poca Plata,,Tango,Mario Alonso,Odeón,,18858,55657 A,Antonio Arcieri,José Terragno,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1953-08-14,Del Suburbio,,Tango,Alberto Arenas,Odeón,,19063,55762 B,Oscar Sabino,Víctor Lamanna,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1953-08-14,Una Canción,,Tango,Mario Alonso,Odeón,,19062,55762 A,Aníbal Troilo,Cátulo Castillo,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1953-08-14,Una Noche de Garufa,,Tango,Instrumental,Odeón,,19064,55820 A,Eduardo Arolas,Gabriel Clausi,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1953-11-23,El Tigre,,Tango,Instrumental,Odeón,,19244,55841 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1954-01-04,Cara Dura,,Tango,Instrumental,Odeón,,19343,55897 B,Ernesto Ponzio,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1954-01-04,Envidia,,Tango,Mario Alonso,Odeón,,19340,55877 B,Francisco Canaro,"José Castillo, Antonio Botta, Luis Amadori",,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1953-08-14,Una Canción,,Tango,Mario Alonso,Odeón,,19062,55762 A,Aníbal Troilo,Cátulo Castillo,,50-59 50s,,,,,,LP,TEV 11017 - Francisco Canaro Et Son Orchestre Argentin,,Francisco Canaro Et Son Orchestre Argentin
+Francisco Canaro,Orquesta Francisco Canaro,1953-08-14,Una Noche de Garufa,,Tango,Instrumental,Odeón,,19064,55820 A,Eduardo Arolas,Gabriel Clausi,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Quinteto Pirincho,1953-11-23,El Tigre,,Tango,Instrumental,Odeón,,19244,55841 A,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 11017 - Francisco Canaro Et Son Orchestre Argentin,,Francisco Canaro Et Son Orchestre Argentin
+Francisco Canaro,Orquesta Francisco Canaro,1954-01-04,Cara Dura,,Tango,Instrumental,Odeón,,19343,55897 B,Ernesto Ponzio,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Quinteto Pirincho,1954-01-04,Envidia,,Tango,Mario Alonso,Odeón,,19340,55877 B,Francisco Canaro,"José Castillo, Antonio Botta, Luis Amadori",,50-59 50s,,,,,,LP,TEV 50099 - Adiós Pampa Mía,,Adiós Pampa Mía
 Francisco Canaro,Orquesta Francisco Canaro,1954-01-04,Noches de Amor,,Vals,Instrumental,Odeón,,19342,55897 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1954-01-04,Tomá Estas Monedas,,Tango,Alberto Arenas,Odeón,,19341,55877 A,Juan Salamanca,"Juan D'Arienzo, Fulvio Salamanca, Carlos Bahr",,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1954-01-04,Tomá Estas Monedas,,Tango,Alberto Arenas,Odeón,,19341,55877 A,Juan Salamanca,"Juan D'Arienzo, Fulvio Salamanca, Carlos Bahr",,50-59 50s,,,,,,LP,TEV 11017 - Francisco Canaro Et Son Orchestre Argentin,,Francisco Canaro Et Son Orchestre Argentin
 Francisco Canaro,Orquesta Francisco Canaro,1954-03-30,Cómo Querés Que Te Quiera,,Tango,Alberto Arenas,Odeón,,19419,55914 B,Héctor Marcó,Héctor Marcó,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1954-03-30,Prohibido,,Tango,Mario Alonso,Odeón,,19420,55914 A,Bernardo Sucher,Carlos Bahr,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1954-05-28,A su Majestad,,Tango,Instrumental,Odeón,,19503,55953 B,Juan Canaro,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1954-03-30,Prohibido,,Tango,Mario Alonso,Odeón,,19420,55914 A,Bernardo Sucher,Carlos Bahr,,50-59 50s,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
+Francisco Canaro,Quinteto Pirincho,1954-05-28,A su Majestad,,Tango,Instrumental,Odeón,,19503,55953 B,Juan Canaro,,,50-59 50s,,,,,,LP,TEV 50134 - Historia del Quinteto Pirincho Vol.4,,"Historia del Quinteto ""Pirincho"" Vol.4"
 Francisco Canaro,Orquesta Francisco Canaro,1954-05-28,Taquito Militar,,Milonga,Instrumental,Odeón,,19502,55953 A,Mariano Mores,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1954-07-19,De Mi Barrio,,Tango,Mario Alonso,Odeón,,19585,55983 A,Roberto Goyeneche,Roberto Goyeneche,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1954-07-19,De Mi Barrio,,Tango,Mario Alonso,Odeón,,19585,55983 A,Roberto Goyeneche,Roberto Goyeneche,,50-59 50s,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
 Francisco Canaro,Orquesta Francisco Canaro,1954-07-19,Pedime Lo Que Querés,Pedime Lo Que Quieras,Tango,Alberto Arenas,Odeón,,19584,55983 B,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1954-07-23,El Choclo,Kiss Of Fire,Tango,Tita Merello,Odeón,,19596,61002 A,Ángel Villoldo,Ángel Villoldo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1954-07-23,Se Dice de Mí,,Milonga,Tita Merello,Odeón,,19597,61002 B,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1954-08-02,En el Séptimo Cielo,,Tango,Instrumental,Odeón,,19616,51616 B,Manuel Campoamor,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1954-08-02,Se Dice de Mí,,Milonga,Instrumental,Odeón,,19617,51616 A,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1954-11-17,Pimienta,Pimient,Tango,Instrumental,Odeón,,19815,51640 A,Osvaldo Fresedo,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1954-11-17,Viviré con Tu Recuerdo,,Vals,Instrumental,Odeón,,19816,51640 B,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1954-12-29,Lilac,The Lilac Tango,Tango,Instrumental,Odeón,,19901,51655 A,Harry Acres,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-01-31,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,19976,51701 A,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1954-08-02,Se Dice de Mí,,Milonga,Instrumental,Odeón,,19617,51616 A,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Quinteto Pirincho,1954-11-17,Pimienta,Pimient,Tango,Instrumental,Odeón,,19815,51640 A,Osvaldo Fresedo,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1954-11-17,Viviré con Tu Recuerdo,,Vals,Instrumental,Odeón,,19816,51640 B,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,LP,TEV 116 - Quinteto Pirincho,,Quinteto Pirincho
+Francisco Canaro,Quinteto Pirincho,1954-12-29,Lilac,The Lilac Tango,Tango,Instrumental,Odeón,,19901,51655 A,Harry Acres,,,50-59 50s,,,,,,LP,TEV 642 - La vida de F. Canaro Vol9,,La vida de F. Canaro Vol9
+Francisco Canaro,Orquesta Francisco Canaro,1955-01-31,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,19976,51701 A,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
 Francisco Canaro,Orquesta Francisco Canaro,1955-03-01,Arrabalera,,Tango,Tita Merello,Odeón,,19981,61006 A,Sebastián Piana,Cátulo Castillo,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1955-03-08,Cara Sucia,,Tango,Juan Carlos Rolon,Odeón,,19991,51691 A,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-03-08,Nueve Puntos,9 Puntos,Tango,Instrumental,Odeón,,19993,51701 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-03-31,Al Compás del Corazón,Late un Corazón,Tango,Juan Carlos Rolon,Odeón,,20000,51714 A,Domingo Federico,Homero Expósito,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1955-03-31,Noches de Colón,,Tango,Alberto Arenas,Odeón,,20041,51714 B,Raúl De Los Hoyos,Roberto Cayol,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-04-28,El Apache Argentino,,Tango,Instrumental,Odeón,,20123,51719 A,Manuel Aróztegui,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-05-30,Bodas de Oro con el Tango,,Tango,Instrumental,Odeón,,20197,51750 B,Oscar Sabino,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1955-03-08,Cara Sucia,,Tango,Juan Carlos Rolon,Odeón,,19991,51691 A,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,LP,TEV 56021 - Francisco Canaro y su orquesta tipica,,Francisco Canaro y su orquesta tipica
+Francisco Canaro,Orquesta Francisco Canaro,1955-03-08,Nueve Puntos,9 Puntos,Tango,Instrumental,Odeón,,19993,51701 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1955-03-31,Al Compás del Corazón,Late un Corazón,Tango,Juan Carlos Rolon,Odeón,,20000,51714 A,Domingo Federico,Homero Expósito,,50-59 50s,,,,,,LP,TEV 57 - Destellos,,Destellos
+Francisco Canaro,Quinteto Pirincho,1955-03-31,Noches de Colón,,Tango,Alberto Arenas,Odeón,,20041,51714 B,Raúl De Los Hoyos,Roberto Cayol,,50-59 50s,,,,,,LP,TEV 56021 - Francisco Canaro y su orquesta tipica,,Francisco Canaro y su orquesta tipica
+Francisco Canaro,Orquesta Francisco Canaro,1955-04-28,El Apache Argentino,,Tango,Instrumental,Odeón,,20123,51719 A,Manuel Aróztegui,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1955-05-30,Bodas de Oro con el Tango,,Tango,Instrumental,Odeón,,20197,51750 B,Oscar Sabino,,,50-59 50s,,,,,,LP,TEV 50119 - Francisco Canaro,,Francisco Canaro
 Francisco Canaro,Orquesta Francisco Canaro,1955-05-30,Pájaro Silvestre,,Tango,Instrumental,Odeón,,20196,51750 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1955-06-25,Copa de Ajenjo,,Tango,Tita Merello,Odeón,,20271,61007 A,Juan Canaro,Carlos Pesce,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1955-06-25,Qué Hacés Qué Hacés,,Tango,Tita Merello,Odeón,,20272,61007 B,José Di Clemente,Jesús Blanco,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-06-30,El Día Que Me Quieras,The Day You Love Me,Tango,Juan Carlos Rolon,Odeón,,20292,51793 B,Carlos Gardel,Alfredo Le Pera,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-06-30,Te Quiero,,Tango,Juan Carlos Rolon,Odeón,,20291,51793 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1955-06-30,El Día Que Me Quieras,The Day You Love Me,Tango,Juan Carlos Rolon,Odeón,,20292,51793 B,Carlos Gardel,Alfredo Le Pera,,50-59 50s,,,,,,LP,TEV 56021 - Francisco Canaro y su orquesta tipica,,Francisco Canaro y su orquesta tipica
+Francisco Canaro,Orquesta Francisco Canaro,1955-06-30,Te Quiero,,Tango,Juan Carlos Rolon,Odeón,,20291,51793 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,LP,TEV 50064 - Mis Bodas de Oro Con el Tango,,Mis Bodas de Oro Con el Tango
 Francisco Canaro,Orquesta Francisco Canaro,1955-07-02,La Muchachada del Centro,La Muchacha del Centro,Tango,Tita Merello,Odeón,,20299,61011 A,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1955-07-02,La Payasa,,Tango,Tita Merello,Odeón,,20298,,Feliciano Latasa,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-07-25,Joaquina,,Tango,Instrumental,Odeón,,20358,51774 A,Juan Bergamino,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-08-02,Las Vueltas de la Vida,,Tango,Alberto Arenas,Odeón,,20369,51814 B,Francisco Canaro,Manuel Romero,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1955-08-02,Malena,,Tango,Juan Carlos Rolon,Odeón,,20368,51814 A,Lucio Demare,Homero Manzi,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1955-07-25,Joaquina,,Tango,Instrumental,Odeón,,20358,51774 A,Juan Bergamino,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1955-08-02,Las Vueltas de la Vida,,Tango,Alberto Arenas,Odeón,,20369,51814 B,Francisco Canaro,Manuel Romero,,50-59 50s,,,,,,LP,TEV 50076 - Las Famosas Obras de Fco. Canaro,,"Las Famosas Obras de ""Fco. Canaro"""
+Francisco Canaro,Quinteto Pirincho,1955-08-02,Malena,,Tango,Juan Carlos Rolon,Odeón,,20368,51814 A,Lucio Demare,Homero Manzi,,50-59 50s,,,,,,LP,TEV 56021 - Francisco Canaro y su orquesta tipica,,Francisco Canaro y su orquesta tipica
 Francisco Canaro,Quinteto Pirincho,1955-10-25,Bajo el Cielo Azul,,Vals,Instrumental,Odeón,,20520,51827 B,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-10-25,El Once,A Divertirse,Tango,Instrumental,Odeón,,20519,51827 A,Osvaldo Fresedo,Emilio Fresedo,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1955-10-25,El Once,A Divertirse,Tango,Instrumental,Odeón,,20519,51827 A,Osvaldo Fresedo,Emilio Fresedo,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
 Francisco Canaro,Orquesta Francisco Canaro,1955-11-13,Siga el Corso,,Tango,Carlos Gardel,Odeón,,20670,61010 B,Anselmo Aieta,Francisco Jiménez,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1955-11-13,Yira Yira,Yira Yira,Tango,Carlos Gardel,Odeón,,20671,61010 A,Enrique Discépolo,Enrique Discépolo,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1955-12-27,La Trampera,,Milonga,Instrumental,Odeón,,20684,51861 B,Aníbal Troilo,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1955-12-27,La Trampera,,Milonga,Instrumental,Odeón,,20684,51861 B,Aníbal Troilo,,,50-59 50s,,,,,,LP,TEV 50134 - Historia del Quinteto Pirincho Vol.4,,"Historia del Quinteto ""Pirincho"" Vol.4"
 Francisco Canaro,Quinteto Pirincho,1955-12-27,Qué Tal,,Tango,Instrumental,Odeón,,20685,51861 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1955-12-30,El Gavilán,,Tango,Instrumental,Odeón,,20694,51874 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1955-12-30,El Irresistible,,Tango,Instrumental,Odeón,,20693,51874 A,Lorenzo Logatti,Carlos Pesce,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-04-12,Café Para Dos,,Tango,Alberto Arenas,Odeón,,20897,51954 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-04-12,Me Gusta Bailar Milonga,,Milonga,Alberto Arenas,Odeón,,20898,51954 B,Pintín Castellanos,Pintín Castellanos,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-04-13,Canaro en París,Canaro en París,Tango,Instrumental,Odeón,,20904,51093 A,Alejandro Caldarella,José Scarpino,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1955-12-30,El Gavilán,,Tango,Instrumental,Odeón,,20694,51874 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1955-12-30,El Irresistible,,Tango,Instrumental,Odeón,,20693,51874 A,Lorenzo Logatti,Carlos Pesce,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1956-04-12,Café Para Dos,,Tango,Alberto Arenas,Odeón,,20897,51954 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,LP,TEV 11018 - Francisco Canaro Y Su Exitos De Todos Los Tiempos,,Francisco Canaro Y Su Exitos De Todos Los Tiempos
+Francisco Canaro,Quinteto Pirincho,1956-04-12,Me Gusta Bailar Milonga,,Milonga,Alberto Arenas,Odeón,,20898,51954 B,Pintín Castellanos,Pintín Castellanos,,50-59 50s,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
+Francisco Canaro,Quinteto Pirincho,1956-04-13,Canaro en París,Canaro en París,Tango,Instrumental,Odeón,,20904,51093 A,Alejandro Caldarella,José Scarpino,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
 Francisco Canaro,Quinteto Pirincho,1956-04-13,Vibraciones del Alma,,Vals,Instrumental,Odeón,,20903,51085 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-04-24,Derecho Viejo,,Tango,Instrumental,Odeón,,20930,51085 B,Eduardo Arolas,Gabriel Clausi,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-04-24,Mano Brava,,Tango,Instrumental,Odeón,,20929,51093 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-04-26,Historia de un Amor,,Tango,Juan Carlos Rolon,Odeón,,20936,51926 A,Carlos Almarán,Carlos Almarán,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1956-04-24,Derecho Viejo,,Tango,Instrumental,Odeón,,20930,51085 B,Eduardo Arolas,Gabriel Clausi,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1956-04-24,Mano Brava,,Tango,Instrumental,Odeón,,20929,51093 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1956-04-26,Historia de un Amor,,Tango,Juan Carlos Rolon,Odeón,,20936,51926 A,Carlos Almarán,Carlos Almarán,,50-59 50s,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
 Francisco Canaro,Orquesta Francisco Canaro,1956-05-18,Bandoneón Arrabalero,,Tango,Carlos Gardel,Odeón,,20991,61013 B,Juan Deambroggio,Pascual Contursi,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-05-18,Chorra,,Tango,Carlos Gardel,Odeón,,20990,61013 A,Enrique Discépolo,Enrique Discépolo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-05-30,Confesión,,Tango,Dalva De Oliveira,Odeón,,21024,74318 B,Enrique Discépolo,Enrique Amadori,,50-59 50s,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1956-05-30,El Pañuelito,,Tango,Dalva De Oliveira,Odeón,,21023,74318 A,Juan Filiberto,Gabino Peñaloza,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-06-08,Adoración,,Vals,Instrumental,Odeón,,21069,51982 B,Pedro Argüello,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-06-08,El Favorito,,Milonga,Instrumental,Odeón,,21068,51982 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-06-08,Olga,,Vals,Instrumental,Odeón,,21066,51092 A,Francisco Peña,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-06-08,Pan Nuestro,,Tango,Instrumental,Odeón,,21067,51092 B,Juan Noli,Ernesto Noli,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1956-06-08,Adoración,,Vals,Instrumental,Odeón,,21069,51982 B,Pedro Argüello,,,50-59 50s,,,,,,LP,TEV 487 - Recordando el 900 Volumen Nro7,,Recordando el 900 Volumen Nro7
+Francisco Canaro,Quinteto Pirincho,1956-06-08,El Favorito,,Milonga,Instrumental,Odeón,,21068,51982 A,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Quinteto Pirincho,1956-06-08,Olga,,Vals,Instrumental,Odeón,,21066,51092 A,Francisco Peña,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1956-06-08,Pan Nuestro,,Tango,Instrumental,Odeón,,21067,51092 B,Juan Noli,Ernesto Noli,,50-59 50s,,,,,,LP,TEV 940 - Mano Brava,,Mano Brava
 Francisco Canaro,Orquesta Francisco Canaro,1956-06-14,Niño Bien,,Tango,Tita Merello,Odeón,,21080,61015 A,Juan Collazo,Víctor Fontaina,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-06-14,Pipistrela,,Tango,Tita Merello,Odeón,,21081,61015 B,Juan Canaro,Fernando Ochoa,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-06-15,Copa de Silencio,,Tango,Alberto Arenas,Odeón,,21084,51978 B,Alberto Arenas,Alberto Arenas,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-17,La Calesita,,Tango,Juan Carlos Rolon,Odeón,,21323,52019 A,Mariano Mores,Cátulo Castillo,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1956-06-15,Copa de Silencio,,Tango,Alberto Arenas,Odeón,,21084,51978 B,Alberto Arenas,Alberto Arenas,,50-59 50s,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-17,La Calesita,,Tango,Juan Carlos Rolon,Odeón,,21323,52019 A,Mariano Mores,Cátulo Castillo,,50-59 50s,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
 Francisco Canaro,Quinteto Pirincho,1956-09-17,Meditación Maleva,,Tango,Guillermo Rico,Odeón,,21324,52019 B,Oscar Sabino,Víctor Lamanna,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-09-19,Corralera,,Milonga,Instrumental,Odeón,,21334,52023 B,Anselmo Aieta,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-19,El Pillín,,Tango,Instrumental,Odeón,,21333,52023 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-20,Destellos,,Tango,Juan Carlos Rolon,Odeón,,21338,DSOA/E 1591 A,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-20,La Barra Fuerte,,Tango,Instrumental,Odeón,,21336,52055 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-20,Te Quiero,,Tango,Juan Carlos Rolon,Odeón,,21339,LDS 255 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1956-09-19,Corralera,,Milonga,Instrumental,Odeón,,21334,52023 B,Anselmo Aieta,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-19,El Pillín,,Tango,Instrumental,Odeón,,21333,52023 A,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-20,Destellos,,Tango,Juan Carlos Rolon,Odeón,,21338,DSOA/E 1591 A,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,LP,TEV 50064 - Mis Bodas de Oro Con el Tango,,Mis Bodas de Oro Con el Tango
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-20,La Barra Fuerte,,Tango,Instrumental,Odeón,,21336,52055 A,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-20,Te Quiero,,Tango,Juan Carlos Rolon,Odeón,,21339,LDS 255 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
 Francisco Canaro,Orquesta Francisco Canaro,1956-09-20,Vibraciones del Alma,,Vals,Instrumental,Odeón,,21337,52055 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-25,Café Para Dos,,Tango,Guillermo Rico,Odeón,,21351,51954 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-25,La Última Copa,,Tango,Guillermo Rico,Odeón,,21352,DSOA/E 1591 B,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-28,Corazón Encadenado,,Tango,Juan Carlos Rolon,Odeón,,21364,LDS 255 B,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-09-28,Tangon,,Tango,Guillermo Rico,Odeón,,21365,DSOA/E 1591 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-25,Café Para Dos,,Tango,Guillermo Rico,Odeón,,21351,51954 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-25,La Última Copa,,Tango,Guillermo Rico,Odeón,,21352,DSOA/E 1591 B,Francisco Canaro,Juan Caruso,,50-59 50s,,,,,,LP,TEV 50064 - Mis Bodas de Oro Con el Tango,,Mis Bodas de Oro Con el Tango
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-28,Corazón Encadenado,,Tango,Juan Carlos Rolon,Odeón,,21364,LDS 255 B,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,LP,TEV 56021 - Francisco Canaro y su orquesta tipica,,Francisco Canaro y su orquesta tipica
+Francisco Canaro,Orquesta Francisco Canaro,1956-09-28,Tangon,,Tango,Guillermo Rico,Odeón,,21365,DSOA/E 1591 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50064 - Mis Bodas de Oro Con el Tango,,Mis Bodas de Oro Con el Tango
 Francisco Canaro,Orquesta Francisco Canaro,1956-10-03,Cambalache,,Tango,Tita Merello,Odeón,,21383,61016 A,Enrique Discépolo,Enrique Discépolo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-10-08,Madame Ivonne,Madame Yvonne | Madame Yvone,Tango,Carlos Gardel,Odeón,,21395,61018 A,Eduardo Pereyra,Enrique Cadícamo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-10-08,Madre Hay una Sola,,Tango,Carlos Gardel,Odeón,,21394,61018 B,Agustín Bardi,José De La Vega,,50-59 50s,,,,,,,,,
@@ -2717,19 +2717,19 @@ Francisco Canaro,Orquesta Francisco Canaro,1956-10-16,Es Mejor,,Tango,Juan Carlo
 Francisco Canaro,Orquesta Francisco Canaro,1956-10-16,Mi Promesa,,Tango,Juan Carlos Rolon Y Guillermo Rico,Odeón,,21421,52043 A,Alfredo De Angelis,José Rótulo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-11-16,Cuando No Existas Más,,Tango,Juan Carlos Rolon,Odeón,,21552,52077 A,Antonio D'Alessandro,José Contursi,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-11-16,Los Adioses,,Tango,Juan Carlos Rolon,Odeón,,21553,52077 B,Donato Bove,Juan Patrón,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-11-21,El Pardo Cejas,,Tango,Instrumental,Odeón,,21567,52069 A,Prudencio Aragón,Antonio Polito,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1956-11-21,El Pardo Cejas,,Tango,Instrumental,Odeón,,21567,52069 A,Prudencio Aragón,Antonio Polito,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
 Francisco Canaro,Orquesta Francisco Canaro,1956-11-21,Tana Linda,,Tango,Instrumental,Odeón,,21568,52069 B,Rafael Canaro,,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-11-22,Mañana,,Tango,Tita Merello,Odeón,,21572,61017 B,Anselmo Aieta,Ivo Pelay,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-11-22,Tranquilo Viejo Tranquilo,,Tango,Tita Merello,Odeón,,21571,61017 A,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-11-30,Porteña,,Vals,Carlos Lombardi,Odeón,,21613,,Carlos Lombardi,,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-11-30,Yo También Soñé,,Tango,Carlos Lombardi,Odeón,,21612,,Francisco Canaro,,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1956-12-14,Muriéndome de Amor,,Tango,Guillermo Rico,Odeón,,21677,52097 B,Bernardo Sucher,Carlos Bahr,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1956-12-19,Canillita,Canillita (No 1),Tango,Instrumental,Odeón,,21706,52110 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1956-12-19,El Talar,,Tango,Instrumental,Odeón,,21705,52110 A,Prudencio Aragón,Antonio Polito,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1957-01-02,Casas Viejas,,Tango,Juan Carlos Rolon,Odeón,,21739,52122 A,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1957-01-02,Casi Caminando,,Tango,Juan Carlos Rolon,Odeón,,21738,52122 B,Cristóbal Bernal,Francisco Yoni,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1957-01-31,Marianito,Manou,Tango,Instrumental,Odeón,,21834,52192 A,Domingo Salerno,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1957-01-31,Zorro Gris,,Tango,Instrumental,Odeón,,21835,52192 B,Rafael Tuegols,Francisco Jiménez,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1956-12-19,Canillita,Canillita (No 1),Tango,Instrumental,Odeón,,21706,52110 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50131 - Historia del Quinteto Pirincho Vol.1,,"Historia del Quinteto ""Pirincho"" Vol.1"
+Francisco Canaro,Orquesta Francisco Canaro,1956-12-19,El Talar,,Tango,Instrumental,Odeón,,21705,52110 A,Prudencio Aragón,Antonio Polito,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1957-01-02,Casas Viejas,,Tango,Juan Carlos Rolon,Odeón,,21739,52122 A,Francisco Canaro,Ivo Pelay,,50-59 50s,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
+Francisco Canaro,Quinteto Pirincho,1957-01-02,Casi Caminando,,Tango,Juan Carlos Rolon,Odeón,,21738,52122 B,Cristóbal Bernal,Francisco Yoni,,50-59 50s,,,,,,EP,TEV 11165 - Isto è Tango,,Isto è Tango
+Francisco Canaro,Quinteto Pirincho,1957-01-31,Marianito,Manou,Tango,Instrumental,Odeón,,21834,52192 A,Domingo Salerno,,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
+Francisco Canaro,Orquesta Francisco Canaro,1957-01-31,Zorro Gris,,Tango,Instrumental,Odeón,,21835,52192 B,Rafael Tuegols,Francisco Jiménez,,50-59 50s,,,,,,LP,TEV 50132 - Historia del Quinteto Pirincho Vol.2,,"Historia del Quinteto ""Pirincho"" Vol.2"
 Francisco Canaro,Orquesta Francisco Canaro,1957-04-15,Cuando Mi China Se Fue,,Milonga,Alberto Arenas Y Juan Carlos Rolon,Odeón,,22001,52136 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1957-05-09,Fumando Espero,,Tango,Dalva De Oliveira,Odeón,,22085,MODB 3083 B,Juan Masanas,Félix Garzo,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1957-05-09,Yira Yira,Yira Yira,Tango,Dalva De Oliveira,Odeón,,22086,14231 A,Enrique Discépolo,Enrique Discépolo,,50-59 50s,,,,,,,,,
@@ -2740,88 +2740,88 @@ Francisco Canaro,Orquesta Francisco Canaro,1957-05-20,La Última Copa,,Tango,Dal
 Francisco Canaro,Orquesta Francisco Canaro,1957-05-20,Tristeza Marina,,Tango,Dalva De Oliveira,Odeón,,22111,74351 A,José Flores,Horacio Sanguinetti,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1957-05-24,La Copa del Olvido,A Taça Do Esquecimento,Tango,Dalva De Oliveira,Odeón,,22128,MOFB 3227 A,Enrique Delfino,Alberto Vacarezza,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1957-05-24,Oro y Plata,Ouro e Prata,Milonga,Dalva De Oliveira,Odeón,,22127,Released in Brazil,Charlo,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1957-08-19,Cuando el Amor,,Tango,Juan Carlos Rolon,Odeón,,22378,DSOA 1101 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1957-08-19,Noche Deseada,Noche Estrellada,Vals,Juan Carlos Rolon,Odeón,,22379,DSOA 1101 A,Francisco Canaro,"Guillermo Pelay, Horacio Pelay",,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1957-09-02,Mala Junta,,Tango,Instrumental,Odeón,,22428,52238 B,Julio Laurenz,Juan Velich,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1957-09-02,Milonga del Tiempo Heroico,,Milonga,Instrumental,Odeón,,22427,52238 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1957-08-19,Cuando el Amor,,Tango,Juan Carlos Rolon,Odeón,,22378,DSOA 1101 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,LP,TEV 400 - Tangolandia Francisco Canaro y su orquesta tipica Vol N,,"""Tangolandia"" Francisco Canaro y su orquesta tipica Vol No 10"
+Francisco Canaro,Quinteto Pirincho,1957-08-19,Noche Deseada,Noche Estrellada,Vals,Juan Carlos Rolon,Odeón,,22379,DSOA 1101 A,Francisco Canaro,"Guillermo Pelay, Horacio Pelay",,50-59 50s,,,,,,LP,TEV 400 - Tangolandia Francisco Canaro y su orquesta tipica Vol N,,"""Tangolandia"" Francisco Canaro y su orquesta tipica Vol No 10"
+Francisco Canaro,Quinteto Pirincho,1957-09-02,Mala Junta,,Tango,Instrumental,Odeón,,22428,52238 B,Julio Laurenz,Juan Velich,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Orquesta Francisco Canaro,1957-09-02,Milonga del Tiempo Heroico,,Milonga,Instrumental,Odeón,,22427,52238 A,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
 Francisco Canaro,Orquesta Francisco Canaro,1957-09-12,Cuando el Dolor Hiere el Alma,,Tango,Juan Carlos Rolon,Odeón,,22478,52266 A,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1957-09-12,Laburo,,Milonga,Juan Carlos Rolon,Odeón,,22479,52266 B,Francisco Canaro,"Guillermo Pelay, Horacio Pelay",,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1957-09-13,Bambu,,Milonga,Instrumental,Odeón,,22483,52267 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1957-09-13,Bambu,,Milonga,Instrumental,Odeón,,22483,52267 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 400 - Tangolandia Francisco Canaro y su orquesta tipica Vol N,,"""Tangolandia"" Francisco Canaro y su orquesta tipica Vol No 10"
 Francisco Canaro,Orquesta Francisco Canaro,1958-03-17,Buenas Noches Buenos Aires,,Tango,Marcelo Paz,Odeón,,22921,52315 A,Sebastián Piana,Osvaldo Cordero,,50-59 50s,,,,,,EP,Un Recuerdo... Nada Mas !,A,Un Recuerdo... Nada Mas !
 Francisco Canaro,Orquesta Francisco Canaro,1958-03-17,Un Recuerdo Nada Más,,Tango,Marcelo Paz,Odeón,,22922,52315 B,Julián Sanmarco,Julián Sanmarco,,50-59 50s,,,,,,EP,Un Recuerdo... Nada Mas !,A,Un Recuerdo... Nada Mas !
 Francisco Canaro,Quinteto Pirincho,1958-03-31,Mirlo Blanco,,Tango,Instrumental,Odeón,,22934,DSOA/E 1632 A,Francisco Canaro,,,50-59 50s,,,,,,LP,Tangolandia - Volumen N° 10,B,Tangolandia - Volumen N° 10
-Francisco Canaro,Quinteto Pirincho,1958-04-21,Bailonga,,Milonga,Instrumental,Odeón,,23006,52338 A,Mariano Mores,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1958-04-21,Bailonga,,Milonga,Instrumental,Odeón,,23006,52338 A,Mariano Mores,,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
 Francisco Canaro,Quinteto Pirincho,1958-04-21,Bronce,,Tango,Instrumental,Odeón,,23007,52338 B,Oscar Sabino,,,50-59 50s,,,,,,LP,Recordando El Ayer . Volumen No. 8,B,Recordando El Ayer . Volumen No. 8
 Francisco Canaro,Quinteto Pirincho,1958-05-26,A Mi Madre,Pobre Madre,Vals,Instrumental,Odeón,,23108,51094 B,Francisco Peña,,,50-59 50s,,,,,,EP,Volumen N° 7,A,Volumen N° 7
 Francisco Canaro,Quinteto Pirincho,1958-05-26,Canción de Arrabal,,Tango,,Odeón,,23107,52421 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1958-08-28,El Firulete,,Milonga,Instrumental,Odeón,,23419,52421 A,Mariano Mores,Rodolfo Taboada,,50-59 50s,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1958-08-28,Marinera,,Tango,Marcelo Paz,Odeón,,23418,52404 A,Pedro Laurenz,Carlos Marín,,50-59 50s,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1958-08-28,El Firulete,,Milonga,Instrumental,Odeón,,23419,52421 A,Mariano Mores,Rodolfo Taboada,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Orquesta Francisco Canaro,1958-08-28,Marinera,,Tango,Marcelo Paz,Odeón,,23418,52404 A,Pedro Laurenz,Carlos Marín,,50-59 50s,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
 Francisco Canaro,Quinteto Pirincho,1958-08-28,Qué Me Importa Tu Pasado,,Tango,Marcelo Paz,Odeón,,23417,52404 B,Retama,Roberto Giménez,,50-59 50s,,,,,,LP,Canaro Decada Del 50,A,Canaro Decada Del 50
-Francisco Canaro,Quinteto Pirincho,1959-03-24,Boedo,,Tango,Instrumental,Odeón,,23893,52485 B,Julio De Caro,Dante Linyera,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-03-24,Recordando el 900,,Tango,Instrumental,Odeón,,23892,52485 A,Francisco Canaro,,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1959-03-24,Boedo,,Tango,Instrumental,Odeón,,23893,52485 B,Julio De Caro,Dante Linyera,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Quinteto Pirincho,1959-03-24,Recordando el 900,,Tango,Instrumental,Odeón,,23892,52485 A,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
 Francisco Canaro,Quinteto Pirincho,1959-04-09,El Irresistible,,Tango,Instrumental,Odeón,,23936,DSOA/E 1831 A,Lorenzo Logatti,Carlos Pesce,,50-59 50s,,,,,,LP,Quinteto Pirincho Dir Francisco Canaro,B,"Quinteto ""Pirincho"" Dir: Francisco Canaro"
-Francisco Canaro,Quinteto Pirincho,1959-04-09,El Porteñito,,Tango,Instrumental,Odeón,,23933,51094 A,Ángel Villoldo,Ángel Villoldo,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1959-04-09,El Porteñito,,Tango,Instrumental,Odeón,,23933,51094 A,Ángel Villoldo,Ángel Villoldo,,50-59 50s,,,,,,LP,TEV 50134 - Historia del Quinteto Pirincho Vol.4,,"Historia del Quinteto ""Pirincho"" Vol.4"
 Francisco Canaro,Quinteto Pirincho,1959-04-09,He Nacido en Buenos Aires,,Tango,Instrumental,Odeón,,23937,,,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-09,Hotel Victoria,Gran Hotel Victoria,Tango,Instrumental,Odeón,,23935,LDS 758 A,Feliciano Latasa,Carlos Pesce,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-09,La Cara de la Luna,La Cara de la Luna,Tango,Instrumental,Odeón,,23934,LDS 758 A,Manuel Campoamor,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-15,Don Juan,Mozos Guapos,Tango,Instrumental,Odeón,,23958,DSOA/E 1744 B,Ernesto Ponzio,Ricardo Podestá,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1959-04-09,Hotel Victoria,Gran Hotel Victoria,Tango,Instrumental,Odeón,,23935,LDS 758 A,Feliciano Latasa,Carlos Pesce,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Quinteto Pirincho,1959-04-09,La Cara de la Luna,La Cara de la Luna,Tango,Instrumental,Odeón,,23934,LDS 758 A,Manuel Campoamor,,,50-59 50s,,,,,,LP,TEV 50059 - Alma del Tango Porteño,,Alma del Tango Porteño
+Francisco Canaro,Quinteto Pirincho,1959-04-15,Don Juan,Mozos Guapos,Tango,Instrumental,Odeón,,23958,DSOA/E 1744 B,Ernesto Ponzio,Ricardo Podestá,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
 Francisco Canaro,Quinteto Pirincho,1959-04-15,El Choclo,Kiss Of Fire,Tango,Instrumental,Odeón,,23957,DSOA/E 1803 A,Ángel Villoldo,"Juan Catán, Enrique Discépolo",,50-59 50s,,,,,,EP,Volumen Nº 13,B,Volumen Nº 13
 Francisco Canaro,Quinteto Pirincho,1959-04-15,El Entrerriano,El Entrerriano,Tango,Instrumental,Odeón,,23956,DSOA/E 1803 A,Rosendo Mendizábal,Ernesto Amor,,50-59 50s,,,,,,EP,Volumen Nº 13,B,Volumen Nº 13
 Francisco Canaro,Quinteto Pirincho,1959-04-15,He Nacido en Buenos Aires,,Tango,Instrumental,Odeón,,23959,,,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-15,Rodríguez Peña,Rodríguez Peña,Tango,Instrumental,Odeón,,23955,DSOA/E 1744 B,Vicente Greco,"Ernesto Temes, Juan Velich, Rafael Velich",,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-22,Che Papusa Oí,,Tango,Instrumental,Odeón,,23979,DTOA/E 2066 B,Gerardo Rodríguez,Enrique Cadícamo,,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1959-04-15,Rodríguez Peña,Rodríguez Peña,Tango,Instrumental,Odeón,,23955,DSOA/E 1744 B,Vicente Greco,"Ernesto Temes, Juan Velich, Rafael Velich",,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Quinteto Pirincho,1959-04-22,Che Papusa Oí,,Tango,Instrumental,Odeón,,23979,DTOA/E 2066 B,Gerardo Rodríguez,Enrique Cadícamo,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
 Francisco Canaro,Quinteto Pirincho,1959-04-22,El Marne,,Tango,Instrumental,Odeón,,23978,DSOA/E 1744 A,Eduardo Arolas,Gabriel Clausi,,50-59 50s,,,,,,LP,He Nacido En Buenos Aires,B,He Nacido En Buenos Aires
 Francisco Canaro,Quinteto Pirincho,1959-04-22,El Pollito,,Tango,Instrumental,Odeón,,23976,DSOA/E 1803 B,Francisco Canaro,,,50-59 50s,,,,,,LP,El Astro Maximo del Tango,,El Astro Maximo del Tango
-Francisco Canaro,Quinteto Pirincho,1959-04-22,La Morocha,,Tango,Instrumental,Odeón,,23977,DSOA/E 1744 A,Enrique Saborido,Ángel Villoldo,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-29,Alma de Bohemio,,Tango,Instrumental,Odeón,,24003,LDS 758 A,Roberto Firpo,Juan Caruso,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-29,El Alacrán,,Tango,Instrumental,Odeón,,24002,LDS 758 B,Francisco Canaro,,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-04-29,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,24000,DSOA/E 1831 B,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,50-59 50s,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1959-04-22,La Morocha,,Tango,Instrumental,Odeón,,23977,DSOA/E 1744 A,Enrique Saborido,Ángel Villoldo,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Quinteto Pirincho,1959-04-29,Alma de Bohemio,,Tango,Instrumental,Odeón,,24003,LDS 758 A,Roberto Firpo,Juan Caruso,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Quinteto Pirincho,1959-04-29,El Alacrán,,Tango,Instrumental,Odeón,,24002,LDS 758 B,Francisco Canaro,,,50-59 50s,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Quinteto Pirincho,1959-04-29,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,24000,DSOA/E 1831 B,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,50-59 50s,,,,,,LP,TEV 50059 - Alma del Tango Porteño,,Alma del Tango Porteño
 Francisco Canaro,Orquesta Francisco Canaro,1959-04-29,Mi Noche Triste,,Tango,Carlos Gardel De Guitarras,Odeón,,24001,LDS 758 B,Samuel Castriota,Pascual Contursi,,50-59 50s,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1959-07-27,No Te Doy Bolilla,No Te Doy Boliya,Tango,Marcelo Paz,Odeón,,24271,52532 B,Francisco Canaro,Francisco Canaro,,50-59 50s,,,,,,LP,Una Vida Con El Tango,A,Una Vida Con El Tango
-Francisco Canaro,Orquesta Francisco Canaro,1959-10-27,La Canción,Flor de Mburucuyá,Tango,Guillermo Rico,Odeón,,24643,DSOA 1232 A,Juan Filiberto,Lito Bayardo,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1959-10-27,La Novia del Alcohol,,Tango,Guillermo Rico,Odeón,,24642,DSOA 1232 B,Dante Durán,Dante Durán,,50-59 50s,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1960-03-22,El Laberinto,,Tango,Instrumental,Odeón,,24993,52594 B,Francisco Canaro,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1960-03-22,Entrada Prohibida,,Tango,Instrumental,Odeón,,24994,52594 A,Luis Teisseire,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1960-05-05,El Tango,,Tango,Eduardo Adrian,Odeón,,25260,52616 B,Francisco Canaro,Francisco Canaro,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1960-05-05,Tres Esperanzas,,Tango,Eduardo Adrian,Odeón,,25261,52616 A,Enrique Discépolo,Enrique Discépolo,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1959-10-27,La Canción,Flor de Mburucuyá,Tango,Guillermo Rico,Odeón,,24643,DSOA 1232 A,Juan Filiberto,Lito Bayardo,,50-59 50s,,,,,,LP,TEV 642 - La vida de F. Canaro Vol9,,La vida de F. Canaro Vol9
+Francisco Canaro,Quinteto Pirincho,1959-10-27,La Novia del Alcohol,,Tango,Guillermo Rico,Odeón,,24642,DSOA 1232 B,Dante Durán,Dante Durán,,50-59 50s,,,,,,LP,TEV 50106 - Francisco Canaro y su orquesta típica,,Francisco Canaro y su orquesta típica
+Francisco Canaro,Quinteto Pirincho,1960-03-22,El Laberinto,,Tango,Instrumental,Odeón,,24993,52594 B,Francisco Canaro,,,60-73 Final Years,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Orquesta Francisco Canaro,1960-03-22,Entrada Prohibida,,Tango,Instrumental,Odeón,,24994,52594 A,Luis Teisseire,,,60-73 Final Years,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Orquesta Francisco Canaro,1960-05-05,El Tango,,Tango,Eduardo Adrian,Odeón,,25260,52616 B,Francisco Canaro,Francisco Canaro,,60-73 Final Years,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
+Francisco Canaro,Quinteto Pirincho,1960-05-05,Tres Esperanzas,,Tango,Eduardo Adrian,Odeón,,25261,52616 A,Enrique Discépolo,Enrique Discépolo,,60-73 Final Years,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
 Francisco Canaro,Quinteto Pirincho,1960-08-16,Mi Coqueta,,Vals,Instrumental,Odeón,,25658,52642 B,Francisco Canaro,,,60-73 Final Years,,,,,,LP,Quinteto Pirincho Dir Francisco Canaro,A,"Quinteto ""Pirincho"" Dir: Francisco Canaro"
 Francisco Canaro,Quinteto Pirincho,1960-08-16,Torta Frita,,Tango,,Odeón,,25657,52642 A,Francisco Canaro,Francisco Canaro,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1960-11-29,A Pan y Agua,,Tango,Instrumental,Odeón,,26265,52701 A,Juan Cobián,Enrique Cadícamo,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1960-11-29,Buen Amigo,,Tango,Instrumental,Odeón,,26266,52701 B,José De Caro,Juan Catán,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1960-12-01,Don Goyo,,Tango,Instrumental,Odeón,,25908,52677 A,Luis Bernstein,,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1960-11-29,A Pan y Agua,,Tango,Instrumental,Odeón,,26265,52701 A,Juan Cobián,Enrique Cadícamo,,60-73 Final Years,,,,,,LP,TEV 487 - Recordando el 900 Volumen Nro7,,Recordando el 900 Volumen Nro7
+Francisco Canaro,Quinteto Pirincho,1960-11-29,Buen Amigo,,Tango,Instrumental,Odeón,,26266,52701 B,José De Caro,Juan Catán,,60-73 Final Years,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
+Francisco Canaro,Quinteto Pirincho,1960-12-01,Don Goyo,,Tango,Instrumental,Odeón,,25908,52677 A,Luis Bernstein,,,60-73 Final Years,,,,,,LP,TEV 50133 - Historia del Quinteto Pirincho Vol.3,,"Historia del Quinteto ""Pirincho"" Vol.3"
 Francisco Canaro,Orquesta Francisco Canaro,1960-12-01,Orillera,,Milonga,Instrumental,Odeón,,25907,52677 B,"Oscar Bassil, Guillermo Pelay",,,60-73 Final Years,,,,,,EP,Volumen No. 12,B,Volumen No. 12
 Francisco Canaro,Orquesta Francisco Canaro,1961-07-14,Bandoneón Arrabalero,,Tango,Isabel De Grana,Odeón,,26630,52715 A,Juan Deambroggio,Pascual Contursi,,60-73 Final Years,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1961-07-14,De Mi Barrio,,Tango,Isabel De Grana,Odeón,,26631,52715 B,Roberto Goyeneche,Roberto Goyeneche,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,B,El Astro Maximo del Tango
 Francisco Canaro,Orquesta Francisco Canaro,1961-10-02,Quiero Verte una Vez Más,Viejo Gaucho,Tango,Ernesto Rondo,Odeón,,26991,52739 B,Mario Canaro,José Contursi,,60-73 Final Years,,,,,,LP,Francisco Canaro,A,Francisco Canaro
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,Adiós Pampa Mía,,Tango,Ernesto Herrera,Odeón,,OR 8133 A,LDB 1034L,Francisco Mores,,,60-73 Final Years,,,,,,LP,Los Éxitos De Francisco Canaro,B,Los Éxitos De Francisco Canaro
 Francisco Canaro,Quinteto Pirincho,1961-12-01,Bandoneón Arrabalero,,Tango,Isabel De Grana,Odeón,,OR 8133 A,LDB 1034L,Juan Deambroggio,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,El Entrerriano,El Entrerriano,Tango,Instrumental,Odeón,,OR 8133 B,LDB 1034L,Rosendo Mendizábal,Homero Expósito,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,El Entrerriano,El Entrerriano,Tango,Instrumental,Odeón,,OR 8133 B,LDB 1034L,Rosendo Mendizábal,Homero Expósito,,60-73 Final Years,,,,,,LP,TEV 50054 - Canaro en Teatro Koma en Tokyo,,"""Canaro en Teatro Koma"" en Tokyo"
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,El Esquinazo,,Milonga,Instrumental,Odeón,,OR 8133 A,LDB 1034L,Ángel Villoldo,Carlos Polito,,60-73 Final Years,,,,,,EP,Volumen N° 7,B,Volumen N° 7
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,OR 8133 A,LDB 1034L,Gerardo Rodríguez,Pascual Maroni,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,B,El Astro Maximo del Tango
-Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,Milonga del Tiempo Heroico,,Milonga,Instrumental,Odeón,,OR 8133 A,LDB 1034L,Francisco Canaro,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1961-12-01,Organito de la Tarde,,Tango,Instrumental,Odeón,,OR 8133 B,LDB 1034L,Cátulo Castillo,José Castillo,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,Milonga del Tiempo Heroico,,Milonga,Instrumental,Odeón,,OR 8133 A,LDB 1034L,Francisco Canaro,,,60-73 Final Years,,,,,,LP,TEV 50054 - Canaro en Teatro Koma en Tokyo,,"""Canaro en Teatro Koma"" en Tokyo"
+Francisco Canaro,Quinteto Pirincho,1961-12-01,Organito de la Tarde,,Tango,Instrumental,Odeón,,OR 8133 B,LDB 1034L,Cátulo Castillo,José Castillo,,60-73 Final Years,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-01,Sentimiento Gaucho,,Tango,Instrumental,Odeón,,OR 8133 B,LDB 1034L,Francisco Canaro,Juan Caruso,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,B,El Astro Maximo del Tango
-Francisco Canaro,"Orquesta Francisco Canaro con Ernesto Herrera, Japanese Presentation By Tadao Takahashi",1961-12-01,Torta Frita,,Tango,Instrumental,Odeón,,OR 8133 B,LDB 1034L,Francisco Canaro,,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,"Orquesta Francisco Canaro con Ernesto Herrera, Japanese Presentation By Tadao Takahashi",1961-12-01,Torta Frita,,Tango,Instrumental,Odeón,,OR 8133 B,LDB 1034L,Francisco Canaro,,,60-73 Final Years,,,,,,LP,TEV 50054 - Canaro en Teatro Koma en Tokyo,,"""Canaro en Teatro Koma"" en Tokyo"
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-13,Adiós Pampa Mía,,Tango,Ernesto Herrera Y Japanese Presentation By Tadao Takahashi,Odeón,,OR 8133 A,LDB 1034L,"Francisco Canaro, Mariano Mores",Ivo Pelay,,60-73 Final Years,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-21,Caminito,,Tango,Isabel De Grana Y Ernesto Herrera,Odeón,,S2AJ-1,SLDS 841 A,Juan Filiberto,Gabino Peñaloza,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,A,El Astro Maximo del Tango
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-21,Canaro en Japón,,Tango,Ernesto Herrera,Odeón,,S2AJ-1,SLDS 841 A,Francisco Canaro,Ernesto Temes,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,A,El Astro Maximo del Tango
-Francisco Canaro,Quinteto Pirincho,1961-12-21,De Mi Barrio,,Tango,Isabel De Grana,Odeón,,S2AJ-2,SLDS 841 B,Roberto Goyeneche,Roberto Goyeneche,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1961-12-21,De Mi Barrio,,Tango,Isabel De Grana,Odeón,,S2AJ-2,SLDS 841 B,Roberto Goyeneche,Roberto Goyeneche,,60-73 Final Years,,,,,,LP,TEV 644 - Canaro en Japón,,Canaro en Japón
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-21,El Choclo,Kiss Of Fire,Tango,Instrumental,Odeón,,S2AJ-1,SLDS 841 A,Ángel Villoldo,"Juan Catán, Enrique Discépolo",,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,A,El Astro Maximo del Tango
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-21,Lo Han Visto con Otra,,Tango,Isabel De Grana,Odeón,,S2AJ-1,SLDS 841 A,Horacio Pettorossi,Horacio Pettorossi,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,A,El Astro Maximo del Tango
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-21,Yira Yira,Yira Yira,Tango,Ernesto Herrera,Odeón,,S2AJ-2,SLDS 841 B,Enrique Discépolo,Enrique Discépolo,,60-73 Final Years,,,,,,LP,Los Éxitos De Francisco Canaro,A,Los Éxitos De Francisco Canaro
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-26,Canaro en París,Canaro en París,Tango,Instrumental,Odeón,,S2AJ-2,SLDS 841 B,Alejandro Caldarella,José Scarpino,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,B,El Astro Maximo del Tango
 Francisco Canaro,Quinteto Pirincho,1961-12-26,Corazón de Oro,Corazón de Oro,Vals,,Odeón,,S2AJ-2,SLDS 841 B,Francisco Canaro,Jesús Blanco,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,,El Astro Maximo del Tango
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-26,Felicia,,Tango,Instrumental,Odeón,,,OM-9013,Enrique Saborido,Carlos Pacheco,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,B,El Astro Maximo del Tango
-Francisco Canaro,Orquesta Francisco Canaro,1961-12-26,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,S2AJ-2,SLDS 841 B,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Orquesta Francisco Canaro,1961-12-26,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,S2AJ-2,SLDS 841 B,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,60-73 Final Years,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
 Francisco Canaro,Orquesta Francisco Canaro,1961-12-26,Quejas de Bandoneón,Quejas de Bandoneón,Tango,Instrumental,Odeón,,S2AJ-1,SLDS 841 A,Juan Filiberto,,,60-73 Final Years,,,,,,LP,El Astro Maximo del Tango,A,El Astro Maximo del Tango
-Francisco Canaro,Quinteto Pirincho,1961-12-26,Sentimiento Gaucho,,Tango,Instrumental,Odeón,,S2AJ-2,SLDS 841 B,Francisco Canaro,Juan Caruso,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1962-05-11,Anoche Te Soñé,,Vals,Instrumental,Odeón,,27819,52767 A,Mario Canaro,Abel Aznar,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1962-05-11,Noche Buena,,Tango,Instrumental,Odeón,,27818,52767 B,Enrique Esviza,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1962-08-02,Mala Sombra,,Tango,Instrumental,Odeón,,28131,DTOA 1419 A,Alberto Buchardo,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1962-08-02,Negro Carbón,,Milonga,Instrumental,Odeón,,28132,DTOA 1419 B,Antonio D'Alessandro,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1962-10-22,El Triunfo,,Tango,Instrumental,Odeón,,28432,DTOA 1499 A,Francisco Canaro,,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1961-12-26,Sentimiento Gaucho,,Tango,Instrumental,Odeón,,S2AJ-2,SLDS 841 B,Francisco Canaro,Juan Caruso,,60-73 Final Years,,,,,,LP,TEV 643 - La vida de F. Canaro Vol10,,La vida de F. Canaro Vol10
+Francisco Canaro,Quinteto Pirincho,1962-05-11,Anoche Te Soñé,,Vals,Instrumental,Odeón,,27819,52767 A,Mario Canaro,Abel Aznar,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Quinteto Pirincho,1962-05-11,Noche Buena,,Tango,Instrumental,Odeón,,27818,52767 B,Enrique Esviza,,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Quinteto Pirincho,1962-08-02,Mala Sombra,,Tango,Instrumental,Odeón,,28131,DTOA 1419 A,Alberto Buchardo,,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Quinteto Pirincho,1962-08-02,Negro Carbón,,Milonga,Instrumental,Odeón,,28132,DTOA 1419 B,Antonio D'Alessandro,,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Quinteto Pirincho,1962-10-22,El Triunfo,,Tango,Instrumental,Odeón,,28432,DTOA 1499 A,Francisco Canaro,,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
 Francisco Canaro,Quinteto Pirincho,1962-10-22,Que Macanudo,,Tango,Instrumental,Odeón,,28433,DTOA 1499 B,Octavio Scaglione,,,60-73 Final Years,,,,,,LP,Tres Joyas Del Tango En La Epocha,A,Tres Joyas Del Tango En La Epocha
-Francisco Canaro,Quinteto Pirincho Dir. Francisco Canaro,1962-12-17,Criolla Linda,,Tango,Instrumental,Odeón,,28659,52782 B,Vicente Germino,Luis Rubistein,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho Dir. Francisco Canaro,1962-12-17,Criolla Linda,,Tango,Instrumental,Odeón,,28659,52782 B,Vicente Germino,Luis Rubistein,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
 Francisco Canaro,Orquesta Francisco Canaro,1963-09-17,Adiós Mi Amor,,Tango,Isabel De Grana Y Ernesto Herrera,Odeón,,29476,DTOA 7029 A,Francisco Canaro,Francisco Canaro,,60-73 Final Years,,,,,,LP,Volumen Nº 18,A,Volumen Nº 18
 Francisco Canaro,Orquesta Francisco Canaro,1964-06-15,Arrabal Amargo,,Tango,Instrumental,Odeón,,30236,,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,Francisco Canaro Interpreta A Carlos Gardel,B,Francisco Canaro Interpreta A Carlos Gardel
 Francisco Canaro,Orquesta Francisco Canaro,1964-06-15,Golondrinas,,Tango,Instrumental,Odeón,,30232,,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
@@ -2833,19 +2833,19 @@ Francisco Canaro,Orquesta Francisco Canaro,1964-06-17,Melodía de Arrabal,,Tango
 Francisco Canaro,Orquesta Francisco Canaro,1964-06-17,Mi Buenos Aires Querido,,Tango,Instrumental,Odeón,,30246,,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
 Francisco Canaro,Orquesta Francisco Canaro,1964-06-17,Tomo y Obligo,,Tango,Instrumental,Odeón,,30247,,Carlos Gardel,Manuel Romero,,60-73 Final Years,,,,,,,,,
 Francisco Canaro,Quinteto Pirincho,1964-06-17,Volvió una Noche,,Tango,Instrumental,Odeón,,30251,,Carlos Gardel,,,60-73 Final Years,,,,,,LP,Francisco Canaro Interpreta A Carlos Gardel,B,Francisco Canaro Interpreta A Carlos Gardel
-Francisco Canaro,Quinteto Pirincho,1964-07-29,Conjuro Negro,,Milonga,Instrumental,Odeón,,30459,LDI 222 A,Alfredo Felipetti,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1964-07-29,La Payanca,,Tango,Instrumental,Odeón,,30457,LDI 222 B,Augusto Berto,Jesús Bianco,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1964-07-29,Qué Tal,,Tango,Instrumental,Odeón,,30456,LDI 222 A,Francisco Canaro,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1964-07-29,Se Acabaron los Otarios,,Tango,Instrumental,Odeón,,30458,LDI 222 A,Francisco Canaro,Juan Caruso,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1964-10-02,Halcón Negro,,Tango,Instrumental,Odeón,,30686,DTOA 7106 A,Francisco Canaro,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1964-10-02,Pájaro Azul,,Tango,Instrumental,Odeón,,30687,DTOA 7106 B,Francisco Canaro,,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-10-27,Golondrinas,,Tango,Argentino Ledesma,Odeón,,36563,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-10-27,Sus Ojos Se Cerraron,,Tango,Argentino Ledesma,Odeón,,36565,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-10-27,Volver,,Tango,Argentino Ledesma,Odeón,,36564,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-11-18,Mi Buenos Aires Querido,,Tango,Argentino Ledesma,Odeón,,36623,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-11-18,Por una Cabeza,,Tango,Argentino Ledesma,Odeón,,36622,6484 B,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-11-26,Cuesta Abajo,,Tango,Argentino Ledesma,Odeón,,36656,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-11-26,Tomo y Obligo,,Tango,Argentino Ledesma,Odeón,,36655,6484 B,Carlos Gardel,Manuel Romero,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1969-11-27,Volvió una Noche,,Tango,Argentino Ledesma,Odeón,,36659,6484 B,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Orquesta Francisco Canaro,1973-11-07,Arrabal Amargo,,Tango,Argentino Ledesma,Odeón,,41011,6484 B,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,,,,
-Francisco Canaro,Quinteto Pirincho,1973-11-07,Melodía de Arrabal,,Tango,Argentino Ledesma,Odeón,,41010,6484 A,Carlos Gardel,Alfredo Battistella,,60-73 Final Years,,,,,,,,,
+Francisco Canaro,Quinteto Pirincho,1964-07-29,Conjuro Negro,,Milonga,Instrumental,Odeón,,30459,LDI 222 A,Alfredo Felipetti,,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Quinteto Pirincho,1964-07-29,La Payanca,,Tango,Instrumental,Odeón,,30457,LDI 222 B,Augusto Berto,Jesús Bianco,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Quinteto Pirincho,1964-07-29,Qué Tal,,Tango,Instrumental,Odeón,,30456,LDI 222 A,Francisco Canaro,,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Orquesta Francisco Canaro,1964-07-29,Se Acabaron los Otarios,,Tango,Instrumental,Odeón,,30458,LDI 222 A,Francisco Canaro,Juan Caruso,,60-73 Final Years,,,,,,LP,TEV 50122 - Memento de Quinteto Pirincho,,"Memento de Quinteto ""Pirincho"""
+Francisco Canaro,Orquesta Francisco Canaro,1964-10-02,Halcón Negro,,Tango,Instrumental,Odeón,,30686,DTOA 7106 A,Francisco Canaro,,,60-73 Final Years,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
+Francisco Canaro,Orquesta Francisco Canaro,1964-10-02,Pájaro Azul,,Tango,Instrumental,Odeón,,30687,DTOA 7106 B,Francisco Canaro,,,60-73 Final Years,,,,,,LP,TEV 56022 - Francisco Canaro Halcon Negro,,Francisco Canaro Halcon Negro
+Francisco Canaro,Orquesta Francisco Canaro,1969-10-27,Golondrinas,,Tango,Argentino Ledesma,Odeón,,36563,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1969-10-27,Sus Ojos Se Cerraron,,Tango,Argentino Ledesma,Odeón,,36565,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1969-10-27,Volver,,Tango,Argentino Ledesma,Odeón,,36564,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1969-11-18,Mi Buenos Aires Querido,,Tango,Argentino Ledesma,Odeón,,36623,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1969-11-18,Por una Cabeza,,Tango,Argentino Ledesma,Odeón,,36622,6484 B,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1969-11-26,Cuesta Abajo,,Tango,Argentino Ledesma,Odeón,,36656,6484 A,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1969-11-26,Tomo y Obligo,,Tango,Argentino Ledesma,Odeón,,36655,6484 B,Carlos Gardel,Manuel Romero,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1969-11-27,Volvió una Noche,,Tango,Argentino Ledesma,Odeón,,36659,6484 B,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Orquesta Francisco Canaro,1973-11-07,Arrabal Amargo,,Tango,Argentino Ledesma,Odeón,,41011,6484 B,Carlos Gardel,Alfredo Le Pera,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel
+Francisco Canaro,Quinteto Pirincho,1973-11-07,Melodía de Arrabal,,Tango,Argentino Ledesma,Odeón,,41010,6484 A,Carlos Gardel,Alfredo Battistella,,60-73 Final Years,,,,,,LP,TEV 277 - Argentino Ledesma interpreta a Carlos Gardel,,Argentino Ledesma interpreta a Carlos Gardel

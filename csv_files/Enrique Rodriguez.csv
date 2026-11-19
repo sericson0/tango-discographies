@@ -1,4 +1,4 @@
-﻿Bandleader,Orchestra,Date,Title,AltTitle,Genre,Singer,Label,Master,Matrix,Disc,Composer,Author,Arranger,Grouping,Pianist,Bassist,Bandoneons,Strings,Lineup,Img_Type,Img_Folder,Img_Side,Img_Album
+Bandleader,Orchestra,Date,Title,AltTitle,Genre,Singer,Label,Master,Matrix,Disc,Composer,Author,Arranger,Grouping,Pianist,Bassist,Bandoneons,Strings,Lineup,Img_Type,Img_Folder,Img_Side,Img_Album
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1937-11-03,Ilusión,,Vals,Roberto Flores,Odeón,,,,V. Acosta,V. Acosta,,37-39 Flores,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1937-11-18,Clavelito en Flor,,Vals,Roberto Flores,Odeón,,9223,,Enrique Rodríguez,José Casais,,37-39 Flores,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1937-11-18,Mi Muñequita,,Tango,Roberto Flores,Odeón,,9222,,Enrique Rodríguez,Alfredo Bigeschi,,37-39 Flores,,,,,,,,,
@@ -143,13 +143,13 @@ Enrique Rodríguez,Orquesta Enrique Rodríguez,1949-01-27,Te Quiero Igual,,Tango
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1950-12-15,Mamá Lejana,,Vals,Roberto Videla,Odeón,,17944,,Luis Meca,Luis Meca,,46-52 Reyes + Herrera,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1950-12-15,Se Acabó la Mishiadura,,Tango,Ricardo Herrera,Odeón,,17945,,Enrique Rodríguez,José Paradizo,,46-52 Reyes + Herrera,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1951-04-20,Jueves,,Tango,Instrumental,Odeón,,17986,,"Rafael Rossi, Udelino Toranzo",,,46-52 Reyes + Herrera,,,,,,,,,
-Enrique Rodríguez,Orquesta Enrique Rodríguez,1951-04-20,Langosta,,Tango,Ricardo Herrera,Odeón,,17985,,Juan Filiberto,Juan Bruno,,46-52 Reyes + Herrera,,,,,,,,,
+Enrique Rodríguez,Orquesta Enrique Rodríguez,1951-04-20,Langosta,,Tango,Ricardo Herrera,Odeón,,17985,,Juan Filiberto,Juan Bruno,,46-52 Reyes + Herrera,,,,,,LP,TEV 11035 - Todos Los Ritmos,,Todos Los Ritmos
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1951-09-10,Hay Que Entrar,,Vals,Armando Moreno,Odeón,,18175,,Enrique Rodríguez,Enrique Cadícamo,,46-52 Reyes + Herrera,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1951-09-10,Que Me Sube Que Me Baja,,Vals,Armando Moreno,Odeón,,18176,,"Nicolás Paracino, Juan Domingo",Eduardo Sciaraffia,,46-52 Reyes + Herrera,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1952-07-11,Guiseppe el Cruner,,Tango,Ricardo Herrera,Odeón,,18476,,Enrique Rodríguez,Domingo Sciaraffía,,46-52 Reyes + Herrera,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1952-07-11,Si Soy Así,,Tango,Ricardo Herrera,Odeón,,18477,,Francisco Lomuto,Antonio Botta,,46-52 Reyes + Herrera,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1953-01-22,Historia de Chapa Chapa,,Tango,Omar Quirós,Odeón,,18785,,"Enrique Rodríguez, J. Ramirez","Enrique Rodríguez, J. Ramirez",,53-71 Other Singers,,,,,,,,,
-Enrique Rodríguez,Orquesta Enrique Rodríguez,1953-01-22,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,18786,,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,53-71 Other Singers,,,,,,,,,
+Enrique Rodríguez,Orquesta Enrique Rodríguez,1953-01-22,La Cumparsita,Si Supieras,Tango,Instrumental,Odeón,,18786,,Gerardo Rodríguez,"Pascual Contursi, Enrique Maroni, Gerardo Rodríguez",,53-71 Other Singers,,,,,,LP,TEV 296 - Lo mejor de... Enrique Rodriguez,,Lo mejor de... Enrique Rodriguez
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1954-03-27,El Rápido,,Tango,Instrumental,Odeón,,19415,,Roberto Firpo,,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1954-03-27,Tu Nombre Es María,,Vals,Omar Quirós,Odeón,,19416,,Enrique Rodríguez,Enrique Cadícamo,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1954-09-30,El Escondite de Hernando,Hernando's Hideaway,Tango,Omar Quirós,Odeón,,19740,,"Richard Adler, Jerry Ross",Giménez,,53-71 Other Singers,,,,,,,,,
@@ -162,7 +162,7 @@ Enrique Rodríguez,Orquesta Enrique Rodríguez,1955-06-27,Royal Pigall,Qué Has 
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1955-07-27,Royal Pigall,Qué Has Hecho de Mi Cariño,Tango,Instrumental,Odeón,,20362,,Juan Maglio,José Castillo,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1955-12-07,Niño Bien,,Tango,Omar Quirós,Odeón,,20626,,Juan Collazo,"Roberto Fontaina, Víctor Soliño",,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1956-01-27,Barrio Reo,,Tango,Omar Quirós,Odeón,,20763,,Roberto Fugazot,Alfredo Navarrine,,53-71 Other Singers,,,,,,,,,
-Enrique Rodríguez,Orquesta Enrique Rodríguez,1956-05-11,Derrotado,Tenés Razón,Tango,Oscar Galán,Odeón,,20974,,Antonio Arcieri,"José Terragno, Antonio Bernárdez",,53-71 Other Singers,,,,,,,,,
+Enrique Rodríguez,Orquesta Enrique Rodríguez,1956-05-11,Derrotado,Tenés Razón,Tango,Oscar Galán,Odeón,,20974,,Antonio Arcieri,"José Terragno, Antonio Bernárdez",,53-71 Other Singers,,,,,,LP,TEV 11035 - Todos Los Ritmos,,Todos Los Ritmos
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1956-05-11,Pobre Milonga,,Tango,Omar Quirós,Odeón,,20973,,Manuel Jovés,Manuel Romero,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1956-10-08,Adiós Adiós Amor,,Tango,Oscar Galán,Odeón,,21397,,Enrique Rodríguez,Roberto Escalada,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1956-10-30,El Once,A Divertirse,Tango,Instrumental,Odeón,,21481,,Osvaldo Fresedo,Emilio Fresedo,,53-71 Other Singers,,,,,,,,,
@@ -171,7 +171,7 @@ Enrique Rodríguez,Orquesta Enrique Rodríguez,1957-05-20,La Racha,,Tango,Instru
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1957-07-26,Tomaditos de la Mano,,Vals,Oscar Galán,Odeón,,22312,,Enrique Rodríguez,Roberto Escalada,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1957-07-26,Una Mentira Más,,Tango,Omar Quirós,Odeón,,22313,,Osvaldo Donato,Alberto Cosentino,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1958-06-24,Si un Amor Pasó,,Tango,Armando Moreno,Odeón,,23159,,Enrique Rodríguez,Roberto Escalada,,53-71 Other Singers,,,,,,,,,
-Enrique Rodríguez,Orquesta Enrique Rodríguez,1959-01-30,Para Vos Mamá,,Tango,Armando Moreno,Odeón,,23844,,Enrique Rodríguez,Roberto Escalada,,53-71 Other Singers,,,,,,,,,
+Enrique Rodríguez,Orquesta Enrique Rodríguez,1959-01-30,Para Vos Mamá,,Tango,Armando Moreno,Odeón,,23844,,Enrique Rodríguez,Roberto Escalada,,53-71 Other Singers,,,,,,LP,"TEV 906 - Enrique Rodriguez y su orquesta, canta Armando Moreno",,"Enrique Rodriguez y su orquesta, canta Armando Moreno"
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1959-11-26,La Pollita,,Vals,Armando Moreno,Odeón,,,,"Raymundo Cabaracos, Juan Cisneros","Raymundo Cabaracos, Juan Cisneros",,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1960-03-25,Tiempos Que Nunca Olvido,,Milonga,Omar Quirós Y Jorge Sainz,Odeón,,25002,,Enrique Rodríguez,Roberto Escalada,,53-71 Other Singers,,,,,,,,,
 Enrique Rodríguez,Orquesta Enrique Rodríguez,1960-08-05,Mi Caballo Bayo,Mi Caballo Baio,Vals,Armando Moreno,Odeón,,,,"Carlos Gardel, José Razzano",Francisco Brancatti,,53-71 Other Singers,,,,,,,,,

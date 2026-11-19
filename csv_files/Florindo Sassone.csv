@@ -1,4 +1,4 @@
-﻿Bandleader,Orchestra,Date,Title,AltTitle,Genre,Singer,Label,Master,Matrix,Disc,Composer,Author,Arranger,Grouping,Pianist,Bassist,Bandoneons,Strings,Lineup,Img_Type,Img_Folder,Img_Side,Img_Album
+Bandleader,Orchestra,Date,Title,AltTitle,Genre,Singer,Label,Master,Matrix,Disc,Composer,Author,Arranger,Grouping,Pianist,Bassist,Bandoneons,Strings,Lineup,Img_Type,Img_Folder,Img_Side,Img_Album
 Florindo Sassone,Orquesta Florindo Sassone,1947-05-19,Canción de Cuna,,Tango,Jorge Casal,,,83437,,José Rizzuti,José Gómez,,,Armando Cupo,,,,Piano,,,,
 Florindo Sassone,Orquesta Florindo Sassone,1947-05-19,Volver,,Tango,Jorge Casal,,,83436,,Carlos Gardel,Alfredo Le Pera,,,Armando Cupo,,,,Piano,,,,
 Florindo Sassone,Orquesta Florindo Sassone,1947-08-27,Por Dónde Andarás,,Tango,Jorge Casal,,,83606,,Salvador Merico,Atilio Supparo,,,Armando Cupo,,,,Piano,,,,
@@ -63,20 +63,20 @@ Florindo Sassone,Orquesta Florindo Sassone,1953-04-15,El Estrellero,,Tango,Rodol
 Florindo Sassone,Orquesta Florindo Sassone,1953-04-15,Yunque,,Tango,Rodolfo Galé,,,940,,Alonso Díaz,Alfredo Navarrine,,,,,,,,,,,
 Florindo Sassone,Orquesta Florindo Sassone,1956-02-29,Canaro,,Tango,Instrumental,,,4865,,José Martínez,,,,,,,,,,,,
 Florindo Sassone,Orquesta Florindo Sassone,1956-02-29,Lágrimas,,Tango,Instrumental,,,4866,,Eduardo Arolas,Héctor Polito,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,Bahía Blanca,Bahia Blanca,Tango,Instrumental,,,24442,,Carlos Di Sarli,,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,Bar Exposición,Cosa Linda Barata,Tango,Instrumental,,,24441,,Luis Teisseire,,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,El Morochito,,Tango,Instrumental,,,24443,,Vicente Greco,Gerónimo Gradito,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,Tomasito,,Tango,Instrumental,,,24444,,Peregrino Paulos,,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-09-29,Retintín,,Tango,Instrumental,,,24526,,Eduardo Arolas,Gabriel Clausi,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-09-29,Rodríguez Peña,Rodríguez Peña,Tango,Instrumental,,,"24525, 32538",,Vicente Greco,"Ernesto Temes, Juan Velich, Rafael Velich",,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-02,Adiós Muchachos,,Tango,Andrés Peyró,,,24541,,Julio Sanders,"César Vedani, Carol Raven",,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-02,Rawson,,Tango,Instrumental,,,24540,,Eduardo Arolas,Gabriel Clausi,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Hotel Victoria,Gran Hotel Victoria,Tango,Instrumental,,,24564,,Feliciano Latasa,Carlos Pesce,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Organito de la Tarde,,Tango,Andrés Peyró,,,24563,,Castillo Cátulo,José Castillo,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Soledad,,Tango,Fontán Luna,,,24562,,Carlos Gardel,Alfredo Le Pera,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Tierra Negra,,Tango,Instrumental,,,24542,,"Graciano De Leone, Juan Noli",Francisco Bastardi,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-15,A Media Luz,,Tango,Andrés Peyró,,,24575,,Edgardo Donato,Carlos Lenzi,,,Osvaldo Requena,,,,Piano,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1959-10-15,Mano a Mano,Viejo Bandoneón,Tango,Fontán Luna,,,24576,,"Carlos Gardel, José Razzano",Celedonio Flores,,,Osvaldo Requena,,,,Piano,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,Bahía Blanca,Bahia Blanca,Tango,Instrumental,,,24442,,Carlos Di Sarli,,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,Bar Exposición,Cosa Linda Barata,Tango,Instrumental,,,24441,,Luis Teisseire,,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,El Morochito,,Tango,Instrumental,,,24443,,Vicente Greco,Gerónimo Gradito,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-09-10,Tomasito,,Tango,Instrumental,,,24444,,Peregrino Paulos,,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-09-29,Retintín,,Tango,Instrumental,,,24526,,Eduardo Arolas,Gabriel Clausi,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-09-29,Rodríguez Peña,Rodríguez Peña,Tango,Instrumental,,,"24525, 32538",,Vicente Greco,"Ernesto Temes, Juan Velich, Rafael Velich",,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-02,Adiós Muchachos,,Tango,Andrés Peyró,,,24541,,Julio Sanders,"César Vedani, Carol Raven",,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-02,Rawson,,Tango,Instrumental,,,24540,,Eduardo Arolas,Gabriel Clausi,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Hotel Victoria,Gran Hotel Victoria,Tango,Instrumental,,,24564,,Feliciano Latasa,Carlos Pesce,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Organito de la Tarde,,Tango,Andrés Peyró,,,24563,,Castillo Cátulo,José Castillo,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Soledad,,Tango,Fontán Luna,,,24562,,Carlos Gardel,Alfredo Le Pera,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-08,Tierra Negra,,Tango,Instrumental,,,24542,,"Graciano De Leone, Juan Noli",Francisco Bastardi,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-15,A Media Luz,,Tango,Andrés Peyró,,,24575,,Edgardo Donato,Carlos Lenzi,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
+Florindo Sassone,Orquesta Florindo Sassone,1959-10-15,Mano a Mano,Viejo Bandoneón,Tango,Fontán Luna,,,24576,,"Carlos Gardel, José Razzano",Celedonio Flores,,,Osvaldo Requena,,,,Piano,LP,TEV 502 - Brindamos para su tango favorito,,Brindamos para su tango favorito
 Florindo Sassone,Orquesta Florindo Sassone,1959-11-24,Las Hojas Muertas,,Tango,Instrumental,,,24743,,"J. Kosma, J. Prevert",,,,Osvaldo Requena,,,,Piano,,,,
 Florindo Sassone,Orquesta Florindo Sassone,1959-11-24,Tango Azul,,Tango,Instrumental,,,24744,,Leroy Anderson,,,,Osvaldo Requena,,,,Piano,,,,
 Florindo Sassone,Orquesta Florindo Sassone,1960-01-28,Che Papusa Oí,,Tango,Andrés Peyró,,,24909,,Gerardo Rodríguez,Enrique Cadícamo,,,Osvaldo Requena,,,,Piano,,,,
@@ -143,7 +143,7 @@ Florindo Sassone,Orquesta Florindo Sassone,1968-07-13,Celos,Jalousie/jelousie/jo
 Florindo Sassone,Orquesta Florindo Sassone,1968-07-13,Sueño Azul,Pelona,Tango,Instrumental,,,34831,,"Tibor Barczy, Last","Tibor Barczy, Roberto Zerrillo",,,,,,,,LP,Sassone Internacional,B,Sassone Internacional
 Florindo Sassone,Orquesta Florindo Sassone,1968-07-13,Un Jardín en Italia,,Tango,Instrumental,,,34832,,"Ralph Erwin, Last",,,,,,,,,LP,Sassone Internacional,B,Sassone Internacional
 Florindo Sassone,Orquesta Florindo Sassone,1968-08-19,Ojos Negros,Dark Eyes,Tango,Instrumental,,,34934,M529,"Hans Last, Peter Zeeden",,,,,,,,,LP,Sassone Internacional,A,Sassone Internacional
-Florindo Sassone,Orquesta Florindo Sassone,1968-08-19,Tango de las Rosas,,Tango,Instrumental,,,34933,,"Francisco Schreier, A. Bottero",,,,,,,,,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1968-08-19,Tango de las Rosas,,Tango,Instrumental,,,34933,,"Francisco Schreier, A. Bottero",,,,,,,,,LP,TEV 12027 - Sassone Internacional,,Sassone Internacional
 Florindo Sassone,Orquesta Florindo Sassone,1968-08-27,Beso su Mano Señora,Ich Küsse Ihre Hand Madame,Tango,Instrumental,,,34993,,Ralph Erwin,Fritz Rotter,,,,,,,,LP,Sassone Internacional,A,Sassone Internacional
 Florindo Sassone,Orquesta Florindo Sassone,1968-08-27,Cielo Azul,,Tango,Instrumental,,,34995,,Josef Rixner,,,,,,,,,LP,Sassone Internacional,A,Sassone Internacional
 Florindo Sassone,Orquesta Florindo Sassone,1968-08-27,Una Noche en Montecarlo,,Tango,Instrumental,,,34994,,"Heyman, Last",,,,,,,,,LP,Sassone Internacional,B,Sassone Internacional
@@ -167,40 +167,40 @@ Florindo Sassone,Orquesta Florindo Sassone,1970-05-05,Carrillón de la Mercéd,C
 Florindo Sassone,Orquesta Florindo Sassone,1970-05-05,El Estrellero,,Tango,Instrumental,,,37016,,Mariano Mores,Francisco Amor,,,,,,,,LP,Sassoneando,B,Sassoneando
 Florindo Sassone,Orquesta Florindo Sassone,1970-11-27,Cuidado Que Hay Luces Rojas,,Milonga,Oscar Macri,,,37747,,"Javier Mazzea, Manuel Arcos, Florindo Sassone","Javier Mazzea, Manuel Arcos, Florindo Sassone",,,,,,,,LP,Florindo Sassone Y Su Gran Orquesta Típica,A,Florindo Sassone Y Su Gran Orquesta Típica
 Florindo Sassone,Orquesta Florindo Sassone,1970-11-27,Hermosa Japonesita,,Tango,Oscar Macri,,,37746,,Osvaldo Pugliese,Javier Mazzea,,,,,,,,LP,Florindo Sassone Y Su Gran Orquesta Típica,A,Florindo Sassone Y Su Gran Orquesta Típica
-Florindo Sassone,Orquesta Florindo Sassone,1971,Beso su Mano Señora,Ich Küsse Ihre Hand Madame,Tango,Instrumental,,,,,Ralph Erwin,Fritz Rotter,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Canción del Amanecer,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Celos,Jalousie/jelousie/jolouise,Tango,Instrumental,,,,,Jacobo Gade,Adaptación Moreno,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Cielo Azul,,Tango,Instrumental,,,,C510,Josef Rixner,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Donna Vatra,,Tango,Instrumental,,,,M529,Rodolfo Peters,,,,,,,,,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Beso su Mano Señora,Ich Küsse Ihre Hand Madame,Tango,Instrumental,,,,,Ralph Erwin,Fritz Rotter,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Canción del Amanecer,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Celos,Jalousie/jelousie/jolouise,Tango,Instrumental,,,,,Jacobo Gade,Adaptación Moreno,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Cielo Azul,,Tango,Instrumental,,,,C510,Josef Rixner,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Donna Vatra,,Tango,Instrumental,,,,M529,Rodolfo Peters,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
 Florindo Sassone,Orquesta Florindo Sassone,1971,El Amor No Sirve Para Nada,L'amour C'est Pour Rien,Tango,Instrumental,,,,,"Enrico Macías, Blanc",,,,,,,,,LP,Deluxe In Tango,A,Deluxe In Tango
-Florindo Sassone,Orquesta Florindo Sassone,1971,En un Pequeño Café,,Tango,Instrumental,,,,,Fred Raimond,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Esperanza,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Final de un Amor,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Isla de Capri,,Tango,Instrumental,,,,C510,"Will Grosz, Jimmy Kennedy","Jimmy Kennedy, Ángel Del Valle",,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,La Canción de Violeta,,Tango,Instrumental,,,,,"Othmar Klase, Rudi Lukesch",,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,La Paloma,,Tango,Instrumental,,,,M529,Sebastian De Yradier,"A. Franci, Jean Rodor",,,,,,,,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1971,En un Pequeño Café,,Tango,Instrumental,,,,,Fred Raimond,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Esperanza,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Final de un Amor,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Isla de Capri,,Tango,Instrumental,,,,C510,"Will Grosz, Jimmy Kennedy","Jimmy Kennedy, Ángel Del Valle",,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,La Canción de Violeta,,Tango,Instrumental,,,,,"Othmar Klase, Rudi Lukesch",,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,La Paloma,,Tango,Instrumental,,,,M529,Sebastian De Yradier,"A. Franci, Jean Rodor",,,,,,,,LP,Tango Internacional (EPSA 19001),,
 Florindo Sassone,Orquesta Florindo Sassone,1971,Le Tango Du Rêve,Tango del Sueño,Tango,Instrumental,,,,C510,Edward Van Malderen,Jean Carwald,,,,,,,,,,,
 Florindo Sassone,Orquesta Florindo Sassone,1971,Lluvia,,Tango,Instrumental,,,,,"Juan Gelman, Raul Tuñon",,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Lluvia Sobre el Camino,,Tango,Instrumental,,,,,Henry Himmel,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Luz Azul,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Mi Corazón Es un Violín,,Tango,Instrumental,,,,M529,Miarka Lapacerié,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Mujer,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Mundo Para Dos,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Nina,,Tango,Instrumental,,,,C510,Abraham,,,,,,,,,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Lluvia Sobre el Camino,,Tango,Instrumental,,,,,Henry Himmel,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Luz Azul,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Mi Corazón Es un Violín,,Tango,Instrumental,,,,M529,Miarka Lapacerié,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Mujer,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Mundo Para Dos,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Nina,,Tango,Instrumental,,,,C510,Abraham,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
 Florindo Sassone,Orquesta Florindo Sassone,1971,Nostalgias,,Vals,Instrumental,,,,,,,,,,,,,,LP,ラ・クンパルシータ アルゼンチン・タンゴ決定盤,B,ラ・クンパルシータ / アルゼンチン・タンゴ決定盤
-Florindo Sassone,Orquesta Florindo Sassone,1971,Oh Donna Clara,,Tango,Instrumental,,,,,"Rafaelmo, Peters",,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Ojos Negros,Dark Eyes,Tango,Instrumental,,,,,"Hans Last, Peter Zeeden",,,,,,,,,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Oh Donna Clara,,Tango,Instrumental,,,,,"Rafaelmo, Peters",,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Ojos Negros,Dark Eyes,Tango,Instrumental,,,,,"Hans Last, Peter Zeeden",,,,,,,,,LP,Tango Internacional (EPSA 19001),,
 Florindo Sassone,Orquesta Florindo Sassone,1971,Olé Guapa,,Tango,Instrumental,,,,C510,Arie Malando,Pat Pattison,,,,,,,,LP,Deluxe In Tango,A,Deluxe In Tango
-Florindo Sassone,Orquesta Florindo Sassone,1971,Orquídeas a la Luz de la Luna,Orchids In The Moonlight,Tango,Instrumental,,,,,"Vincent Youmans, Gus Kahn, Eliscu, Loges",,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Sueño,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Tango Azul,,Tango,Instrumental,,,,,Leroy Anderson,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Tango Nocturno,,Tango,Instrumental,,,,C510,Hans Borgmann,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Tango de las Rosas,,Tango,Instrumental,,,,C510,"Francisco Schreier, A. Bottero",,,,,,,,,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Orquídeas a la Luz de la Luna,Orchids In The Moonlight,Tango,Instrumental,,,,,"Vincent Youmans, Gus Kahn, Eliscu, Loges",,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Sueño,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Tango Azul,,Tango,Instrumental,,,,,Leroy Anderson,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Tango Nocturno,,Tango,Instrumental,,,,C510,Hans Borgmann,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Tango de las Rosas,,Tango,Instrumental,,,,C510,"Francisco Schreier, A. Bottero",,,,,,,,,LP,Tango Internacional (EPSA 19001),,
 Florindo Sassone,Orquesta Florindo Sassone,1971,Te Quiero,,Tango,Instrumental,,,,,Francisco Canaro,Francisco Canaro,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Un Jardín en Italia,,Tango,Instrumental,,,,M529,"Ralph Erwin, Last",,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Una Noche de Tokyo,,Tango,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Vals Azul,,Vals,Instrumental,,,,,,,,,,,,,,,,,
-Florindo Sassone,Orquesta Florindo Sassone,1971,Violín Gitano,,Tango,Instrumental,,,,,"C. Bixio, B. Cherubini, Artemia Lavelli",,,,,,,,,,,,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Un Jardín en Italia,,Tango,Instrumental,,,,M529,"Ralph Erwin, Last",,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Una Noche de Tokyo,,Tango,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Vals Azul,,Vals,Instrumental,,,,,,,,,,,,,,LP,Tango Internacional (EPSA 19001),,
+Florindo Sassone,Orquesta Florindo Sassone,1971,Violín Gitano,,Tango,Instrumental,,,,,"C. Bixio, B. Cherubini, Artemia Lavelli",,,,,,,,,LP,Tango Internacional (EPSA 19001),,
 Florindo Sassone,Orquesta Florindo Sassone,1972,Rodríguez Peña,Rodríguez Peña,Tango,Instrumental,,,,,Vicente Greco,"Ernesto Temes, Juan Velich, Rafael Velich",,,,,,,,LP,ラ・クンパルシータ アルゼンチン・タンゴ決定盤,A,ラ・クンパルシータ / アルゼンチン・タンゴ決定盤
 Florindo Sassone,Orquesta Florindo Sassone,1973,A Media Luz,,Tango,Instrumental,,,,"C502, PAIS5004",Edgardo Donato,Carlos Lenzi,,,,,,,,LP,Tangos Para La Historia,A,Tangos Para La Historia
 Florindo Sassone,Orquesta Florindo Sassone,1973,Caminito,,Tango,Instrumental,,,,C502,Juan Filiberto,Gabino Peñaloza,,,,,,,,LP,La Cumparsita - Florindo Sassone At His Best,A,La Cumparsita - Florindo Sassone At His Best
